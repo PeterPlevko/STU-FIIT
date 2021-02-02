@@ -1,0 +1,3 @@
+tato vec nie je vyriesitelna
+
+Process finished with exit code 0

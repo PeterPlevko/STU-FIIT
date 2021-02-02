@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.TimeTableEnvironmentTeacherController">
+   <children>
+      <ComboBox fx:id="studentsBox" layoutX="24.0" layoutY="14.0" prefWidth="150.0" />
+      <Button layoutX="225.0" layoutY="14.0" mnemonicParsing="false" onAction="#chooseStudent" text="potvrd" />
+      <TextField editable="false" layoutX="25.0" layoutY="83.0" text="pondelok" />
+      <TextField editable="false" layoutX="25.0" layoutY="144.0" text="utorok" />
+      <TextField editable="false" layoutX="25.0" layoutY="200.0" text="streda" />
+      <TextField editable="false" layoutX="25.0" layoutY="253.0" text="stvrtok" />
+      <TextField editable="false" layoutX="25.0" layoutY="304.0" text="piatok" />
+      <TextField fx:id="monday" editable="false" layoutX="226.0" layoutY="83.0" prefHeight="25.0" prefWidth="338.0" />
+      <TextField fx:id="tuesday" editable="false" layoutX="226.0" layoutY="144.0" prefHeight="25.0" prefWidth="338.0" />
+      <TextField fx:id="wednesday" editable="false" layoutX="226.0" layoutY="200.0" prefHeight="25.0" prefWidth="338.0" />
+      <TextField fx:id="thurstday" editable="false" layoutX="226.0" layoutY="253.0" prefHeight="25.0" prefWidth="338.0" />
+      <TextField fx:id="friday" editable="false" layoutX="226.0" layoutY="304.0" prefHeight="25.0" prefWidth="338.0" />
+      <Button layoutX="521.0" layoutY="361.0" mnemonicParsing="false" onAction="#sendTimetables" text="odoslat" />
+   </children>
+</AnchorPane>

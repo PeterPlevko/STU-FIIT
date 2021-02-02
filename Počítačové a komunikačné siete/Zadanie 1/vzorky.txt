@@ -1,0 +1,16 @@
+eth-4.pcap / FTP-d FTP-r
+eth-5.pcap / SSH
+eth-6.pcap / TELNET
+eth-7.pcap / TELNET
+trace_ip_nad_20_B.pcap / HTTP
+trace-1.pcap / HTTP
+trace-3.pcap / HTTP
+trace-4.pcap / HTTP
+trace-6.pcap / HTTP FTP-r
+trace-7.pcap / FTP-d FTP-r
+trace-8.pcap / HTTP FTP-r
+trace-9.pcap / TELNET HTTP
+trace-10.pcap / HTTPS
+trace-27.pcap / ICMP / ARP
+
+dorobit rozlisovanie ack fin cez bity

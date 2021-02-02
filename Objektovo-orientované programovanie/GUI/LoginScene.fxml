@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.LoginSceneController">
+   <children>
+      <Button layoutX="273.0" layoutY="257.0" mnemonicParsing="false" onAction="#Login" text="Prihlasenie" />
+      <TextField fx:id="username" layoutX="235.0" layoutY="175.0" promptText="meno" />
+      <ImageView fitHeight="139.0" fitWidth="174.0" layoutX="238.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Pictures/bislogo.PNG" />
+         </image>
+      </ImageView>
+      <PasswordField fx:id="password" layoutX="235.0" layoutY="210.0" promptText="password" />
+      <Button layoutX="274.0" layoutY="294.0" mnemonicParsing="false" onAction="#Registration" text="Registracia" />
+   </children>
+</AnchorPane>

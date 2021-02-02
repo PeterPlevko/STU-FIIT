@@ -1,0 +1,82 @@
+http
+	trace_ip_nad_20_B.pcap
+	trace-1.pcap
+	trace-10.pcap
+	trace-11.pcap
+	trace-12.pcap
+	trace-14.pcap
+	trace-20.pcap
+	trace-21.pcap
+	trace-24.pcap
+	trace-25.pcap
+	trace-27.pcap
+	trace-3.pcap
+	trace-4.pcap
+	trace-6.pcap
+	trace-8.pcap
+	trace-9.pcap
+https
+	trace-10.pcap
+	trace-12.pcap
+	trace-14.pcap
+	trace-17.pcap
+	trace-27.pcap
+	trace-8.pcap
+telnet
+	eth-6.pcap
+	eth-7.pcap
+	trace-14.pcap
+	trace-19.pcap
+	trace-9.pcap
+ssh
+	eth-5.pcap
+	trace-18.pcap
+tftp
+	eth-8.pcap
+	eth-9.pcap
+	trace-15.pcap
+ftp-control
+	eth-4.pcap
+	trace-12.pcap
+	trace-13.pcap
+	trace-14.pcap
+	trace-16.pcap
+	trace-6.pcap
+	trace-7.pcap
+	trace-8.pcap
+ftp-data
+	eth-4.pcap
+	trace-12.pcap
+	trace-13.pcap
+	trace-14.pcap
+	trace-16.pcap
+	trace-6.pcap
+	trace-7.pcap
+	trace-8.pcap
+arp
+	eth-4.pcap
+	eth-8.pcap
+	trace-1.pcap
+	trace-10.pcap
+	trace-11.pcap
+	trace-12.pcap
+	trace-13.pcap
+	trace-14.pcap
+	trace-15.pcap
+	trace-2.pcap
+	trace-20.pcap
+	trace-21.pcap
+	trace-22.pcap
+	trace-23.pcap
+	trace-24.pcap
+	trace-25.pcap
+	trace-26.pcap
+	trace-27.pcap
+	trace-8.pcap
+icmp
+	eth-9.pcap
+	trace_ip_nad_20_B.pcap
+	trace-15.pcap
+	trace-26.pcap
+	trace-27.pcap
+	trace-6.pcap

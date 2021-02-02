@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.StudentEnvironmentController">
+   <children>
+      <Button layoutX="3.0" layoutY="14.0" mnemonicParsing="false" onAction="#printAssignment" text="zadanie:" />
+      <Label fx:id="assignmentLabel" layoutX="72.0" layoutY="14.0" prefHeight="25.0" prefWidth="324.0" />
+      <Button layoutX="3.0" layoutY="64.0" mnemonicParsing="false" onAction="#printType" text="typ studenta:" />
+      <Label fx:id="whatTypeAmILabel" layoutX="100.0" layoutY="64.0" prefHeight="25.0" prefWidth="289.0" />
+      <Button layoutX="4.0" layoutY="109.0" mnemonicParsing="false" onAction="#printExam" text="pisomka" />
+      <Label fx:id="examLabel" layoutX="72.0" layoutY="109.0" prefHeight="25.0" prefWidth="324.0" />
+      <Button layoutX="9.0" layoutY="163.0" mnemonicParsing="false" onAction="#printFinalExam" text="skuska" />
+      <Label fx:id="finalExamLabel" layoutX="67.0" layoutY="163.0" prefHeight="25.0" prefWidth="324.0" />
+      <Button layoutX="9.0" layoutY="216.0" mnemonicParsing="false" onAction="#printAttendance" text="dochadzka" />
+      <Label fx:id="attendanceLabel" layoutX="95.0" layoutY="216.0" prefHeight="25.0" prefWidth="296.0" />
+      <ListView fx:id="attendanceListView" layoutX="397.0" layoutY="2.0" prefHeight="238.0" prefWidth="200.0" />
+      <Button layoutX="523.0" layoutY="374.0" mnemonicParsing="false" onAction="#signOff" text="odhlasenie" />
+      <Button layoutX="9.0" layoutY="266.0" mnemonicParsing="false" onAction="#showTimetable" text="rozvrh" />
+      <Button layoutX="9.0" layoutY="310.0" mnemonicParsing="false" onAction="#sendMessage" text="poslat spravu" />
+      <ComboBox fx:id="comboBox" layoutX="138.0" layoutY="310.0" prefWidth="150.0" />
+      <TextField fx:id="textField" layoutX="323.0" layoutY="310.0" prefHeight="25.0" prefWidth="277.0" promptText="sem napis spravu" />
+      <Label fx:id="mark" layoutX="111.0" layoutY="351.0" prefHeight="17.0" prefWidth="247.0" />
+      <Button layoutX="9.0" layoutY="347.0" mnemonicParsing="false" onAction="#printMark" text="znamka" />
+   </children>
+</AnchorPane>

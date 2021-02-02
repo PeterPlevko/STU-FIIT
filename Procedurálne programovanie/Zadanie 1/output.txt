@@ -1,0 +1,70 @@
+Pole nie je vytvorene
+Pole nie je vytvorene
+Pole nie je vytvorene
+meno priezvisko: Karol Velky
+SPZ: BA353AB
+typ auta: 1
+cena: 23455.34
+datum: 20181122
+
+meno priezvisko: Maria Razusova Martakova
+SPZ: SC128BD
+typ auta: 0
+cena: 1352.00
+datum: 20190101
+
+meno priezvisko: Jean Claude Van Damme
+SPZ: BL585LB
+typ auta: 0
+cena: 5211.80
+datum: 20190615
+
+meno priezvisko: Hilda Mudra
+SPZ: BA858BA
+typ auta: 1
+cena: 59834.77
+datum: 20180628
+
+meno priezvisko: Vincent Van Gogh
+SPZ: SC321DC
+typ auta: 1
+cena: 11352.00
+datum: 20180110
+
+meno priezvisko: Hilda Mudra
+SPZ: PK421AO
+typ auta: 1
+cena: 29179.52
+datum: 20180628
+
+meno priezvisko: Vincent Van Gogh
+SPZ: SC321DC
+typ auta: 0
+cena: 4352.00
+datum: 20180110
+
+meno priezvisko: Hilda Mudra
+SPZ: MA123SC
+typ auta: 0
+cena: 9832.28
+datum: 20180628
+
+Hilda Mudra BA858BA 1376.20
+Vincent Van Gogh SC321DC 261.10
+Hilda Mudra PK421AO 671.13
+Vincent Van Gogh SA323AS 221.95
+Hilda Mudra MA123SC 501.45
+BA 353 AB
+SC 128 BD
+BL 585 LB
+BA 858 BA
+SC 321 DC
+PK 421 AO
+SA 323 AS
+MA 123 SC
+A 8
+BA
+BL
+SA
+BA 2
+SC 2

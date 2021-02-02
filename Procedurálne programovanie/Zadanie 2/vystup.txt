@@ -1,0 +1,173 @@
+1.
+kategoria ponuky: trojizbovy apartman
+miesto ponuky: Ivanka pri Dunaji
+ulica: Stefanikova 56
+rozloha v m2: 132
+cena: 238555
+popis: novostavba
+Nacitalo sa 3 zaznamov
+1.
+kategoria ponuky: stvorizbovy byt
+miesto ponuky: Bratislava
+ulica: Medena 32
+rozloha v m2: 104
+cena: 475000
+popis: byt po ciastocnej rekonstrukcii, samostatne vykurovanie
+2.
+kategoria ponuky: rodinny dom 5+1
+miesto ponuky: Povazska Bystrica
+ulica: Jana Amosa Komenskeho 45
+rozloha v m2: 230
+cena: 255000
+popis: starsi udrziavany rodinny dom s atelierom na pozemku 970 m2 
+3.
+kategoria ponuky: celorocne obyvatelna chata
+miesto ponuky: Stary Smokovec
+ulica: Tatranska 340
+rozloha v m2: 158
+cena: 178000
+popis: drevena novostavba, potrebne ukoncit rozvody elektriny
+1.
+kategoria ponuky: stvorizbovy byt
+miesto ponuky: Bratislava
+ulica: Medena 32
+rozloha v m2: 104
+cena: 475000
+popis: byt po ciastocnej rekonstrukcii, samostatne vykurovanie
+2.
+kategoria ponuky: garsonka
+miesto ponuky: Kamenica nad Cirochou
+ulica: Estonska 32
+rozloha v m2: 45
+cena: 32000
+popis: renovacia kupelne
+3.
+kategoria ponuky: rodinny dom 5+1
+miesto ponuky: Povazska Bystrica
+ulica: Jana Amosa Komenskeho 45
+rozloha v m2: 230
+cena: 255000
+popis: starsi udrziavany rodinny dom s atelierom na pozemku 970 m2
+4.
+kategoria ponuky: celorocne obyvatelna chata
+miesto ponuky: Stary Smokovec
+ulica: Tatranska 340
+rozloha v m2: 158
+cena: 178000
+popis: drevena novostavba, potrebne ukoncit rozvody elektriny
+1.
+kategoria ponuky: stvorizbovy byt
+miesto ponuky: Bratislava
+ulica: Medena 32
+rozloha v m2: 104
+cena: 475000
+popis: byt po ciastocnej rekonstrukcii, samostatne vykurovanie
+2.
+kategoria ponuky: chata
+miesto ponuky: Kamenna Poruba
+ulica: Hlavna 1
+rozloha v m2: 123
+cena: 65000
+popis: celorocne obyvatelna chata
+3.
+kategoria ponuky: garsonka
+miesto ponuky: Kamenica nad Cirochou
+ulica: Estonska 32
+rozloha v m2: 45
+cena: 32000
+popis: renovacia kupelne
+4.
+kategoria ponuky: rodinny dom 5+1
+miesto ponuky: Povazska Bystrica
+ulica: Jana Amosa Komenskeho 45
+rozloha v m2: 230
+cena: 255000
+popis: starsi udrziavany rodinny dom s atelierom na pozemku 970 m2
+5.
+kategoria ponuky: celorocne obyvatelna chata
+miesto ponuky: Stary Smokovec
+ulica: Tatranska 340
+rozloha v m2: 158
+cena: 178000
+popis: drevena novostavba, potrebne ukoncit rozvody elektriny
+1.
+kategoria ponuky: chata
+miesto ponuky: Kamenna Poruba
+ulica: Hlavna 1
+rozloha v m2: 123
+cena: 65000
+popis: celorocne obyvatelna chata
+2.
+kategoria ponuky: garsonka
+miesto ponuky: Kamenica nad Cirochou
+ulica: Estonska 32
+rozloha v m2: 45
+cena: 32000
+popis: renovacia kupelne
+3.
+kategoria ponuky: celorocne obyvatelna chata
+miesto ponuky: Stary Smokovec
+ulica: Tatranska 340
+rozloha v m2: 158
+cena: 178000
+popis: drevena novostavba, potrebne ukoncit rozvody elektriny 
+V ponuke su len reality s vyssou cenou
+Aktualizovalo sa 1 zaznamov
+1.
+kategoria ponuky: stvorizbovy byt
+miesto ponuky: Bratislava
+ulica: Medena 32
+rozloha v m2: 104
+cena: 475000
+popis: byt po ciastocnej rekonstrukcii, samostatne vykurovanie
+2.
+kategoria ponuky: chata
+miesto ponuky: Kamenna Poruba
+ulica: Hlavna 1
+rozloha v m2: 123
+cena: 65000
+popis: celorocne obyvatelna chata
+3.
+kategoria ponuky: garsonka
+miesto ponuky: Kamenica nad Cirochou
+ulica: Estonska 32
+rozloha v m2: 45
+cena: 32000
+popis: renovacia kupelne
+4.
+kategoria ponuky: rodinny dom 5+1
+miesto ponuky: Povazska Bystrica
+ulica: Jana Amosa Komenskeho 45
+rozloha v m2: 230
+cena: 255000
+popis: starsi udrziavany rodinny dom s atelierom na pozemku 970 m2
+5.
+kategoria ponuky: celorocne obyvatelna chata
+miesto ponuky: Stary Smokovec
+ulica: Tatranska 340/A
+rozloha v m2: 158
+cena: 195000
+popis: drevena novostavba v perfektnom stave
+Vymazalo sa 2 zaznamov
+1.
+kategoria ponuky: stvorizbovy byt
+miesto ponuky: Bratislava
+ulica: Medena 32
+rozloha v m2: 104
+cena: 475000
+popis: byt po ciastocnej rekonstrukcii, samostatne vykurovanie
+2.
+kategoria ponuky: rodinny dom 5+1
+miesto ponuky: Povazska Bystrica
+ulica: Jana Amosa Komenskeho 45
+rozloha v m2: 230
+cena: 255000
+popis: starsi udrziavany rodinny dom s atelierom na pozemku 970 m2
+3.
+kategoria ponuky: celorocne obyvatelna chata
+miesto ponuky: Stary Smokovec
+ulica: Tatranska 340/A
+rozloha v m2: 158
+cena: 195000
+popis: drevena novostavba v perfektnom stave
+

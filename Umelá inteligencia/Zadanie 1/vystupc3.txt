@@ -1,0 +1,77 @@
+C:\Users\pplev\PycharmProjects\UI_zadanie2\venv\Scripts\python.exe C:/Users/pplev/PycharmProjects/UI_zadanie2/main.py
+pocet navstivenych: 636
+pocet spracovanych: 1075
+cas vykonania algoritmu: 0.009972572326660156
+[1, 0, 3]
+[4, 8, 6]
+[2, 5, 7]
+right
+[1, 3, 0]
+[4, 8, 6]
+[2, 5, 7]
+down
+[1, 3, 6]
+[4, 8, 0]
+[2, 5, 7]
+left
+[1, 3, 6]
+[4, 0, 8]
+[2, 5, 7]
+down
+[1, 3, 6]
+[4, 5, 8]
+[2, 0, 7]
+left
+[1, 3, 6]
+[4, 5, 8]
+[0, 2, 7]
+up
+[1, 3, 6]
+[0, 5, 8]
+[4, 2, 7]
+right
+[1, 3, 6]
+[5, 0, 8]
+[4, 2, 7]
+down
+[1, 3, 6]
+[5, 2, 8]
+[4, 0, 7]
+right
+[1, 3, 6]
+[5, 2, 8]
+[4, 7, 0]
+up
+[1, 3, 6]
+[5, 2, 0]
+[4, 7, 8]
+up
+[1, 3, 0]
+[5, 2, 6]
+[4, 7, 8]
+left
+[1, 0, 3]
+[5, 2, 6]
+[4, 7, 8]
+down
+[1, 2, 3]
+[5, 0, 6]
+[4, 7, 8]
+left
+[1, 2, 3]
+[0, 5, 6]
+[4, 7, 8]
+down
+[1, 2, 3]
+[4, 5, 6]
+[0, 7, 8]
+right
+[1, 2, 3]
+[4, 5, 6]
+[7, 0, 8]
+right
+[1, 2, 3]
+[4, 5, 6]
+[7, 8, 0]
+
+Process finished with exit code 0
