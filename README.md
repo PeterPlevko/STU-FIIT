@@ -1,2 +1,2 @@
 # STU-FIIT
-school
+school folder
