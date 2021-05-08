@@ -1,0 +1,910 @@
+openapi: 3.0.0
+info:
+  title: DBS 2021
+  description: Definícia API zadania na predmet DBS 2021
+  version: 0.3.0
+servers:
+  - url: https://fiit-dbs-xdubec-app.azurewebsites.net
+    description: Váš Azure server
+tags:
+- name: "Zadanie 1"
+- name: "Zadanie 2"
+- name: "Zadanie 3"
+- name: "Zadanie 4"
+
+paths:
+  /v1/health:
+    get:
+      tags:
+        - "Zadanie 1"
+      summary: Vráti informácie o tom, ako dlho beží inštancia databázového servera.
+      description: Na získanie žiadanej informácie použite nasledujúci SQL dotaz `SELECT date_trunc('second', current_timestamp - pg_postmaster_start_time()) as uptime;`
+      responses:
+        '200':
+          description: Očakávaná odpoveď vo formáte [JSON](https://www.json.org/json-en.html)
+          content:
+            application/json:
+              schema: 
+                type: object
+                properties: 
+                  pgsql:
+                    type: object
+                    example: 
+                      uptime: '10 days 21:20:12'
+  /v1/ov/submissions:
+    get:
+      tags:
+        - "Zadanie 2"
+      summary: Vráti zoznam podaní z tabuĺky `ov.or_podania_issues`
+      description: >
+        Pre tabuľku ov/ov_podania_issues vytvorte endpoint **GET /v1/ov/submissions**, ktorý 
+        bude stránkovaný a bude vracať pole objektov, ktoré priamo mapujú databázové stĺpce:
+
+          - `id`
+          - `br_court_name`
+          - `kind_name`
+          - `cin`
+          - `registration_date`
+          - `corporate_body_name`
+          - `br_section`
+          - `br_insertion`
+          - `text`
+          - `street`
+          - `postal_code`
+          - `city`
+
+
+        **Dbajte na dodržiavanie datových typov!**
+
+
+        Stránkovanie bude fungovať na základe GET parametrov `page` a `per_page`, kde štandardný 
+        počet záznamov na stránku bude 10. Teda: `GET /v1/ov/submissions/?page=1&per_page=10` 
+        je ekvivalentné s `GET /v1/ov/submissions`.
+       
+       
+        Parameter `page` definuje stránku v poradí, ktorá sa aktuálne zobrazuje, parameter
+        `per_page` hovorí o tom, koľko záznamov sa nachádza na jednej stránke. Príklad: 
+        `GET /v1/ov/submissions/?page=3&per_page=10` zobrazí  záznamy v poradí 21 – 30 vrátane. 
+        
+        
+        Keďže sú to parametre, tak si dávajte pozor, aby to fungovalo pre všetky možné kombinácie.
+        
+        
+        Umožnite vyhľadávať nad nasledovnými stĺpcami: `corporate_body_name`, `cin`, `city` 
+        fulltextovo (OR medzi nimi) a nad poľom `registration_date` väčšie rovné aj menšie 
+        rovné hodnoty nasledovne:
+        
+        
+        `GET /v1/ov/submissions/?query=Orange%20Slovensko&registration_date_gte=2016-06-17%2011%3A14%3A42.579414&registration_date_lte=2017-06-17%2011%3A14%3A42.579414`
+        
+        
+        Umožnite zoraďovať výsledky podľa jedného vybraného stĺpca spomedzi všetkých ktoré sa 
+        štandardne vracajú nasledovne:
+        
+        
+        `GET /v1/ov/submissions/?order_by=registration_date&order_type=desc`
+      parameters:
+        - name: page
+          in: query
+          required: false
+          description: Číslo žiadanej stránky (adresované od 1)
+          schema:
+            type: integer
+            format: int64
+        - name: per_page
+          in: query
+          required: false
+          description: Počet záznamov na jednej stránke
+          schema:
+            type: integer
+            format: int64
+        - name: order_by
+          in: query
+          required: false
+          description: Názov stĺpca, podľa ktorého bude zoradený výsledok
+          schema:
+            type: string
+            enum:
+              - id
+              - br_court_name
+              - kind_name
+              - cin
+              - registration_date
+              - corporate_body_name
+              - br_section
+              - br_insertion
+              - text
+              - street
+              - postal_code
+              - city
+        - name: order_type
+          in: query
+          required: false
+          description: Orientácia zoraďovania
+          schema:
+            type: string
+            enum:
+              - asc
+              - desc
+        - name: registration_date_lte
+          description: Dátum vo formáte ISO8601
+          in: query
+          required: false
+          schema:
+            type: string
+            format: date-time
+        - name: registration_date_gte
+          description: Dátum vo formáte ISO8601
+          in: query
+          required: false
+          schema:
+            type: string
+            format: date-time
+        - name: query
+          description: Full-text vyhľadávanie nad stĺpcami `corporate_body_name`, `cin`, `city`
+          in: query
+          required: false
+          schema:
+            type: string
+            format: date-time
+      responses:
+        '200':
+          description: List záznamov z tabuľky `or_podania_issues`
+          content:
+            application/json:
+              schema: 
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/SubmissionDetail'
+                  metadata:
+                    $ref: '#/components/schemas/Metadata'
+    post:
+      tags:
+        - "Zadanie 2"
+      summary: Vytvorý nový záznam v tabuľke `ov.or_podania_issues`
+      description: >
+        Pridajte metódu `POST /v1/ov/submissions`, ktorá vytvorí nový záznam do tabuľky 
+        ov/or_podania_issues. Metóda musí validovať nasledovné hodnoty:
+
+          - `br_court_name`: povinné pole
+          - `kind_name`: povinné pole
+          - `cin`: povinné pole, len číselná hodnota
+          - `registration_date`: povinné pole, hodnota môže byť len z aktuálneho roka
+          - `corporate_body_name`: povinné pole
+          - `br_section`: povinné pole
+          - `br_insertion`: povinné pole
+          - `text`: povinné pole
+          - `street`: povinné pole
+          - `postal_code`: povinné pole
+          - `city`: povinné pole
+
+
+        Systém automaticky doplní správne `created_at`, `updated_at`, `address_line` a zaroveň 
+        vytvorí záznamy v tabuľkách `raw_issues` a `bulletin_issues`. Do ostatných stĺpcov 
+        vložte znak –. V prípade úspešného zapísania, vráťte HTTP status kód 201 Created a 
+        detailom záznamu v rovnakom formáte ako je v liste.
+        
+        
+        V prípade validačnej chyby vráťte chybu v tvare s HTTP status kódom 422:
+      responses:
+        '201':
+          description: Detail vytvoreného záznamu
+          content:
+            application/json:
+              schema: 
+                type: object
+                properties:
+                  response:
+                    $ref: '#/components/schemas/SubmissionDetail'
+        '422':
+          description: Detaily validačnej chyby
+          content:
+            application/json:
+              schema: 
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      properties:
+                        field:
+                          type: string
+                        reasons:
+                          type: array
+                    example:
+                      - field: registration_date
+                        reasons: [required, invalid_range]
+                      - field: cin
+                        reasons: [required, not_number]
+                      - field: streat
+                        reasons: [required]
+
+  /v1/ov/submissions/{submissionId}:
+    delete:
+      tags:
+        - "Zadanie 2"
+      summary: Odstránenie záznamu pomocou ID
+      description: >
+        Pridajte metódu `DELETE /v1/ov/submissions/:id`, kde :id je id záznamu na zmazanie. 
+        Daný záznam sa zmaže z DB. Nezabudnite zmazať aj príslušné záznamy v tabuľkách 
+        `raw_issues` a `bulletin_issues`. V prípade, že záznam neexistuje vráťte HTTP 
+        status kód 404, ak sa podarilo záznam zmazať tak 204 a žiadny response body.
+      parameters:
+        - in: path
+          name: submissionId
+          schema:
+            type: integer
+          required: true
+          description: Identifikátor záznamu (primárny klúč)
+      responses:
+        '204':
+          description: V prípade úspešného záznamu, server vracia prázdnu odpoveď
+        '404':
+          description: Záznam neexistuje na strane servrera
+          content:
+            application/json:
+              schema: 
+                type: object
+                properties: 
+                  error:
+                    type: object
+                    example: 
+                      message: "Záznam neexistuje"
+  /v1/companies:
+    get:
+      tags:
+        - "Zadanie 3"
+      summary: Vráti zoznam firiem z tabuĺky `ov.companies`
+      description: >
+        Po vytvorení tabuľky firiem a zmigrovaní dát, vytvorte endpoint `/v1/companies`. 
+        Tento endpoint bude vracať všetky firmy z tabuľky `companies` a bude obsahovať pole 
+        objektov, kde každý má nasledovné polia:
+
+          - `cin`
+          - `name`
+          - `br_section`
+          - `address_line`
+          - `last_update`
+          - `or_podanie_issues_count`: počet asociovaných záznamov z tabuľky `or_podanie_issues` pre danú firmu
+          - `znizenie_imania_issues_count`: počet asociovaných záznamov z tabuľky `znizenie_imania_issues` pre danú firmu
+          - `likvidator_issues_count`: počet asociovaných záznamov z tabuľky `likvidator_issues` pre danú firmu
+          - `konkurz_vyrovnanie_issues_count`: počet asociovaných záznamov z tabuľky `konkurz_vyrovnanie_issues` pre danú firmu
+          - `konkurz_restrukturalizacia_actors_count`: počet asociovaných záznamov z tabuľky `konkurz_restrukturalizacia_actors` pre danú firmu
+        
+        Dáta pre endpoint musia byť vytiahnuté pomocou jednej query (operácie v rámci DDL sa nepočítajú 
+        k danej query), ktorá musí bez použitia hocijakej podmienky zbehnúť do 70 sekúnd na AWS 
+        (pre porovnanie na 2,6 GHz 6-Core Intel Core i7 to ide okolo 30 sekúnd). 
+
+
+        Endpoint musí vedieť vyhľadávať nad poľami `name` a `address_line` cez GET parameter `query` 
+        tak ako nad parametrom `last_update` cez `last_update_gte` a `last_update_lte`. GET parametre sú 
+        rovnako definované ako v predošlom zadaní.
+       
+        Endpoint zároveň podporuje rovnaké stránkovanie ako v predošlom zadaní a rovnako sa dá zoraďovať nad 
+        každým stĺpcom pomocou GET parametrov `order_by` a `order_type`.
+      parameters:
+        - name: page
+          in: query
+          required: false
+          description: Číslo žiadanej stránky (adresované od 1)
+          schema:
+            type: integer
+            format: int64
+        - name: per_page
+          in: query
+          required: false
+          description: Počet záznamov na jednej stránke
+          schema:
+            type: integer
+            format: int64
+        - name: order_by
+          in: query
+          required: false
+          description: Názov stĺpca, podľa ktorého bude zoradený výsledok
+          schema:
+            type: string
+            enum:
+              - cin
+              - name
+              - br_section
+              - address_line
+              - last_update
+        - name: order_type
+          in: query
+          required: false
+          description: Orientácia zoraďovania
+          schema:
+            type: string
+            enum:
+              - asc
+              - desc
+        - name: last_update_lte
+          description: Dátum vo formáte ISO8601
+          in: query
+          required: false
+          schema:
+            type: string
+            format: date-time
+        - name: last_update_gte
+          description: Dátum vo formáte ISO8601
+          in: query
+          required: false
+          schema:
+            type: string
+            format: date-time
+        - name: query
+          description: Full-text vyhľadávanie nad stĺpcami `name` a `address_line`
+          in: query
+          required: false
+          schema:
+            type: string
+            format: date-time
+      responses:
+        '200':
+          description: List záznamov z tabuľky `companies`
+          content:
+            application/json:
+              schema: 
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/CompanyDetail'
+                  metadata:
+                    $ref: '#/components/schemas/Metadata'
+  
+  /v2/ov/submissions:
+    get:
+      tags:
+        - "Zadanie 4"
+      summary: Vráti zoznam podaní z tabuĺky `ov.or_podania_issues`
+      description: >
+        Pre tabuľku ov/ov_podania_issues vytvorte endpoint pomocou ORM **GET /v2/ov/submissions**, ktorý 
+        bude stránkovaný a bude vracať pole objektov, ktoré priamo mapujú databázové stĺpce:
+
+          - `id`
+          - `br_court_name`
+          - `kind_name`
+          - `cin`
+          - `registration_date`
+          - `corporate_body_name`
+          - `br_section`
+          - `br_insertion`
+          - `text`
+          - `street`
+          - `postal_code`
+          - `city`
+
+
+        **Dbajte na dodržiavanie datových typov!**
+
+
+        Stránkovanie bude fungovať na základe GET parametrov `page` a `per_page`, kde štandardný 
+        počet záznamov na stránku bude 10. Teda: `GET /v2/ov/submissions/?page=1&per_page=10` 
+        je ekvivalentné s `GET /v2/ov/submissions`.
+       
+       
+        Parameter `page` definuje stránku v poradí, ktorá sa aktuálne zobrazuje, parameter
+        `per_page` hovorí o tom, koľko záznamov sa nachádza na jednej stránke. Príklad: 
+        `GET /v2/ov/submissions/?page=3&per_page=10` zobrazí  záznamy v poradí 21 – 30 vrátane. 
+        
+        
+        Keďže sú to parametre, tak si dávajte pozor, aby to fungovalo pre všetky možné kombinácie.
+        
+        
+        Umožnite vyhľadávať nad nasledovnými stĺpcami: `corporate_body_name`, `cin`, `city` 
+        fulltextovo (OR medzi nimi) a nad poľom `registration_date` väčšie rovné aj menšie 
+        rovné hodnoty nasledovne:
+        
+        
+        `GET /v2/ov/submissions/?query=Orange%20Slovensko&registration_date_gte=2016-06-17%2011%3A14%3A42.579414&registration_date_lte=2017-06-17%2011%3A14%3A42.579414`
+        
+        
+        Umožnite zoraďovať výsledky podľa jedného vybraného stĺpca (NULL hodnoty majú byť posledné) spomedzi všetkých ktoré sa 
+        štandardne vracajú nasledovne:
+        
+        
+        `GET /v2/ov/submissions/?order_by=registration_date&order_type=desc`
+      parameters:
+        - name: page
+          in: query
+          required: false
+          description: Číslo žiadanej stránky (adresované od 1)
+          schema:
+            type: integer
+            format: int64
+        - name: per_page
+          in: query
+          required: false
+          description: Počet záznamov na jednej stránke
+          schema:
+            type: integer
+            format: int64
+        - name: order_by
+          in: query
+          required: false
+          description: Názov stĺpca, podľa ktorého bude zoradený výsledok
+          schema:
+            type: string
+            enum:
+              - id
+              - br_court_name
+              - kind_name
+              - cin
+              - registration_date
+              - corporate_body_name
+              - br_section
+              - br_insertion
+              - text
+              - street
+              - postal_code
+              - city
+        - name: order_type
+          in: query
+          required: false
+          description: Orientácia zoraďovania
+          schema:
+            type: string
+            enum:
+              - asc
+              - desc
+        - name: registration_date_lte
+          description: Dátum vo formáte ISO8601
+          in: query
+          required: false
+          schema:
+            type: string
+            format: date-time
+        - name: registration_date_gte
+          description: Dátum vo formáte ISO8601
+          in: query
+          required: false
+          schema:
+            type: string
+            format: date-time
+        - name: query
+          description: Full-text vyhľadávanie nad stĺpcami `corporate_body_name`, `cin`, `city`
+          in: query
+          required: false
+          schema:
+            type: string
+            format: date-time
+      responses:
+        '200':
+          description: List záznamov z tabuľky `or_podania_issues`
+          content:
+            application/json:
+              schema: 
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/SubmissionDetail'
+                  metadata:
+                    $ref: '#/components/schemas/Metadata'
+    
+    post:
+      tags:
+        - "Zadanie 4"
+      summary: Vytvorý nový záznam v tabuľke `ov.or_podania_issues`
+      description: >
+        Pridajte metódu `POST /v2/ov/submissions`, ktorá vytvorí pomocou ORM nový záznam do tabuľky 
+        ov/or_podania_issues. Metóda musí validovať nasledovné hodnoty:
+
+          - `br_court_name`: povinné pole
+          - `kind_name`: povinné pole
+          - `cin`: povinné pole, len číselná hodnota
+          - `registration_date`: povinné pole, hodnota môže byť len z aktuálneho roka
+          - `corporate_body_name`: povinné pole
+          - `br_section`: povinné pole
+          - `br_insertion`: povinné pole
+          - `text`: povinné pole
+          - `street`: povinné pole
+          - `postal_code`: povinné pole
+          - `city`: povinné pole
+
+
+        Systém automaticky doplní správne `created_at`, `updated_at`, `address_line` a zaroveň 
+        vytvorí záznamy v tabuľkách `raw_issues` a `bulletin_issues`. Do ostatných stĺpcov 
+        vložte znak –. V prípade úspešného zapísania, vráťte HTTP status kód 201 Created a 
+        detailom záznamu v rovnakom formáte ako je v liste.
+        
+        
+        V prípade validačnej chyby vráťte chybu v tvare s HTTP status kódom 422:
+      responses:
+        '201':
+          description: Detail vytvoreného záznamu
+          content:
+            application/json:
+              schema: 
+                type: object
+                properties:
+                  response:
+                    $ref: '#/components/schemas/SubmissionDetail'
+        '422':
+          description: Detaily validačnej chyby
+          content:
+            application/json:
+              schema: 
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      properties:
+                        field:
+                          type: string
+                        reasons:
+                          type: array
+                    example:
+                      - field: registration_date
+                        reasons: [required, invalid_range]
+                      - field: cin
+                        reasons: [required, not_number]
+                      - field: streat
+                        reasons: [required]
+  
+  /v2/ov/submissions/{submissionId}:
+    delete:
+      tags:
+        - "Zadanie 4"
+      summary: Odstránenie záznamu pomocou ID
+      description: >
+        Pridajte metódu `DELETE /v2/ov/submissions/:id`, kde :id je id záznamu na zmazanie. 
+        Daný záznam sa zmaže z DB pomocou oRM. Nezabudnite zmazať aj príslušné záznamy v tabuľkách 
+        `raw_issues` a `bulletin_issues`. V prípade, že záznam neexistuje vráťte HTTP 
+        status kód 404, ak sa podarilo záznam zmazať tak 204 a žiadny response body.
+      parameters:
+        - in: path
+          name: submissionId
+          schema:
+            type: integer
+          required: true
+          description: Identifikátor záznamu (primárny klúč)
+      responses:
+        '204':
+          description: V prípade úspešného záznamu, server vracia prázdnu odpoveď
+        '404':
+          description: Záznam neexistuje na strane servrera
+          content:
+            application/json:
+              schema: 
+                type: object
+                properties: 
+                  error:
+                    type: object
+                    example: 
+                      message: "Záznam neexistuje"
+    get:
+      tags:
+        - "Zadanie 4"
+      summary: Získanie záznamu pomocou ID
+      description: >
+        Pridajte metódu `GET /v2/ov/submissions/:id`, kde :id je id záznamu na prebratie. 
+      parameters:
+        - in: path
+          name: submissionId
+          schema:
+            type: integer
+          required: true
+          description: Identifikátor záznamu (primárny klúč)
+      responses:
+        '200':
+          description: Detail vytvoreného záznamu
+          content:
+            application/json:
+              schema: 
+                type: object
+                properties:
+                  response:
+                    $ref: '#/components/schemas/SubmissionDetail'
+    put:
+      tags:
+        - "Zadanie 4"
+      summary: Upravte záznam v tabuľke `ov.or_podania_issues`
+      description: >
+        Pridajte metódu `PUT /v2/ov/submissions/:id`, ktorá upraví pomocou ORM ľubovoľný parameter záznamu z
+        ov/or_podania_issues. Metóda musí obsahovať aspoň jedno pole ak ho obsahuje, musí validovať nasledovné hodnoty:
+
+          - `br_court_name`: string hodnota
+          - `kind_name`: string hodnota
+          - `cin`: číselná hodnota
+          - `registration_date`: hodnota môže byť len z aktuálneho roka
+          - `corporate_body_name`: string hodnota
+          - `br_section`: string hodnota
+          - `br_insertion`: string hodnota
+          - `text`: string hodnota
+          - `street`: string hodnota
+          - `postal_code`: string hodnota
+          - `city`: string hodnota
+
+        V prípade úspešného zapísania, vráťte HTTP status kód 201 Created a 
+        detailom záznamu v rovnakom formáte ako je v liste.
+        
+        
+        V prípade validačnej chyby vráťte chybu v tvare s HTTP status kódom 422:
+      
+      parameters:
+        - in: path
+          name: submissionId
+          schema:
+            type: integer
+          required: true
+          description: Identifikátor záznamu (primárny klúč)
+
+      responses:
+        '201':
+          description: Detail vytvoreného záznamu
+          content:
+            application/json:
+              schema: 
+                type: object
+                properties:
+                  response:
+                    $ref: '#/components/schemas/SubmissionDetail'
+        '422':
+          description: Detaily validačnej chyby
+          content:
+            application/json:
+              schema: 
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      properties:
+                        field:
+                          type: string
+                        reasons:
+                          type: array
+                    example:
+                      - field: registration_date
+                        reasons: [invalid_range]
+                      - field: cin
+                        reasons: [not_number]
+                      - field: street
+                        reasons: [not_string]
+  /v2/companies:
+    get:
+      tags:
+        - "Zadanie 4"
+      summary: Vráti zoznam firiem z tabuĺky `ov.companies`
+      description: >
+        Vytvorte endpoint `/v1/companies`. 
+        Tento endpoint bude vracať pomocou ORM všetky firmy z tabuľky `companies` a agregačné hodnoty vypočítané s pripojených tabuliek nasledovne:
+
+          - `cin`
+          - `name`
+          - `br_section`
+          - `address_line`
+          - `last_update`
+          - `or_podanie_issues_count`: počet asociovaných záznamov z tabuľky `or_podanie_issues` pre danú firmu
+          - `znizenie_imania_issues_count`: počet asociovaných záznamov z tabuľky `znizenie_imania_issues` pre danú firmu
+          - `likvidator_issues_count`: počet asociovaných záznamov z tabuľky `likvidator_issues` pre danú firmu
+          - `konkurz_vyrovnanie_issues_count`: počet asociovaných záznamov z tabuľky `konkurz_vyrovnanie_issues` pre danú firmu
+          - `konkurz_restrukturalizacia_actors_count`: počet asociovaných záznamov z tabuľky `konkurz_restrukturalizacia_actors` pre danú firmu
+        
+        Dáta pre endpoint musia byť vytiahnuté pomocou jednej query (operácie v rámci DDL sa nepočítajú 
+        k danej query), ktorá musí bez použitia hocijakej podmienky zbehnúť do 70 sekúnd na AWS 
+        (pre porovnanie na 2,6 GHz 6-Core Intel Core i7 to ide okolo 30 sekúnd). 
+
+
+        Endpoint musí vedieť vyhľadávať nad poľami `name` a `address_line` cez GET parameter `query` 
+        tak ako nad parametrom `last_update` cez `last_update_gte` a `last_update_lte`. GET parametre sú 
+        rovnako definované ako v predošlom zadaní.
+       
+        Endpoint zároveň podporuje rovnaké stránkovanie ako v predošlom zadaní a rovnako sa dá zoraďovať nad 
+        každým stĺpcom (aj agregačným pomocou GET parametrov `order_by` a `order_type`, kde NULL hodnoty budú vždy posledné.
+      parameters:
+        - name: page
+          in: query
+          required: false
+          description: Číslo žiadanej stránky (adresované od 1)
+          schema:
+            type: integer
+            format: int64
+        - name: per_page
+          in: query
+          required: false
+          description: Počet záznamov na jednej stránke
+          schema:
+            type: integer
+            format: int64
+        - name: order_by
+          in: query
+          required: false
+          description: Názov stĺpca, podľa ktorého bude zoradený výsledok
+          schema:
+            type: string
+            enum:
+              - cin
+              - name
+              - br_section
+              - address_line
+              - last_update
+        - name: order_type
+          in: query
+          required: false
+          description: Orientácia zoraďovania
+          schema:
+            type: string
+            enum:
+              - asc
+              - desc
+        - name: last_update_lte
+          description: Dátum vo formáte ISO8601
+          in: query
+          required: false
+          schema:
+            type: string
+            format: date-time
+        - name: last_update_gte
+          description: Dátum vo formáte ISO8601
+          in: query
+          required: false
+          schema:
+            type: string
+            format: date-time
+        - name: query
+          description: Full-text vyhľadávanie nad stĺpcami `name` a `address_line`
+          in: query
+          required: false
+          schema:
+            type: string
+            format: date-time
+      responses:
+        '200':
+          description: List záznamov z tabuľky `companies`
+          content:
+            application/json:
+              schema: 
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/CompanyDetail'
+                  metadata:
+                    $ref: '#/components/schemas/Metadata'
+components:
+  schemas:
+    SubmissionDetail:
+      properties:
+        id: 
+          type: number
+          example: 79
+        br_court_name: 
+          type: string
+          example: Okresný súd Bratislava I
+        kind_name: 
+          type: string
+          example: Zmena zápisov
+        cin: 
+          type: number
+          example: 35971126
+        registration_date: 
+          type: string
+          format: date
+          example: 2006-01-01
+        corporate_body_name: 
+          type: string
+          example: Národný ústav srdcových a cievnych chorôb a.s.
+        br_section: 
+          type: string
+          example: Sa
+        text: 
+          type: string
+          example: >
+            ODDIEL: Sa VLOŽKA ČÍSLO: 3774/B OBCHODNÉ MENO: Národný ústav srdcových a cievnych chorôb
+            a.s. SÍDLO: Názov ulice (iného verejného priestranstva) a orientačné číslo (príp. 
+            súpisné číslo): Pod Krásnou hôrkou 1  Názov obce: Bratislava PSČ: 833 48 IČO: 35 
+            971 126 DEŇ ZÁPISU: 01.01.2006 PRÁVNA FORMA: Akciová spoločnosť PREDMET PODNIKANIA 
+            (ČINNOSTI): 1. poskytovanie ambulantnej a ústavnej zdravotnej starostlivosti v rozsahu...
+        street: 
+          type: string
+          example: Pod Krásnou hôrkou 1 
+        postal_code: 
+          type: string
+          example: 83348
+        city: 
+          type: string
+          example: Bratislava
+    CreateSubmission:
+      properties:
+        br_court_name: 
+          type: string
+          example: Okresný súd Bratislava I
+        kind_name: 
+          type: string
+          example: Zmena zápisov
+        cin: 
+          type: number
+          example: 35971126
+        registration_date: 
+          type: string
+          format: date
+          example: 2006-01-01
+        corporate_body_name: 
+          type: string
+          example: Národný ústav srdcových a cievnych chorôb a.s.
+        br_section: 
+          type: string
+          example: Sa
+        text: 
+          type: string
+          example: >
+            ODDIEL: Sa VLOŽKA ČÍSLO: 3774/B OBCHODNÉ MENO: Národný ústav srdcových a cievnych chorôb
+            a.s. SÍDLO: Názov ulice (iného verejného priestranstva) a orientačné číslo (príp. 
+            súpisné číslo): Pod Krásnou hôrkou 1  Názov obce: Bratislava PSČ: 833 48 IČO: 35 
+            971 126 DEŇ ZÁPISU: 01.01.2006 PRÁVNA FORMA: Akciová spoločnosť PREDMET PODNIKANIA 
+            (ČINNOSTI): 1. poskytovanie ambulantnej a ústavnej zdravotnej starostlivosti v rozsahu...
+        street: 
+          type: string
+          example: Pod Krásnou hôrkou 1 
+        postal_code: 
+          type: string
+          example: 83348
+        city: 
+          type: string
+          example: Bratislava
+    Metadata:
+      properties:
+        page: 
+          type: number
+          example: 1
+        per_page: 
+          type: number
+          example: 10
+        pages: 
+          type: number
+          example: 1
+        total: 
+          type: number
+          example: 4
+    ValidationError:
+      properties:
+        field: 
+          type: number
+          example: 1
+        reasons: 
+          type: number
+          example: 10
+    CompanyDetail:
+      properties:
+        cin: 
+          type: number
+          example: 35971126
+        name: 
+          type: string
+          example: Národný ústav srdcových a cievnych chorôb a.s.
+        br_section: 
+          type: string
+          example: Sa
+        address_line: 
+          type: string
+          example: Pod Krásnou hôrkou 1 , Bratislava 83348
+        last_update: 
+          type: string
+          format: date
+          example: 2006-01-01
+        or_podanie_issues_count: 
+          type: number
+          example: 35971126
+        znizenie_imania_issues_count: 
+          type: number
+          example: 321
+        likvidator_issues_count: 
+          type: number
+          example: 12
+        konkurz_vyrovnanie_issues_count: 
+          type: number
+          example: 32
+        konkurz_restrukturalizacia_actors_count: 
+          type: number
+          example: 10
+          

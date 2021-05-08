@@ -1,0 +1,263 @@
+enum sex {
+  male
+  female
+  other
+}
+
+enum registration_type {
+  facebook
+  twitter
+  google
+}
+
+Table User_credentials {
+  id bigint [pk, increment]
+  player_id bigint [ref: - Player.id]
+  pwd_hash varchar(150)
+  registration_type registration_type
+  external_id varchar(200)   // id from external system
+  email varchar(50) [unique, not null]
+  confirmed boolean [DEFAULT: FALSE]
+  created_at TIMESTAMP
+  updated_at TIMESTAMP
+}
+
+Table Player {
+  id bigint [pk, increment, ref: < User_friends.id_friend]
+  user_name varchar(20) [unique, not null]
+  registration_type registration_type
+  created_at TIMESTAMP
+  updated_at TIMESTAMP
+  sex sex [not null]
+}
+
+Table Character {
+  id bigint [pk, increment]
+  id_player bigint  [ ref: > Player.id]
+  id_coordinates bigint [not null, ref: > Coordinates.id]
+  id_class bigint [not null, ref: > Class.id]
+  level int [DEFAULT: 1]
+  name varchar(20) [not null]
+  attack decimal 
+  defense decimal
+  health decimal
+  experience int
+  created_at TIMESTAMP
+}
+
+Table Character_stats {
+  id bigint [pk, increment]
+  character_id bigint [ref: > Character.id]
+  character_class bigint [ref: > Class.id]
+  monster_class bigint [ref: > Monster_class.id]
+  died int [DEFAULT: 0]
+  killed int [DEFAULT: 0]
+}
+
+Table Player_teams {
+  id bigint [pk, increment]
+  id_player bigint [ref: > Player.id]
+  id_team bigint [ref: > Team.id]
+  member boolean [DEFAULT: TRUE]
+  created_at TIMESTAMP
+  updated_at TIMESTAMP
+}
+
+Table User_friends {
+  id_Player bigint [pk, increment, ref: > Player.id]
+  id_friend bigint 
+  created_at TIMESTAMP
+}
+
+Table User_blocks {
+  id bigint [pk, increment]
+  id_Player bigint [ref: > Player.id]
+  id_blocked bigint [ref: > Player.id]
+  created_at TIMESTAMP
+}
+
+Table Team {
+  id bigint [pk, increment]
+  name varchar(30) [not null]
+  members_num int [not null]
+  created_at TIMESTAMP
+}
+
+Table Team_invites {
+  id bigint [pk, increment]
+  id_player_to bigint [ref: > Player.id]
+  id_player_from bigint [ref: > Player.id]
+  id_team bigint [ref: > Team.id]
+  accepted boolean [DEFAULT: FALSE]
+  created_at TIMESTAMP
+  answered_at TIMESTAMP
+}
+
+Table Friendship_invites {
+  id bigint [pk, increment]
+  id_player_to bigint [ref: > Player.id]
+  id_player_from bigint [ref: > Player.id]
+  accepted boolean [DEFAULT: FALSE]
+  created_at TIMESTAMP
+  answered_at TIMESTAMP
+}
+
+Table Player_chat {
+  id bigint [pk, increment] 
+  id_player_to bigint [ref: > Player.id]
+  id_player_from bigint [ref: > Player.id]
+  message varchar(200) [not null]
+  created_at TIMESTAMP
+}
+
+Table Team_chat {
+  id bigint [pk, increment] 
+  id_team_to bigint [ref: > Team.id]
+  id_player_from bigint [ref: > Player.id]
+  message varchar(200) [not null]
+  created_at TIMESTAMP
+}
+
+Table Location {
+  id bigint [pk, increment]
+  location_name varchar(50) [not null]
+  required_level int [DEFAULT: 1]
+  encounter_chance decimal [DEFAULT: 0.1]
+  width int [DEFAULT: 50]
+  height int [DEFAULT: 50]
+}
+
+Table Coordinates{
+  id bigint [pk, increment]
+  id_location bigint [ref: > Location.id]
+  pos_x bigint [DEFAULT: 0]
+  pos_y bigint [DEFAULT: 0]
+}
+
+Table Quest {
+  id bigint [pk] 
+  quest_name varchar(30) [not null]
+  id_location bigint [ref: > Location.id]
+  item_reward bigint [ref: > Item_class.id]
+  required_level int [DEFAULT: 1]
+  experience int [not null]
+  monster_class varchar(20)
+  monster_num int
+}
+
+Table Character_quests {
+  id bigint [pk, increment]
+  id_quest bigint [ref: > Quest.id]
+  id_character bigint [ref: > Character.id]
+  finished boolean [DEFAULT: FALSE]
+  finished_at TIMESTAMP
+  acquired_at TIMESTAMP
+}
+
+Table Class {
+  id bigint [pk]
+  name varchar(20) [not null]
+  created_at TIMESTAMP 
+}
+
+Table Class_level {
+  id bigint [pk]
+  id_class bigint [ref: > Class.id]
+  level int [DEFAULT: 1]
+  experience_required int //experience required for reaching the next level
+  health decimal
+  attack decimal
+  defense decimal
+}
+
+Table Skills {
+  id bigint [pk]
+  skill_name varchar(20)
+  skill_class bigint [ref: > Class.id]
+  required_skill bigint [ref: > Skills.id]
+  description varchar(100) [not null]
+  damage_modifier decimal
+  defense_modifier decimal
+  health_modifier decimal
+}
+
+Table Character_skills {
+  id bigint [pk, increment]
+  id_character bigint [not null,ref: > Character.id]
+  id_skill bigint [not null, ref: > Skills.id]
+}
+
+Table Monster {
+  id bigint [pk, increment]
+  id_coordinates bigint [ref: > Coordinates.id]
+  monster_class bigint [not null, ref: > Monster_class.id]
+  attack decimal
+  defense decimal
+  health decimal
+  created_at TIMESTAMP
+}
+
+Table Monster_class {
+  id bigint [pk]
+  class_name varchar(20) 
+  level int [DEFAULT: 1]
+  required_monster bigint [ref: > Monster_class.id]
+  required_quest bigint [ref: > Quest.id]  
+  item_class_drop bigint [ref: > Item_class.id]
+  drop_chance decimal 
+  experience int
+  attack decimal
+  defense decimal
+  health decimal
+}
+
+Table Monster_skills {
+  id bigint [pk]
+  skill_name varchar(20)
+  monster_class bigint [ref: > Monster_class.id]
+  description varchar(100) [not null]
+  damage_modifier decimal
+  defense_modifier decimal
+  health_modifier decimal
+}
+
+Table Item {
+  id bigint [pk, increment]
+  id_coordinates bigint [ref: > Coordinates.id]
+  id_character bigint [ref: > Character.id]
+  id_monster bigint [ref: - Monster.id]
+  item_class_id bigint [ref: > Item_class.id]
+  item_class varchar(20) [not null]
+  is_equipped boolean [DEFAULT: FALSE]
+  created_at TIMESTAMP
+}
+
+Table Item_class {
+  id bigint [pk]
+  class_name varchar(20)
+  attack_modifier decimal
+  defense_modifier decimal
+  health_modifier decimal
+}
+
+Table Battle {
+  id bigint [pk, increment]
+  character_id bigint [ref: > Character.id]
+  monster_id bigint [ref: > Monster.id]
+  character_starting_health decimal
+  monster_starting_health decimal
+  character_damage_done decimal
+  monster_damage_done decimal
+  character_remaining_health decimal
+  monster_remaining_healt decimal
+  experience int
+  created_at TIMESTAMP
+}
+
+Table Battle_skills {
+  id bigint [pk, increment]
+  battle_id bigint [ref: > Battle.id]
+  character_skill varchar(20)
+  monster_skill varchar(20)
+  damage_done decimal
+}
