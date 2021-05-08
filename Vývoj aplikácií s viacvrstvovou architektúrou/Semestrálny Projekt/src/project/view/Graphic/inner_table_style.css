@@ -1,0 +1,26 @@
+.list-view .scroll-bar:vertical {
+    -fx-scale-x: 0;
+}
+
+.list-view .scroll-bar:horizontal {
+    -fx-scale-x: 0;
+}
+
+.list-view {
+    -fx-background-color: transparent;
+}
+
+.list-view .list-cell{
+    -fx-background-color: transparent;
+    -fx-text-fill: #000000;
+}
+
+.list-view .list-cell:selected{
+    -fx-background-color: transparent;
+    -fx-text-fill: #000000;
+}
+
+.list-view .list-cell:hover{
+    -fx-background-color: rgba(255, 255, 255, 0.4);
+    -fx-text-fill: #000000;
+}

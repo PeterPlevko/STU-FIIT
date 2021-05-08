@@ -1,0 +1,54 @@
+//# 1 A
+//# 2 B
+//# 4 B
+//# 5 A
+read 1
+load 1
+jzero nula
+load 1
+store 5
+read 2
+load 2
+jzero nula
+load 2
+store 4
+//10
+// 3 krat pre 2 a 4
+//6 krat pre 6 4 
+porovnaj: load 1 //14 krat sa zrobil
+	    sub 2
+          store 3
+	    jzero koniec
+	    jgtz zvacsicislo
+	    
+load 1
+store 10
+load 2
+store 1
+load 10
+store 2	
+load 5
+store 10
+load 4
+store 5
+load 10
+store 4
+jump porovnaj
+
+zvacsicislo:		
+load 2
+add 4
+store 2
+jump porovnaj
+
+
+
+
+//1
+koniec: write 1
+	  halt
+//3
+nula:
+load =0
+store 11
+write 11		

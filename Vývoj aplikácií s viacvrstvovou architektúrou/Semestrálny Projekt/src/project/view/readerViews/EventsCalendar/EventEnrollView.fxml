@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="517.0" prefWidth="961.0" stylesheets="@../../Graphic/style_sheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.controller.readerControllers.EventsCalendar.EventEnrollController">
+   <Button layoutX="4.0" layoutY="4.0" mnemonicParsing="false" onAction="#showCalendar" styleClass="button_back">
+      <graphic>
+         <ImageView fitHeight="50.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@../../../images/other/back_button.png"/>
+         </ImageView>
+      </graphic></Button>
+   <TextArea fx:id="titleArea" editable="false" layoutX="60.0" layoutY="104.0" prefHeight="47.0" prefWidth="373.0" wrapText="true" />
+   <Label fx:id="eventTitleLabel" layoutX="61.0" layoutY="72.0" text="%eventTitleLabel" />
+   <TextArea fx:id="noteArea" editable="false" layoutX="60.0" layoutY="205.0" prefHeight="117.0" prefWidth="373.0" wrapText="true" />
+   <Label fx:id="eventNoteLabel" layoutX="61.0" layoutY="173.0" text="%eventNoteLabel" />
+   <DatePicker fx:id="datePickerFrom" editable="false" layoutX="575.0" layoutY="114.0" prefHeight="31.0" prefWidth="280.0" />
+   <DatePicker fx:id="datePickerTo" editable="false" layoutX="575.0" layoutY="199.0" prefHeight="31.0" prefWidth="280.0" />
+   <Label fx:id="startEventLabel" layoutX="578.0" layoutY="77.0" text="%startEventLabel" />
+   <Label fx:id="endEventLabel" layoutX="578.0" layoutY="167.0" text="%endEventLabel" />
+   <Label fx:id="hostLabel" layoutX="61.0" layoutY="335.0" text="%hostLabel" />
+   <TextField fx:id="hostField" layoutX="60.0" layoutY="369.0" prefHeight="31.0" prefWidth="373.0" />
+   <Button fx:id="participantBtn" layoutX="608.0" layoutY="262.0" mnemonicParsing="false" onAction="#enrollParticipant" prefHeight="60.0" prefWidth="215.0" styleClass="button_basic" text="%participantBtn" textAlignment="CENTER" wrapText="true" />
+   <Button fx:id="volunteerBtn" layoutX="618.0" layoutY="374.0" mnemonicParsing="false" onAction="#enrollVolunteer" prefHeight="60.0" prefWidth="197.0" styleClass="button_basic" text="%volunteerBtn" textAlignment="CENTER" wrapText="true" />
+   <Label fx:id="typeLabel" alignment="CENTER" layoutX="246.0" layoutY="4.0" prefHeight="51.0" prefWidth="469.0" text="Label">
+      <font>
+         <Font name="Segue UI Bold" size="41.0" />
+      </font>
+   </Label>
+   <Button fx:id="cancelBtn" layoutX="148.0" layoutY="428.0" mnemonicParsing="false" onAction="#cancelParticipation" prefHeight="60.0" prefWidth="197.0" styleClass="button_basic" text="%cancelBtn" textAlignment="CENTER" wrapText="true" />
+   <Label fx:id="participantLabel" alignment="CENTER" layoutX="599.0" layoutY="324.0" prefHeight="47.0" prefWidth="235.0" text="Label">
+      <font>
+         <Font name="Segue UI" size="18.0" />
+      </font>
+   </Label>
+   <Button fx:id="forumBtn" layoutX="600.0" layoutY="428.0" mnemonicParsing="false" onAction="#showForum" prefHeight="60.0" prefWidth="235.0" styleClass="button_basic" text="%forumBtn" textAlignment="CENTER" wrapText="true" />
+   <Button fx:id="booksBtn" layoutX="610.0" layoutY="428.0" mnemonicParsing="false" onAction="#showBooks" prefHeight="60.0" prefWidth="215.0" styleClass="button_basic" text="%booksBtn" textAlignment="CENTER" wrapText="true" />
+   <Button layoutX="832.0" layoutY="14.0" mnemonicParsing="false" onAction="#languageSK" prefHeight="0.0" prefWidth="0.0" styleClass="button_lg" stylesheets="@../../Graphic/style_sheet.css">
+      <graphic>
+         <ImageView fitHeight="36.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@../../../images/other/sk.png"/>
+         </ImageView>
+      </graphic>
+   </Button>
+   <Button layoutX="892.0" layoutY="14.0" mnemonicParsing="false" onAction="#languageEN" prefHeight="12.0" prefWidth="17.0" styleClass="button_lg" stylesheets="@../../Graphic/style_sheet.css">
+      <graphic>
+         <ImageView fitHeight="36.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@../../../images/other/us.png"/>
+         </ImageView>
+      </graphic>
+   </Button>
+</AnchorPane>

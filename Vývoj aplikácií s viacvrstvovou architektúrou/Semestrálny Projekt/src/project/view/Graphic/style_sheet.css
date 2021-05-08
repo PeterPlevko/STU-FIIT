@@ -1,0 +1,337 @@
+/************************************ ROOT ***********************************/
+.root{
+    -fx-background-color: linear-gradient(#ade7ff, #ffa7a7);
+}
+
+/************************************ BUTTONS ***********************************/
+.button_lg {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;
+    -fx-font-size: 0px;
+    -fx-padding: 0 0;
+    -fx-border-color: rgba(0, 0, 0, 0.5);
+}
+
+.button_back {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;
+    -fx-font-size: 0px;
+    -fx-padding: 0 0;
+}
+
+.button_basic {
+    -fx-background-color:
+            #090a0c,
+            linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),
+            linear-gradient(#20262b, #191d22),
+            radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));
+    -fx-background-radius: 5,4,3,5;
+    -fx-background-insets: 0,1,2,0;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+    -fx-font-family: "Segoe UI";
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+}
+
+.button_basic:hover{
+    -fx-background-color:
+            rgba(9, 10, 12, 0.64),
+            linear-gradient(rgba(56, 66, 75, 0.64) 0%, rgba(31, 36, 41, 0.66) 20%, rgba(25, 29, 34, 0.59) 100%),
+            linear-gradient(rgba(32, 38, 43, 0.7), rgba(25, 29, 34, 0.62)),
+            radial-gradient(center 50% 0%, radius 100%, rgba(114, 131, 148, 0.59), rgba(255, 255, 255, 0.13));
+    -fx-background-radius: 5,4,3,5;
+    -fx-background-insets: 0,1,2,0;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+    -fx-font-family: "Segoe UI";
+    -fx-font-weight: bold;
+    -fx-text-fill: linear-gradient(white, #d0d0d0);
+    -fx-font-size: 16px;
+}
+
+.radio-button{
+    -fx-font-weight: bold;
+}
+
+.radio-button .radio {
+    -fx-background-color: #ffffff;
+}
+
+/************************************ LABELS AND TEXTS ***********************************/
+.label, .text{
+    -fx-font-weight: bold;
+    -fx-font-family: "Segoe UI";
+}
+
+.text_title{
+    -fx-background-color: #000000;
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 34px;
+    -fx-font-weight: bold;
+}
+
+.text-field{
+    -fx-background-color: transparent;
+    -fx-border-color:
+            #090a0c,
+            linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),
+            linear-gradient(#20262b, #191d22),
+            radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));
+    -fx-border-width: 0px 0px 2px 0px;
+    -fx-text-fill: #000000;
+    -fx-font-family: "Segoe UI";
+    -fx-prompt-text-fill: rgba(0, 0, 0, 0.54);
+}
+
+.text-area {
+    -fx-background-color: transparent;
+    -fx-border-color:
+            #090a0c,
+            linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),
+            linear-gradient(#20262b, #191d22),
+            radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));
+    -fx-text-fill: #000000;
+    -fx-font-family: "Segoe UI";
+    -fx-prompt-text-fill: rgba(0, 0, 0, 0.54);
+}
+
+.text-area .content, .text-area .viewport{
+    -fx-background-color: transparent;
+}
+
+.text-area .scroll-bar:vertical .thumb{
+    -fx-background-color:
+            #090a0c,
+            linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),
+            linear-gradient(#20262b, #191d22),
+            radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));
+}
+
+.text-area .scroll-bar:vertical, .text-area .scroll-bar:vertical .track, .text-area .scroll-bar:vertical .track-background{
+    -fx-background-color: transparent;
+}
+
+.text-area .scroll-bar .increment-button, .text-area .scroll-bar .decrement-button {
+    -fx-opacity: 0;
+    -fx-padding: 2;
+}
+
+/************************************ DATE PICKER ***********************************/
+.date-picker-popup .button {
+    -fx-font-size: 1em;
+    -fx-border-color: transparent;
+    -fx-font-family: "Segoe UI";
+    -fx-background-color: transparent;
+}
+
+.date-picker-popup .button:hover {
+    -fx-font-size: 1em;
+    -fx-border-color: transparent;
+    -fx-font-family: "Segoe UI";
+    -fx-background-color: lightgrey;
+}
+
+.date-picker{
+    -fx-background-color: transparent;
+}
+
+.date-picker .arrow-button{
+    -fx-background-color: transparent;
+    -fx-border-color:
+            #090a0c,
+            linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),
+            linear-gradient(#20262b, #191d22),
+            radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));
+    -fx-border-width: 2px;
+}
+
+.date-picker .cell {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #000000;
+}
+
+.date-picker .cell:hover {
+    -fx-background-color: #4273a1;
+    -fx-text-fill: #ffffff;
+}
+
+.date-picker-popup > .month-year-pane {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #090a0c;
+    -fx-font-family: "Segoe UI";
+}
+
+.date-picker-popup > .calendar-grid{
+    -fx-background-color: transparent;
+}
+
+/************************************ COMBO BOX ***********************************/
+.combo-box{
+    -fx-background-color:
+            #090a0c,
+            linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),
+            linear-gradient(#20262b, #191d22),
+            radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+}
+
+.combo-box .list-cell:selected{
+    -fx-background-color:
+            #090a0c,
+            linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),
+            linear-gradient(#20262b, #191d22),
+            radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));
+    -fx-text-fill: #ffffff;
+}
+
+.combo-box .list-cell{
+    -fx-background-color:
+            #090a0c,
+            linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),
+            linear-gradient(#20262b, #191d22),
+            radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));
+    -fx-text-fill: #ffffff;
+}
+
+.combo-box .list-cell:hover{
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #000000;
+}
+
+.combo-box .arrow-button{
+    -fx-background-color: transparent;
+    -fx-border-color:
+            #090a0c,
+            linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),
+            linear-gradient(#20262b, #191d22),
+            radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));
+    -fx-border-width: 2px;
+}
+
+/************************************ LISTVIEW ***********************************/
+.list-view_transparent{
+    -fx-background-color: rgba(255, 255, 255, 0.24);
+}
+
+.list-view_transparent .list-cell{
+    -fx-background-color: rgba(255, 255, 255, 0.24);
+    -fx-text-fill: #000000;
+}
+
+.list-view_transparent .list-cell:selected{
+    -fx-background-color: rgba(255, 255, 255, 0.24);
+    -fx-text-fill: #000000;
+}
+
+.list-view_transparent .scroll-bar:vertical, .list-view_transparent .scroll-bar:vertical .track,
+.list-view_transparent .scroll-bar:vertical .track-background{
+    -fx-background-color: transparent;
+}
+
+.list-view_transparent .scroll-bar .increment-button, .list-view_transparent .scroll-bar .decrement-button {
+    -fx-opacity: 0;
+    -fx-padding: 2;
+}
+
+.list-view_transparent .scroll-bar:vertical .thumb{
+    -fx-background-color:
+            #090a0c,
+            linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),
+            linear-gradient(#20262b, #191d22),
+            radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));
+}
+
+/************************************ TABLEVIEW ***********************************/
+.table-view {
+    -fx-background-color: rgba(255, 255, 255, 0.24);
+}
+
+.table-view .column-header-background .filler, .table-view .corner, .table-view .column-header{
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header-background{
+    -fx-background-color:
+            #090a0c,
+            linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),
+            linear-gradient(#20262b, #191d22),
+            radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));
+    -fx-background-radius: 7px 7px 0px 0px;
+    -fx-padding: 0 0 5px 0;
+}
+
+.table-view .column-header .label{
+    -fx-text-fill: white;
+}
+
+.table-view .table-cell, .table-row-cell:odd, .table-row-cell:even{
+    -fx-background-color: rgba(255, 255, 255, 0.24);
+}
+
+.table-row-cell:selected{
+    -fx-background-color: rgba(255, 255, 255, 0.5);
+}
+
+.table-view .virtual-flow .scroll-bar:vertical, .table-view .virtual-flow .scroll-bar:vertical .track,
+.table-view .virtual-flow .scroll-bar:vertical .track-background{
+    -fx-background-color: transparent;
+}
+
+.table-view .virtual-flow .scroll-bar .increment-button, .table-view .virtual-flow .scroll-bar .decrement-button {
+    -fx-opacity: 0;
+    -fx-padding: 2;
+}
+
+.table-view .virtual-flow .scroll-bar:vertical .thumb{
+    -fx-background-color:
+            #090a0c,
+            linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),
+            linear-gradient(#20262b, #191d22),
+            radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));
+}
+
+/************************************ DISCUSSION LISTVIEW ***********************************/
+.list-view_discussion{
+    -fx-background-color: rgba(255, 255, 255, 0.24);
+}
+
+.list-view_discussion .list-cell{
+    -fx-background-color: rgba(255, 255, 255, 0.24);
+    -fx-text-fill: #000000;
+}
+
+.list-view_discussion .list-cell:selected{
+    -fx-background-color: rgba(255, 255, 255, 0.24);
+    -fx-text-fill: #000000;
+}
+
+.list-view_discussion:filled:selected:focused, .list-cell:filled:selected  {
+    -fx-background-color: white;
+}
+
+.list-view_discussion:odd {
+    -fx-background-color: white;
+}
+
+.list-view_discussion:filled:hover {
+    -fx-text-fill: white;
+}
+
+.list-view_discussion .scroll-bar:vertical, .list-view_discussion .scroll-bar:vertical .track,
+.list-view_discussion .scroll-bar:vertical .track-background{
+    -fx-background-color: transparent;
+}
+
+.list-view_discussion .scroll-bar .increment-button, .list-view_discussion .scroll-bar .decrement-button {
+    -fx-opacity: 0;
+    -fx-padding: 2;
+}
+
+.list-view_discussion .scroll-bar:vertical .thumb{
+    -fx-background-color:
+            #090a0c,
+            linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),
+            linear-gradient(#20262b, #191d22),
+            radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));
+}

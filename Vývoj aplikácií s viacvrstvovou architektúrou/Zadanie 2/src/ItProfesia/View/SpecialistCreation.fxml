@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ItProfesia.Controller.SpecialistCreationController">
+   <children>
+      <ComboBox fx:id="typeOfSpecialistComboBox" layoutX="35.0" layoutY="44.0" prefWidth="150.0" />
+      <Button layoutX="228.0" layoutY="44.0" mnemonicParsing="false" onAction="#chooseType" prefHeight="25.0" prefWidth="149.0" text="vybrat specialistu" />
+      <Text layoutX="35.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cena za den" />
+      <TextField fx:id="dayPrice" layoutX="228.0" layoutY="93.0" />
+      <Text layoutX="37.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dlzka praxe" />
+      <TextField fx:id="praxisLength" layoutX="228.0" layoutY="143.0" />
+      <Text layoutX="37.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Najvyssie dosiahnute vzdelanie" />
+      <TextField fx:id="education" layoutX="228.0" layoutY="196.0" />
+      <Text layoutX="35.0" layoutY="256.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Certifikaty" />
+      <ComboBox fx:id="classDependable" layoutX="225.0" layoutY="335.0" prefWidth="150.0" />
+      <TextField fx:id="certificates" layoutX="228.0" layoutY="239.0" />
+      <Text fx:id="differentText" layoutX="36.0" layoutY="352.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="148.99999648332596" />
+      <Button layoutX="481.0" layoutY="326.0" mnemonicParsing="false" onAction="#sendIntoDatabase" prefHeight="60.0" prefWidth="107.0" text="odoslat" />
+      <Text fx:id="zaradenie" layoutX="39.0" layoutY="299.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="118.0" />
+      <TextField fx:id="zaradenieTextField" layoutX="228.0" layoutY="282.0" visible="false" />
+   </children>
+</AnchorPane>

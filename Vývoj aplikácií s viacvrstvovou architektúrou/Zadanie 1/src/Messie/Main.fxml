@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Messie.Main">
+   <children>
+      <Button layoutX="138.0" layoutY="48.0" mnemonicParsing="false" onAction="#switchToCustomer" prefHeight="67.0" prefWidth="101.0" text="pridaj zakaznika" />
+      <Button layoutX="356.0" layoutY="48.0" mnemonicParsing="false" onAction="#switchToChangeCustomer" prefHeight="67.0" prefWidth="100.0" text="uprav zakaznika" />
+      <Button layoutX="138.0" layoutY="167.0" mnemonicParsing="false" onAction="#switchToMerchandise" prefHeight="67.0" prefWidth="101.0" text="pridaj tovar" />
+      <Button layoutX="356.0" layoutY="167.0" mnemonicParsing="false" onAction="#switchToChangeMerchandise" prefHeight="67.0" prefWidth="100.0" text="uprav tovar" />
+      <Button layoutX="239.0" layoutY="276.0" mnemonicParsing="false" onAction="#switchToBill" prefHeight="67.0" prefWidth="123.0" text="vystav fakturu" />
+   </children>
+</AnchorPane>

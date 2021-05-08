@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox fx:id="hBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="670.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <VBox fx:id="vBox" prefHeight="70.0" prefWidth="500.0">
+      <Label fx:id="label" style="-fx-text-fill: black;" text="UserName" />
+      <TextArea fx:id="textArea" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="47.0" prefWidth="500.0" styleClass="text-area" wrapText="true">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </TextArea>
+   </VBox>
+</HBox>

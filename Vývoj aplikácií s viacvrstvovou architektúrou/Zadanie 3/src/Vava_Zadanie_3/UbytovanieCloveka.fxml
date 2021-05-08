@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="654.0" prefWidth="1010.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Vava_Zadanie_3.UbytovanieClovekaController">
+   <children>
+      <ComboBox fx:id="maRezervaciu" layoutX="34.0" layoutY="28.0" prefWidth="150.0" />
+      <Button layoutX="248.0" layoutY="28.0" mnemonicParsing="false" onAction="#checkReservation" text="Button" />
+      <ComboBox fx:id="menoUzivatela" layoutX="34.0" layoutY="84.0" prefWidth="150.0" visible="false" />
+      <Button layoutX="418.0" layoutY="541.0" mnemonicParsing="false" onAction="#sendIntoDatabase" text="odosli" />
+      <TableView fx:id="rooms" layoutX="49.0" layoutY="97.0" prefHeight="200.0" prefWidth="701.0" visible="false">
+         <columns>
+            <TableColumn fx:id="kategoria" prefWidth="193.0" text="kategoria" />
+            <TableColumn fx:id="cisloIzby" prefWidth="105.0" text="cislo izby" />
+            <TableColumn fx:id="info" prefWidth="287.0" text="info" />
+            <TableColumn fx:id="cenaIzby" prefWidth="93.0" text="cena izby" />
+         </columns>
+      </TableView>
+      <DatePicker fx:id="dateFrom" layoutX="57.0" layoutY="358.0" promptText="odkedy" visible="false" />
+      <DatePicker fx:id="dateTo" layoutX="519.0" layoutY="358.0" promptText="dokedy" visible="false" />
+      <ComboBox fx:id="zakaznik" layoutX="300.0" layoutY="458.0" prefWidth="150.0" visible="false" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,95 @@
+.root{
+    -fx-background-color: linear-gradient(#ade7ff, #ffa7a7);
+}
+
+.list-view{
+    -fx-background-color: rgba(255, 255, 255, 0.24);
+}
+
+.list-view .list-cell{
+    -fx-background-color: rgba(255, 255, 255, 0.24);
+    -fx-text-fill: #000000;
+}
+
+.list-view .list-cell:selected{
+    -fx-background-color: rgba(255, 255, 255, 0.24);
+    -fx-text-fill: #000000;
+}
+
+.list-view .scroll-bar:vertical, .list-view .scroll-bar:vertical .track,
+.list-view .scroll-bar:vertical .track-background{
+    -fx-background-color: transparent;
+}
+
+.list-view .scroll-bar .increment-button, .list-view .scroll-bar .decrement-button {
+    -fx-opacity: 0;
+    -fx-padding: 2;
+}
+
+.list-view .scroll-bar:vertical .thumb{
+    -fx-background-color:
+            #090a0c,
+            linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),
+            linear-gradient(#20262b, #191d22),
+            radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));
+}
+
+.list-cell:filled:selected:focused, .list-cell:filled:selected  {
+    -fx-background-color: white;
+}
+
+.list-cell:odd {
+    -fx-background-color: white;
+}
+
+.list-cell:filled:hover {
+    -fx-text-fill: white;
+}
+
+.button_lg {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;
+    -fx-font-size: 0px;
+    -fx-padding: 0 0;
+    -fx-border-color: rgba(0, 0, 0, 0.5);
+}
+
+.button_back {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;
+    -fx-font-size: 0px;
+    -fx-padding: 0 0;
+}
+
+.text-area_send {
+    -fx-background-color: transparent;
+    -fx-border-color:
+            #090a0c,
+            linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),
+            linear-gradient(#20262b, #191d22),
+            radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));
+    -fx-text-fill: #000000;
+    -fx-font-family: "Segoe UI";
+    -fx-prompt-text-fill: rgba(0, 0, 0, 0.54);
+}
+
+.text-area_send .content, .text-area .viewport{
+    -fx-background-color: transparent;
+}
+
+.text-area_send .scroll-bar:vertical .thumb{
+    -fx-background-color:
+            #090a0c,
+            linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),
+            linear-gradient(#20262b, #191d22),
+            radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));
+}
+
+.text-area_send .scroll-bar:vertical, .text-area .scroll-bar:vertical .track, .text-area_send .scroll-bar:vertical .track-background{
+    -fx-background-color: transparent;
+}
+
+.text-area_send .scroll-bar .increment-button, .text-area_send .scroll-bar .decrement-button {
+    -fx-opacity: 0;
+    -fx-padding: 2;
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Vava_Zadanie_3.PaymentController">
+   <children>
+      <Button layoutX="274.0" layoutY="348.0" mnemonicParsing="false" onAction="#sendIntoDatabase" text="odoslat" />
+      <ComboBox fx:id="typPlatby" layoutX="32.0" layoutY="269.0" prefWidth="150.0" />
+      <DatePicker fx:id="datumPlatby" layoutX="32.0" layoutY="315.0" />
+      <TableView fx:id="ubytovanie" layoutX="32.0" layoutY="14.0" prefHeight="174.0" prefWidth="160.0">
+        <columns>
+          <TableColumn fx:id="ubytovanieColumn" prefWidth="159.0" text="Meno" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
