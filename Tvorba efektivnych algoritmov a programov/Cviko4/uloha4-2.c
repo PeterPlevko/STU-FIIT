@@ -1,146 +1,262 @@
-// uloha4-2.c
+//// uloha4-2.c
+//
+//#include <stdio.h>
+//#include <math.h>
+//
+//int res = 0;
+//int partition(char* arr, int length, int act) {
+//    if (act == length) {
+//        char stackA = 0, stackG = 0;
+//        for (int i = 0; i < length; i++) {
+//            if (arr[i] == 65 || arr[i] == 69 || arr[i] == 73 || arr[i] == 79 || arr[i] == 85 || arr[i] == 89) {
+//                stackA++;
+//                stackG = 0;
+//                if (stackA == 3) {
+//                    return 1;
+//                }
+//            } else {
+//                stackG++;
+//                stackA = 0;
+//                if (stackG == 5) {
+//                    return 1;
+//                }
+//            }
+//        }
+//        return 0;
+//    }
+//    while (arr[act] != 63) {
+//        if (act == length)
+//            return partition(arr, length, act);
+//        act++;
+//    }
+//    arr[act] = 'A';
+//    res += partition(arr, length, act);
+//    arr[act] = 'B';
+//    res += partition(arr, length, act);
+//    arr[act] = '?';
+//    return res;
+//}
+//
+//
+//
+//int main() {
+//    char arr[50];
+//    int length = 1;
+//    while (scanf("%c", &arr[0]) >= 1) {
+//        while (scanf("%c", &arr[length]) >= 1) {
+//            if (arr[length] == '\n') {
+//                break;
+//            }
+//            length++;
+//        }
+//        double otazCount = 0;
+//        for (int i = 0; i < length; i++) {
+//            if (arr[i] == 63) {
+//                otazCount++;
+//            }
+//        }
+//        int count = (int)round(pow(2.0, otazCount));
+//        int final = partition(arr, length, 0);
+//        if (final == count) {
+//            printf("paci\n");
+//        } else {
+//            if (final == 0)
+//                printf("nepaci\n");
+//            else
+//                printf("neviem\n");
+//        }
+//        res = 0;
+//        length = 1;
+//    }
+//    return 0;
+//}
+
+// uloha4-2.c -- Matej Delinčák, 7.3.2021 08:3
+
 #include <stdio.h>
-#include <string.h>
+#include <math.h>
+#include <stdlib.h>
 
-
-void add(char* list, char c) {
-
-    list[0] = list[1];
-    list[1] = list[2];
-    list[2] = list[3];
-    list[3] = list[4];
-    list[4] = list[5];
-    list[5] = list[6];
-    list[6] = c;
-}
-
-
-int check(char* list) {
-
-    int vowels = 0, consonants = 0, question_marks = 0, possible = 0;
-
-    for (int i = 2; i < 7; i++) {
-
-        // It's a consonant
-        if (strchr("QWRTPSDFGHJKLZXCVBNM", list[i]) != NULL) {
-            consonants++;
-        }
-
-        if (list[i] == '?') {
-            question_marks++;
-        }
-    }
-
-    if (consonants == 5) {
-        return 2;
-    }
-
-    if (consonants + question_marks == 5) {
-        possible = 1;
-    }
-
-    question_marks = 0;
-
-    for (int i = 4; i < 7; i++) {
-
-        // It's a vowel
-        if (strchr("AEIOUY", list[i]) != NULL) {
-            vowels++;
-        }
-
-        if (list[i] == '?') {
-            question_marks++;
-        }
-    }
-
-    if (vowels == 3) {
-        return 2;
-    }
-
-    if (vowels + question_marks == 3) {
-        possible = 1;
-    }
-
-    // Weird-ass specials
-    if (strchr("AEIOUY", list[0]) != NULL && strchr("AEIOUY", list[1]) != NULL) {
-        if (list[2] == '?') {
-            consonants = 0;
-            for (int i = 3; i < 7; i++) {
-                if (strchr("QWRTPSDFGHJKLZXCVBNM", list[i]) != NULL) {
-                    consonants++;
-                }
+int isAlwaysGood(char* arr, int length) {
+    char stackA = 0, stackG = 0;
+    for (int i = 0; i < length; i++) {
+        if (arr[i] == 0) {
+            stackA++;
+            stackG = 0;
+            if (stackA == 3) {
+                return 1;
             }
-            if (consonants == 4) {
-                return 2;
+        }
+        if (arr[i] == 1) {
+            stackG++;
+            stackA = 0;
+            if (stackG == 5) {
+                return 1;
             }
         }
     }
-
-    if (strchr("AEIOUY", list[6]) != NULL && strchr("AEIOUY", list[5]) != NULL) {
-        if (list[4] == '?') {
-            consonants = 0;
-            for (int i = 3; i >= 0; i--) {
-                if (strchr("QWRTPSDFGHJKLZXCVBNM", list[i]) != NULL) {
-                    consonants++;
-                }
-            }
-            if (consonants == 4) {
-                return 2;
-            }
-        }
-    }
-
-    if (possible) {
-        return 1;
-    }
-
     return 0;
 }
 
+int isThereOnePossibilityOfGood(char* arr, int length) {
+    char stackA = 0, stackG = 0, stackOtaz = 0;
+    for (int i = 0; i < length; i++) {
+        if (arr[i] == 0) {
+            stackA++;
 
-int main() {
-
-    char c, breaking = 0;
-
-    while (!breaking) {
-
-        if (scanf("%c", &c) < 1) {
-            break;
-        }
-
-        int checker = 0, next = 0;
-        char list[7] = {'-', '-', '-', '-', '-', '-', '-'};
-
-        while (c != '\n' && !breaking) {
-
-            if (checker != 2) {
-
-                add(list, c);
-                next = check(list);
-
-                if (next > checker) {
-                    checker = next;
+            if (stackG != 0) {
+                int j = i-1;
+                stackOtaz = 0;
+                while (arr[j] == 2) {
+                    stackOtaz++;
+                    j--;
+                    if (j == -1)
+                        break;
                 }
             }
 
-            // End
-            if (scanf("%c", &c) < 1) {
-                breaking = 1;
+            if (stackA + stackOtaz >= 3)
+                return 1;
+            stackG = 0;
+        }
+        if (arr[i] == 1) {
+            stackG++;
+
+            if (stackA != 0) {
+                int j = i-1;
+                stackOtaz = 0;
+                while (arr[j] == 2) {
+                    stackOtaz++;
+                    j--;
+                    if (j == -1)
+                        break;
+                }
             }
-        }
 
-        if (checker == 2) {
-            printf("paci\n");
+            if (stackG + stackOtaz >= 5)
+                return 1;
+            stackA = 0;
         }
-
-        if (checker == 1) {
-            printf("neviem\n");
-        }
-
-        if (checker == 0) {
-            printf("nepaci\n");
+        if (arr[i] == 2) {
+            stackOtaz++;
+            if (stackOtaz >= 3 && arr[i] == 2 && arr[i-1] == 2 && arr[i-2] == 2)
+                return 1;
+            if (stackG + stackOtaz >= 5)
+                return 1;
+            if (stackA != 0 && stackA + stackOtaz >= 3)
+                return 1;
         }
     }
+    return 0;
+}
 
+char* returnGreedyFalse(char* arr, int length) {
+    char stackA = 0, stackG = 0;
+    char* greedy = (char*) malloc(length*sizeof(char));
+    for (int i = 0; i < length; ++i) {
+        greedy[i] = arr[i];
+    }
+    for (int i = 0; i < length; i++) {
+        if (greedy[i] == 0) {
+            stackA++;
+            stackG = 0;
+        }
+        if (greedy[i] == 1) {
+            stackG++;
+            stackA = 0;
+        }
+        if (greedy[i] == 2) {
+            if (i == 0) {
+                if (i + 1 < length && greedy[i + 1] == 0)
+                    greedy[i] = 1;
+                if (i + 1 < length && greedy[i + 1] == 1)
+                    greedy[i] = 0;
+            } else {
+                if (stackA >= 2) {
+                    stackA = 0;
+                    stackG = 1;
+                    greedy[i] = 1;
+                } else if (stackG >= 4) {
+                    stackA = 1;
+                    stackG = 0;
+                    greedy[i] = 0;
+                } else {
+                    if (i - 1 >= 0 && greedy[i - 1] == 0) {
+                        if (i + 1 < length && (greedy[i + 1] == 0 || greedy[i + 1] == 2)) {
+                            greedy[i] = 1;
+                            stackA = 0;
+                            stackG++;
+                        } else {
+                            if (i + 1 < length && greedy[i + 1] == 1) {
+                                greedy[i] = 0;
+                                stackA++;
+                            }
+                        }
+                    }
+                    if (i - 1 >= 0 && greedy[i - 1] == 1) {
+                        if (i + 1 < length && (greedy[i + 1] == 1 || greedy[i + 1] == 2)) {
+                            greedy[i] = 0;
+                            stackG = 0;
+                            stackA++;
+                        } else {
+                            if (i + 1 < length && greedy[i + 1] == 0) {
+                                greedy[i] = 1;
+                                stackG++;
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+        int f = greedy[i];
+    }
+    return greedy;
+}
+
+int main() {
+    char arr[55];
+    int length = 1;
+    while (scanf("%c", &arr[0]) >= 1) {
+        if (arr[0] == 65 || arr[0] == 69 || arr[0] == 73 || arr[0] == 79 || arr[0] == 85 || arr[0] == 89) {
+            arr[0] = 0;
+        } else {
+            if (arr[0] == 63) {
+                arr[0] = 2;
+            } else {
+                arr[0] = 1;
+            }
+        }
+        while (scanf("%c", &arr[length]) >= 1) {
+            if (arr[length] == '\n') {
+                break;
+            }
+            if (arr[length] == 65 || arr[length] == 69 || arr[length] == 73 || arr[length] == 79 || arr[length] == 85 ||
+                arr[length] == 89) {
+                arr[length] = 0;
+            } else {
+                if (arr[length] == 63) {
+                    arr[length] = 2;
+                } else {
+                    arr[length] = 1;
+                }
+            }
+
+            length++;
+        }
+        if (isAlwaysGood(returnGreedyFalse(arr, length), length) == 1) {
+            printf("paci\n");
+        } else {
+            if (isThereOnePossibilityOfGood(arr, length))
+                printf("neviem\n");
+            else
+                printf("nepaci\n");
+        }
+//        printf("%d\n", isAlwaysGood(returnGreedyFalse(arr, length), length));
+        for (int i = 0; i < 55; ++i) {
+            arr[i] = -1;
+        }
+        length = 1;
+    }
     return 0;
 }

@@ -1,4 +1,4 @@
-tn// uloha8-2.c
+// uloha8-2.c
 
 #include <stdio.h>
 #include <stdlib.h>
