@@ -16,7 +16,7 @@
 ### [UI](https://github.com/PeterPlevko/STU-FIIT/tree/master/Umel%C3%A1%20inteligencia)
 
 ## 4 semester 
-### [DBS](https://github.com/PeterPlevko/STU-FIIT/tree/master/Datov%C3%A9%20%C5%A1trukt%C3%BAry%20a%20algoritmy)
+### [DBS](https://github.com/PeterPlevko/STU-FIIT/tree/master/Datab%C3%A1zov%C3%A9%20syst%C3%A9my)
 
 ## Voliteľné
 ### [VAVA](https://github.com/PeterPlevko/STU-FIIT/tree/master/V%C3%BDvoj%20aplik%C3%A1ci%C3%AD%20s%20viacvrstvovou%20architekt%C3%BArou)
