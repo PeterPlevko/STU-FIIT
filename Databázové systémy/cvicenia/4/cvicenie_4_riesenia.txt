@@ -73,11 +73,48 @@ FROM regions as reg,(
 WHERE reg.id = sub.region_id AND sub.row_num <= 3
 ORDER BY sub.ceplota DESC;
 
---8 trosku fake
-WITH help AS (     SELECT DISTINCT r.name, ROUND(AVG(m.temperature),
-2) AS ceplota     FROM regions as r     JOIN cities as c ON
-c.region_id = r.id     JOIN sensors as s ON s.city_id = c.id     JOIN
-measurements as m ON m.sensor_id = s.id     GROUP BY r.name ) SELECT
-name FROM help WHERE ceplota = (SELECT MAX(ceplota) FROM help) OR
-ceplota = (SELECT MIN(ceplota) FROM help) ORDER BY name;
+--8
+WITH help AS (
+    SELECT DISTINCT r.name, ROUND(AVG(m.temperature), 2) AS ceplota
+    FROM regions as r
+    JOIN cities as c ON c.region_id = r.id
+    JOIN sensors as s ON s.city_id = c.id
+    JOIN measurements as m ON m.sensor_id = s.id
+    GROUP BY r.name
+)
+SELECT name
+FROM help
+WHERE ceplota = (SELECT MAX(ceplota) FROM help) OR ceplota = (SELECT MIN(ceplota) FROM help)
+ORDER BY name;
 
+--8 trosku fake
+SELECT *
+FROM (
+    SELECT DISTINCT r.name, ROUND(AVG(m.temperature), 2) AS ceplota
+    FROM regions as r
+    JOIN cities as c ON c.region_id = r.id
+    JOIN sensors as s ON s.city_id = c.id
+    JOIN measurements as m ON m.sensor_id = s.id
+    GROUP BY r.name
+) AS sub
+WHERE ceplota = (
+		SELECT MAX(ceplota)
+        FROM (
+            SELECT DISTINCT r.name, ROUND(AVG(m.temperature), 2) AS ceplota
+            FROM regions as r
+            JOIN cities as c ON c.region_id = r.id
+            JOIN sensors as s ON s.city_id = c.id
+            JOIN measurements as m ON m.sensor_id = s.id
+            GROUP BY r.name
+        ) maxi)
+	OR ceplota = (
+        SELECT MIN(ceplota)
+        FROM (
+            SELECT DISTINCT r.name, ROUND(AVG(m.temperature), 2) AS ceplota
+            FROM regions as r
+            JOIN cities as c ON c.region_id = r.id
+            JOIN sensors as s ON s.city_id = c.id
+            JOIN measurements as m ON m.sensor_id = s.id
+            GROUP BY r.name
+        ) mini)
+ORDER BY name;
