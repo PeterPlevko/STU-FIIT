@@ -1,0 +1,83 @@
+--1
+SELECT EXTRACT(MONTH FROM measurements.measured_at) as month, 
+       ROUND(AVG(measurements.temperature),2) as ceplota
+FROM measurements
+WHERE EXTRACT(YEAR FROM measured_at) = 2015
+GROUP BY month
+ORDER BY month;
+
+--2
+SELECT *
+FROM (
+    SELECT EXTRACT(MONTH FROM measured_at) as month, ROUND(AVG(temperature),2) as ceplota
+    FROM measurements
+    GROUP BY month
+    ORDER BY ceplota
+) as sub
+WHERE ceplota > (SELECT ROUND(AVG(temperature),2) FROM measurements);
+
+--3
+SELECT regions.name, COUNT(regions.name) as pocet_senzi_senzusov
+FROM regions
+LEFT JOIN cities ON cities.region_id = regions.id
+LEFt JOIN sensors ON sensors.city_id = cities.id
+GROUP BY regions.name
+ORDER BY pocet_senzi_senzusov DESC;
+
+--4
+SELECT sub.name
+FROM (
+    SELECT ct.name, stddev(me.temperature) as odchylkac
+    FROM cities as ct
+    JOIN sensors as se ON se.city_id = ct.id
+    JOIN measurements as me ON me.sensor_id = se.id
+    GROUP BY ct.name) as sub
+WHERE sub.odchylkac = (
+    SELECT stddev(me.temperature) as odchylkac
+    FROM cities as ct
+    JOIN sensors as se ON se.city_id = ct.id
+    JOIN measurements as me ON me.sensor_id = se.id
+    GROUP BY ct.name
+    ORDER BY odchylkac
+    LIMIT 1);
+
+--5
+SELECT c.name, COUNT(*) as pocet_senzi_senzusov
+FROM cities as c
+LEFT JOIN sensors as s ON s.city_id = c.id
+GROUP BY c.name
+ORDER BY pocet_senzi_senzusov DESC;
+
+--6
+SELECT DISTINCT ON (reg.name) sub.name, MAX(sub.ceplota) as ceplota 
+FROM regions as reg, (
+    SELECT c.region_id, c.name, MAX(m.temperature) as ceplota
+    FROM cities as c
+    JOIN sensors as s ON s.city_id = c.id
+    JOIN measurements as m ON m.sensor_id = s.id
+    GROUP BY c.region_id, c.name) as sub
+WHERE reg.id = sub.region_id
+GROUP BY reg.id, sub.name
+ORDER BY reg.name DESC, ceplota DESC;
+
+--7
+SELECT reg.name as region, sub.name as mesto, sub.ceplota
+FROM regions as reg,(
+    SELECT subsub.region_id, subsub.name, subsub.ceplota, ROW_NUMBER() OVER (PARTITION BY subsub.region_id ORDER BY subsub.ceplota DESC) as row_num
+    FROM (
+        SELECT c.region_id, c.name, MAX(m.temperature) as ceplota
+        FROM cities as c
+        JOIN sensors as s ON s.city_id = c.id
+        JOIN measurements as m ON m.sensor_id = s.id
+        GROUP BY c.region_id, c.name) as subsub) as sub
+WHERE reg.id = sub.region_id AND sub.row_num <= 3
+ORDER BY sub.ceplota DESC;
+
+--8 trosku fake
+WITH help AS (     SELECT DISTINCT r.name, ROUND(AVG(m.temperature),
+2) AS ceplota     FROM regions as r     JOIN cities as c ON
+c.region_id = r.id     JOIN sensors as s ON s.city_id = c.id     JOIN
+measurements as m ON m.sensor_id = s.id     GROUP BY r.name ) SELECT
+name FROM help WHERE ceplota = (SELECT MAX(ceplota) FROM help) OR
+ceplota = (SELECT MIN(ceplota) FROM help) ORDER BY name;
+
