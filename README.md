@@ -21,4 +21,5 @@
 ## Voliteľné
 ### [VAVA](https://github.com/PeterPlevko/STU-FIIT/tree/master/V%C3%BDvoj%20aplik%C3%A1ci%C3%AD%20s%20viacvrstvovou%20architekt%C3%BArou)
 ### [TEAP](https://github.com/PeterPlevko/STU-FIIT/tree/master/Tvorba%20efektivnych%20algoritmov%20a%20programov)
+### [AZA](https://github.com/PeterPlevko/STU-FIIT/tree/master/Anal%C3%BDza%20a%20zlo%C5%BEitos%C5%A5%20algoritmov)
 
