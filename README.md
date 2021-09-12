@@ -19,10 +19,10 @@
 
 ## 4 semester
 
+### [AZA](Analýza%20a%20zložitosť%20algoritmov)
 ### [DBS](Databázové%20systémy)
 
 ## Voliteľné
 
-### [VAVA](Vývoj%20aplikácií%20s%20viacvrstvovou%20architektúrou)
 ### [TEAP](Tvorba%20efektivnych%20algoritmov%20a%20programov)
-### [AZA](Analýza%20a%20zložitosť%20algoritmov)
+### [VAVA](Vývoj%20aplikácií%20s%20viacvrstvovou%20architektúrou)
