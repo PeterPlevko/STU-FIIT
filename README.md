@@ -2,7 +2,7 @@
 
 ## 1 semester
 
-### [PPI](Princípy počítačového inžinierstva)
+### [PPI](./Princípy počítačového inžinierstva)
 ### [PRPR](https://github.com/PeterPlevko/STU-FIIT/tree/master/Procedur%C3%A1lne%20programovanie)
 
 ## 2 semester
