@@ -27,3 +27,8 @@
 
 ### [TEAP](Tvorba%20efektivnych%20algoritmov%20a%20programov)
 ### [VAVA](Vývoj%20aplikácií%20s%20viacvrstvovou%20architektúrou)
+
+## Vedľajšie
+
+### [Voľba rozvrhu](Voľba%20rozvrhu.pdf)
+### [Výber predmetov.pdf](Výber%20predmetov.pdf)
