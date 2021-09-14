@@ -21,6 +21,7 @@
 
 ### [AZA](Analýza%20a%20zložitosť%20algoritmov)
 ### [DBS](Databázové%20systémy)
+### [PIB](Princípy%20informačnej%20bezpečnosti)
 
 ## Voliteľné
 
