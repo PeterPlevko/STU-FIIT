@@ -106,5 +106,4 @@ Aby si uzivatel mohol vyskusat co robi moj program aj bez toho aby sa registrova
 
 # UML diagram:
 
-![](https://github.com/OOP-FIIT/oop-2020-uto-16-c-kovacik-kuntox/blob/master/Dokumentacia/UML%20Diagram.jpg "UML Diagram")
-
+![UML Diagram](https://github.com/PeterPlevko/STU-FIIT/blob/master/Objektovo-orientovan%C3%A9%20programovanie/Dokumentacia/UML%20Diagram.jpg)
