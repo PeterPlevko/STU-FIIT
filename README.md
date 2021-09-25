@@ -32,4 +32,5 @@
 ## Vedľajšie
 
 ### [Voľba rozvrhu](Voľba%20rozvrhu.pdf)
-### [Výber predmetov](Výber%20predmetov.pdf)
+### [Výber predmetov](Výber%20predmetov.pdf) 
+
