@@ -1,8 +1,8 @@
 # Logický model
-![Logický model](https://github.com/FIIT-DBS/zadanie4-str12-findura-z4_plevko_podmanicky/blob/master/LogickyModel.png)
+![Logický model](https://github.com/PeterPlevko/STU-FIIT/blob/main/Datab%C3%A1zov%C3%A9%20syst%C3%A9my/RPG-Hra/LogickyModel.png)
 
 # Fyzicky model
-![Fyzický model](https://github.com/FIIT-DBS/zadanie4-str12-findura-z4_plevko_podmanicky/blob/master/FyzickyModel.png)
+![Fyzický model](https://github.com/PeterPlevko/STU-FIIT/blob/main/Datab%C3%A1zov%C3%A9%20syst%C3%A9my/RPG-Hra/FyzickyModel.png)
 
 # Úvod do hry
 
