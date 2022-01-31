@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Lezec.sk</title>
+    <link rel="stylesheet" type="text/css" href="../libs/slick-1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="../libs/slick-1.8.1/slick/slick-theme.css"/>
+    <link rel="stylesheet" type="text/css" href="../libs/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/basic/mainTheme.css">
+    <link rel="stylesheet" type="text/css" href="../css/responsive/mainThemeResponsive.css">
+    <link rel="stylesheet" type="text/css" href="../css/basic/payment.css">
+    <link rel="stylesheet" type="text/css" href="../css/responsive/paymentResponsive.css">
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="../pics/mainPage/Logo.png" alt="Lezec.sk" width="200">
+            </a>
+            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a href="products.html">Produkty</a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#bestOfWeek">Zľavy</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a href="shoppingCard.html">Košík 🛒</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="login.html">Prihlásenie</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<main>
+    <section id="mainPart">
+        <form action="payment.html" method="post">
+            <fieldset class="typeOfPayment">
+                <legend>Zvoliť typ platby:</legend>
+                <div class="option" id="option1">
+                    <input type="radio" name="delivery" id="delivery_1" value="yourself">
+                    <div class="spacing">
+                        <label for="delivery_1"><p>Visa</p></label>
+                    </div>
+                </div>
+                <div class="option" id="option2">
+                    <input type="radio" name="delivery" id="delivery_2" value="address">
+                    <div class="spacing">
+                        <label for="delivery_2"><p>Prevod na účet</p></label>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset class="functionalPart">
+                <div class="rightPart">
+                    <a class="buttonBlack" id="paymentBtn">Platba</a>
+                    <h2 class="price">154 €</h2>
+                </div>
+                <a href="delivery.html" class="buttonBlack leftBtn">Späť</a>
+            </fieldset>
+        </form>
+    </section>
+    <section id="allPaid" style="display: none">
+        <p>Všetko zaplatené. Ďakujeme za nákup. :)</p>
+    </section>
+</main>
+<footer>
+    <section class="bottomInfo">
+        <div class="footerLinksDiv">
+            <a href="contact.html">Kontakt</a>
+            <a href="contact.html">Obchodné podmienky</a>
+            <a href="shopNetwork.html">Predajná sieť</a>
+            <a href="contact.html">Reklamácia</a>
+        </div>
+        <p class="copyright">Copyright (c) 2021</p>
+    </section>
+    <section class="bottomLogoSection">
+        <img class="eshopLogo" src="../pics/mainPage/Logo.png" alt="shop logo" width="200">
+    </section>
+</footer>
+
+<script type="text/javascript" src="../libs/jquery/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../libs/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../libs/helperMethods.js"></script>
+<script>
+    randomBackground();
+    document.getElementById('delivery_1').onclick = function () {
+        document.getElementById('option1').classList.replace("option", "option-hover");
+        document.getElementById('option2').classList.replace("option-hover", "option");
+    };
+    document.getElementById('delivery_2').onclick = function () {
+        document.getElementById('option2').classList.replace("option", "option-hover");
+        document.getElementById('option1').classList.replace("option-hover", "option");
+    };
+    document.getElementById('paymentBtn').addEventListener("click", function () {
+        document.getElementById('mainPart').style = 'display: none';
+        document.getElementById('allPaid').style = 'display: block';
+    });
+</script>
+
+</body>
+</html>

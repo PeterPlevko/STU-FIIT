@@ -1,0 +1,118 @@
+@media (min-width: 1400px) {
+    .gridItem img {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media (min-width: 2000px) {
+    .gridItem {
+        margin: 100px 0px 100px 0px;
+        transform: scale(1.5);
+    }
+}
+
+@media (max-width: 1400px) {
+
+}
+
+@media (max-width: 1200px) {
+
+}
+
+@media (max-width: 992px) {
+    .newsletter {
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+    }
+
+    .newsletter h1 {
+        text-align: center;
+    }
+
+    .labelPart {
+        flex-direction: column;
+    }
+
+    .labelPart .buttonWhite {
+        margin-top: 20px;
+    }
+
+    .inputPart {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .bestOfWeek {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .rightPart {
+        align-items: center;
+        margin: 0;
+    }
+
+
+    .rightPart p {
+        width: 90%;
+        font-size: 30px;
+    }
+    .rightPart h2 {
+        font-size: 40px;
+    }
+
+    .buyPart {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pricePart {
+        display: flex;
+        justify-content: center;
+    }
+
+    .buyPart a {
+        width: 70%;
+    }
+
+    .leftPart h1 {
+        font-size: 60px;
+        text-align: center;
+
+    }
+
+    .leftPart .bestOfWeek {
+        width: 400px;
+        height: 400px;
+        max-height: 400px;
+    }
+    .newsletter {
+        margin: 10px 0px 0px 0px;
+    }
+}
+
+@media (max-width: 768px) {
+    .newsletterForm {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .leftPart {
+        width: 90%;
+    }
+    .bestOfWeek img {
+        max-width: 100%;
+        max-height: 300px;
+    }
+    .floatedDiscount {
+        transform: rotate(0.86turn) translate(-60px, 140px);
+    }
+}
+

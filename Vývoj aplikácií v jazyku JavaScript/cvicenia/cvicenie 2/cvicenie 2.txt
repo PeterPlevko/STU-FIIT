@@ -1,0 +1,16 @@
+pridajte na lubovolnu stranku canvas
+pridajte tlacidlo na vykreslenie obdlzniku
+
+var canv = document.createElement('canvas');
+canv.id = 'someId';
+document.body.appendChild(canv);
+var btn = document.createElement('button');
+btn.innerHTML = "Scisni!";
+document.body.appendChild(btn);
+btn.onclick = function(){
+    let c = document.getElementById("someId");
+    let recto = c.getContext("2d");
+    recto.beginPath();
+    recto.rect(20, 20, 150, 100);
+    recto.stroke();
+};

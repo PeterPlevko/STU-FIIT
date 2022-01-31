@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lezec.sk</title>
+    <link rel="stylesheet" type="text/css" href="../libs/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/basic/mainTheme.css">
+    <link rel="stylesheet" type="text/css" href="../css/responsive/mainThemeResponsive.css">
+    <link rel="stylesheet" href="../css/basic/shopNetwork.css">
+    <link rel="stylesheet" href="../css/responsive/shopNetworkResponsive.css">
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="../pics/mainPage/Logo.png" alt="Lezec.sk" width="200" >
+            </a>
+            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a href="products.html">Produkty</a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#bestOfWeek">Zľavy</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a href="shoppingCard.html">Košík 🛒</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="login.html">Prihlásenie</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<main>
+    <script>
+        function showMap(iFrame){
+            let map
+            switch (iFrame) {
+                case 1:
+                    map = "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2882.253298651308!2d17.070587484120647!3d48.153743735471004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x8b585229fc0ae860!2sFaculty%20of%20Informatics%20and%20Information%20Technologies%20STU!5e0!3m2!1sen!2ssk!4v1634975187582!5m2!1sen!2ssk\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\"></iframe>"
+                    break;
+                case 2:
+                    map = "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3011.651156484129!2d17.57033660646662!3d48.371818320988204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476ca0803adb09af%3A0xd9720bfe8b034517!2sMateri%C3%A1lovotechnologick%C3%A1%20fakulta%20STU!5e0!3m2!1sen!2ssk!4v1634975247128!5m2!1sen!2ssk\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\"></iframe>"
+                    break;
+                case 3:
+                    map = "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3059.69678003012!2d18.04744303146391!3d48.89812185014093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4714a18af69bfe33%3A0x7b29790dd9addd!2sAlexander%20Dubcek%20University%20in%20Trencin!5e0!3m2!1sen!2ssk!4v1634975334009!5m2!1sen!2ssk\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\"></iframe>"
+                    break;
+                case 4:
+                    map = "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6676.852328949255!2d18.0923585573331!3d48.306034561430685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476b3ee583e728a7%3A0xe70919ee435d2989!2sSlovak%20University%20of%20Agriculture!5e0!3m2!1sen!2ssk!4v1634975489821!5m2!1sen!2ssk\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\"></iframe>"
+                    break;
+                case 5:
+                    map = "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3038.294952311352!2d18.752597116522377!3d49.20281150175681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471459482d177287%3A0x278378d8bd875274!2sUniversity%20of%20%C5%BDilina!5e0!3m2!1sen!2ssk!4v1634975519370!5m2!1sen!2ssk\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\"></iframe>"
+                    break;
+                case 6:
+                    map = "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2644.318747526392!2d19.145654567979562!3d48.74444454875284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4715161b9f41bc8d%3A0xf5144937567f6792!2sFaculty%20of%20Matej%20Bel%20University!5e0!3m2!1sen!2ssk!4v1634975553989!5m2!1sen!2ssk\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\"></iframe>"
+                    break;
+                case 7:
+                    map = "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2632.297812044787!2d21.2320189476981!3d48.99106330384565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473eed7bb014df5d%3A0xa5f8d568b88a1bb0!2zUHJlxaFvdnNrw6EgdW5pdmVyeml0YSB2IFByZcWhb3Zl!5e0!3m2!1sen!2ssk!4v1634975582610!5m2!1sen!2ssk\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\"></iframe>"
+                    break;
+                case 8:
+                    map = "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2182.3806613895235!2d21.250381214136635!3d48.71918767004948!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473ee042424efac3%3A0x760e93fdfa0f5429!2sPavol%20Jozef%20%C5%A0af%C3%A1rik%20University!5e0!3m2!1sen!2ssk!4v1634975609918!5m2!1sen!2ssk\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\"></iframe>"
+                    break;
+                default:
+                    console.log(`Sorry, we are out of ${expr}.`);
+            }
+
+            const parent = document.getElementById("mapId")
+            while (parent.firstChild) {
+                parent.firstChild.remove()
+            }
+            parent.innerHTML = map
+        }
+
+            function myFunction(param) {
+                let copyText = document.getElementById(`myInput${param}`);
+                copyText.innerText
+                navigator.clipboard.writeText(copyText.innerText);
+        }
+
+    </script>
+
+    <section class="buttons row">
+        <div class="col-xl-3 col-sm-6">
+            <button class="button" onclick="showMap(1)"></button>
+            <h2>Bratislava</h2>
+            <h6 id="myInput1">Ilkovičova 2, 842 16 Karlova Ves <button onclick="myFunction(1)" class="copy"></button></h6>
+        </div>
+
+        <div class="col-xl-3 col-sm-6">
+            <button class="button" onclick="showMap(2)"></button>
+            <h2>Trnava</h2>
+            <h6 id="myInput2">Jána Bottu 2744/24, 917 24 Trnava <button onclick="myFunction(2)" class="copy"></button></h6>
+        </div>
+
+        <div class="col-xl-3 col-sm-6">
+            <button class="button" onclick="showMap(3)"></button>
+            <h2>Trenčín</h2>
+            <h6 id="myInput3">Študentská 1639/2, 911 01 Trenčín <button onclick="myFunction(3)" class="copy"></button></h6>
+        </div>
+
+        <div class="col-xl-3 col-sm-6">
+            <button class="button" onclick="showMap(4)"></button>
+            <h2>Nitra</h2>
+            <h6 id="myInput4">Trieda Andreja Hlinku 2, 949 76 Nitra-Chrenová <button onclick="myFunction(4)" class="copy"></button></h6>
+        </div>
+
+        <div class="col-xl-3 col-sm-6">
+            <button class="button" onclick="showMap(5)"></button>
+            <h2>Žilina</h2>
+            <h6 id="myInput5">Univerzitná 8215, 010 26 Žilina <button onclick="myFunction(5)" class="copy"></button></h6>
+        </div>
+
+        <div class="col-xl-3 col-sm-6">
+            <button class="button" onclick="showMap(6)"></button>
+            <h2>Banská Bystrica</h2>
+            <h6 id="myInput6">Komenského 3730/20, 974 01 Banská Bystrica <button onclick="myFunction(6)" class="copy"></button></h6>
+        </div>
+
+        <div class="col-xl-3 col-sm-6">
+            <button class="button" onclick="showMap(7)"></button>
+            <h2>Prešov</h2>
+            <h6 id="myInput7">17. novembra 3724/15, 080 01 Prešov <button onclick="myFunction(7)" class="copy"></button></h6>
+        </div>
+
+        <div class="col-xl-3 col-sm-6">
+            <button class="button" onclick="showMap(8)"></button>
+            <h2>Košice</h2>
+            <h6 id="myInput8">041 80, Šrobárova 1014/2, 040 01 Košice <button onclick="myFunction(8)" class="copy"></button></h6>
+        </div>
+
+    </section>
+
+    <section>
+        <h1 style="text-align: center">Mapa</h1>
+        <div  id="mapId" class="map">
+
+        </div>
+    </section>
+</main>
+<footer>
+    <section class="bottomInfo">
+        <div class="footerLinksDiv">
+            <a href="contact.html">Kontakt</a>
+            <a href="contact.html">Obchodné podmienky</a>
+            <a href="shopNetwork.html">Predajná sieť</a>
+            <a href="contact.html">Reklamácia</a>
+        </div>
+        <p class="copyright">Copyright (c) 2021</p>
+    </section>
+    <section class="bottomLogoSection">
+        <img class="eshopLogo" src="../pics/mainPage/Logo.png" alt="shop logo" width="200" >
+    </section>
+</footer>
+
+<script type="text/javascript" src="../libs/jquery/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../libs/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../libs/helperMethods.js"></script>
+<script>
+    randomBackground();
+</script>
+
+</body>
+</html>

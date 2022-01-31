@@ -19,6 +19,9 @@ TCP = {
 ICMP = {
 }
 
+UDP = {
+}
+
 is_first_tftp = 0
 komunikujem = 0
 poradove_cislo_ramca = 0
@@ -33,7 +36,7 @@ tftp_zoznam = []
 arp_zoznam = []
 icmp_zoznam = []
 tftp_pole_struktur = []
-
+igmp_protokol_zoznam = []
 
 
 class Commun:  # class for every tcp protocol
@@ -993,6 +996,59 @@ def uloha_4i():  #vypise ulohu 4i
             print_hexa(z)
             print()
 
+def napln_igmp(packet):
+    global poradove_cislo_ramca
+    poradove_cislo_ramca += 1
+    destination_port = 0
+    source_port = 0
+
+    num_dec = int(str(hexlify(packet[12:14]))[2: -1], 16)
+    if num_dec == 2048:
+        ip_protocol = protocol_ip_type(int(str(hexlify(packet[23:24]))[2: -1], 16))
+        offset = int(str(hexlify(packet[14:15]))[3: -1], 16) * 4 + 14
+        if ip_protocol == "IGMP":
+            source_port = int(str(hexlify(packet[offset:offset + 2]))[2: -1], 16)
+            destination_port = int(str(hexlify(packet[offset + 2:offset + 4]))[2: -1], 16)
+            igmp_protokol_zoznam.append([poradove_cislo_ramca, packet])
+
+
+def vypis_igmp():
+
+    for x in igmp_protokol_zoznam:
+        counter_poradoveho_cisla = 0
+        print("Ramec ", x[counter_poradoveho_cisla], ": ", sep="")
+        counter_poradoveho_cisla += 1
+        print("dĺžka rámca poskytnutá pcap API – ", len(x[1]), "B")
+        if len(x[1]) < 60:
+            print("dĺžka rámca prenášaného po médiu – 64 B", )
+        else:
+            print("dĺžka rámca prenášaného po médiu", len(x[1]) + 4, "B")
+        num_dec = int(str(hexlify(x[1][12:14]))[2: -1], 16)
+        if num_dec > 1500:
+            print("Ethernet II")
+            print_addresses(x[1])
+            print_protocol_ether_type(num_dec)
+            if num_dec == 2048:
+                ip_protocol = protocol_ip_type(int(str(hexlify(x[1][23:24]))[2: -1], 16))
+                count_addresses(x[1][30:34])
+                offset = int(str(hexlify(x[1][14:15]))[3: -1], 16) * 4 + 14
+                if ip_protocol == "IGMP":
+
+                    destination_port = int(str(hexlify(x[1][offset + 2:offset + 4]))[2: -1], 16)
+
+                    print("Zdrojova IP adresa: ", end="")
+                    print_ipv4(x[1][26:30])
+                    print("Cielova IP adresa: ", end="")
+                    print_ipv4(x[1][30:34])
+                    print(ip_protocol)
+                    tcp_source_port = int(str(hexlify(x[1][offset:offset + 2]))[2: -1], 16)
+                    tcp_destination_port = int(str(hexlify(x[1][offset + 2:offset + 4]))[2: -1], 16)
+                    #print("zdrojovy port:", tcp_source_port)
+                    #print("cielovy port:", tcp_destination_port)
+                    print_hexa(x[1])
+    print("pocet igmp ramcov je: ", len(igmp_protokol_zoznam))
+    print()
+
 
 load_database()  # nacita mi vsetky slovniky ktore potrebujem
 print("Analyzator packetov")
@@ -1011,6 +1067,7 @@ print("Zadaj 4f pre analyzu FTP datove")
 print("Zadaj 4g pre analyzu TFTP")
 print("Zadaj 4h pre analyzu ICMP")
 print("Zadaj 4i pre analyzu ARP")
+print("Zadaj 4j pre analyzu IGMP")
 
 user_input = input("Zadaj vyber ulohy: ")
 packets = rdpcap(file_name)
@@ -1082,6 +1139,12 @@ for packet in packets:
         napln_listy(raw_data)
         if counter == len(packets):
             uloha_4i()
+        counter += 1
+
+    if user_input == "4j":  # rip
+        napln_igmp(raw_data)
+        if counter == len(packets):
+            vypis_igmp()
         counter += 1
 
     if user_input == "0":

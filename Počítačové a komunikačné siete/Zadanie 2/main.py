@@ -195,7 +195,7 @@ def server(server_socket, address):
 
 
 # this function sends message
-def send_message(client_socket, server_address, file_text):
+def send_message(client_socket, server_address, file_text, even_packet):
     message = 0
     file_name = 0
     message_to_send = 0
@@ -215,6 +215,9 @@ def send_message(client_socket, server_address, file_text):
 
         print("Number of fragments is:", number_of_packets)
 
+        if even_packet:
+            number_of_packets = math.floor(number_of_packets / 2)
+
         start_of_communication = ("1" + str(number_of_packets))
         start_of_communication = start_of_communication.encode('utf-8').strip()
         client_socket.sendto(start_of_communication, server_address)
@@ -228,6 +231,9 @@ def send_message(client_socket, server_address, file_text):
         number_of_packets = math.ceil(file_size / fragment)
 
         print("Number of fragments is:", number_of_packets)
+
+        if even_packet:
+            number_of_packets = math.floor(number_of_packets / 2)
 
         message = file.read()
         start_of_communication = ("2" + str(number_of_packets))
@@ -266,7 +272,15 @@ def send_message(client_socket, server_address, file_text):
 
             header = struct.pack("c", str.encode("2")) + struct.pack("HHH", len(message_to_send), packet_number, crc)
 
-            client_socket.sendto(header + message_to_send, server_address)
+            if even_packet:
+                if packet_number % 2 == 0:
+                    client_socket.sendto(header + message_to_send, server_address)
+                else:
+                    packet_number += 1
+                    message = message[fragment:]
+                    continue
+            else:
+                client_socket.sendto(header + message_to_send, server_address)
 
             data, address = client_socket.recvfrom(1500)
 
@@ -310,15 +324,22 @@ def client(client_socket, server_address):
             if thread is not None:
                 thread_status = False
                 thread.join()
-
-            send_message(client_socket, server_address, "t")
+            even = input("1 for even packets only: ")
+            if even == "1":
+                send_message(client_socket, server_address, "t", 1)
+            else:
+                send_message(client_socket, server_address, "t", 0)
 
         elif choice_client == '2':
             if thread is not None:
                 thread_status = False
                 thread.join()
 
-            send_message(client_socket, server_address, "f")
+            even = input("1 for even packets only: ")
+            if even == "1":
+                send_message(client_socket, server_address, "f", 1)
+            else:
+                send_message(client_socket, server_address, "f", 0)
 
         elif choice_client == '3':
             thread_status = True

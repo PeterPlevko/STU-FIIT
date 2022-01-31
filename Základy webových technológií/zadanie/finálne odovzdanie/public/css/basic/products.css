@@ -1,0 +1,191 @@
+.searchOptions{
+    text-align: center;
+    font-size: 25px;
+    border-radius: 15px;
+    background-color: #1F2833;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.searchOptions div{
+    margin-right: 10px;
+}
+
+.searchOptions a{
+    text-decoration: none;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.filtering {
+    border-radius: 15px;
+    background-color: #1F2833;
+}
+
+.submitPart {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.prizes{
+    display: flex;
+    margin: 10px 0px 10px 0px;
+}
+
+.submitPart div {
+    margin-top: 20px;
+}
+
+.padding {
+    background-color: #0B0C10;
+    text-align: center;
+}
+
+.padding p{
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+a:hover {
+    color: #C5C6C7;
+    text-decoration: none;
+}
+.formFiltering {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.lastPart {
+    align-items: center;
+    justify-content: center;
+    border-right: 0px !important;
+}
+
+.filterPrice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.alignMiddle{
+    align-items: center;
+    text-align: center;
+
+}
+.center{
+    text-align: center;
+}
+.filterSize {
+    display: flex;
+    margin-left: 10px;
+}
+
+.filterSize div{
+    margin-right: 30px;
+}
+
+.filterBrand {
+    display: flex;
+    margin-left: 10px;
+}
+
+.filterBrand div{
+    margin-right: 30px;
+}
+
+.left{
+    margin-right: 10px;
+    text-align: center;
+}
+
+.right{
+    margin-left: 10px;
+}
+
+.productInfo{
+    align-items: center;
+    display: flex;
+    margin-top: 10px;
+}
+
+.productInfo * {
+    margin: 15px;
+}
+
+.allProducts{
+    background-color: #0B0C10;
+    margin-top: 25px;
+    padding-bottom: 25px;
+}
+
+.allProducts p{
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+.gridItem h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 25px;
+    height: 115px;
+}
+
+.gridItem img {
+    width: 250px;
+    height: 250px;
+}
+
+.gridItem {
+    width: 90%;
+}
+
+.grid {
+    justify-content: center;
+    margin: 20px 0px 20px 0px;
+}
+
+fieldset.grid {
+    border-right: #FFFFFF 1px solid;
+    height: 280px;
+}
+
+.grid legend {
+    text-align: center;
+}
+
+.grid label {
+    text-align: center;
+}
+
+
+.buttonBlack {
+    margin: 0;
+}
+
+.prize {
+    font-size: 30px;
+}
+
+.row {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.padding nav {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color:  #1F2833;
+}
+
+.navRow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.submitPart {
+    padding-bottom: 20px;
+}

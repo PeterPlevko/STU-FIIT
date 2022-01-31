@@ -1,0 +1,76 @@
+@media (max-width: 1400px) {
+    .functionalPart {
+        flex-direction: column;
+    }
+    .functionalPart h2 {
+        margin-top: 40px;
+    }
+    .functionalPart a{
+        margin-top: 40px;
+    }
+
+}
+
+@media (max-width: 1200px) {
+    .functionalPart {
+        flex-direction: column;
+    }
+    .functionalPart h2 {
+        margin-top: 40px;
+    }
+    .functionalPart a{
+        margin-top: 40px;
+    }
+
+}
+
+@media (max-width: 992px) {
+    .leftPart {
+        width: 85%;
+    }
+    .rightPart {
+        width: 90%;
+    }
+    .product {
+        flex-direction: column;
+        align-items: center;
+    }
+    .textPart {
+        margin: 0px 10px 0px 10px;
+    }
+    .textPart h1 {
+        text-align: center;
+    }
+    .textPart p {
+        text-align: justify;
+    }
+    .functionalPart {
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .prizes {
+        width: 80%;
+    }
+}
+
+@media (max-width: 576px) {
+    .textPart {
+        margin: 0px 5px 0px 5px;
+    }
+    .leftPart {
+        width: 90%;
+    }
+    .functionalPart form {
+        display: flex;
+        flex-direction: column;
+        margin-top: 30px;
+        align-items: center;
+    }
+    .reviewPart {
+        width: 60%;
+    }
+}

@@ -1,0 +1,152 @@
+/*#region Menu*/
+.menu {
+    border: 2px solid #45A29E;
+    width: -webkit-fill-available;
+    border-radius: 15px;
+    border-collapse: inherit;
+    background-color: #1F2833;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/*#endregion Menu*/
+
+/*#region Best Of Week*/
+.bestOfWeek {
+    border: 2px solid #45A29E;
+    background-color: #0B0C10;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.bestOfWeek img {
+    max-height: 350px;
+    border-radius: 0px;
+}
+
+.leftPart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 50px;
+    margin-bottom: 35px;
+}
+
+
+.leftPart h1 {
+    font-size: 40px;
+    margin: 10px;
+    margin-bottom: 30px;
+}
+
+.menuButton{
+    max-height: 200px;
+    max-width: 200px;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+}
+
+.floatedDiscount {
+    position: absolute;
+    background-color: #45A29E;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px 15px 5px 15px;
+    transform: rotate(0.86turn) translate(-30px, 160px);
+}
+
+.rightPart {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    margin: 20px;
+    margin-right: 75px;
+}
+
+.rightPart > p {
+    text-align: justify;
+    margin-top: 20px;
+}
+
+.rightPart h2 {
+    text-align: center;
+}
+
+.rightPart div {
+    width: -webkit-fill-available;
+}
+
+.rightPart div h2 {
+    float: left;
+    padding-top: 20px;
+}
+
+
+.pricePart h2{
+    margin-top: 15px;
+}
+
+.crossedPrice {
+    margin-left: 25px;
+}
+
+/*#endregion Best Of Week*/
+
+/*#region Recommendation*/
+.recommendations {
+    background-color: #1F2833;
+    border: 2px solid #45A29E;
+    width: -webkit-fill-available;
+    border-radius: 15px;
+}
+
+.recommendations img {
+    width: 200px;
+    height: 200px;
+    border-radius: 0px;
+    margin-top: 40px;
+}
+
+.recommendations h1 {
+    margin-left: 10px;
+}
+
+/*#endregion Recommendation*/
+
+/*#region Newsletter*/
+.newsletter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #0B0C10;
+    border-radius: 15px;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-bottom: 20px;
+}
+
+.newsletter h1 {
+    margin-top: 25px;
+}
+
+.newsletterForm {
+    display: flex;
+    align-items: center;
+}
+
+.newsletterForm label {
+    margin-right: 10px;
+
+}
+
+
+/*#endregion Newsletter*/

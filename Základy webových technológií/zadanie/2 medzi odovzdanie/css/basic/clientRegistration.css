@@ -1,0 +1,51 @@
+.mainForm{
+    background-color:  #0B0C10;
+    border-radius: 15px;
+    margin-left: 30%;
+    margin-right: 30%;
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.buttonBlack{
+    margin-top: 30px;
+}
+
+.registrationForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.registrationForm label{
+    font-size: 20px;
+}
+
+.registrationForm input{
+    width: 80%;
+    text-align: center;
+    font-size: 15px;
+}
+
+.g-recaptcha{
+    margin-top: 30px;
+}
+
+.cityPostalDiv{
+    display:-webkit-flex;
+    display: flex;
+    align-items: center;
+}
+
+.left{
+    width: 30%;
+    margin-left: 8%;
+}
+
+.right{
+    width: 70%;
+    margin-right: 4%;
+
+}

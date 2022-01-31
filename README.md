@@ -24,10 +24,20 @@
 ### [PIB](Princípy%20informačnej%20bezpečnosti)
 ### [PSI](Princípy%20softvérového%20inžinierstva)
 
+## 5 semester
+
+### [BP1](Bakalársky%20projekt%20I)
+
 ## Voliteľné
 
 ### [TEAP](Tvorba%20efektivnych%20algoritmov%20a%20programov)
 ### [VAVA](Vývoj%20aplikácií%20s%20viacvrstvovou%20architektúrou)
+### [VAVJS](Vývoj%20aplikácií%20s%20viacvrstvovou%20architektúrou)
+### [IAU](Inteligentná%20analýza%20údajov)
+### [DSP](Programovanie%20pre%20dátovú%20vedu)
+### [APC](Aplikačné%20programovanie%20v%20C++)
+### [WTECH](Základy%20webových%20technológií)
+### [ICP](Interakcia%20človeka%20s%20počítačom)
 
 ## Vedľajšie
 

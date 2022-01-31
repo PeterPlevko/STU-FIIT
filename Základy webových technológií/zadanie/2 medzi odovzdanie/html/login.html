@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lezec/Login.sk</title>
+    <link rel="stylesheet" type="text/css" href="../libs/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/basic/mainTheme.css">
+    <link rel="stylesheet" type="text/css" href="../css/responsive/mainThemeResponsive.css">
+    <link rel="stylesheet" type="text/css" href="../css/basic/login.css">
+    <link rel="stylesheet" type="text/css" href="../css/responsive/loginResponsive.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light ">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    <img src="../pics/mainPage/Logo.png" alt="Lezec.sk" width="200" >
+                </a>
+                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a href="products.html">Produkty</a>
+
+                        </li>
+                        <li class="nav-item">
+                            <a href="index.html#bestOfWeek">Zľavy</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a href="shoppingCard.html">Košík 🛒</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="login.html">Prihlásenie</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="wholeLogin">
+            <div class="halfBlock">
+                    <img class="climber" srcset="../pics/login/climber_400.jpg 480w, ../pics/login/climber.jpg 800w"
+                         sizes="(max-width: 600px) 480px, 800px"
+                         src="../pics/login/climber.jpg"
+                         alt="climber">
+            </div>
+            <div class="halfBlock">
+                <form>
+                        <label>Email : </label>
+                        <input type="text" placeholder="Napíš email" name="username" required>
+                        <label>Heslo : </label>
+                        <input type="password" placeholder="Napíš heslo" name="password" required>
+                        <div class="checkbox">
+                            <input type="checkbox" checked="checked"><p> Zapamätaj si ma</p>
+                        </div>
+                        <button type="submit" class="buttonBlack">Prihlásenie</button>
+                        <div>
+                            <div class="left">
+                                <a href="clientRegistration.html">Registrácia</a>
+                            </div>
+                            <div class="right">
+                                <a href="forgottenPassword.html">Zabudnuté heslo</a>
+                            </div>
+                        </div>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <section class="bottomInfo">
+            <div class="footerLinksDiv">
+                <a href="contact.html">Kontakt</a>
+                <a href="contact.html">Obchodné podmienky</a>
+                <a href="shopNetwork.html">Predajná sieť</a>
+                <a href="contact.html">Reklamácia</a>
+            </div>
+            <p class="copyright">Copyright (c) 2021</p>
+        </section>
+        <section class="bottomLogoSection">
+            <img class="eshopLogo" src="../pics/mainPage/Logo.png" alt="shop logo" width="200" >
+        </section>
+    </footer>
+
+    <script type="text/javascript" src="../libs/jquery/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../libs/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../libs/helperMethods.js"></script>
+    <script>
+        randomBackground();
+        alert("Pre prihlasenie do admin rozhrania treba dat zatial do url /adminLogin.html")
+    </script>
+</body>
+</html>

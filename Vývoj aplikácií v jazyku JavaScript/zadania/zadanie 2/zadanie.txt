@@ -1,0 +1,95 @@
+2. uloha (odovzdanie 8.11.)
+
+Cielom ulohy bude prepisat vesmirnu hru z client-side verzie na server-side verziu s moznostou manazmentu viacerych hracov.
+ 
+1	prepisanie hlavnej logiky hry na server-side riesenie										1
+2	posielanie stlaceni klaves na server a ich spracovanie na serveri								1
+3	vratenie aktualnej plochy hry zo serveru pomocou websocketov a vykreslenie aktualnej plochy cez canvas				1
+4	vypisovanie aktualneho a najlepsieho skore a levelu zo serveru (per user/session)						1
+5	umoznenie viacerych nezavislych hier paralelne (aspon 1000)									1
+6	umoznit ovladanie pomocou tlacitok zobrazenych na stranke (aj z inej session, cez zdielany pin)					1
+7	na stranke umoznit registraciu a prihlasenie pouzivatelov - e-mail, login, heslo (2x pri registracii), meno a priezvisko	1
+8	zdielanie session medzi backendom (server) a frontedom (browser)								1
+9	serverside ukladanie max skore a levelu pre prihlaseneho pouzivatela a neprihlaseneho pouzivatela				1
+10	admin rozhranie zobrazujuce tabulku pouzivatelov a aktualnych hier (meno ak je, session, pin) len pre pouzivatela "admin"	1
+11	import a export CSV udajov pouzivatelov (meno, email, heslo, max score, max level) len pre pouzivatela "admin"			1
+12	zobrazit zoznam aktualne hranych hier s moznostou sledovania pre vsetkych pouzivatelov						1
+13	vyuzitie objektovej reprezentacie struktury stranky										1
+14	server vracia 1 staticku stranku (index.html, obrazky, js subory), ostatna komunikacia (plocha, interakcia) pouziva JSON	1
+15	kontrola vstupov (email, login, heslo, pin, meno a priezvisko)									1
+ 	SUM																15
+ 
+13. Inspiracia:
+[
+    {​​​​​​​​
+        "tag": "div",
+        "id":  "id1",
+        "innerTags": [
+            {​​​​​​​​
+                "tag": "p",
+                "innerText": "Lorem ipsum"
+            }​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​,
+            {​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+                "tag": "button",
+                "innerText": "Click me"
+            }​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+        ]
+    }​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+]
+ 
+15.
+e-mail - unikatny, s overenim tvaru abc@def.xy
+heslo - hashed
+login - unikatne, iba [a-zA-Z]; nepihlaseny "[N/A]"
+pin -  0000 - 9999
+meno a priezvisko - "Roman Bronis" (medzera oddeluje meno a priezvisko, meno a priezvisko zacinaju velkym pismenom a meno a priezvisko maju kazde aspon 2 znaky)
+ 
+vzor index.html:
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <script src="client.js"></script>
+    </head>
+    <body>
+    </body>
+</html>
+ 
+Odovzdavate zazipovany priecinok s:
+1x JS so server kodom nazvany "server.js"
+1x JS so server-side kodom hry
+1x JS s client-side kodom hry
+max. 1 HTML - index.html (cez server, nie cez file://) kde LEN nacitate svoju client-side kniznicu
+optional: iny pocet JS suborov
+obrazky ako u predosleho zadania (licencie musia byt stale ok)
+1x package.json
+optional: docker-compose a pripadne Dockerfile ak mate dospelacku DB (vid dole)
+ 
+HTTP server komunikuje na 8080
+WS server komunikuje na 8082
+ 
+Po otvoreni priecinku a spusteni "npm install" sa musia nahrat vsetky potrebne moduly. Prikazom "node server.js" sa potom spusti komplet riesenie.
+ 
+Neodovzdavate!!!:
+node_modules !!!
+ 
+Kazdy subor musi mat hlavicku s menom autora.
+Priklad hlavicky a komentaru:
+html:
+<!-- Roman Bronis -->
+ 
+js:
+// Roman Bronis
+...
+ 
+
+Odporucane frameworky/kniznice:
+Express
+ 
+Vyzadovane frameworky/kniznice:
+ws, Ajax(jQuery)/fetch
+ 
+Zakazane frameworky/kniznice:
+React, Angular, Vue, socket.io, html2json... (ak si nie ste isty, ci ho mozete pouzit, spytajte sa)
+ 
+V pripade ak chcete vyuzit dospelacku DB (MariaDB/MySQL, PostrgeSQL, MongoDB, ...), odovzdate (urcite) docker-compose a (pripadne) Dockerfile k nej.

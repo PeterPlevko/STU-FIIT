@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <label for="inpt">Login</label>
+    <input name="login" id="inpt" type="text" required>
+    <button id="btn">Click me</button>
+<script>
+    const socket = new WebSocket('ws://localhost:3001');
+    socket.addEventListener('open', (event)=>{
+        console.log(event);
+    });
+    socket.addEventListener('message', (msg) => {
+        var data = JSON.parse(msg.data)
+        console.log('Hashed login from server: '+data.hashedLogin);
+    });
+    document.getElementById('btn').addEventListener('click', () => {
+        socket.send(JSON.stringify({login: document.getElementById('inpt').value}))
+    });
+</script>
+</body>
+</html>

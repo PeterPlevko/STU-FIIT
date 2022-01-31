@@ -1,0 +1,123 @@
+
+form {
+    margin: 20px;
+}
+
+main section {
+    background-color: #0B0C10;
+}
+
+.option {
+    border: 2px solid #45A29E;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.spacing {
+    display: flex;
+    margin: 20px 20px 0px 20px;
+    width: -webkit-fill-available;
+}
+
+.floatButton{
+    float: right;
+}
+
+.floatButtonLeft{
+    float: left;
+}
+
+#profile{
+    float: right;
+}
+
+.navbar form{
+    margin: 0px;
+}
+
+.prize {
+    font-size: 40px;
+    font-weight: bold;
+    float: right;
+    margin: 30px;
+}
+
+
+.spacing label {
+    width: 33%;
+
+}
+
+#allPaid{
+    text-align: center;
+}
+
+.spacing label:not(:first-child) {
+    text-align: right
+}
+
+input[type=radio] {
+    margin-left: 10px;
+}
+
+.option:hover {
+    background-color: #1F2833;
+}
+
+.option-hover {
+    background-color: #1F2833;
+    border: 2px solid #45A29E;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.itemTypes{
+    text-align: center;
+}
+
+.itemTypes p {
+    margin: 20px;
+}
+
+.nextToEachOther {
+    display: flex;
+}
+
+#allPaid p{
+    margin: 20px;
+}
+
+.nextToEachOther label {
+    margin-left: 30px;
+}
+
+.typeOfDelivery, .infoAboutDelivery {
+    margin: 20px;
+}
+
+.address {
+    width: 100%;
+    margin-left: 2.5%;
+    margin-right: 5.1%;
+}
+
+.infoAboutDelivery div:not(.address) {
+    margin-left: 2.5%;
+    width: 45%;
+}
+
+.infoAboutDelivery div input {
+    width: 100%;
+}
+
+.leftBtn {
+    float: left;
+}
+
+.dataFromProfile {
+    height: 100px;
+}

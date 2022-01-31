@@ -1,0 +1,118 @@
+
+@media (max-width: 1400px) {
+
+}
+
+@media (max-width: 1200px) {
+    .functionalPart form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .functionalPart form * {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 992px) {
+    .productInfo {
+        flex-direction: column;
+    }
+
+    .textPart h2{
+
+    }
+    .textPart p {
+        display: none;
+    }
+    .imagePart img {
+        max-width: 100%;
+    }
+    .imagePart a {
+        width: 200px;
+        height: 200px;
+    }
+
+    label {
+        font-size: 30px;
+    }
+
+
+    .imagePart {
+        width: 85%;
+    }
+    .leftPart {
+        flex-direction: column-reverse;
+        align-items: center;
+        width: 50%;
+    }
+    .rightPart {
+        width: 50%;
+    }
+    .functionalPart span {
+        font-size: 30px;
+    }
+    .functionalPart select {
+        font-size: 30px;
+        width: 50px;
+    }
+    .functionalPart h2 {
+        font-size: 40px;
+    }
+    .closePart button {
+        font-size: 30px;
+    }
+    .sizeDown{
+        margin-top: 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .middle{
+        width: 100%;
+    }
+    /*closeBTN*/
+    .itemTypes {
+        display: flex;
+        flex-direction: column;
+
+    }
+    .leftPart {
+        width: 100%;
+    }
+    .rightPart {
+        width: 100%;
+
+    }
+    .functionalPart {
+
+        width: 100%;
+    }
+
+    .moveDown{
+        margin-top: 15px;
+    }
+    .closePart{
+        width: 100%;
+        height: 1%;
+    }
+    .sameMargin{
+        margin: 5px;
+    }
+
+    .closePart { order: 1; }
+    .leftPart{ order: 2; }
+    .rightPart { order: 3; }
+
+    .sizeDown{
+        margin-left: 5px;
+    }
+}
+
+@media (max-width: 576px) {
+    .summaryInfo {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+

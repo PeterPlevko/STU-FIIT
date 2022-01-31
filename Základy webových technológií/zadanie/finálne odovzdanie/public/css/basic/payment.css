@@ -1,0 +1,83 @@
+main section {
+    background-color: #0B0C10;
+    border-radius: 15px;
+}
+
+form {
+    margin: 20px;
+}
+
+.option {
+    border: 2px solid #45A29E;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.spacing {
+    display: flex;
+    margin: 20px 20px 0px 20px;
+    width: -webkit-fill-available;
+}
+
+.spacing label:not(:first-child) {
+    text-align: right
+}
+
+input[type=radio] {
+    margin-left: 10px;
+}
+
+
+.option:hover {
+    background-color: #1F2833;
+}
+
+.option-hover {
+    background-color: #1F2833;
+    border: 2px solid #45A29E;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+
+
+
+.typeOfPayment {
+    margin: 20px;
+}
+
+.leftBtn {
+    float: left;
+}
+
+.prize {
+    font-size: 40px;
+    font-weight: bold;
+    float: right;
+    margin: 30px;
+}
+
+.rightPart {
+    float: right;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+#allPaid p{
+    text-align: center;
+    padding: 30px;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.floatButton{
+    float: right;
+}
+
+.floatButtonLeft{
+    float: left;
+}

@@ -1,0 +1,90 @@
+.wholeLogin{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background-color: #0B0C10;
+}
+
+section input[type=email],section input[type=password] {
+    width: 100%;
+    margin: 8px 0;
+    padding: 12px 20px;
+    display: inline-block;
+
+    box-sizing: border-box;
+}
+
+button:hover {
+    opacity: 0.7;
+}
+
+.rightBlock {
+    background-color: #1F2833;
+    border-radius: 15px;
+    width: -webkit-fill-available;
+    padding: 25px;
+    margin-right: 20px;
+}
+
+section form {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.halfBlock {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    height: 600px;
+    padding: 25px;
+    align-items: center;
+}
+
+.halfBlock img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+form a:hover {
+    color: #C5C6C7;
+    text-decoration: none;
+}
+
+.rightSide{
+    margin: 0 50px 0 50px;
+}
+
+.left{
+    float: left;
+    width: 40%;
+}
+
+.right{
+    float: right;
+    width: 40%;
+    overflow: hidden;
+    text-align: right;
+}
+
+.leftSide img{
+    width: 50%;
+    border-radius: 15px;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox p{
+    margin-top: 15px;
+    margin-left: 20px;
+}
+
+.centerDiv {
+    display: flex;
+    justify-content: center;
+}

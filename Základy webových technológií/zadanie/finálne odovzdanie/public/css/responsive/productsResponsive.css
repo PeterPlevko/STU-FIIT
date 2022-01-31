@@ -1,0 +1,61 @@
+@media (max-width: 1600px) {
+
+}
+@media (max-width: 1400px) {
+
+}
+
+@media (max-width: 1200px) {
+
+}
+
+@media (max-width: 992px) {
+    .productInfo {
+        flex-direction: column;
+    }
+    .left {
+        margin-right: 0px;
+    }
+    .filtering {
+        height: auto;
+    }
+    .gridItem img {
+        width: 200px;
+        height: 200px;
+    }
+    .formFiltering .grid {
+        margin: 5px 0px 5px 0px;
+    }
+    .gridItem h1 {
+        height: 115px;
+    }
+    fieldset.grid:nth-child(2n+2) {
+        border-right: 0;
+    }
+}
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 576px) {
+    .searchOptions {
+        display: flex;
+        flex-direction: column;
+    }
+    .searchOptions a {
+        font-size: 30px;
+    }
+    .halfSearch {
+        width: 90%;
+    }
+    .submitPart {
+        margin-left: 30%;
+        display: flex;
+    }
+    .gridItem img {
+        width: 250px;
+        height: 250px;
+    }
+}
+

@@ -1,0 +1,8 @@
+mkdir <cvicenie>
+cd <cvicenie>
+python -m venv env_name
+env_name\Scripts\activate
+pip install jupyterlab 
+pip install -r requirements.txt
+jupyter-notebook 
+

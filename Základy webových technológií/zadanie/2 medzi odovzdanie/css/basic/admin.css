@@ -1,0 +1,81 @@
+.loginSection form {
+    margin: 50px;
+    display: grid;
+}
+
+body {
+    margin: 50px;
+}
+
+.loginSection {
+
+    display: flex;
+    justify-content: center;
+}
+
+.buttonBlack a {
+    text-decoration: none;
+}
+
+main {
+    margin: 0;
+}
+
+.allProducts {
+    border: 0;
+}
+
+body {
+    margin: 20px;
+}
+
+table {
+    border: 2px solid #45A29E;
+    width: -webkit-fill-available;
+}
+
+dialog {
+    border: 2px solid #45A29E;
+    border-radius: 15px;
+    background-color: #1F2833;
+    width: 500px;
+}
+
+tbody th {
+    font-size: 15px;
+}
+
+table td {
+    padding: 0.5rem;
+    border: 1px solid #45A29E;
+}
+table th {
+    padding: 0.5rem;
+    border: 1px solid #45A29E;
+}
+
+#closeBtn {
+    width: 24px;
+    float: right;
+}
+
+dialog form fieldset{
+    display: grid;
+}
+
+.editBtn {
+    width: 20%;
+}
+
+#newProduct {
+    margin-bottom: 20px;
+}
+
+.productsBtn {
+    color: #0B0C10;
+    font-weight: bold;
+    width: 70px;
+    border-radius: 15px;
+    border: 1px solid #45A29E;
+    background-color: #66FCF1;
+}

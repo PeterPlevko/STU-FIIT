@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Platobný formulár</title>
+    <link href="formulare-priklad1.css" rel="stylesheet">
+</head>
+
+<body>
+    <form method="post">
+        <h1>Platobný formulár</h1>
+        <p>Povinné polia sú označené <strong><abbr title="required">*</abbr></strong>.</p>
+        <section>
+            <h2>Kontaktné informácie</h2>
+            <fieldset>
+              <legend>Oslovenie</legend>
+              <ul>
+                  <li>
+                    <label for="title_1">
+                      <input type="radio" id="title_1" name="title" value="pan" >
+                      Pán
+                    </label>
+                  </li>
+                  <li>
+                    <label for="title_2">
+                      <input type="radio" id="title_2" name="title" value="pani">
+                      Pani
+                    </label>
+                  </li>
+              </ul>
+            </fieldset>
+            <p>
+              <label for="name">
+                <span>Celé meno: </span>
+                <strong><abbr title="povinné">*</abbr></strong>
+              </label>
+              <input type="text" id="name" name="username">
+            </p>
+            <p>
+              <label for="mail">
+                <span>E-mail: </span>
+                <strong><abbr title="povinné">*</abbr></strong>
+              </label>
+              <input type="email" id="mail" name="usermail">
+            </p>
+            <p>
+              <label for="pwd">
+                <span>Heslo: </span>
+                <strong><abbr title="povinné">*</abbr></strong>
+              </label>
+              <input type="password" id="pwd" name="password">
+            </p>
+        </section>
+        <section>
+            <h2>Informácie o platbe</h2>
+            <p>
+              <label for="card">
+                <span>Typ karty:</span>
+              </label>
+              <select id="card" name="usercard">
+                <option value="visa">Visa</option>
+                <option value="mc">Mastercard</option>
+              </select>
+            </p>
+            <p>
+              <label for="number">
+                <span>Číslo karty:</span>
+                <strong><abbr title="povinné">*</abbr></strong>
+              </label>
+                <input type="text" id="number" name="cardnumber">
+            </p>
+            <p>
+              <label for="date">
+                <span>Dátum expirácie:</span>
+                <strong><abbr title="povinné">*</abbr></strong>
+                <em>formát mm/rr</em>
+              </label>
+              <input type="text" id="date" name="expiration">
+            </p>
+        </section>
+        <section>
+            <p> <button type="submit">Odoslať platbu</button> </p>
+        </section>
+    </form>
+</body>
+
+</html>

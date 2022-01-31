@@ -1,0 +1,51 @@
+.itemTypes {
+    display: flex;
+    border-radius: 15px;
+    background-color: #1F2833;
+}
+
+.itemTypes div {
+    margin: 10px;
+}
+
+.imagePart {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.imagePart img {
+    max-width: 100%;
+}
+
+.functionalPart {
+    width: 95%;
+    margin: 10px 0 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.summaryInfo {
+    background-color: #0B0C10;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+}
+
+.summaryInfo p{
+    margin-top: 30px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.leftPart {
+    display: flex;
+    width: 75%;
+}
+
+.rightPart {
+    display: flex;
+    width: 25%;
+}

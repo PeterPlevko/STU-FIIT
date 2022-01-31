@@ -1,0 +1,17 @@
+.middle{
+    size: 1205px;
+    height: auto;
+    justify-content: center;
+    text-align: center;
+    margin-top: 50px;
+}
+
+
+main section {
+    background-color:  #0B0C10;
+}
+
+.middle p {
+    margin: 20px;
+}
+
