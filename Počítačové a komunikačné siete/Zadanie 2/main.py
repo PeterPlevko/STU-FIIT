@@ -7,7 +7,7 @@ import threading
 import time
 import random
 
-thread_status = True
+thread_status = True 
 
 
 def keep_alive(client_sock, server_addr, interval):
