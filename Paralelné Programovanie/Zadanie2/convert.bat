@@ -1,0 +1,1 @@
+ffmpeg -y -i "out.ppm" "out.png"
