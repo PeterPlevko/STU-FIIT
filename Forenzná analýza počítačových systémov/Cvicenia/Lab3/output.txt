@@ -1,0 +1,44 @@
+1.Download, verify and mount image Lab3.E01
+2.Analyze partition table - partition 1. 
+	Where does it start, how big is it, what FS, what OS formatted the drive? Any other metadata?
+	Start = 2048 sector
+	End = 204800 sector
+	Size = 202753 sectors
+	FS = 	fdisk -l 	-> FAT16
+		mmls 		-> DOS FAT16
+		fsstat		-> FAT16
+	OS = mkfs.fat -> Linux tool so LINUX (my guess not based on evidence is SIFT)
+3.Your job is to find password for perpetrators keychain stored in text file.
+	1. During routine check for unllocated blocks found with command:
+		blkls /dev/mapper/loop19p1 | xxd | grep -v "0000 0000 0000" | less
+	Wierd sentence: heslo na klucenku je v6Jc3p8VRau
+	2. Going deeper and searching for deleted files with:
+		ils -em -o 2048 -f fat /mnt/ewf/ewf1
+		a. Found file: _ECRET~1.swp-dead-65417
+		b. inspecting inode: istat -o 2048 /mnt/ewf/ewf1 65417
+		c. inspecting inode as suggested druing class 65416 -> file .secret.txt.s
+		d. getting content of inode 65417
+		e. Using command icat /dev/mapper/loop19p1 65417 | xxd | less found at the of
+		the file again the same sentence with password
+		f. done in this section probably continue to point 4
+4.Document everything about all files on the FS and build timeline.
+	1. testing fls command from last session
+		fls -m C: -r /dev/mapper/loop19p1 > usb1.fls
+	2. timeline built using command:
+		mactime -b usb1.fls
+5.Which files do you suspect might contain sensitive information?
+	1. As described before secret.txt has sensitive info
+	2. pwdecrypt -> event tried to run this on VM but without any success
+	3. passwd -> used icat with 65414, regulat passwd file as on all linuxes
+	4. Tried few different files without any further succes (inodes 4, 65422, 65419, 65416)
+6.Were the files modified or tampered in any way?
+	1. after running machine -b usb1.fls following files / folders where modified / hard deleted
+		a. C:/tmp/.secret.txt.swp (deleted)
+		b. C:/tmp/_ (hard deleted through wipe)
+		c. C:/tmp/_0(hard deleted through wipe)
+		d. C:/tmp/_0000000(hard deleted through wipe)
+		e. C:/tmp/_00000~1(hard deleted through wipe)
+		f. C:/tmp/_ECRET~1.SWX(deleted)
+7.Is there a way for you to find the information anyways?
+	1. about hard deleted files i am not aware of any method
+	2. about normal deleted files i got "heslo na klucenku je ..."

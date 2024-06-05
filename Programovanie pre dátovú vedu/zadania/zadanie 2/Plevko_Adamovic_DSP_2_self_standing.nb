@@ -1,0 +1,189 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      9093,        180]
+NotebookOptionsPosition[      8851,        168]
+NotebookOutlinePosition[      9130,        182]
+CellTagsIndexPosition[      9087,        179]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`from$$ = 10, $CellContext`randomSeed$$ = 
+    0, $CellContext`showResult$$ = False, $CellContext`to$$ = 2, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`from$$], 10, 
+       "Za\[CHacek]iato\[CHacek]n\[AAcute] s\[UAcute]stava"}, 2, 16, 1}, {{
+       Hold[$CellContext`to$$], 2, "Cie\:013eov\[AAcute] s\[UAcute]stava"}, 2,
+       16, 1}, {{
+       Hold[$CellContext`showResult$$], False, 
+       "Zobrazi\[THacek] v\[YAcute]sledok"}, {True, False}}, {{
+       Hold[$CellContext`randomSeed$$], 0, "Random seed"}}, {
+      Hold[
+       Button["Vygenerova\[THacek] pr\[IAcute]klad", 
+        AddTo[$CellContext`randomSeed$$, 1]]], 
+      Manipulate`Dump`ThisIsNotAControl}}, Typeset`size$$ = {
+    304., {31.3575, 36.442499999999995`}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`from$$ = 10, $CellContext`randomSeed$$ = 
+        0, $CellContext`showResult$$ = False, $CellContext`to$$ = 2}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Column[{"Vyber si s\[UAcute]stavy z ktor\[YAcute]ch chce\[SHacek] \
+generova\[THacek].", 
+         SeedRandom[$CellContext`randomSeed$$]; $CellContext`digits = 
+          10 - Ceiling[$CellContext`from$$/2]; $CellContext`taskInt = 
+          0; $CellContext`taskString = ""; 
+         For[$CellContext`i = 0, $CellContext`i < $CellContext`digits, 
+           
+           Increment[$CellContext`i], $CellContext`randomAddInt = 
+            RandomInteger[$CellContext`from$$ - 1]; While[
+             And[$CellContext`i == 0, $CellContext`randomAddInt == 
+              0], $CellContext`randomAddInt = 
+              RandomInteger[$CellContext`from$$ - 1]; Null]; 
+           If[$CellContext`randomAddInt > 9, $CellContext`randomAddString = 
+             FromCharacterCode[$CellContext`randomAddInt + 
+               55], $CellContext`randomAddString = 
+              ToString[$CellContext`randomAddInt]; Null]; 
+           TimesBy[$CellContext`taskInt, $CellContext`from$$]; 
+           AddTo[$CellContext`taskInt, $CellContext`randomAddInt]; \
+$CellContext`taskString = $CellContext`taskString <> \
+$CellContext`randomAddString; Null]; $CellContext`mathProcess = 
+          "Konkr\[EAcute]tny postup:\nNa\[SHacek]e zadanie je \
+previes\[THacek] " <> $CellContext`taskString <> " z " <> 
+           ToString[$CellContext`from$$] <> " s\[UAcute]stavy do " <> 
+           ToString[$CellContext`to$$] <> " s\[UAcute]stavy.\n" <> 
+           "\[CapitalCHacek]\[IAcute]slo v 10 s\[UAcute]stave: " <> 
+           ToString[$CellContext`taskInt] <> "\n\n"; $CellContext`result = 
+          ""; $CellContext`highestPossible = $CellContext`to$$; \
+$CellContext`whichPlace = 0; 
+         While[$CellContext`highestPossible < $CellContext`taskInt, 
+           TimesBy[$CellContext`highestPossible, $CellContext`to$$]; 
+           Increment[$CellContext`whichPlace]]; 
+         DivideBy[$CellContext`highestPossible, $CellContext`to$$]; \
+$CellContext`remainder = $CellContext`taskInt; 
+         While[Floor[$CellContext`highestPossible] > 
+           0, $CellContext`whatToWrite = 0; 
+           While[($CellContext`whatToWrite + 
+               1) $CellContext`to$$^$CellContext`whichPlace <= \
+$CellContext`remainder, 
+             
+             Increment[$CellContext`whatToWrite]]; $CellContext`mathProcess = \
+$CellContext`mathProcess <> 
+             "V danom momente (vzh\:013eadom na cifru) najv\[ADoubleDot]\
+\[CHacek]\[SHacek]ia mo\[ZHacek]n\[AAcute] mocnina \[CHacek]\[IAcute]sla " <> 
+             ToString[$CellContext`to$$] <> 
+             ", ktor\[AAcute] sa m\[OHat]\[ZHacek]e (ale nemus\[IAcute]) \
+zmesti\[THacek] do zvy\[SHacek]ku " <> ToString[$CellContext`remainder] <> 
+             ", je " <> ToString[$CellContext`highestPossible] <> "\n" <> 
+             "Mocnina " <> ToString[$CellContext`highestPossible] <> 
+             " sa zmest\[IAcute] do zvy\[SHacek]ku " <> 
+             ToString[$CellContext`whatToWrite] <> 
+             " kr\[AAcute]t, tak\[ZHacek]e budeme zapisova\[THacek] \[CHacek]\
+\[IAcute]slo " <> ToString[$CellContext`whatToWrite] <> ".\n" <> 
+             "Od zvy\[SHacek]ku " <> ToString[$CellContext`remainder] <> 
+             " odpo\[CHacek]\[IAcute]tame " <> 
+             ToString[$CellContext`whatToWrite] <> " x " <> 
+             ToString[$CellContext`highestPossible] <> " \[Rule] " <> 
+             ToString[$CellContext`whatToWrite $CellContext`highestPossible] <> 
+             "\n"; SubtractFrom[$CellContext`remainder, \
+$CellContext`whatToWrite $CellContext`to$$^$CellContext`whichPlace]; 
+           Decrement[$CellContext`whichPlace]; 
+           DivideBy[$CellContext`highestPossible, $CellContext`to$$]; 
+           If[$CellContext`whatToWrite > 
+             9, $CellContext`result = $CellContext`result <> ToString[
+                
+                FromCharacterCode[$CellContext`whatToWrite + 
+                 55]], $CellContext`result = $CellContext`result <> 
+              ToString[$CellContext`whatToWrite]]; $CellContext`mathProcess = \
+$CellContext`mathProcess <> 
+             "N\[AAcute]\[SHacek] medziv\[YAcute]sledok: " <> \
+$CellContext`result <> "\n\n"; 
+           Null]; $CellContext`mathProcess = $CellContext`mathProcess <> 
+           "Fin\[AAcute]lne rie\[SHacek]enie: " <> $CellContext`result; \
+$CellContext`genericProcess = 
+          " V\[SHacek]eobecn\[YAcute] postup:\n -prevedieme \
+\[CHacek]\[IAcute]slo do 10 s\[UAcute]stavy, s ktor\[YAcute]m budeme pracova\
+\[THacek]\n -n\[AAcute]jdeme najv\[ADoubleDot]\[CHacek]\[SHacek]iu mocninu \
+\[CHacek]\[IAcute]sla s\[UAcute]stavy, do ktorej ideme \[CHacek]\[IAcute]slo \
+prev\[AAcute]dza\[THacek] a ktor\[AAcute] sa zmest\[IAcute] do n\[AAcute]\
+\[SHacek]ho zbytku\n -vypo\[CHacek]\[IAcute]tame, ko\:013ekokr\[AAcute]t sa t\
+\[AAcute]to najv\[ADoubleDot]\[CHacek]\[SHacek]ia mocnina zmest\[IAcute] do n\
+\[AAcute]\[SHacek]ho zbytku a tak\[EAcute] \[CHacek]\[IAcute]slo nap\[IAcute]\
+\[SHacek]eme\n -predel\[IAcute]me na\[SHacek]u najv\[ADoubleDot]\[CHacek]\
+\[SHacek]iu mo\[ZHacek]n\[UAcute] mocninu \[CHacek]\[IAcute]slom \
+s\[UAcute]stavy, do ktorej prev\[AAcute]dzame\n -prejdeme na \[DHacek]al\
+\[SHacek]iu cifru\n\n"; $CellContext`final = 
+          Column[{"Preve\[DHacek] toto \[CHacek]\[IAcute]slo z " <> 
+             ToString[$CellContext`from$$] <> " s\[UAcute]stavy do " <> 
+             ToString[$CellContext`to$$] <> 
+             " s\[UAcute]stavy:\n" <> $CellContext`taskString, 
+             
+             If[$CellContext`showResult$$, $CellContext`genericProcess <> \
+$CellContext`mathProcess, ""]}]; $CellContext`final}], 
+      "Specifications" :> {{{$CellContext`from$$, 10, 
+          "Za\[CHacek]iato\[CHacek]n\[AAcute] s\[UAcute]stava"}, 2, 16, 1, 
+         Appearance -> 
+         "Open"}, {{$CellContext`to$$, 2, 
+          "Cie\:013eov\[AAcute] s\[UAcute]stava"}, 2, 16, 1, Appearance -> 
+         "Open"}, {{$CellContext`showResult$$, False, 
+          "Zobrazi\[THacek] v\[YAcute]sledok"}, {
+         True, False}}, {{$CellContext`randomSeed$$, 0, "Random seed"}}, 
+        Button["Vygenerova\[THacek] pr\[IAcute]klad", 
+         AddTo[$CellContext`randomSeed$$, 1]]}, 
+      "Options" :> {
+       TrackedSymbols :> {$CellContext`showResult$$, \
+$CellContext`randomSeed$$}}, "DefaultOptions" :> {}],
+     ImageSizeCache->{349., {145.4575, 150.5425}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]]]
+},
+Visible->False,
+FrontEndVersion->"13.0 for Linux x86 (64-bit) (November 22, 2021)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 8289, 146, 70, InheritFromParent,ExpressionUUID->"641e59a6-a577-4a16-ba02-4aadaac2fac6"]
+}
+]
+*)
+
+(* End of internal cache information *)

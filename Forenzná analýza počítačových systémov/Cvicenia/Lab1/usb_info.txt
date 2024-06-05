@@ -1,0 +1,23 @@
+Bus 001 Device 005: ID 8690:3a04  
+NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sdb      8:16   1  7.5G  0 disk 
+└─sdb1   8:17   1  7.5G  0 part 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+Disk /dev/sdb: 7.5 GiB, 8053063680 bytes, 15728640 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0x3a87adbf
+
+Device     Boot Start      End  Sectors  Size Id Type
+/dev/sdb1        5120 15728639 15723520  7.5G  c W95 FAT32 (LBA)
+Model: Flash USB Disk (scsi)
+Disk /dev/sdb: 8053MB
+Sector size (logical/physical): 512B/512B
+Partition Table: msdos
+Disk Flags: 
+
+Number  Start   End     Size    Type     File system  Flags
+ 1      2621kB  8053MB  8050MB  primary  fat32        lba

@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--DOCTYPE olympics SYSTEM "OlympicsZ2.dtd"-->
+<!--Author:Radovan CYPRICH-->
+<!--Sources: en.wikipedia.org -->
+<olympics>
+	<language language="EN" />
+	<athletes>
+		<athlete id-athlete="a1" rank="1" sex="male" trainers-name="Marian Vajda">
+			<name>
+				<first-name>Novak</first-name>
+				<last-name>Djokovic</last-name>
+			</name>
+			<informations height="188" weight="77" playstyle="agressive attack" status="married">
+				<additional-info infoID="i1" athlete="a1">
+					18 grand slams victories
+				</additional-info>
+				<additional-info infoID="i2" athlete="a1">
+					Worlds number one for 311 weeks.
+				</additional-info>
+				<additional-info infoID="i3" athlete="a1">
+					82 ATP singles titles
+				</additional-info>
+			</informations>
+			<date-of-birth>
+				<day>22</day>
+				<month>May</month>
+				<year>1987</year>
+			</date-of-birth>
+			<sport type-of-sport="summer">
+				<name-of-sport>Tennis</name-of-sport>
+			</sport>
+			<country>
+				<name-of-country>Serbia</name-of-country>
+				<continent>Europe</continent>
+			</country>
+			<olympic-starts>
+				<start>
+					<city>Tokyo</city>
+					<name-of-country>Japan</name-of-country>
+					<continent>Asia</continent>
+					<year>2020</year>
+				</start>
+				<start>
+					<city>Rio de Janeiro</city>
+					<name-of-country>Brazil</name-of-country>
+					<continent>South America</continent>
+					<year>2016</year>
+				</start>
+				<start>
+					<city>London</city>
+					<name-of-country>England</name-of-country>
+					<continent>Europe</continent>
+					<year>2012</year>
+				</start>
+				<start>
+					<city>Peking</city>
+					<name-of-country>China</name-of-country>
+					<continent>Asia</continent>
+					<year>2008</year>
+				</start>
+			</olympic-starts>
+
+		</athlete>
+		<athlete id-athlete="a2" rank="2" sex="male" trainers-name="Toni Nadal">
+			<name>
+				<first-name>Rafael</first-name>
+				<last-name>Nadal</last-name>
+			</name>
+			<informations height="185" weight="85" playstyle="universal" status="married">
+				<additional-info infoID="i4" athlete="a2">
+					Olympic winner in Peking 2008.
+					Antuka master,13 grandslam wins in Paris.
+					Left handed player with two handed backhand.
+				</additional-info>
+			</informations>
+			<date-of-birth>
+				<day>3</day>
+				<month>June</month>
+				<year>1986</year>
+			</date-of-birth>
+			<sport type-of-sport="summer">
+				<name-of-sport>Tennis</name-of-sport>
+			</sport>
+			<country>
+				<name-of-country>Spain</name-of-country>
+				<continent>Europe</continent>
+			</country>
+			<olympic-starts>
+				<start>
+					<city>Tokyo</city>
+					<name-of-country>Japan</name-of-country>
+					<continent>Asia</continent>
+					<year>2020</year>
+				</start>
+				<start>
+					<city>Rio de Janeiro</city>
+					<name-of-country>Brazil</name-of-country>
+					<continent>South America</continent>
+					<year>2016</year>
+				</start>
+				<start>
+					<city>Peking</city>
+					<name-of-country>China</name-of-country>
+					<continent>Asia</continent>
+					<year>2008</year>
+				</start>
+			</olympic-starts>
+
+		</athlete>
+		<athlete id-athlete="a3" rank="18" sex="female">
+			<name>
+				<first-name>Serena</first-name>
+				<last-name>Williams</last-name>
+			</name>
+			<informations height="175" weight="68" playstyle="agressive attack">
+			</informations>
+			<date-of-birth>
+				<day>26</day>
+				<month>September</month>
+				<year>1981</year>
+			</date-of-birth>
+			<sport type-of-sport="summer">
+				<name-of-sport>Tennis</name-of-sport>
+			</sport>
+			<country>
+				<name-of-country>USA</name-of-country>
+				<continent>North America</continent>
+			</country>
+			<olympic-starts>
+				<start>
+					<city>Rio de Janeiro</city>
+					<name-of-country>Brazil</name-of-country>
+					<continent>South America</continent>
+					<year>2016</year>
+				</start>
+				<start>
+					<city>London</city>
+					<name-of-country>England</name-of-country>
+					<continent>Europe</continent>
+					<year>2012</year>
+				</start>
+				<start>
+					<city>Peking</city>
+					<name-of-country>China</name-of-country>
+					<continent>Asia</continent>
+					<year>2008</year>
+				</start>
+				<start>
+					<city>Sydney</city>
+					<name-of-country>Australia</name-of-country>
+					<continent>Oceania</continent>
+					<year>2000</year>
+				</start>
+			</olympic-starts>
+
+		</athlete>
+		<athlete id-athlete="a4" league="NHL" team="Washington Capitals" sex="male">
+			<name>
+				<first-name>Alexander</first-name>
+				<last-name>Ovechkin</last-name>
+			</name>
+			<informations height="188" weight="77" position="forward" status="married">
+				<additional-info infoID="i7" athlete="a4">
+					Attacking Wayne Gretzky record goals on shot.
+				</additional-info>
+				<additional-info infoID="i8" athlete="a4">
+					World champion in Canada 2008.
+				</additional-info>
+				<additional-info infoID="i9" athlete="a4">
+					Total NHL goals 714.
+					Total NHL asists 582.
+					Total NHL points 1,296.
+				</additional-info>
+			</informations>
+			<date-of-birth>
+				<day>17</day>
+				<month>September</month>
+				<year>1985</year>
+			</date-of-birth>
+			<sport type-of-sport="winter">
+				<name-of-sport>
+					Hockey
+				</name-of-sport>
+			</sport>
+			<country>
+				<name-of-country>Russia</name-of-country>
+				<continent>Europe-Asia</continent>
+			</country>
+			<olympic-starts>
+				<start>
+					<city>Sochi</city>
+					<name-of-country>Russia</name-of-country>
+					<continent>Europe</continent>
+					<year>2014</year>
+				</start>
+				<start>
+					<city>Vancouver</city>
+					<name-of-country>Canada</name-of-country>
+					<continent>North America</continent>
+					<year>2010</year>
+				</start>
+				<start>
+					<city>Torino</city>
+					<name-of-country>Italy</name-of-country>
+					<continent>Europe</continent>
+					<year>2006</year>
+				</start>
+			</olympic-starts>
+
+		</athlete>
+		<athlete id-athlete="a5" league="Serie A" team="Juventus" sex="male" trainers-name="Toni Nadal">
+			<name>
+				<first-name>Cristiano</first-name>
+				<last-name>Ronaldo</last-name>
+			</name>
+			<informations height="187" weight="85" position="forward" status="married">
+				<additional-info infoID="i10" athlete="a5">
+					UEFA European champion France 2016.
+				</additional-info>
+				<additional-info infoID="i12" athlete="a5">
+					Total trophies won - 31.
+				</additional-info>
+				<additional-info infoID="i13" athlete="a5">
+					Total goals 781.
+				</additional-info>
+			</informations>
+			<date-of-birth>
+				<day>5</day>
+				<month>February</month>
+				<year>1985</year>
+			</date-of-birth>
+			<sport type-of-sport="summer">
+				<name-of-sport>
+					Football
+				</name-of-sport>
+			</sport>
+			<country>
+				<name-of-country>Portugal</name-of-country>
+				<continent>Europe</continent>
+			</country>
+			<olympic-starts>
+				<start>
+					<city>Athens</city>
+					<name-of-country>Greece</name-of-country>
+					<continent>Europe</continent>
+					<year>2004</year>
+				</start>
+			</olympic-starts>
+		</athlete>
+		<athlete id-athlete="a6" sex="male" team="North Baltimore Aquatic Club" trainers-name="Bob Bowman">
+			<name>
+				<first-name>Michael</first-name>
+				<last-name>Phelps</last-name>
+			</name>
+			<informations height="193" weight="88" playstyle="all swimming styles" status="married">
+				<additional-info infoID="i14" athlete="a6">
+					He is one of the greatest swimmers ever.
+				</additional-info>
+				<additional-info infoID="i15" athlete="a6">
+					He has won 23x olympic gold 3x olypic silver and 2x olympic bronze medal.
+				</additional-info>
+				<additional-info infoID="i16" athlete="a6">
+					Most decorated olympian of all time.
+				</additional-info>
+			</informations>
+			<date-of-birth>
+				<day>30</day>
+				<month>June</month>
+				<year>1985</year>
+			</date-of-birth>
+			<sport type-of-sport="summer">
+				<name-of-sport>
+					Swimming
+				</name-of-sport>
+			</sport>
+			<country>
+				<name-of-country>USA</name-of-country>
+				<continent>North America</continent>
+			</country>
+			<olympic-starts>
+				<start>
+					<city>Rio de Janeiro</city>
+					<name-of-country>Brazil</name-of-country>
+					<continent>South America</continent>
+					<year>2016</year>
+				</start>
+				<start>
+					<city>London</city>
+					<name-of-country>England</name-of-country>
+					<continent>Europe</continent>
+					<year>2012</year>
+				</start>
+				<start>
+					<city>Peking</city>
+					<name-of-country>China</name-of-country>
+					<continent>Asia</continent>
+					<year>2008</year>
+				</start>
+				<start>
+					<city>Athens</city>
+					<name-of-country>Greece</name-of-country>
+					<continent>Europe</continent>
+					<year>2004</year>
+				</start>
+				<start>
+					<city>Sydney</city>
+					<name-of-country>Australia</name-of-country>
+					<continent>Oceania</continent>
+					<year>2000</year>
+				</start>
+			</olympic-starts>
+
+		</athlete>
+		<athlete id-athlete="a7" rank="2" team="Slovakia" sex="female" trainers-name="Livio Magoni">
+			<name>
+				<first-name>Petra</first-name>
+				<last-name>Vlhova</last-name>
+			</name>
+			<informations height="180" weight="73" status=" in relationship">
+				<additional-info infoID="i17" athlete="a7">
+					She made her World Cup debut at age 17 in December 2012 and her first World Cup podium came three years later, a victory in slalom in December 2015 at Åre, Sweden.
+				</additional-info>
+				<additional-info infoID="i18" athlete="a7">
+					Vlhová won a gold medal in 2012 Winter Youth Olympics and represented Slovakia in the 2014 Winter Olympics.
+				</additional-info >
+				<additional-info>
+					She also won gold in the slalom at the Junior World Championships in 2014 in Jasná, Slovakia
+				</additional-info>
+			</informations>
+			<date-of-birth>
+				<day>13</day>
+				<month>June</month>
+				<year>1995</year>
+			</date-of-birth>
+			<sport type-of-sport="winter">
+				<name-of-sport>
+					Skiing
+				</name-of-sport>
+			</sport>
+			<country>
+				<name-of-country>Slovakia</name-of-country>
+				<continent>Europe</continent>
+			</country>
+			<olympic-starts>
+				<start>
+					<city>Pchjongjang</city>
+					<name-of-country>South Korea</name-of-country>
+					<continent>Asia</continent>
+					<year>2018</year>
+				</start>
+				<start>
+					<city>Sochi</city>
+					<name-of-country>Russia</name-of-country>
+					<continent>Europe</continent>
+					<year>2014</year>
+				</start>
+			</olympic-starts>
+
+		</athlete>
+		<athlete id-athlete="a8" league="China National League" team="Shandong Weiqiao" rank="3" sex="male" trainers-name="Liu Guoliang">
+			<name>
+				<first-name>Long</first-name>
+				<last-name>Ma</last-name>
+			</name>
+			<informations height="175" weight="72" playstyle="offensive" status="married">
+			</informations>
+			<date-of-birth>
+				<day>20</day>
+				<month>October</month>
+				<year>1988</year>
+			</date-of-birth>
+			<sport type-of-sport="summer">
+				<name-of-sport>
+					Table Tennis
+				</name-of-sport>
+			</sport>
+			<country>
+				<name-of-country>China</name-of-country>
+				<continent>Asia</continent>
+			</country>
+			<olympic-starts>
+				<start>
+					<city>Rio de Janeiro</city>
+					<name-of-country>Brazil</name-of-country>
+					<continent>South America</continent>
+					<year>2016</year>
+				</start>
+				<start>
+					<city>London</city>
+					<name-of-country>England</name-of-country>
+					<continent>Europe</continent>
+					<year>2004</year>
+				</start>
+			</olympic-starts>
+
+		</athlete>
+		<athlete id-athlete="a9" league="La Liga" team="FC Barcelona" sex="male" trainers-name="Ronald Coeman">
+			<name>
+				<first-name>Lionel</first-name>
+				<last-name>Messi</last-name>
+			</name>
+			<informations height="170 " weight="71" position="forward" status="married">
+				<additional-info infoID="i19" athlete="a9">
+					Often considered as the best player in the world and widely regarded as one of the greatest players of all time.
+					Messi has won a record six Ballon d'Or awards and a record six European Golden Shoes. 
+					He has spent his entire professional career with Barcelona, where he has won a club-record 34 trophies, including ten La Liga titles, six Copa del Rey titles and four UEFA Champions Leagues.
+				</additional-info>
+			</informations>
+			<date-of-birth>
+				<day>24</day>
+				<month>June</month>
+				<year>1987</year>
+			</date-of-birth>
+			<sport type-of-sport="summer">
+				<name-of-sport>
+					Football
+				</name-of-sport>
+			</sport>
+			<country>
+				<name-of-country>Argentina</name-of-country>
+				<continent>South America</continent>
+			</country>
+			<olympic-starts>
+				<start>
+					<city>Peking</city>
+					<name-of-country>China</name-of-country>
+					<continent>Asia</continent>
+					<year>2008</year>
+				</start>
+			</olympic-starts>
+		</athlete>
+		<athlete id-athlete="a10" league="NBA" team="Milwaukee Bucks" sex="male">
+			<name>
+				<first-name>Giannis</first-name>
+				<last-name>Antetokonoumpo</last-name>
+			</name>
+			<informations height="211" weight="110" playstyle="offensive" position="forward">
+				<additional-info infoID="i20" athlete="a10">
+					Two-time All-Star Game starter (2017, 2018)</additional-info>
+				<additional-info infoID="i21" athlete="a10">
+					Named the NBA’s Most Improved Player, selected to the All-NBA Second Team and named to the NBA All-Defensive Second Team in 2017</additional-info>
+				<additional-info infoID="i23" athlete="a10">
+					Bucks’ all-time leader in triple-doubles (9)</additional-info>
+				<additional-info infoID="i24" athlete="a10">
+				Earned Eastern Conference Player of the Month honors in 2017 for the month of March</additional-info>
+				<additional-info infoID="i25" athlete="a10">
+					Three-time Eastern Conference Player of the Week winner (Oct. 23, 2017; Dec. 5, 2016; Feb. 9, 2015)</additional-info>
+				<additional-info infoID="i26" athlete="a10">
+					Participated in the BBVA Rising Stars Challenge and Sprite Slam Dunk Contest during 2015 All-Star Weekend in New York, and the 2014 Rising Stars Challenge and the Taco Bell Skills Challenge during 2014 All-Star Weekend in New Orleans</additional-info>
+				<additional-info infoID="i27" athlete="a10">
+					Named to the 2013-14 NBA All-Rookie Second Team</additional-info>
+				<additional-info infoID="i28" athlete="a10">
+					Member of the Greek National Team for the 2016 Olympic Qualifying Tournament in Italy and the 2014 FIBA World Cup in Spain</additional-info>
+			</informations>
+			<date-of-birth>
+				<day>6</day>
+				<month>December</month>
+				<year>1994</year>
+			</date-of-birth>
+			<sport type-of-sport="summer">
+				<name-of-sport>
+						Basketball
+				</name-of-sport>
+			</sport>
+			<country>
+				<name-of-country>Greece</name-of-country>
+				<continent>Europe</continent>
+			</country>
+			<olympic-starts>
+				<start>
+					<city>Rio de Janeiro</city>
+					<name-of-country>Brazil</name-of-country>
+					<continent>South America</continent>
+					<year>2016</year>
+				</start>
+				<start>
+					<city>London</city>
+					<name-of-country>England</name-of-country>
+					<continent></continent>
+					<year>2012</year>
+				</start>
+			</olympic-starts>
+		</athlete>
+	</athletes>
+</olympics>

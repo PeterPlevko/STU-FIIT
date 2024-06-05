@@ -1,0 +1,15 @@
+1. cvicenie
+
+1. ako rozlisit ci je typ honoty premennej a cislo alebo retazec
+odpoved: 
+typeof premenna;
+2. inkrementujte premennu i od 0 do 100 a vypiste jej hodnotu
+odpoved: 
+for(var i = 0; i <= 100; i++){console.log(i)}
+3. vyuzite try/catch blok a ukazte jeho pouzitie
+odpoved:
+try{
+    console.log(a);
+} catch (e){
+    console.log("error: " + e)
+}

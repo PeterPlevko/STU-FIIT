@@ -1,0 +1,11 @@
+@media (max-width: 768px) {
+    .middle{
+        size: 1205px;
+        height: auto;
+        justify-content: center;
+        text-align: center;
+        margin-top: 50px;
+    }
+
+
+}

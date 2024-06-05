@@ -1,0 +1,83 @@
+<app-header></app-header>
+
+<div class="displayFlexCenter">
+  <div class="mainBlok">
+    <div class="displayFlex">
+      <div class="menu">
+        <button #matMenuTrigger mat-raised-button color="primary"[matMenuTriggerFor]="menu"
+        (menuOpened)="onMenuOpened()"
+        (menuClosed)="onMenuClosed()">{{triggerButtonText}}</button>
+        <!-- #enddocregion mat-menu-trigger-for -->
+        <mat-menu  #menu="matMenu">
+        <div class="column">
+
+            <mat-checkbox  #menuItems
+              *ngFor="let item of options; let i = index;"
+              [(ngModel)]="item.activated"
+              (click)="$event.stopPropagation()"
+              (change)="onSelectValue()"
+              (keydown)="onMenuKeyDown($event, i)"
+              >{{ item.title }}</mat-checkbox
+            >
+
+        </div>
+      </mat-menu>
+
+        <!-- <p>{{ formattedSelectedVehicles }}</p> -->
+      </div>
+    </div>
+
+    <ng-container  matColumnDef="symbol">
+      <mat-header-cell *matHeaderCellDef>Symbol</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.symbol}}</mat-cell>
+    </ng-container>
+
+    <div class="example-header">
+      <mat-form-field>
+        <!-- (<HTMLTextAreaElement>e.target) -->
+        <input matInput (keyup)="applyFilter($event.target)" placeholder="Filter">
+      </mat-form-field>
+    </div>
+
+    <div class="example-container mat-elevation-z8">
+
+      <mat-table [dataSource]="dataSource"  matSort>
+
+        <!-- Progress Column -->
+        <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Meno </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="dateOfBirth">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Dátum narodenia </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.dateOfBirth}} </mat-cell>
+        </ng-container>
+
+        <!-- Color Column -->
+        <ng-container matColumnDef="dateOfDeath">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Dátum úmrtia </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.dateOfDeath}} </mat-cell>
+        </ng-container>
+
+              <!-- Color Column -->
+              <ng-container class="biggerStory" matColumnDef="story">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Príbeh </mat-header-cell>
+
+
+                <mat-cell [ngClass]="{'maxHeightStory' : row.story.length>200}" *matCellDef="let row"> {{row.story}} </mat-cell>
+              </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row class="marginOfBlocks" *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+    </div>
+
+  </div>
+</div>
+
+
+<app-footer></app-footer>

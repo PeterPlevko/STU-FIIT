@@ -1,0 +1,71 @@
+[
+    {
+        "cemeteryType": "typ cintorína 1",
+        "nationality": [
+            "národnosť 1",
+            "národnosť 2",
+            "národnosť 3"
+        ],
+        "reasonOfDeath": [
+            "typ úmrtia 1",
+            "typ úmrtia 2",
+            "typ úmrtia 3"
+        ],
+        "dateOfDeath": [
+            "dátum úmrtia 1",
+            "dátum úmrtia 2",
+            "dátum úmrtia 3"
+        ],
+        "numberOfGraves": 1,
+        "numberOfBurried": 1,
+        "GPS": "48.139109 17.708497",
+        "state": "confirmed",
+        "addedBy": "kuntox"
+    },
+    {
+        "cemeteryType": "typ cintorína 2",
+        "nationality": [
+            "národnosť 4",
+            "národnosť 5",
+            "národnosť 6"
+        ],
+        "reasonOfDeath": [
+            "typ úmrtia 4",
+            "typ úmrtia 5",
+            "typ úmrtia 6"
+        ],
+        "dateOfDeath": [
+            "dátum úmrtia 4",
+            "dátum úmrtia 5",
+            "dátum úmrtia 6"
+        ],
+        "numberOfGraves": 1,
+        "numberOfBurried": 1,
+        "GPS": "48.729524 19.885422",
+        "state": "confirmed",
+        "addedBy": "kuntox"
+    },
+    {
+        "cemeteryType": "typ cintorína 3",
+        "nationality": [
+            "národnosť 7",
+            "národnosť 8",
+            "národnosť 9"
+        ],
+        "reasonOfDeath": [
+            "typ úmrtia 7",
+            "typ úmrtia 8",
+            "typ úmrtia 9"
+        ],
+        "dateOfDeath": [
+            "dátum úmrtia 7",
+            "dátum úmrtia 8",
+            "dátum úmrtia 9"
+        ],
+        "numberOfGraves": 1,
+        "numberOfBurried": 1,
+        "GPS": "49.090556 20.984863",
+        "state": "confirmed",
+        "addedBy": "kuntox"
+    }   
+]

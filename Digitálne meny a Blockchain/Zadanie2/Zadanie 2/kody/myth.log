@@ -1,0 +1,442 @@
+==== Exception State ====
+SWC ID: 110
+Severity: Medium
+Contract: Battleship
+Function name: accuse_cheating(bytes,bytes32[],uint256,address)
+PC address: 4387
+Estimated Gas Usage: 6319 - 12958
+An assertion violation was triggered.
+It is possible to trigger an assertion violation. Note that Solidity assert() statements should only be used to check invariants. Review the transaction trace generated for this issue and either make sure your program logic is correct, or use require() instead of assert() if your goal is to constrain user inputs or enforce preconditions. Remember to validate inputs from both callers (for instance, via passed arguments) and callees (for instance, via return values).
+--------------------
+In file: Battleship.sol:43
+
+function callFromOnePlayer() internal view returns(bool){
+        return (msg.sender == players[0] || msg.sender == players[1]);
+    }
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x54000000000002, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x2000000000000, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , value: 0x0
+Caller: [SOMEGUY], function: store_bid(), txdata: 0x45f203b1, value: 0x0
+Caller: [SOMEGUY], function: accuse_cheating(bytes,bytes32[],uint256,address), txdata: 0x6cf399fa0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000080000000000000000000000000000000000006b6b6b6b6b6b6b6b6b6b6b6b0101010101010101010101020101010001010101, value: 0x0
+
+==== Exception State ====
+SWC ID: 110
+Severity: Medium
+Contract: Battleship
+Function name: accuse_cheating(bytes,bytes32[],uint256,address)
+PC address: 4417
+Estimated Gas Usage: 6320 - 12959
+An assertion violation was triggered.
+It is possible to trigger an assertion violation. Note that Solidity assert() statements should only be used to check invariants. Review the transaction trace generated for this issue and either make sure your program logic is correct, or use require() instead of assert() if your goal is to constrain user inputs or enforce preconditions. Remember to validate inputs from both callers (for instance, via passed arguments) and callees (for instance, via return values).
+--------------------
+In file: Battleship.sol:43
+
+function callFromOnePlayer() internal view returns(bool){
+        return (msg.sender == players[0] || msg.sender == players[1]);
+    }
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x9202a800104202, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x11000002000000000, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , value: 0x0
+Caller: [ATTACKER], function: store_bid(), txdata: 0x45f203b1, value: 0x0
+Caller: [ATTACKER], function: accuse_cheating(bytes,bytes32[],uint256,address), txdata: 0x6cf399fa0000000000000000000000000000000000000000000000000000000000000048000000000000000000000000000000000000000000000000000000000000004a0808080808080808000000000000000000000000000000000000000000000000000000000000000000000000deadbeefdeadbeefdeadbeefdeadbeefdeadbeef, value: 0x0
+
+==== Exception State ====
+SWC ID: 110
+Severity: Medium
+Contract: Battleship
+Function name: check_one_ship(bytes,bytes32[],uint256,address)
+PC address: 5432
+Estimated Gas Usage: 1829 - 7288
+An assertion violation was triggered.
+It is possible to trigger an assertion violation. Note that Solidity assert() statements should only be used to check invariants. Review the transaction trace generated for this issue and either make sure your program logic is correct, or use require() instead of assert() if your goal is to constrain user inputs or enforce preconditions. Remember to validate inputs from both callers (for instance, via passed arguments) and callees (for instance, via return values).
+--------------------
+In file: Battleship.sol:113
+
+function check_one_ship(bytes memory opening_nonce, bytes32[] memory proof,
+        uint256 guess_leaf_index, address owner) public returns (bool result) {
+        //check player one
+
+         bool is_valid = verify_opening(opening_nonce, proof, guess_leaf_index, owner == players[0] ? initial_states[0] : initial_states[1]);
+
+        if(msg.sender == players[0]){
+            //sending his own ships
+            if(msg.sender == owner){
+                if( !isInArray(first_player_own_ships_indexes, guess_leaf_index) && is_valid){
+                   first_player_own_ships_indexes.push(guess_leaf_index);
+                }
+            }
+            else{
+                if( !isInArray(first_player_hitted_places_indexes, guess_leaf_index) && is_valid){
+                   first_player_hitted_places_indexes.push(guess_leaf_index);
+                }
+            }
+        }
+        // check for player two
+        else{
+             //sending his own ships
+            if(msg.sender == owner){
+                if( !isInArray(second_player_own_ships_indexes, guess_leaf_index) && is_valid){
+                   second_player_own_ships_indexes.push(guess_leaf_index);
+                }
+            }
+            else{
+                if( !isInArray(second_player_hitted_places_indexes, guess_leaf_index) && is_valid){
+                   second_player_hitted_places_indexes.push(guess_leaf_index);
+                }
+            }
+        }    
+        
+        return is_valid;
+    }
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x40000000000000001, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , value: 0x0
+Caller: [SOMEGUY], function: check_one_ship(bytes,bytes32[],uint256,address), txdata: 0xb62829b90000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+==== Exception State ====
+SWC ID: 110
+Severity: Medium
+Contract: Battleship
+Function name: check_one_ship(bytes,bytes32[],uint256,address)
+PC address: 5539
+Estimated Gas Usage: 3579 - 9463
+An assertion violation was triggered.
+It is possible to trigger an assertion violation. Note that Solidity assert() statements should only be used to check invariants. Review the transaction trace generated for this issue and either make sure your program logic is correct, or use require() instead of assert() if your goal is to constrain user inputs or enforce preconditions. Remember to validate inputs from both callers (for instance, via passed arguments) and callees (for instance, via return values).
+--------------------
+In file: Battleship.sol:113
+
+function check_one_ship(bytes memory opening_nonce, bytes32[] memory proof,
+        uint256 guess_leaf_index, address owner) public returns (bool result) {
+        //check player one
+
+         bool is_valid = verify_opening(opening_nonce, proof, guess_leaf_index, owner == players[0] ? initial_states[0] : initial_states[1]);
+
+        if(msg.sender == players[0]){
+            //sending his own ships
+            if(msg.sender == owner){
+                if( !isInArray(first_player_own_ships_indexes, guess_leaf_index) && is_valid){
+                   first_player_own_ships_indexes.push(guess_leaf_index);
+                }
+            }
+            else{
+                if( !isInArray(first_player_hitted_places_indexes, guess_leaf_index) && is_valid){
+                   first_player_hitted_places_indexes.push(guess_leaf_index);
+                }
+            }
+        }
+        // check for player two
+        else{
+             //sending his own ships
+            if(msg.sender == owner){
+                if( !isInArray(second_player_own_ships_indexes, guess_leaf_index) && is_valid){
+                   second_player_own_ships_indexes.push(guess_leaf_index);
+                }
+            }
+            else{
+                if( !isInArray(second_player_hitted_places_indexes, guess_leaf_index) && is_valid){
+                   second_player_hitted_places_indexes.push(guess_leaf_index);
+                }
+            }
+        }    
+        
+        return is_valid;
+    }
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x800000014080ca2, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , value: 0x0
+Caller: [CREATOR], function: store_bid(), txdata: 0x45f203b1, value: 0x0
+Caller: [SOMEGUY], function: check_one_ship(bytes,bytes32[],uint256,address), txdata: 0xb62829b90000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000006b6b6b6b6b6b6b6b6b6b6b6b0101010101010210020101010401010101018001, value: 0x0
+
+==== Exception State ====
+SWC ID: 110
+Severity: Medium
+Contract: Battleship
+Function name: check_one_ship(bytes,bytes32[],uint256,address)
+PC address: 5569
+Estimated Gas Usage: 3580 - 9464
+An assertion violation was triggered.
+It is possible to trigger an assertion violation. Note that Solidity assert() statements should only be used to check invariants. Review the transaction trace generated for this issue and either make sure your program logic is correct, or use require() instead of assert() if your goal is to constrain user inputs or enforce preconditions. Remember to validate inputs from both callers (for instance, via passed arguments) and callees (for instance, via return values).
+--------------------
+In file: Battleship.sol:113
+
+function check_one_ship(bytes memory opening_nonce, bytes32[] memory proof,
+        uint256 guess_leaf_index, address owner) public returns (bool result) {
+        //check player one
+
+         bool is_valid = verify_opening(opening_nonce, proof, guess_leaf_index, owner == players[0] ? initial_states[0] : initial_states[1]);
+
+        if(msg.sender == players[0]){
+            //sending his own ships
+            if(msg.sender == owner){
+                if( !isInArray(first_player_own_ships_indexes, guess_leaf_index) && is_valid){
+                   first_player_own_ships_indexes.push(guess_leaf_index);
+                }
+            }
+            else{
+                if( !isInArray(first_player_hitted_places_indexes, guess_leaf_index) && is_valid){
+                   first_player_hitted_places_indexes.push(guess_leaf_index);
+                }
+            }
+        }
+        // check for player two
+        else{
+             //sending his own ships
+            if(msg.sender == owner){
+                if( !isInArray(second_player_own_ships_indexes, guess_leaf_index) && is_valid){
+                   second_player_own_ships_indexes.push(guess_leaf_index);
+                }
+            }
+            else{
+                if( !isInArray(second_player_hitted_places_indexes, guess_leaf_index) && is_valid){
+                   second_player_hitted_places_indexes.push(guess_leaf_index);
+                }
+            }
+        }    
+        
+        return is_valid;
+    }
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x400080100100023, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x8, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , value: 0x0
+Caller: [SOMEGUY], function: store_bid(), txdata: 0x45f203b1, value: 0x0
+Caller: [ATTACKER], function: check_one_ship(bytes,bytes32[],uint256,address), txdata: 0xb62829b90000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000006b6b6b6b6b6b6b6b6b6b6b6baaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa, value: 0x0
+
+==== Exception State ====
+SWC ID: 110
+Severity: Medium
+Contract: Battleship
+Function name: claim_win()
+PC address: 7199
+Estimated Gas Usage: 1853 - 2278
+An assertion violation was triggered.
+It is possible to trigger an assertion violation. Note that Solidity assert() statements should only be used to check invariants. Review the transaction trace generated for this issue and either make sure your program logic is correct, or use require() instead of assert() if your goal is to constrain user inputs or enforce preconditions. Remember to validate inputs from both callers (for instance, via passed arguments) and callees (for instance, via return values).
+--------------------
+In file: Battleship.sol:156
+
+callFromOnePlayer()
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x3, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , value: 0x0
+Caller: [ATTACKER], function: claim_win(), txdata: 0x0868d16b, value: 0x0
+
+==== Exception State ====
+SWC ID: 110
+Severity: Medium
+Contract: Battleship
+Function name: claim_win()
+PC address: 7308
+Estimated Gas Usage: 3607 - 4457
+An assertion violation was triggered.
+It is possible to trigger an assertion violation. Note that Solidity assert() statements should only be used to check invariants. Review the transaction trace generated for this issue and either make sure your program logic is correct, or use require() instead of assert() if your goal is to constrain user inputs or enforce preconditions. Remember to validate inputs from both callers (for instance, via passed arguments) and callees (for instance, via return values).
+--------------------
+In file: Battleship.sol:156
+
+callFromOnePlayer()
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0xfadfffeffffeffbc, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x11000044020200004, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , value: 0x0
+Caller: [SOMEGUY], function: store_bid(), txdata: 0x45f203b1, value: 0x0
+Caller: [ATTACKER], function: claim_win(), txdata: 0x0868d16b, value: 0x0
+
+==== Exception State ====
+SWC ID: 110
+Severity: Medium
+Contract: Battleship
+Function name: claim_opponent_left(address)
+PC address: 7646
+Estimated Gas Usage: 1966 - 2391
+An assertion violation was triggered.
+It is possible to trigger an assertion violation. Note that Solidity assert() statements should only be used to check invariants. Review the transaction trace generated for this issue and either make sure your program logic is correct, or use require() instead of assert() if your goal is to constrain user inputs or enforce preconditions. Remember to validate inputs from both callers (for instance, via passed arguments) and callees (for instance, via return values).
+--------------------
+In file: Battleship.sol:211
+
+callFromOnePlayerWithOpponent(payable(opponent))
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x3, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , value: 0x0
+Caller: [ATTACKER], function: claim_opponent_left(address), txdata: 0xa1fe39530000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+==== Exception State ====
+SWC ID: 110
+Severity: Medium
+Contract: Battleship
+Function name: claim_timeout_winnings(address)
+PC address: 7646
+Estimated Gas Usage: 1987 - 2412
+An assertion violation was triggered.
+It is possible to trigger an assertion violation. Note that Solidity assert() statements should only be used to check invariants. Review the transaction trace generated for this issue and either make sure your program logic is correct, or use require() instead of assert() if your goal is to constrain user inputs or enforce preconditions. Remember to validate inputs from both callers (for instance, via passed arguments) and callees (for instance, via return values).
+--------------------
+In file: Battleship.sol:235
+
+callFromOnePlayerWithOpponent(payable(opponent))
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x3, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , value: 0x0
+Caller: [ATTACKER], function: claim_timeout_winnings(address), txdata: 0xdeffa9670000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+==== Exception State ====
+SWC ID: 110
+Severity: Medium
+Contract: Battleship
+Function name: claim_opponent_left(address)
+PC address: 7756
+Estimated Gas Usage: 3723 - 4573
+An assertion violation was triggered.
+It is possible to trigger an assertion violation. Note that Solidity assert() statements should only be used to check invariants. Review the transaction trace generated for this issue and either make sure your program logic is correct, or use require() instead of assert() if your goal is to constrain user inputs or enforce preconditions. Remember to validate inputs from both callers (for instance, via passed arguments) and callees (for instance, via return values).
+--------------------
+In file: Battleship.sol:211
+
+callFromOnePlayerWithOpponent(payable(opponent))
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x200000, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x2, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , value: 0x0
+Caller: [SOMEGUY], function: store_bid(), txdata: 0x45f203b1, value: 0x0
+Caller: [SOMEGUY], function: claim_opponent_left(address), txdata: 0xa1fe3953b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1, value: 0x0
+
+==== Exception State ====
+SWC ID: 110
+Severity: Medium
+Contract: Battleship
+Function name: claim_timeout_winnings(address)
+PC address: 7756
+Estimated Gas Usage: 3744 - 4594
+An assertion violation was triggered.
+It is possible to trigger an assertion violation. Note that Solidity assert() statements should only be used to check invariants. Review the transaction trace generated for this issue and either make sure your program logic is correct, or use require() instead of assert() if your goal is to constrain user inputs or enforce preconditions. Remember to validate inputs from both callers (for instance, via passed arguments) and callees (for instance, via return values).
+--------------------
+In file: Battleship.sol:235
+
+callFromOnePlayerWithOpponent(payable(opponent))
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x15c00000001080002, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , value: 0x0
+Caller: [SOMEGUY], function: store_bid(), txdata: 0x45f203b1, value: 0x0
+Caller: [SOMEGUY], function: claim_timeout_winnings(address), txdata: 0xdeffa9676b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b, value: 0x0
+
+==== Exception State ====
+SWC ID: 110
+Severity: Medium
+Contract: Battleship
+Function name: claim_opponent_left(address)
+PC address: 7866
+Estimated Gas Usage: 3740 - 4590
+An assertion violation was triggered.
+It is possible to trigger an assertion violation. Note that Solidity assert() statements should only be used to check invariants. Review the transaction trace generated for this issue and either make sure your program logic is correct, or use require() instead of assert() if your goal is to constrain user inputs or enforce preconditions. Remember to validate inputs from both callers (for instance, via passed arguments) and callees (for instance, via return values).
+--------------------
+In file: Battleship.sol:211
+
+callFromOnePlayerWithOpponent(payable(opponent))
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0xe3890010301, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x1, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , value: 0x0
+Caller: [CREATOR], function: store_bid(), txdata: 0x45f203b1, value: 0x0
+Caller: [ATTACKER], function: claim_opponent_left(address), txdata: 0xa1fe3953b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1, value: 0x0
+
+==== Exception State ====
+SWC ID: 110
+Severity: Medium
+Contract: Battleship
+Function name: claim_timeout_winnings(address)
+PC address: 7866
+Estimated Gas Usage: 3761 - 4611
+An assertion violation was triggered.
+It is possible to trigger an assertion violation. Note that Solidity assert() statements should only be used to check invariants. Review the transaction trace generated for this issue and either make sure your program logic is correct, or use require() instead of assert() if your goal is to constrain user inputs or enforce preconditions. Remember to validate inputs from both callers (for instance, via passed arguments) and callees (for instance, via return values).
+--------------------
+In file: Battleship.sol:235
+
+callFromOnePlayerWithOpponent(payable(opponent))
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x1000, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x1, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , value: 0x0
+Caller: [SOMEGUY], function: store_bid(), txdata: 0x45f203b1, value: 0x0
+Caller: [ATTACKER], function: claim_timeout_winnings(address), txdata: 0xdeffa9676b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b, value: 0x0

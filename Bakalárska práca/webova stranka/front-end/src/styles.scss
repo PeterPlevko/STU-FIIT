@@ -1,0 +1,75 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$front-end-primary: mat.define-palette(mat.$indigo-palette);
+$front-end-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$front-end-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$front-end-theme: mat.define-light-theme((
+  color: (
+    primary: $front-end-primary,
+    accent: $front-end-accent,
+    warn: $front-end-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($front-end-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+html { background-color: rgb(225, 225, 225); }
+
+// popup on map cant take styles from anywhere else so they are here
+.popupMap{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.popupMap .title{
+  font-size: 20px;
+}
+
+.popupMap .popupMapPNoMargin{
+  margin: 0px;
+}
+
+.popupMap .popupMapButton{
+  margin-top: 5px;
+  box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
+  background-color: #ec6602; border:0;
+
+  min-width: 64px;
+  line-height: 36px;padding: 0 16px;
+  border-radius: 4px;
+}
+
+.popupMap .popupMapButton:hover{
+  background-color: rgb(253, 138, 51);
+  cursor: pointer;
+}
+
+.mat-raised-button:hover{
+  background-color: rgb(253, 138, 51) !important;
+}

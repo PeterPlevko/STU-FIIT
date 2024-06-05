@@ -1,0 +1,39 @@
+{
+	"info": {
+		"_postman_id": "6f05c2fc-4018-4ee7-b866-e4ec7a296d00",
+		"name": "uloha 8",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14763343"
+	},
+	"item": [
+		{
+			"name": "update",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"script\": {\r\n        \"source\": \"ctx._source.retweet_count++\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9200/tweets/_update/1247616214769086465",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"tweets",
+						"_update",
+						"1247616214769086465"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

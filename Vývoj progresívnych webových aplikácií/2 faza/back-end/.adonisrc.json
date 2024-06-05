@@ -1,0 +1,47 @@
+{
+  "typescript": true,
+  "commands": [
+    "./commands",
+    "@adonisjs/core/build/commands/index.js",
+    "@adonisjs/repl/build/commands",
+    "@adonisjs/lucid/build/commands"
+  ],
+  "exceptionHandlerNamespace": "App/Exceptions/Handler",
+  "aliases": {
+    "App": "app",
+    "Config": "config",
+    "Database": "database",
+    "Contracts": "contracts"
+  },
+  "preloads": [
+    "./start/routes",
+    "./start/kernel",
+    {
+      "file": "./start/wsKernel",
+      "environment": [
+        "web",
+        "test"
+      ],
+      "optional": true
+    },
+    {
+      "file": "./start/socket",
+      "environment": [
+        "web",
+        "test"
+      ],
+      "optional": true
+    },
+    "./start/orm"
+  ],
+  "providers": [
+    "./providers/AppProvider",
+    "@adonisjs/core",
+    "@adonisjs/lucid",
+    "@adonisjs/auth",
+    "@ruby184/adonis-socket.io"
+  ],
+  "aceProviders": [
+    "@adonisjs/repl"
+  ]
+}

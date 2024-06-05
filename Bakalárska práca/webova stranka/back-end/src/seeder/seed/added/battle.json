@@ -1,0 +1,72 @@
+[
+    {
+        "name": "boj 1",
+        "GPS": "49.211118 18.552624",
+        "startDate": "1/1/1918",
+        "endDate": "2/1/1918",
+        "result": "víťazstvo 1",
+        "austriaHungaryArmy": "armáda 1",
+        "austriaHungaryArmyNumber": 100,
+        "russianArmyNumber": 100,
+        "russianArmy": "armáda 1",
+        "note": "poznámka 1",
+        "state": "confirmed",
+        "addedBy": "kuntox"
+    },
+    {
+        "name": "boj 2",
+        "GPS": "48.263592 17.631536",
+        "startDate": "1/1/1915",
+        "endDate": "2/1/1918",
+        "result": "víťazstvo 2",
+        "austriaHungaryArmy": "armáda 2",
+        "austriaHungaryArmyNumber": 100,
+        "russianArmyNumber": 100,
+        "russianArmy": "armáda 2",
+        "note": "poznámka 2",
+        "state": "confirmed",
+        "addedBy": "kuntox"
+    },
+    {
+        "name": "boj 3",
+        "GPS": "48.881475 21.523557",
+        "startDate": "1/1/1916",
+        "endDate": "2/1/1918",
+        "result": "víťazstvo 3",
+        "austriaHungaryArmy": "armáda 3",
+        "austriaHungaryArmyNumber": 100,
+        "russianArmyNumber": 100,
+        "russianArmy": "armáda 3",
+        "note": "poznámka 3",
+        "state": "confirmed",
+        "addedBy": "kuntox"
+    },
+    {
+        "name": "boj 4",
+        "GPS": "48.181451 19.124333",
+        "startDate": "1/1/1917",
+        "endDate": "2/1/1918",
+        "result": "víťazstvo 3",
+        "austriaHungaryArmy": "armáda 3",
+        "austriaHungaryArmyNumber": 100,
+        "russianArmyNumber": 100,
+        "russianArmy": "armáda 3",
+        "note": "poznámka 3",
+        "state": "confirmed",
+        "addedBy": "kuntox"
+    },
+    {
+        "name": "boj 5",
+        "GPS": "49.153668 18.453674",
+        "startDate": "1/1/1914",
+        "endDate": "2/1/1918",
+        "result": "víťazstvo 3",
+        "austriaHungaryArmy": "armáda 3",
+        "austriaHungaryArmyNumber": 100,
+        "russianArmyNumber": 100,
+        "russianArmy": "armáda 3",
+        "note": "poznámka 3",
+        "state": "confirmed",
+        "addedBy": "kuntox"
+    }
+]

@@ -1,0 +1,1 @@
+Niektoré funkcie bežia dlhšie tak prikladáme pdf verziu jupyter notebooku. 

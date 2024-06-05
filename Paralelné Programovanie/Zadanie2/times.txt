@@ -1,0 +1,15 @@
+reso: 600 x 400
+def: 0.135s
+OMP: 0.24s
+MPI: 0.4s
+
+reso: 6000 x 4000
+def: 13.4s
+OMP: 2.4s
+MPI: 2.45s
+
+OMP 6: 3.95s
+OMP 3: 7.77s
+
+MPI 3 3: 4s
+MPI 1 1: 6.61s

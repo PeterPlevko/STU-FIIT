@@ -1,0 +1,3619 @@
+{
+	"info": {
+		"_postman_id": "02acdabe-d916-4e63-ab95-f17be18f6c70",
+		"name": "Articles API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "All articles",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}",
+							"host": [
+								"{{baseUrl}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}",
+									"host": [
+										"{{baseUrl}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "10.21.254.101"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 28 Mar 2022 11:11:10 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 28 Mar 2022 11:11:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "56"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:80"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 32,\n        \"title\": \"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa aasda asda asd asd asd\",\n        \"category\": \"tips\",\n        \"created_at\": \"2022-03-12T14:38:55.000000Z\",\n        \"updated_at\": \"2022-03-12T14:38:55.000000Z\",\n        \"user_id\": 2,\n        \"user\": {\n            \"id\": 2,\n            \"name\": \"Mr. Alexandre Spinka PhD\",\n            \"email\": \"blanda.whitney@example.net\",\n            \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"role\": \"ADMIN\",\n            \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n        }\n    },\n    {\n        \"id\": 31,\n        \"title\": \"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa aasda asda asd asd asd\",\n        \"category\": \"howto\",\n        \"created_at\": \"2022-03-12T14:38:24.000000Z\",\n        \"updated_at\": \"2022-03-12T14:38:24.000000Z\",\n        \"user_id\": 2,\n        \"user\": {\n            \"id\": 2,\n            \"name\": \"Mr. Alexandre Spinka PhD\",\n            \"email\": \"blanda.whitney@example.net\",\n            \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"role\": \"ADMIN\",\n            \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n        }\n    },\n    {\n        \"id\": 30,\n        \"title\": \"a\",\n        \"category\": \"tips\",\n        \"created_at\": \"2022-03-12T14:38:16.000000Z\",\n        \"updated_at\": \"2022-03-12T14:38:16.000000Z\",\n        \"user_id\": 2,\n        \"user\": {\n            \"id\": 2,\n            \"name\": \"Mr. Alexandre Spinka PhD\",\n            \"email\": \"blanda.whitney@example.net\",\n            \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"role\": \"ADMIN\",\n            \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n        }\n    },\n    {\n        \"id\": 29,\n        \"title\": \"a\",\n        \"category\": \"tips\",\n        \"created_at\": \"2022-03-12T14:37:59.000000Z\",\n        \"updated_at\": \"2022-03-12T14:37:59.000000Z\",\n        \"user_id\": 2,\n        \"user\": {\n            \"id\": 2,\n            \"name\": \"Mr. Alexandre Spinka PhD\",\n            \"email\": \"blanda.whitney@example.net\",\n            \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"role\": \"ADMIN\",\n            \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n        }\n    },\n    {\n        \"id\": 28,\n        \"title\": \"a\",\n        \"category\": \"howto\",\n        \"created_at\": \"2022-03-12T14:37:49.000000Z\",\n        \"updated_at\": \"2022-03-12T14:37:49.000000Z\",\n        \"user_id\": 2,\n        \"user\": {\n            \"id\": 2,\n            \"name\": \"Mr. Alexandre Spinka PhD\",\n            \"email\": \"blanda.whitney@example.net\",\n            \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"role\": \"ADMIN\",\n            \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n        }\n    },\n    {\n        \"id\": 27,\n        \"title\": \"a\",\n        \"category\": \"tips\",\n        \"created_at\": \"2022-03-12T14:37:40.000000Z\",\n        \"updated_at\": \"2022-03-12T14:37:40.000000Z\",\n        \"user_id\": 2,\n        \"user\": {\n            \"id\": 2,\n            \"name\": \"Mr. Alexandre Spinka PhD\",\n            \"email\": \"blanda.whitney@example.net\",\n            \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"role\": \"ADMIN\",\n            \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n        }\n    },\n    {\n        \"id\": 26,\n        \"title\": \"a\",\n        \"category\": \"tips\",\n        \"created_at\": \"2022-03-12T14:37:28.000000Z\",\n        \"updated_at\": \"2022-03-12T14:37:28.000000Z\",\n        \"user_id\": 2,\n        \"user\": {\n            \"id\": 2,\n            \"name\": \"Mr. Alexandre Spinka PhD\",\n            \"email\": \"blanda.whitney@example.net\",\n            \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"role\": \"ADMIN\",\n            \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n        }\n    },\n    {\n        \"id\": 25,\n        \"title\": \"a\",\n        \"category\": \"a\",\n        \"created_at\": \"2022-03-12T14:36:36.000000Z\",\n        \"updated_at\": \"2022-03-12T14:36:36.000000Z\",\n        \"user_id\": 2,\n        \"user\": {\n            \"id\": 2,\n            \"name\": \"Mr. Alexandre Spinka PhD\",\n            \"email\": \"blanda.whitney@example.net\",\n            \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"role\": \"ADMIN\",\n            \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n        }\n    },\n    {\n        \"id\": 24,\n        \"title\": \"a\",\n        \"category\": \"a\",\n        \"created_at\": \"2022-03-12T14:36:29.000000Z\",\n        \"updated_at\": \"2022-03-12T14:36:29.000000Z\",\n        \"user_id\": 2,\n        \"user\": {\n            \"id\": 2,\n            \"name\": \"Mr. Alexandre Spinka PhD\",\n            \"email\": \"blanda.whitney@example.net\",\n            \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"role\": \"ADMIN\",\n            \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n        }\n    },\n    {\n        \"id\": 23,\n        \"title\": \"a\",\n        \"category\": \"howto\",\n        \"created_at\": \"2022-03-12T14:36:23.000000Z\",\n        \"updated_at\": \"2022-03-12T14:36:23.000000Z\",\n        \"user_id\": 2,\n        \"user\": {\n            \"id\": 2,\n            \"name\": \"Mr. Alexandre Spinka PhD\",\n            \"email\": \"blanda.whitney@example.net\",\n            \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"role\": \"ADMIN\",\n            \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n        }\n    },\n    {\n        \"id\": 22,\n        \"title\": \"a\",\n        \"category\": \"a\",\n        \"created_at\": \"2022-03-12T14:36:18.000000Z\",\n        \"updated_at\": \"2022-03-12T14:36:18.000000Z\",\n        \"user_id\": 2,\n        \"user\": {\n            \"id\": 2,\n            \"name\": \"Mr. Alexandre Spinka PhD\",\n            \"email\": \"blanda.whitney@example.net\",\n            \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"role\": \"ADMIN\",\n            \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n        }\n    },\n    {\n        \"id\": 21,\n        \"title\": \"a\",\n        \"category\": \"a\",\n        \"created_at\": \"2022-03-12T14:36:13.000000Z\",\n        \"updated_at\": \"2022-03-12T14:36:13.000000Z\",\n        \"user_id\": 2,\n        \"user\": {\n            \"id\": 2,\n            \"name\": \"Mr. Alexandre Spinka PhD\",\n            \"email\": \"blanda.whitney@example.net\",\n            \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"role\": \"ADMIN\",\n            \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n        }\n    },\n    {\n        \"id\": 20,\n        \"title\": \"a\",\n        \"category\": \"a\",\n        \"created_at\": \"2022-03-12T14:36:05.000000Z\",\n        \"updated_at\": \"2022-03-12T14:36:05.000000Z\",\n        \"user_id\": 2,\n        \"user\": {\n            \"id\": 2,\n            \"name\": \"Mr. Alexandre Spinka PhD\",\n            \"email\": \"blanda.whitney@example.net\",\n            \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"role\": \"ADMIN\",\n            \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n        }\n    },\n    {\n        \"id\": 19,\n        \"title\": \"a\",\n        \"category\": \"a\",\n        \"created_at\": \"2022-03-12T14:35:54.000000Z\",\n        \"updated_at\": \"2022-03-12T14:35:54.000000Z\",\n        \"user_id\": 2,\n        \"user\": {\n            \"id\": 2,\n            \"name\": \"Mr. Alexandre Spinka PhD\",\n            \"email\": \"blanda.whitney@example.net\",\n            \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"role\": \"ADMIN\",\n            \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n        }\n    },\n    {\n        \"id\": 18,\n        \"title\": \"a\",\n        \"category\": \"a\",\n        \"created_at\": \"2022-03-12T14:35:49.000000Z\",\n        \"updated_at\": \"2022-03-12T14:35:49.000000Z\",\n        \"user_id\": 2,\n        \"user\": {\n            \"id\": 2,\n            \"name\": \"Mr. Alexandre Spinka PhD\",\n            \"email\": \"blanda.whitney@example.net\",\n            \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"role\": \"ADMIN\",\n            \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n        }\n    },\n    {\n        \"id\": 17,\n        \"title\": \"a\",\n        \"category\": \"a\",\n        \"created_at\": \"2022-03-12T14:35:30.000000Z\",\n        \"updated_at\": \"2022-03-12T14:35:30.000000Z\",\n        \"user_id\": 2,\n        \"user\": {\n            \"id\": 2,\n            \"name\": \"Mr. Alexandre Spinka PhD\",\n            \"email\": \"blanda.whitney@example.net\",\n            \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"role\": \"ADMIN\",\n            \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n        }\n    },\n    {\n        \"id\": 16,\n        \"title\": \"a\",\n        \"category\": \"a\",\n        \"created_at\": \"2022-03-12T14:34:17.000000Z\",\n        \"updated_at\": \"2022-03-12T14:34:17.000000Z\",\n        \"user_id\": 2,\n        \"user\": {\n            \"id\": 2,\n            \"name\": \"Mr. Alexandre Spinka PhD\",\n            \"email\": \"blanda.whitney@example.net\",\n            \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"role\": \"ADMIN\",\n            \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n        }\n    },\n    {\n        \"id\": 15,\n        \"title\": \"a\",\n        \"category\": \"a\",\n        \"created_at\": \"2022-03-12T14:34:09.000000Z\",\n        \"updated_at\": \"2022-03-12T14:34:09.000000Z\",\n        \"user_id\": 2,\n        \"user\": {\n            \"id\": 2,\n            \"name\": \"Mr. Alexandre Spinka PhD\",\n            \"email\": \"blanda.whitney@example.net\",\n            \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"role\": \"ADMIN\",\n            \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n        }\n    },\n    {\n        \"id\": 14,\n        \"title\": \"a\",\n        \"category\": \"a\",\n        \"created_at\": \"2022-03-12T14:34:02.000000Z\",\n        \"updated_at\": \"2022-03-12T14:34:02.000000Z\",\n        \"user_id\": 2,\n        \"user\": {\n            \"id\": 2,\n            \"name\": \"Mr. Alexandre Spinka PhD\",\n            \"email\": \"blanda.whitney@example.net\",\n            \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"role\": \"ADMIN\",\n            \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n        }\n    },\n    {\n        \"id\": 13,\n        \"title\": \"a\",\n        \"category\": \"a\",\n        \"created_at\": \"2022-03-12T14:33:53.000000Z\",\n        \"updated_at\": \"2022-03-12T14:33:53.000000Z\",\n        \"user_id\": 2,\n        \"user\": {\n            \"id\": 2,\n            \"name\": \"Mr. Alexandre Spinka PhD\",\n            \"email\": \"blanda.whitney@example.net\",\n            \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"role\": \"ADMIN\",\n            \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n        }\n    },\n    {\n        \"id\": 12,\n        \"title\": \"a\",\n        \"category\": \"a\",\n        \"created_at\": \"2022-03-12T14:33:41.000000Z\",\n        \"updated_at\": \"2022-03-12T14:33:41.000000Z\",\n        \"user_id\": 2,\n        \"user\": {\n            \"id\": 2,\n            \"name\": \"Mr. Alexandre Spinka PhD\",\n            \"email\": \"blanda.whitney@example.net\",\n            \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"role\": \"ADMIN\",\n            \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n        }\n    },\n    {\n        \"id\": 11,\n        \"title\": \"a\",\n        \"category\": \"a\",\n        \"created_at\": \"2022-03-12T14:29:34.000000Z\",\n        \"updated_at\": \"2022-03-12T14:29:34.000000Z\",\n        \"user_id\": 2,\n        \"user\": {\n            \"id\": 2,\n            \"name\": \"Mr. Alexandre Spinka PhD\",\n            \"email\": \"blanda.whitney@example.net\",\n            \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"role\": \"ADMIN\",\n            \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n        }\n    },\n    {\n        \"id\": 10,\n        \"title\": \"a\",\n        \"category\": \"a\",\n        \"created_at\": \"2022-03-12T14:29:21.000000Z\",\n        \"updated_at\": \"2022-03-12T14:29:21.000000Z\",\n        \"user_id\": 2,\n        \"user\": {\n            \"id\": 2,\n            \"name\": \"Mr. Alexandre Spinka PhD\",\n            \"email\": \"blanda.whitney@example.net\",\n            \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"role\": \"ADMIN\",\n            \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n        }\n    },\n    {\n        \"id\": 7,\n        \"title\": \"s\",\n        \"category\": \"howto\",\n        \"created_at\": \"2022-03-12T09:53:53.000000Z\",\n        \"updated_at\": \"2022-03-12T10:14:12.000000Z\",\n        \"user_id\": 2,\n        \"user\": {\n            \"id\": 2,\n            \"name\": \"Mr. Alexandre Spinka PhD\",\n            \"email\": \"blanda.whitney@example.net\",\n            \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"role\": \"ADMIN\",\n            \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n        }\n    },\n    {\n        \"id\": 6,\n        \"title\": \"a\",\n        \"category\": \"a\",\n        \"created_at\": \"2022-03-12T09:52:26.000000Z\",\n        \"updated_at\": \"2022-03-12T09:52:26.000000Z\",\n        \"user_id\": 2,\n        \"user\": {\n            \"id\": 2,\n            \"name\": \"Mr. Alexandre Spinka PhD\",\n            \"email\": \"blanda.whitney@example.net\",\n            \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"role\": \"ADMIN\",\n            \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n        }\n    },\n    {\n        \"id\": 5,\n        \"title\": \"a\",\n        \"category\": \"a\",\n        \"created_at\": \"2022-03-12T09:51:59.000000Z\",\n        \"updated_at\": \"2022-03-12T09:51:59.000000Z\",\n        \"user_id\": 2,\n        \"user\": {\n            \"id\": 2,\n            \"name\": \"Mr. Alexandre Spinka PhD\",\n            \"email\": \"blanda.whitney@example.net\",\n            \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"role\": \"ADMIN\",\n            \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n        }\n    },\n    {\n        \"id\": 4,\n        \"title\": \"a\",\n        \"category\": \"a\",\n        \"created_at\": \"2022-03-12T09:50:45.000000Z\",\n        \"updated_at\": \"2022-03-12T09:50:45.000000Z\",\n        \"user_id\": 2,\n        \"user\": {\n            \"id\": 2,\n            \"name\": \"Mr. Alexandre Spinka PhD\",\n            \"email\": \"blanda.whitney@example.net\",\n            \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"role\": \"ADMIN\",\n            \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n        }\n    },\n    {\n        \"id\": 3,\n        \"title\": \"a\",\n        \"category\": \"a\",\n        \"created_at\": \"2022-03-12T09:45:57.000000Z\",\n        \"updated_at\": \"2022-03-12T09:45:57.000000Z\",\n        \"user_id\": 2,\n        \"user\": {\n            \"id\": 2,\n            \"name\": \"Mr. Alexandre Spinka PhD\",\n            \"email\": \"blanda.whitney@example.net\",\n            \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"role\": \"ADMIN\",\n            \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n        }\n    },\n    {\n        \"id\": 2,\n        \"title\": \"a\",\n        \"category\": \"howto\",\n        \"created_at\": \"2022-03-12T09:45:28.000000Z\",\n        \"updated_at\": \"2022-03-12T09:45:28.000000Z\",\n        \"user_id\": 2,\n        \"user\": {\n            \"id\": 2,\n            \"name\": \"Mr. Alexandre Spinka PhD\",\n            \"email\": \"blanda.whitney@example.net\",\n            \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"role\": \"ADMIN\",\n            \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n        }\n    },\n    {\n        \"id\": 1,\n        \"title\": \"Title for article 1\",\n        \"category\": \"howto\",\n        \"created_at\": \"2022-03-11T20:07:09.000000Z\",\n        \"updated_at\": \"2022-03-27T15:42:01.000000Z\",\n        \"user_id\": 1,\n        \"user\": {\n            \"id\": 1,\n            \"name\": \"Ernestine Kessler\",\n            \"email\": \"reese63@example.com\",\n            \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"role\": \"USER\",\n            \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n        }\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Howto articles",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/latest/howto",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"latest",
+								"howto"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/latest/howto",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"latest",
+										"howto"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 27 Mar 2022 12:41:43 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 27 Mar 2022 12:41:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:80"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 31,\n        \"title\": \"a\",\n        \"category\": \"howto\",\n        \"created_at\": \"2022-03-12T14:38:24.000000Z\",\n        \"updated_at\": \"2022-03-12T14:38:24.000000Z\",\n        \"user_id\": 2,\n        \"user\": {\n            \"id\": 2,\n            \"name\": \"Mr. Alexandre Spinka PhD\",\n            \"email\": \"blanda.whitney@example.net\",\n            \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"role\": \"ADMIN\",\n            \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n        }\n    },\n    {\n        \"id\": 28,\n        \"title\": \"a\",\n        \"category\": \"howto\",\n        \"created_at\": \"2022-03-12T14:37:49.000000Z\",\n        \"updated_at\": \"2022-03-12T14:37:49.000000Z\",\n        \"user_id\": 2,\n        \"user\": {\n            \"id\": 2,\n            \"name\": \"Mr. Alexandre Spinka PhD\",\n            \"email\": \"blanda.whitney@example.net\",\n            \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"role\": \"ADMIN\",\n            \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n        }\n    },\n    {\n        \"id\": 23,\n        \"title\": \"a\",\n        \"category\": \"howto\",\n        \"created_at\": \"2022-03-12T14:36:23.000000Z\",\n        \"updated_at\": \"2022-03-12T14:36:23.000000Z\",\n        \"user_id\": 2,\n        \"user\": {\n            \"id\": 2,\n            \"name\": \"Mr. Alexandre Spinka PhD\",\n            \"email\": \"blanda.whitney@example.net\",\n            \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"role\": \"ADMIN\",\n            \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n        }\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Tips & Tricks articles",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/latest/tips",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"latest",
+								"tips"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/latest/tips",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"latest",
+										"tips"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 27 Mar 2022 12:41:58 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 27 Mar 2022 12:41:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:80"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 32,\n        \"title\": \"a\",\n        \"category\": \"tips\",\n        \"created_at\": \"2022-03-12T14:38:55.000000Z\",\n        \"updated_at\": \"2022-03-12T14:38:55.000000Z\",\n        \"user_id\": 2,\n        \"user\": {\n            \"id\": 2,\n            \"name\": \"Mr. Alexandre Spinka PhD\",\n            \"email\": \"blanda.whitney@example.net\",\n            \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"role\": \"ADMIN\",\n            \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n        }\n    },\n    {\n        \"id\": 30,\n        \"title\": \"a\",\n        \"category\": \"tips\",\n        \"created_at\": \"2022-03-12T14:38:16.000000Z\",\n        \"updated_at\": \"2022-03-12T14:38:16.000000Z\",\n        \"user_id\": 2,\n        \"user\": {\n            \"id\": 2,\n            \"name\": \"Mr. Alexandre Spinka PhD\",\n            \"email\": \"blanda.whitney@example.net\",\n            \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"role\": \"ADMIN\",\n            \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n        }\n    },\n    {\n        \"id\": 29,\n        \"title\": \"a\",\n        \"category\": \"tips\",\n        \"created_at\": \"2022-03-12T14:37:59.000000Z\",\n        \"updated_at\": \"2022-03-12T14:37:59.000000Z\",\n        \"user_id\": 2,\n        \"user\": {\n            \"id\": 2,\n            \"name\": \"Mr. Alexandre Spinka PhD\",\n            \"email\": \"blanda.whitney@example.net\",\n            \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"role\": \"ADMIN\",\n            \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n        }\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Specific article",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/{{article_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"{{article_id}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/{{article_id}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"{{article_id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "10.21.254.101"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 28 Mar 2022 11:07:02 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 28 Mar 2022 11:07:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:80"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"text\": \"Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \\\"de Finibus Bonorum et Malorum\\\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \\\"Lorem ipsum dolor sit amet..\\\", comes from a line in section 1.10.32.\\n\\nThe standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \\\"de Finibus Bonorum et Malorum\\\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.\",\n    \"title\": \"Title for article 1\",\n    \"category\": \"howto\",\n    \"user_id\": 1,\n    \"created_at\": \"2022-03-11T20:07:09.000000Z\",\n    \"updated_at\": \"2022-03-27T15:42:01.000000Z\",\n    \"articles_asset\": [\n        {\n            \"id\": 1,\n            \"name\": \"test.sql\",\n            \"type\": \"text/plain\",\n            \"article_id\": 1,\n            \"created_at\": \"2022-03-12T09:53:53.000000Z\",\n            \"updated_at\": \"2022-03-12T09:53:53.000000Z\"\n        },\n        {\n            \"id\": 21,\n            \"name\": \"CarFront.jpg\",\n            \"type\": \"image/jpeg\",\n            \"article_id\": 1,\n            \"created_at\": \"2022-03-27T15:57:26.000000Z\",\n            \"updated_at\": \"2022-03-27T15:57:26.000000Z\"\n        }\n    ],\n    \"user\": {\n        \"id\": 1,\n        \"name\": \"Ernestine Kessler\",\n        \"email\": \"reese63@example.com\",\n        \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n        \"role\": \"USER\",\n        \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n        \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n    }\n}"
+						},
+						{
+							"name": "404 not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/{{article_id_404}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"{{article_id_404}}"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Mar 2022 14:47:43 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Mar 2022 14:47:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:3000"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"No query results for model [App\\\\Models\\\\Article] 500\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Article Asset contents",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/{{article_id}}/assets/{{asset_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"{{article_id}}",
+								"assets",
+								"{{asset_id}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/{{article_id}}/assets/{{asset_id}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"{{article_id}}",
+										"assets",
+										"{{asset_id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Mar 2022 09:59:31 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Mar 2022 09:59:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.7"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain; charset=UTF-8"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "56"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:3000"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date"
+								}
+							],
+							"body": "Test 01;1970;25;CZ;Komedia;video1.mp4;2Guns;nothing\nTest 02;1970;25;SK;Komedia;video2.mp4;2Guns;nothing\nTest 03;1970;25;SK;Komedia;video4.mp4;2Guns;nothing\n"
+						},
+						{
+							"name": "404 not found - article",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/{{article_id_404}}/assets/{{asset_id}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"{{article_id_404}}",
+										"assets",
+										"{{asset_id}}"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Mar 2022 14:48:02 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Mar 2022 14:48:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:3000"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"No query results for model [App\\\\Models\\\\Article] 500\"\n}"
+						},
+						{
+							"name": "404 not found - asset",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/{{article_id}}/assets/{{asset_id_404}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"{{article_id}}",
+										"assets",
+										"{{asset_id_404}}"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Mar 2022 14:48:30 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Mar 2022 14:48:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:3000"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"No query results for model [App\\\\Models\\\\ArticlesAsset] 500\"\n}"
+						},
+						{
+							"name": "404 Not found in current context",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/{{article_id_406}}/assets/{{asset_id}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"{{article_id_406}}",
+										"assets",
+										"{{asset_id}}"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 23 Mar 2022 08:40:22 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 23 Mar 2022 08:40:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:80"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Not found in current context\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Search articles by title",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Title\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/search",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"search"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Title\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/search",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"search"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "10.21.254.101"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 28 Mar 2022 11:11:57 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 28 Mar 2022 11:11:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:80"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"text\": \"Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \\\"de Finibus Bonorum et Malorum\\\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \\\"Lorem ipsum dolor sit amet..\\\", comes from a line in section 1.10.32.\\n\\nThe standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \\\"de Finibus Bonorum et Malorum\\\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.\",\n        \"title\": \"Title for article 1\",\n        \"category\": \"howto\",\n        \"user_id\": 1,\n        \"created_at\": \"2022-03-11T20:07:09.000000Z\",\n        \"updated_at\": \"2022-03-27T15:42:01.000000Z\",\n        \"user\": {\n            \"id\": 1,\n            \"name\": \"Ernestine Kessler\",\n            \"email\": \"reese63@example.com\",\n            \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"role\": \"USER\",\n            \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n        }\n    }\n]"
+						},
+						{
+							"name": "422 missing input",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/search",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"search"
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 13 Mar 2022 09:23:50 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 13 Mar 2022 09:23:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:3000"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"The title field is required.\",\n    \"errors\": {\n        \"title\": [\n            \"The title field is required.\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "422 incorrect input",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/search",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"search"
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 13 Mar 2022 09:24:07 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 13 Mar 2022 09:24:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:3000"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"The title must not be greater than 250 characters.\",\n    \"errors\": {\n        \"title\": [\n            \"The title must not be greater than 250 characters.\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Create new article",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "text",
+									"value": "Something",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}",
+							"host": [
+								"{{baseUrl}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "401 Unauthorized",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}",
+									"host": [
+										"{{baseUrl}}"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 11 Mar 2022 20:37:09 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 11 Mar 2022 20:37:09 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:3000"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Unauthorized\"\n}"
+						},
+						{
+							"name": "403 Forbidden",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "text",
+											"value": "Something",
+											"type": "text"
+										},
+										{
+											"key": "title",
+											"value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+											"type": "text"
+										},
+										{
+											"key": "category",
+											"value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}",
+									"host": [
+										"{{baseUrl}}"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 23 Mar 2022 08:13:24 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 23 Mar 2022 08:13:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:80"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Forbidden\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Edit existing article",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Unauthorized\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/{{article_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"{{article_id}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "401 Unauthorized",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Unauthorized\"\r\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/{{article_id}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"{{article_id}}"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Mar 2022 10:17:44 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Mar 2022 10:17:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "56"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:3000"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Unauthorized\"\n}"
+						},
+						{
+							"name": "403 Forbidden",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Unauthorized\"\r\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/{{article_id}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"{{article_id}}"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 23 Mar 2022 08:13:52 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 23 Mar 2022 08:13:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:80"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Forbidden\"\n}"
+						},
+						{
+							"name": "404 Not found",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Unauthorized\"\r\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/{{article_id_404}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"{{article_id_404}}"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Mar 2022 14:49:27 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Mar 2022 14:49:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:3000"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"No query results for model [App\\\\Models\\\\Article] 500\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Add asset to article",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/{{article_id}}/assets",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"{{article_id}}",
+								"assets"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "401 Unauthorized",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/{{article_id}}/assets",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"{{article_id}}",
+										"assets"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Mar 2022 12:04:39 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Mar 2022 12:04:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:3000"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Unauthorized\"\n}"
+						},
+						{
+							"name": "403 Forbidden",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/{{article_id}}/assets",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"{{article_id}}",
+										"assets"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 23 Mar 2022 08:14:43 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 23 Mar 2022 08:14:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:80"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Forbidden\"\n}"
+						},
+						{
+							"name": "404 Not found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/{{article_id_404}}/assets",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"{{article_id_404}}",
+										"assets"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Mar 2022 14:49:49 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Mar 2022 14:49:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:3000"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"No query results for model [App\\\\Models\\\\Article] 500\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Remove asset",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/{{article_id}}/assets/{{asset_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"{{article_id}}",
+								"assets",
+								"{{asset_id}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "401 Unauthorized",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/{{article_id}}/assets/{{asset_id}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"{{article_id}}",
+										"assets",
+										"{{asset_id}}"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Mar 2022 12:05:38 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Mar 2022 12:05:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:3000"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Unauthorized\"\n}"
+						},
+						{
+							"name": "403 Forbidden",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/{{article_id}}/assets/{{asset_id}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"{{article_id}}",
+										"assets",
+										"{{asset_id}}"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 23 Mar 2022 08:15:19 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 23 Mar 2022 08:15:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:80"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Forbidden\"\n}"
+						},
+						{
+							"name": "404 not found - article",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/{{article_id_404}}/assets/{{asset_id}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"{{article_id_404}}",
+										"assets",
+										"{{asset_id}}"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Mar 2022 14:50:10 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Mar 2022 14:50:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:3000"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"No query results for model [App\\\\Models\\\\Article] 500\"\n}"
+						},
+						{
+							"name": "404 not found - asset",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/{{article_id}}/assets/{{asset_id_404}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"{{article_id}}",
+										"assets",
+										"{{asset_id_404}}"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Mar 2022 14:50:24 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Mar 2022 14:50:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "56"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:3000"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"No query results for model [App\\\\Models\\\\ArticlesAsset] 500\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Remove article",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/{{article_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"{{article_id}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "401 Unauthorized",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/{{article_id}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"{{article_id}}"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Mar 2022 11:54:10 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Mar 2022 11:54:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:3000"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Unauthorized\"\n}"
+						},
+						{
+							"name": "403 Forbidden",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/{{article_id}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"{{article_id}}"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 23 Mar 2022 08:15:46 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 23 Mar 2022 08:15:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:80"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Forbidden\"\n}"
+						},
+						{
+							"name": "404 not found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/{{article_id_404}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"{{article_id_404}}"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Mar 2022 14:50:53 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Mar 2022 14:50:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:3000"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"No query results for model [App\\\\Models\\\\Article] 500\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Create new article",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "titul 2",
+									"type": "text"
+								},
+								{
+									"key": "text",
+									"value": "The standard Lorem Ipsum passage, used since the 1500s\n\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"\n\nSection 1.10.32 of \"de Finibus Bonorum et Malorum\", written by Cicero in 45 BC\n\"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?\"\n\n1914 translation by H. Rackham\n\"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?\"\n\nSection 1.10.33 of \"de Finibus Bonorum et Malorum\", written by Cicero in 45 BC\n\"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.\"\n\n1914 translation by H. Rackham\n\"On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.\"",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "a",
+									"type": "text"
+								},
+								{
+									"key": "files[]",
+									"type": "file",
+									"src": [
+										"/C:/Users/Developer/Documents/Example/chromedriver.ps1",
+										"/C:/Users/Developer/Documents/Example/Jeep.jpg",
+										"/C:/Users/Developer/Documents/Example/movie.csv",
+										"/C:/Users/Developer/Documents/Example/renault_boot.jpg",
+										"/C:/Users/Developer/Documents/Example/renault_front.jpg"
+									]
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}",
+							"host": [
+								"{{baseUrl}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "titul 2",
+											"type": "text"
+										},
+										{
+											"key": "text",
+											"value": "The standard Lorem Ipsum passage, used since the 1500s\n\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"\n\nSection 1.10.32 of \"de Finibus Bonorum et Malorum\", written by Cicero in 45 BC\n\"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?\"\n\n1914 translation by H. Rackham\n\"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?\"\n\nSection 1.10.33 of \"de Finibus Bonorum et Malorum\", written by Cicero in 45 BC\n\"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.\"\n\n1914 translation by H. Rackham\n\"On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.\"",
+											"type": "text"
+										},
+										{
+											"key": "category",
+											"value": "a",
+											"type": "text"
+										},
+										{
+											"key": "files[]",
+											"type": "file",
+											"src": [
+												"/C:/Users/Developer/Documents/Example/chromedriver.ps1",
+												"/C:/Users/Developer/Documents/Example/Jeep.jpg",
+												"/C:/Users/Developer/Documents/Example/movie.csv",
+												"/C:/Users/Developer/Documents/Example/renault_boot.jpg",
+												"/C:/Users/Developer/Documents/Example/renault_front.jpg"
+											]
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}",
+									"host": [
+										"{{baseUrl}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "10.21.254.101"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 28 Mar 2022 11:14:39 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 28 Mar 2022 11:14:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:80"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"text\": \"The standard Lorem Ipsum passage, used since the 1500s\\n\\\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\\\"\\n\\nSection 1.10.32 of \\\"de Finibus Bonorum et Malorum\\\", written by Cicero in 45 BC\\n\\\"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?\\\"\\n\\n1914 translation by H. Rackham\\n\\\"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?\\\"\\n\\nSection 1.10.33 of \\\"de Finibus Bonorum et Malorum\\\", written by Cicero in 45 BC\\n\\\"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.\\\"\\n\\n1914 translation by H. Rackham\\n\\\"On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.\\\"\",\n    \"title\": \"titul 2\",\n    \"category\": \"a\",\n    \"user_id\": 2,\n    \"updated_at\": \"2022-03-28T11:14:39.000000Z\",\n    \"created_at\": \"2022-03-28T11:14:39.000000Z\",\n    \"id\": 34,\n    \"articles_asset\": [\n        {\n            \"id\": 22,\n            \"name\": \"chromedriver.ps1\",\n            \"type\": \"text/plain\",\n            \"article_id\": 34,\n            \"created_at\": \"2022-03-28T11:14:39.000000Z\",\n            \"updated_at\": \"2022-03-28T11:14:39.000000Z\"\n        },\n        {\n            \"id\": 23,\n            \"name\": \"Jeep.jpg\",\n            \"type\": \"image/jpeg\",\n            \"article_id\": 34,\n            \"created_at\": \"2022-03-28T11:14:39.000000Z\",\n            \"updated_at\": \"2022-03-28T11:14:39.000000Z\"\n        },\n        {\n            \"id\": 24,\n            \"name\": \"movie.csv\",\n            \"type\": \"text/plain\",\n            \"article_id\": 34,\n            \"created_at\": \"2022-03-28T11:14:39.000000Z\",\n            \"updated_at\": \"2022-03-28T11:14:39.000000Z\"\n        },\n        {\n            \"id\": 25,\n            \"name\": \"renault_boot.jpg\",\n            \"type\": \"image/jpeg\",\n            \"article_id\": 34,\n            \"created_at\": \"2022-03-28T11:14:39.000000Z\",\n            \"updated_at\": \"2022-03-28T11:14:39.000000Z\"\n        },\n        {\n            \"id\": 26,\n            \"name\": \"renault_front.jpg\",\n            \"type\": \"image/jpeg\",\n            \"article_id\": 34,\n            \"created_at\": \"2022-03-28T11:14:39.000000Z\",\n            \"updated_at\": \"2022-03-28T11:14:39.000000Z\"\n        }\n    ],\n    \"user\": {\n        \"id\": 2,\n        \"name\": \"Mr. Alexandre Spinka PhD\",\n        \"email\": \"blanda.whitney@example.net\",\n        \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n        \"role\": \"ADMIN\",\n        \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n        \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n    }\n}"
+						},
+						{
+							"name": "422 missing input",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{baseUrl}}",
+									"host": [
+										"{{baseUrl}}"
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Mar 2022 09:40:12 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Mar 2022 09:40:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:3000"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"The text field is required. (and 2 more errors)\",\n    \"errors\": {\n        \"text\": [\n            \"The text field is required.\"\n        ],\n        \"title\": [\n            \"The title field is required.\"\n        ],\n        \"category\": [\n            \"The category field is required.\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "422 incorrect input",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+											"type": "text"
+										},
+										{
+											"key": "text",
+											"value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+											"type": "text"
+										},
+										{
+											"key": "category",
+											"value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}",
+									"host": [
+										"{{baseUrl}}"
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Mar 2022 09:43:17 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Mar 2022 09:43:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:3000"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"The title must not be greater than 250 characters. (and 1 more error)\",\n    \"errors\": {\n        \"title\": [\n            \"The title must not be greater than 250 characters.\"\n        ],\n        \"category\": [\n            \"The category must not be greater than 250 characters.\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "422 large file",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "a",
+											"type": "text"
+										},
+										{
+											"key": "text",
+											"value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+											"type": "text"
+										},
+										{
+											"key": "category",
+											"value": "a",
+											"type": "text"
+										},
+										{
+											"key": "files[]",
+											"type": "file",
+											"src": "/C:/Users/Developer/Documents/Example/video3.mp4"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}",
+									"host": [
+										"{{baseUrl}}"
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Mar 2022 14:40:39 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Mar 2022 14:40:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:3000"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"The files.0 must not be greater than 64 kilobytes.\",\n    \"errors\": {\n        \"files.0\": [\n            \"The files.0 must not be greater than 64 kilobytes.\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Edit existing article",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"category\": \"howto\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/{{article_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"{{article_id}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"asd\",\r\n    \"text\": \"aaaaa\",\r\n    \"category\": \"a\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/{{article_id}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"{{article_id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Mar 2022 10:14:12 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Mar 2022 10:14:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:3000"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 7,\n    \"text\": \"aaaaa\",\n    \"title\": \"asd\",\n    \"category\": \"a\",\n    \"user_id\": 2,\n    \"created_at\": \"2022-03-12T09:53:53.000000Z\",\n    \"updated_at\": \"2022-03-12T10:14:12.000000Z\",\n    \"articles_asset\": [\n        {\n            \"id\": 11,\n            \"name\": \"movie.csv\",\n            \"type\": \"text/plain\",\n            \"article_id\": 7,\n            \"created_at\": \"2022-03-12T09:53:53.000000Z\",\n            \"updated_at\": \"2022-03-12T09:53:53.000000Z\"\n        },\n        {\n            \"id\": 12,\n            \"name\": \"renault_boot.jpg\",\n            \"type\": \"image/jpeg\",\n            \"article_id\": 7,\n            \"created_at\": \"2022-03-12T09:53:53.000000Z\",\n            \"updated_at\": \"2022-03-12T09:53:53.000000Z\"\n        },\n        {\n            \"id\": 13,\n            \"name\": \"test.sql\",\n            \"type\": \"text/plain\",\n            \"article_id\": 7,\n            \"created_at\": \"2022-03-12T09:53:53.000000Z\",\n            \"updated_at\": \"2022-03-12T09:53:53.000000Z\"\n        }\n    ],\n    \"user\": {\n        \"id\": 2,\n        \"name\": \"Mr. Alexandre Spinka PhD\",\n        \"email\": \"blanda.whitney@example.net\",\n        \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n        \"role\": \"ADMIN\",\n        \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n        \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n    }\n}"
+						},
+						{
+							"name": "404 not found",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\r\n    \"text\": \"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\r\n    \"category\": \"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/{{article_id_404}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"{{article_id_404}}"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Mar 2022 14:46:14 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Mar 2022 14:46:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:3000"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date"
+								}
+							],
+							"body": "{\n    \"message\": \"No query results for model [App\\\\Models\\\\Article] 500\"\n}"
+						},
+						{
+							"name": "422 incorrect input",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\r\n    \"text\": \"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\r\n    \"category\": \"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/{{article_id}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"{{article_id}}"
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Mar 2022 14:43:30 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Mar 2022 14:43:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:3000"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"The title must not be greater than 250 characters. (and 1 more error)\",\n    \"errors\": {\n        \"title\": [\n            \"The title must not be greater than 250 characters.\"\n        ],\n        \"category\": [\n            \"The category must not be greater than 250 characters.\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Add asset to article",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "files[]",
+									"type": "file",
+									"src": "/C:/Users/Developer/Documents/Example/CarFront.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/{{article_id}}/assets",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"{{article_id}}",
+								"assets"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "files[]",
+											"type": "file",
+											"src": [
+												"/C:/Users/Developer/Documents/Example/movie.csv",
+												"/C:/Users/Developer/Documents/Example/renault_front.jpg"
+											]
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/{{article_id}}/assets",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"{{article_id}}",
+										"assets"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Mar 2022 12:00:15 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Mar 2022 12:00:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:3000"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 7,\n    \"text\": \"aaaaa\",\n    \"title\": \"asd\",\n    \"category\": \"a\",\n    \"user_id\": 2,\n    \"created_at\": \"2022-03-12T09:53:53.000000Z\",\n    \"updated_at\": \"2022-03-12T10:14:12.000000Z\",\n    \"articles_asset\": [\n        {\n            \"id\": 11,\n            \"name\": \"movie.csv\",\n            \"type\": \"text/plain\",\n            \"article_id\": 7,\n            \"created_at\": \"2022-03-12T09:53:53.000000Z\",\n            \"updated_at\": \"2022-03-12T09:53:53.000000Z\"\n        },\n        {\n            \"id\": 12,\n            \"name\": \"renault_boot.jpg\",\n            \"type\": \"image/jpeg\",\n            \"article_id\": 7,\n            \"created_at\": \"2022-03-12T09:53:53.000000Z\",\n            \"updated_at\": \"2022-03-12T09:53:53.000000Z\"\n        },\n        {\n            \"id\": 13,\n            \"name\": \"test.sql\",\n            \"type\": \"text/plain\",\n            \"article_id\": 7,\n            \"created_at\": \"2022-03-12T09:53:53.000000Z\",\n            \"updated_at\": \"2022-03-12T09:53:53.000000Z\"\n        },\n        {\n            \"id\": 20,\n            \"name\": \"movie.csv\",\n            \"type\": \"text/plain\",\n            \"article_id\": 7,\n            \"created_at\": \"2022-03-12T12:00:15.000000Z\",\n            \"updated_at\": \"2022-03-12T12:00:15.000000Z\"\n        },\n        {\n            \"id\": 21,\n            \"name\": \"renault_front.jpg\",\n            \"type\": \"image/jpeg\",\n            \"article_id\": 7,\n            \"created_at\": \"2022-03-12T12:00:15.000000Z\",\n            \"updated_at\": \"2022-03-12T12:00:15.000000Z\"\n        }\n    ],\n    \"user\": {\n        \"id\": 2,\n        \"name\": \"Mr. Alexandre Spinka PhD\",\n        \"email\": \"blanda.whitney@example.net\",\n        \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n        \"role\": \"ADMIN\",\n        \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n        \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n    }\n}"
+						},
+						{
+							"name": "404 not found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "files[]",
+											"type": "file",
+											"src": "/C:/Users/Developer/Documents/Example/Renault.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/{{article_id_404}}/assets",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"{{article_id_404}}",
+										"assets"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Mar 2022 14:46:53 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Mar 2022 14:46:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:3000"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"No query results for model [App\\\\Models\\\\Article] 500\"\n}"
+						},
+						{
+							"name": "422 large file",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "files[]",
+											"type": "file",
+											"src": "/C:/Users/Developer/Documents/Example/Renault.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/{{article_id}}/assets",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"{{article_id}}",
+										"assets"
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Mar 2022 14:44:08 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Mar 2022 14:44:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:3000"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"The files.0 must not be greater than 64 kilobytes.\",\n    \"errors\": {\n        \"files.0\": [\n            \"The files.0 must not be greater than 64 kilobytes.\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Remove asset from article",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/{{article_id}}/assets/{{asset_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"{{article_id}}",
+								"assets",
+								"{{asset_id}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/{{article_id}}/assets/{{asset_id}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"{{article_id}}",
+										"assets",
+										"{{asset_id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Mar 2022 13:51:34 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Mar 2022 13:51:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:3000"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 7,\n    \"text\": \"aaaaa\",\n    \"title\": \"asd\",\n    \"category\": \"a\",\n    \"user_id\": 2,\n    \"created_at\": \"2022-03-12T09:53:53.000000Z\",\n    \"updated_at\": \"2022-03-12T10:14:12.000000Z\",\n    \"articles_asset\": [\n        {\n            \"id\": 12,\n            \"name\": \"renault_boot.jpg\",\n            \"type\": \"image/jpeg\",\n            \"article_id\": 7,\n            \"created_at\": \"2022-03-12T09:53:53.000000Z\",\n            \"updated_at\": \"2022-03-12T09:53:53.000000Z\"\n        },\n        {\n            \"id\": 13,\n            \"name\": \"test.sql\",\n            \"type\": \"text/plain\",\n            \"article_id\": 7,\n            \"created_at\": \"2022-03-12T09:53:53.000000Z\",\n            \"updated_at\": \"2022-03-12T09:53:53.000000Z\"\n        },\n        {\n            \"id\": 20,\n            \"name\": \"movie.csv\",\n            \"type\": \"text/plain\",\n            \"article_id\": 7,\n            \"created_at\": \"2022-03-12T12:00:15.000000Z\",\n            \"updated_at\": \"2022-03-12T12:00:15.000000Z\"\n        }\n    ],\n    \"user\": {\n        \"id\": 2,\n        \"name\": \"Mr. Alexandre Spinka PhD\",\n        \"email\": \"blanda.whitney@example.net\",\n        \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n        \"role\": \"ADMIN\",\n        \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n        \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n    }\n}"
+						},
+						{
+							"name": "404 not found asset",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/{{article_id}}/assets/{{asset_id}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"{{article_id}}",
+										"assets",
+										"{{asset_id}}"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Mar 2022 12:02:20 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Mar 2022 12:02:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:3000"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"No query results for model [App\\\\Models\\\\ArticlesAsset] 21\"\n}"
+						},
+						{
+							"name": "404 not found article",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/{{article_id}}/assets/{{asset_id}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"{{article_id}}",
+										"assets",
+										"{{asset_id}}"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Mar 2022 12:03:15 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Mar 2022 12:03:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:3000"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"No query results for model [App\\\\Models\\\\Article] 9\"\n}"
+						},
+						{
+							"name": "404 Not found in current context",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/{{article_id_406}}/assets/{{asset_id}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"{{article_id_406}}",
+										"assets",
+										"{{asset_id}}"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 23 Mar 2022 08:16:50 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 23 Mar 2022 08:16:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:80"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Not found in current context\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Remove article with all assets",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/{{article_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"{{article_id}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/{{article_id}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"{{article_id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Mar 2022 11:55:52 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Mar 2022 11:55:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:3000"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "[]"
+						},
+						{
+							"name": "404 not found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/{{article_id_404}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"{{article_id_404}}"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Mar 2022 14:45:51 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Mar 2022 14:45:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:3000"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"No query results for model [App\\\\Models\\\\Article] 500\"\n}"
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "2|z6N4zyfWrkHWFMucGMk7VHpjz69P4d9ZQW5W8Pnn",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "NlTxZcVMr8x70AqmL8BsPXKk6WU1fTYtSj7Qnl8v",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.request.headers.add({key: 'accept', value: 'application/json' });"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "10.21.254.101/api/articles",
+			"type": "string"
+		},
+		{
+			"key": "article_id",
+			"value": "1",
+			"type": "string"
+		},
+		{
+			"key": "asset_id",
+			"value": "1",
+			"type": "string"
+		},
+		{
+			"key": "article_id_404",
+			"value": "500",
+			"type": "string"
+		},
+		{
+			"key": "asset_id_404",
+			"value": "500",
+			"type": "string"
+		},
+		{
+			"key": "article_id_406",
+			"value": "2",
+			"type": "string"
+		}
+	]
+}

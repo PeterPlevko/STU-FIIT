@@ -1,0 +1,36 @@
+version: '3.9'
+
+services:
+  mongo:
+    container_name: mongo
+    image: mongo:latest
+    volumes:
+      - ./mongo-volume:/data/db
+    ports:
+      - 27017:27017
+
+  redisBakalarka:
+    image: redis
+    container_name: redisBakalarka
+    ports:
+      - 6379:6379
+
+  backend:
+    container_name: backend
+    restart: always
+    build:
+      context: ../back-end
+    ports:
+      - 3000:3000
+    environment:
+      REDIS_HOST: redisBakalarka
+      MONGO_HOST: mongo
+  
+
+  frontend:
+    container_name: frontend
+    restart: always
+    build:
+      context: ../front-end
+    ports:
+      - 80:80

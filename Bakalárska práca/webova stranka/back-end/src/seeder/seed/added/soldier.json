@@ -1,0 +1,26 @@
+[
+    {
+        "name": "celé meno 1",
+        "dateOfBirth": "dátum narodenia 1",
+        "dateOfDeath": "dátum úmrtia 1",
+        "story": "príbeh 1",
+        "state": "confirmed",
+        "addedBy": "kuntox"
+    },
+    {
+        "name": "celé meno 2",
+        "dateOfBirth": "dátum narodenia 2",
+        "dateOfDeath": "dátum úmrtia 2",
+        "story": "príbeh 2",
+        "state": "confirmed",
+        "addedBy": "kuntox"
+    },
+    {
+        "name": "celé meno 3",
+        "dateOfBirth": "dátum narodenia 3",
+        "dateOfDeath": "dátum úmrtia 3",
+        "story": "príbeh 3",
+        "state": "confirmed",
+        "addedBy": "kuntox"
+    }
+]

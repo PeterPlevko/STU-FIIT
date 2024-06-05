@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="700.0" maxWidth="1300.0" minHeight="700.0" minWidth="1300.0" prefHeight="700.0" prefWidth="1300.0" stylesheets="@../Graphic/style_sheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.controller.librarianControllers.ReturnBooksController">
+   <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#showMenu" styleClass="button_back">
+      <graphic>
+         <ImageView fitHeight="50.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@../../images/other/back_button.png"/>
+         </ImageView>
+      </graphic></Button>
+   <Button fx:id="returnBtn" layoutX="152.0" layoutY="476.0" mnemonicParsing="false" onAction="#returnBook" prefHeight="60.0" prefWidth="200.0" styleClass="button_basic" text="%return" wrapText="true" />
+   <ComboBox fx:id="readersBox" layoutX="107.0" layoutY="168.0" onAction="#updateTableView" prefHeight="31.0" prefWidth="289.0" />
+   <Label fx:id="readerLabel" layoutX="107.0" layoutY="138.0" prefHeight="21.0" prefWidth="175.0" text="%reader" />
+   <TableView fx:id="tableView" layoutX="466.0" layoutY="14.0" onMouseReleased="#showDates" prefHeight="670.0" prefWidth="820.0">
+      <columns>
+         <TableColumn fx:id="imageColumn" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" resizable="false" text="%imageColumn" />
+         <TableColumn fx:id="authorColumn" maxWidth="300.0" minWidth="300.0" prefWidth="300.0" resizable="false" text="%authorColumn" />
+         <TableColumn fx:id="titleColumn" maxWidth="299.0" minWidth="280.0" prefWidth="299.0" resizable="false" text="%titleColumn" />
+      </columns>
+   </TableView>
+   <DatePicker fx:id="datePicker" layoutX="107.0" layoutY="261.0" onAction="#showExtendBtn" prefHeight="31.0" prefWidth="289.0" />
+   <Button fx:id="extendBtn" layoutX="152.0" layoutY="388.0" mnemonicParsing="false" onAction="#extendBook" prefHeight="60.0" prefWidth="200.0" styleClass="button_basic" text="%length" wrapText="true" />
+   <Button layoutX="338.0" layoutY="26.0" mnemonicParsing="false" onAction="#languageSK" prefHeight="0.0" prefWidth="0.0" styleClass="button_lg">
+      <graphic>
+         <ImageView fitHeight="36.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@../../images/other/sk.png"/>
+         </ImageView>
+      </graphic>
+   </Button>
+   <Button layoutX="403.0" layoutY="26.0" mnemonicParsing="false" onAction="#languageEN" prefHeight="12.0" prefWidth="17.0" styleClass="button_lg">
+      <graphic>
+         <ImageView fitHeight="36.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@../../images/other/us.png"/>
+         </ImageView>
+      </graphic>
+   </Button>
+</AnchorPane>

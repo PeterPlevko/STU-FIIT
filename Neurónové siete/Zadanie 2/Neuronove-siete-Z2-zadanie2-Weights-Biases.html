@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<!--
+  We disable Google Translate because it does not play well with React 16
+  See https://github.com/facebook/react/issues/11538
+-->
+<html class="notranslate" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><!--— SERVED BY NEW HOST —-->
+  <!-- anti-flicker snippet for Google Optimize -->
+  <style>.async-hide { opacity: 0 !important} </style>
+  <meta name="robots" content="max-image-preview:large">
+  <!--ROBOTS_TAG_PLACEHOLDER-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#000000">
+  <meta property="fb:app_id" content="420039241995197"><meta property="og:type" content="website"><meta property="og:site_name" content="W&amp;B"><meta property="og:title" content="Weights &amp; Biases"><meta property="og:description" content="Weights &amp; Biases, developer tools for machine learning"><meta property="og:image" content="https://wandb.ai/logo.png"><meta property="og:url" content="https://wandb.ai/xmelicher-team/zadanie2/reports/Neur-nov-siete-Z2--Vmlldzo0MDQ4NjU2">
+  <meta name="twitter:card" content="summary"><meta name="twitter:site" content="@weights_biases"><meta name="twitter:creator" content="@weights_biases"><meta name="description" content="Druhé semestrálne zadanie z predmetu Neurónové siete 13.4.2023. Made by Radovan Cyprich using Weights &amp; Biases"><script type="text/javascript" async="" src="Neur%C3%B3nov%C3%A9%20siete%20Z2%20zadanie2%20%E2%80%93%20Weights%20&amp;%20Biases_files/linkid.js"></script><script async="" src="Neur%C3%B3nov%C3%A9%20siete%20Z2%20zadanie2%20%E2%80%93%20Weights%20&amp;%20Biases_files/clarity.js"></script><script type="text/javascript" async="" src="Neur%C3%B3nov%C3%A9%20siete%20Z2%20zadanie2%20%E2%80%93%20Weights%20&amp;%20Biases_files/munchkin_002.js"></script><script type="text/javascript" async="" src="Neur%C3%B3nov%C3%A9%20siete%20Z2%20zadanie2%20%E2%80%93%20Weights%20&amp;%20Biases_files/analytics.js"></script><script type="text/javascript" async="" src="Neur%C3%B3nov%C3%A9%20siete%20Z2%20zadanie2%20%E2%80%93%20Weights%20&amp;%20Biases_files/js"></script><script type="text/javascript" async="" src="Neur%C3%B3nov%C3%A9%20siete%20Z2%20zadanie2%20%E2%80%93%20Weights%20&amp;%20Biases_files/6si.min.js"></script><script src="Neur%C3%B3nov%C3%A9%20siete%20Z2%20zadanie2%20%E2%80%93%20Weights%20&amp;%20Biases_files/pixel.js" async=""></script><script async="" src="Neur%C3%B3nov%C3%A9%20siete%20Z2%20zadanie2%20%E2%80%93%20Weights%20&amp;%20Biases_files/a6rlxhvc58.js"></script><script type="text/javascript" async="" src="Neur%C3%B3nov%C3%A9%20siete%20Z2%20zadanie2%20%E2%80%93%20Weights%20&amp;%20Biases_files/uwt.js"></script><script type="text/javascript" async="" src="Neur%C3%B3nov%C3%A9%20siete%20Z2%20zadanie2%20%E2%80%93%20Weights%20&amp;%20Biases_files/insight.min.js"></script><script type="text/javascript" async="" src="Neur%C3%B3nov%C3%A9%20siete%20Z2%20zadanie2%20%E2%80%93%20Weights%20&amp;%20Biases_files/bat.js"></script><script gtm="GTM-TCTWFHR" type="text/javascript" async="" src="Neur%C3%B3nov%C3%A9%20siete%20Z2%20zadanie2%20%E2%80%93%20Weights%20&amp;%20Biases_files/optimize.js"></script><script type="text/javascript" async="" src="Neur%C3%B3nov%C3%A9%20siete%20Z2%20zadanie2%20%E2%80%93%20Weights%20&amp;%20Biases_files/analytics.js"></script><script type="text/javascript" async="" src="Neur%C3%B3nov%C3%A9%20siete%20Z2%20zadanie2%20%E2%80%93%20Weights%20&amp;%20Biases_files/fs.js" crossorigin="anonymous"></script><script type="text/javascript" async="" src="Neur%C3%B3nov%C3%A9%20siete%20Z2%20zadanie2%20%E2%80%93%20Weights%20&amp;%20Biases_files/ec5tvc5j"></script><script async="" src="Neur%C3%B3nov%C3%A9%20siete%20Z2%20zadanie2%20%E2%80%93%20Weights%20&amp;%20Biases_files/gtm.js"></script><script type="application/ld+json">{"@context":"http://schema.org","@graph":[{"@type":"TechArticle","url":"https://wandb.ai/xmelicher-team/zadanie2/reports/Neur-nov-siete-Z2--Vmlldzo0MDQ4NjU2","dateCreated":"2023-04-13T05:07:47.605Z","datePublished":"2023-04-13T05:07:47.605Z","dateModified":"2023-04-13T05:07:47.605Z","headline":"Weights & Biases","name":"Weights & Biases","description":"Weights & Biases, developer tools for machine learning","image":["https://wandb.ai/logo.png"],"thumbnailUrl":["https://wandb.ai/logo.png"],"id":"Vmlldzo0MDQ4NjU2","articleSection":"Article","keywords":[],"author":{"@type":"Person","name":"W&B","url":"https://wandb.ai/weights_biases"},"creator":["W&B"],"publisher":{"@type":"Corporation","@id":"https://wandb.ai/#organization","name":"Weights & Biases, Inc.","description":"Weights & Biases is on mission is to build the best tools for machine learning. Their experienced technical cofounders built Figure Eight, and their tools are being used by cutting-edge machine learning teams including OpenAI and Toyota.","image":"https://assets.website-files.com/5ac6b7f2924c656f2b13a88c/5f3ea98410a400266d2579b5_image%2015.jpg","logo":"https://wandb.ai/logo.png","url":"https://wandb.ai/site","sameAs":["https://www.google.com/search?q=knowledge+graph+search+api&kponly&kgmid=/g/11f7h7qw7s","https://twitter.com/weights_biases","https://www.linkedin.com/company/weights-biases","https://www.facebook.com/weightsandbiases","https://www.youtube.com/channel/UCBp3w4DCEC64FZr4k9ROxig","https://www.crunchbase.com/organization/weights-biases","https://github.com/wandb"],"address":{"@type":"PostalAddress","streetAddress":"1479 Folsom St","addressLocality":"San Francisco","postalCode":"94103","addressCountry":"US"}}},{"@type":"BreadcrumbList","itemListElement":[]}]}</script><link rel="canonical" href="Neur%C3%B3nov%C3%A9%20siete%20Z2%20zadanie2%20%E2%80%93%20Weights%20&amp;%20Biases_files/Neur-nov-siete-Z2--Vmlldzo0MDQ4NjU2.htm"><link rel="alternate" type="application/rss+xml" href="https://wandb.ai/fully-connected/rss.xml"><link rel="alternate" type="application/rss+xml" href="https://wandb.ai/public-reports/rss.xml">
+  <meta name="referrer" content="no-referrer-when-downgrade">
+
+  <link rel="manifest" href="https://cdn.wandb.ai/production/f52f98057/manifest.json">
+  <!-- Below polyfill makes the dashboard work on ie11, got this fix from https://github.com/facebook/react/issues/8379#issuecomment-370686878
+      and fixes this sentry issue https://sentry.io/weights-biases/production/issues/571445770/
+  -->
+  <script src="Neur%C3%B3nov%C3%A9%20siete%20Z2%20zadanie2%20%E2%80%93%20Weights%20&amp;%20Biases_files/babel-polyfill.min.js"></script>
+  <!-- Sentry --->
+  <script src="Neur%C3%B3nov%C3%A9%20siete%20Z2%20zadanie2%20%E2%80%93%20Weights%20&amp;%20Biases_files/raven.min.js" crossorigin="anonymous"></script>
+  <!-- Prism syntax highlighting, TODO: just use what's in the bundle -->
+  <script src="Neur%C3%B3nov%C3%A9%20siete%20Z2%20zadanie2%20%E2%80%93%20Weights%20&amp;%20Biases_files/prism.js"></script>
+  <link type="text/css" rel="stylesheet" href="Neur%C3%B3nov%C3%A9%20siete%20Z2%20zadanie2%20%E2%80%93%20Weights%20&amp;%20Biases_files/prism.css">
+  <link rel="shortcut icon" type="image/png" href="https://cdn.wandb.ai/production/f52f98057/favicon.png">
+  <link rel="apple-touch-icon" href="https://cdn.wandb.ai/production/f52f98057/favicon.png">
+  <title>Neurónové siete Z2 | zadanie2 – Weights &amp; Biases</title>
+  <script type="module" crossorigin="" src="Neur%C3%B3nov%C3%A9%20siete%20Z2%20zadanie2%20%E2%80%93%20Weights%20&amp;%20Biases_files/index.9fe72108.js"></script>
+  <link rel="stylesheet" href="Neur%C3%B3nov%C3%A9%20siete%20Z2%20zadanie2%20%E2%80%93%20Weights%20&amp;%20Biases_files/index.ca7008a1.css">
+<script src="Neur%C3%B3nov%C3%A9%20siete%20Z2%20zadanie2%20%E2%80%93%20Weights%20&amp;%20Biases_files/env.js"></script><link type="text/css" href="Neur%C3%B3nov%C3%A9%20siete%20Z2%20zadanie2%20%E2%80%93%20Weights%20&amp;%20Biases_files/optanon.css" rel="stylesheet"><style>#optanon ul#optanon-menu li { background-color:  !important }#optanon ul#optanon-menu li.menu-item-selected { background-color:  !important }#optanon #optanon-popup-wrapper .optanon-white-button-middle { background-color:  !important }.optanon-alert-box-wrapper .optanon-alert-box-button-middle { background-color:  !important; border-color:  !important; }#optanon #optanon-popup-wrapper .optanon-white-button-middle button { color:  !important }.optanon-alert-box-wrapper .optanon-alert-box-button-middle button { color:  !important }#optanon #optanon-popup-bottom { background-color:  !important }#optanon.modern #optanon-popup-top, #optanon.modern #optanon-popup-body-left-shading { background-color:  !important }.optanon-alert-box-wrapper { background-color: !important }.optanon-alert-box-wrapper .optanon-alert-box-bg p { color: !important }</style><style>.react-flow{height:100%;overflow:hidden;position:relative;width:100%}.react-flow__container{height:100%;left:0;position:absolute;top:0;width:100%}.react-flow__pane{z-index:1}.react-flow__viewport{pointer-events:none;transform-origin:0 0;z-index:2}.react-flow__renderer{z-index:4}.react-flow__selectionpane{z-index:5}.react-flow .react-flow__edges{overflow:visible;pointer-events:none}.react-flow .react-flow__connectionline{z-index:1001}.react-flow__edge{pointer-events:visibleStroke}.react-flow__edge.inactive{pointer-events:none}@-webkit-keyframes dashdraw{0%{stroke-dashoffset:10}}@keyframes dashdraw{0%{stroke-dashoffset:10}}.react-flow__edge-path{fill:none}.react-flow__edge-textwrapper{pointer-events:all}.react-flow__edge-text{pointer-events:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.react-flow__connection{pointer-events:none}.react-flow__connection .animated{stroke-dasharray:5;-webkit-animation:dashdraw .5s linear infinite;animation:dashdraw .5s linear infinite}.react-flow__connection-path{fill:none}.react-flow__nodes{pointer-events:none;transform-origin:0 0}.react-flow__node{box-sizing:border-box;pointer-events:all;position:absolute;transform-origin:0 0;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.react-flow__nodesselection{pointer-events:none;transform-origin:left top;z-index:3}.react-flow__nodesselection-rect{cursor:-webkit-grab;cursor:grab;pointer-events:all;position:absolute}.react-flow__handle{pointer-events:none;position:absolute}.react-flow__handle.connectable{pointer-events:all}.react-flow__handle-bottom{bottom:-4px;left:50%;top:auto;transform:translate(-50%)}.react-flow__handle-top{left:50%;top:-4px;transform:translate(-50%)}.react-flow__handle-left{left:-4px;top:50%;transform:translateY(-50%)}.react-flow__handle-right{right:-4px;top:50%;transform:translateY(-50%)}.react-flow__edgeupdater{cursor:move;pointer-events:all}.react-flow__controls{bottom:20px;left:15px;position:absolute;z-index:5}.react-flow__controls-button{border:none;height:24px;width:24px}.react-flow__controls-button svg{width:100%}.react-flow__minimap{bottom:20px;position:absolute;right:15px;z-index:5}.react-flow__attribution{background:hsla(0,0%,100%,.5);color:#999;font-size:10px;padding:2px 3px;position:absolute;z-index:1000}.react-flow__attribution a{color:#555;text-decoration:none}.react-flow__attribution.top{top:0}.react-flow__attribution.bottom{bottom:0}.react-flow__attribution.left{left:0}.react-flow__attribution.right{right:0}.react-flow__attribution.center{left:50%;transform:translateX(-50%)}</style><style>.react-flow__edge.selected .react-flow__edge-path{stroke:#555}.react-flow__edge.animated path{stroke-dasharray:5;-webkit-animation:dashdraw .5s linear infinite;animation:dashdraw .5s linear infinite}.react-flow__edge.updating .react-flow__edge-path{stroke:#777}.react-flow__edge-path{stroke:#b1b1b7;stroke-width:1}.react-flow__edge-text{font-size:10px}.react-flow__edge-textbg{fill:#fff}.react-flow__connection-path{stroke:#b1b1b7;stroke-width:1}.react-flow__node{cursor:-webkit-grab;cursor:grab}.react-flow__node-default,.react-flow__node-group,.react-flow__node-input,.react-flow__node-output{background:#fff;border:1px solid #1a192b;border-radius:3px;color:#222;font-size:12px;padding:10px;text-align:center;width:150px}.react-flow__node-default.selected,.react-flow__node-group.selected,.react-flow__node-input.selected,.react-flow__node-output.selected{box-shadow:0 0 0 .5px #1a192b}.react-flow__node-default .react-flow__handle,.react-flow__node-group .react-flow__handle,.react-flow__node-input .react-flow__handle,.react-flow__node-output .react-flow__handle{background:#1a192b}.react-flow__node-default.selectable:hover,.react-flow__node-group.selectable:hover,.react-flow__node-input.selectable:hover,.react-flow__node-output.selectable:hover{box-shadow:0 1px 4px 1px rgba(0,0,0,.08)}.react-flow__node-default.selectable.selected,.react-flow__node-group.selectable.selected,.react-flow__node-input.selectable.selected,.react-flow__node-output.selectable.selected{box-shadow:0 0 0 .5px #1a192b}.react-flow__node-group{background:hsla(0,0%,94%,.25);border-color:#1a192b}.react-flow__nodesselection-rect,.react-flow__selection{background:rgba(0,89,220,.08);border:1px dotted rgba(0,89,220,.8)}.react-flow__handle{background:#555;border:1px solid #fff;border-radius:100%;height:6px;width:6px}.react-flow__handle.connectable{cursor:crosshair}.react-flow__minimap{background-color:#fff}.react-flow__controls{box-shadow:0 0 2px 1px rgba(0,0,0,.08)}.react-flow__controls-button{align-items:center;background:#fefefe;border-bottom:1px solid #eee;box-sizing:content-box;cursor:pointer;display:flex;height:16px;justify-content:center;padding:5px;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:16px}.react-flow__controls-button svg{max-height:12px;max-width:12px}.react-flow__controls-button:hover{background:#f4f4f4}</style><style data-styled="active" data-styled-version="5.2.1"></style><style data-styled="active" data-styled-version="5.3.5"></style><script type="text/javascript" async="" src="Neur%C3%B3nov%C3%A9%20siete%20Z2%20zadanie2%20%E2%80%93%20Weights%20&amp;%20Biases_files/munchkin.js"></script><link rel="modulepreload" as="script" crossorigin="" href="https://cdn.wandb.ai/production/f52f98057/assets/ReportPageRouter.b3e8b3c7.js"><link rel="modulepreload" as="script" crossorigin="" href="https://cdn.wandb.ai/production/f52f98057/assets/FC.eb3b2339.js"><link rel="modulepreload" as="script" crossorigin="" href="https://cdn.wandb.ai/production/f52f98057/assets/GalleryPage.c13e017c.js"><link rel="modulepreload" as="script" crossorigin="" href="https://cdn.wandb.ai/production/f52f98057/assets/Helmet.cc72339b.js"><link rel="modulepreload" as="script" crossorigin="" href="https://cdn.wandb.ai/production/f52f98057/assets/HomePageWithData.styles.c6dfd3b8.js"><link rel="modulepreload" as="script" crossorigin="" href="https://cdn.wandb.ai/production/f52f98057/assets/NoAccessPage.b3030876.js"><link rel="modulepreload" as="script" crossorigin="" href="https://cdn.wandb.ai/production/f52f98057/assets/graphql.acaa619f.js"><link rel="modulepreload" as="script" crossorigin="" href="https://cdn.wandb.ai/production/f52f98057/assets/DialogTitle.9b965140.js"><link rel="modulepreload" as="script" crossorigin="" href="https://cdn.wandb.ai/production/f52f98057/assets/utils.f5d054a6.js"><link id="beamerStyles" type="text/css" rel="stylesheet" href="Neur%C3%B3nov%C3%A9%20siete%20Z2%20zadanie2%20%E2%80%93%20Weights%20&amp;%20Biases_files/beamer-embed.css"><script type="application/ld+json">[]</script><script src="Neur%C3%B3nov%C3%A9%20siete%20Z2%20zadanie2%20%E2%80%93%20Weights%20&amp;%20Biases_files/5697091.js" type="text/javascript" async="" data-ueto="ueto_b6b96d8583"></script><style data-jss="" data-meta="MuiTooltip">
+.MuiTooltip-popper {
+  z-index: 1500;
+  pointer-events: none;
+}
+.MuiTooltip-popperInteractive {
+  pointer-events: auto;
+}
+.MuiTooltip-popperArrow[x-placement*="bottom"] .MuiTooltip-arrow {
+  top: 0;
+  left: 0;
+  margin-top: -0.71em;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+.MuiTooltip-popperArrow[x-placement*="top"] .MuiTooltip-arrow {
+  left: 0;
+  bottom: 0;
+  margin-left: 4px;
+  margin-right: 4px;
+  margin-bottom: -0.71em;
+}
+.MuiTooltip-popperArrow[x-placement*="right"] .MuiTooltip-arrow {
+  left: 0;
+  width: 0.71em;
+  height: 1em;
+  margin-top: 4px;
+  margin-left: -0.71em;
+  margin-bottom: 4px;
+}
+.MuiTooltip-popperArrow[x-placement*="left"] .MuiTooltip-arrow {
+  right: 0;
+  width: 0.71em;
+  height: 1em;
+  margin-top: 4px;
+  margin-right: -0.71em;
+  margin-bottom: 4px;
+}
+.MuiTooltip-popperArrow[x-placement*="left"] .MuiTooltip-arrow::before {
+  transform-origin: 0 0;
+}
+.MuiTooltip-popperArrow[x-placement*="right"] .MuiTooltip-arrow::before {
+  transform-origin: 100% 100%;
+}
+.MuiTooltip-popperArrow[x-placement*="top"] .MuiTooltip-arrow::before {
+  transform-origin: 100% 0;
+}
+.MuiTooltip-popperArrow[x-placement*="bottom"] .MuiTooltip-arrow::before {
+  transform-origin: 0 100%;
+}
+.MuiTooltip-tooltip {
+  color: #FFFFFF;
+  padding: 4px 8px;
+  font-size: 0.75rem;
+  max-width: 300px;
+  word-wrap: break-word;
+  font-family: Source Sans Pro;
+  font-weight: 500;
+  line-height: 1.4em;
+  border-radius: 4px;
+  background-color: rgba(54, 58, 61, 0.9);
+}
+.MuiTooltip-tooltipArrow {
+  margin: 0;
+  position: relative;
+}
+.MuiTooltip-arrow {
+  color: rgba(54, 58, 61, 0.9);
+  width: 1rem;
+  height: 0.71em;
+  overflow: hidden;
+  position: absolute;
+  box-sizing: border-box;
+}
+.MuiTooltip-arrow::before {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  content: "";
+  display: block;
+  transform: rotate(45deg);
+  background-color: currentColor;
+}
+.MuiTooltip-touch {
+  padding: 8px 16px;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.14286em;
+}
+.MuiTooltip-tooltipPlacementLeft {
+  margin: 0 24px ;
+  transform-origin: right center;
+}
+@media (min-width:600px) {
+  .MuiTooltip-tooltipPlacementLeft {
+    margin: 0 14px;
+  }
+}
+.MuiTooltip-tooltipPlacementRight {
+  margin: 0 24px;
+  transform-origin: left center;
+}
+@media (min-width:600px) {
+  .MuiTooltip-tooltipPlacementRight {
+    margin: 0 14px;
+  }
+}
+.MuiTooltip-tooltipPlacementTop {
+  margin: 24px 0;
+  transform-origin: center bottom;
+}
+@media (min-width:600px) {
+  .MuiTooltip-tooltipPlacementTop {
+    margin: 14px 0;
+  }
+}
+.MuiTooltip-tooltipPlacementBottom {
+  margin: 24px 0;
+  transform-origin: center top;
+}
+@media (min-width:600px) {
+  .MuiTooltip-tooltipPlacementBottom {
+    margin: 14px 0;
+  }
+}
+</style></head>
+
+
+<body><div class="optanon-alert-box-wrapper  hide-cookie-setting-button" role="alertdialog" aria-labelledby="alert-box-title" aria-describedby="alert-box-message" style="display:none"><div class="optanon-alert-box-bottom-top"><div class="optanon-alert-box-corner-close"><button class="optanon-alert-box-close banner-close-button" aria-label="Close" title="Close" onclick="Optanon.TriggerGoogleAnalyticsEvent('OneTrust Cookie Consent', 'Banner Close Button');" tabindex="2"></button></div></div><div class="optanon-alert-box-bg"><div class="optanon-alert-box-logo"> </div><div class="optanon-alert-box-body"><p class="optanon-alert-box-title legacy-banner-title sr-only" id="alert-box-title" role="heading" aria-level="2">Cookie Notice</p><p class="banner-content" id="alert-box-message">We
+ use cookies to personalise content and ads, to provide social media 
+features and to analyse our traffic. We also share information about 
+your use of our site with our social media, advertising and analytics 
+partners.</p></div><div class="optanon-clearfix"></div><div class="optanon-alert-box-button-container"><div class="optanon-alert-box-button optanon-button-close"><div class="optanon-alert-box-button-middle"><button class="optanon-alert-box-close" aria-label="Close">Close</button></div></div><div class="optanon-alert-box-button optanon-button-allow"><div class="optanon-alert-box-button-middle accept-cookie-container"><button class="optanon-allow-all accept-cookies-button" title="Accept Cookies" aria-label="Accept Cookies" onclick="Optanon.TriggerGoogleAnalyticsEvent('OneTrust Cookie Consent', 'Banner Accept Cookies');" tabindex="1">Accept Cookies</button></div></div></div><div class="optanon-clearfix optanon-alert-box-bottom-padding"></div></div></div><div id="optanon" class="modern"><div id="optanon-popup-bg"></div><div id="optanon-popup-wrapper" role="dialog" aria-modal="true" tabindex="-1" lang="en-GB"><div id="optanon-popup-top"><button onclick="Optanon.TriggerGoogleAnalyticsEvent('OneTrust Cookie Consent', 'Preferences Close Button');" aria-label="Close" class="optanon-close-link optanon-close optanon-close-ui" title="Close"><div id="optanon-close" style="background: url(https://cdn.cookielaw.org/skins/6.26.0/default_flat_bottom_two_button_black/v2/images/optanon-pop-up-close.png);width:34px;height:34px;"></div></button></div><div id="optanon-popup-body"><div id="optanon-popup-body-left"><div id="optanon-popup-body-left-shading"></div><div id="optanon-branding-top-logo" style="background-image: url('https://cdn.cookielaw.org/skins/6.26.0/default_flat_bottom_two_button_black/v2/images/cookie-collective-top-logo.svg') !important;"></div><ul id="optanon-menu" aria-label="Navigation Menu" role="tablist"><li class="menu-item-on menu-item-about" title="Your Privacy"><p class="preference-menu-item"><button role="tab" aria-selected="true" aria-controls="Your-Privacy" id="Your-Privacy">Your Privacy</button></p></li><li class="menu-item-necessary menu-item-on" title="Strictly Necessary Cookies"><p class="preference-menu-item"><button role="tab" aria-selected="false" aria-controls="Strictly-Necessary-Cookies" id="Strictly-Necessary">Strictly Necessary Cookies</button></p></li><li class="menu-item-on menu-item-performance" title="Performance Cookies"><p class="preference-menu-item"><button role="tab" aria-selected="false" aria-controls="Performance-Cookies" id="Performance-Cookies">Performance Cookies</button></p></li><li class="menu-item-on menu-item-functional" title="Functional Cookies"><p class="preference-menu-item"><button role="tab" aria-selected="false" aria-controls="Functional-Cookies" id="Functional-Cookies">Functional Cookies</button></p></li><li class="menu-item-on menu-item-advertising" title="Targeting Cookies"><p class="preference-menu-item"><button role="tab" aria-selected="false" aria-controls="Targeting-Cookies" id="Targeting-Cookies">Targeting Cookies</button></p></li><li class="menu-item-moreinfo menu-item-off" title="More Information"><p class="preference-menu-item"><a target="_blank" aria-label="More Information" href="https://cookiepedia.co.uk/giving-consent-to-cookies" onclick="Optanon.TriggerGoogleAnalyticsEvent('OneTrust Cookie Consent', 'Preferences Cookie Policy');">More Information</a></p></li></ul></div><div><div id="optanon-popup-body-right"><p role="heading" aria-level="2" class="legacy-preference-banner-title h2" aria-label="Privacy Preference Centre">Privacy Preference Centre</p><div class="vendor-header-container"><p class="header-3" role="heading" aria-level="3"></p><div id="optanon-popup-more-info-bar"><div class="optanon-status"><div class="optanon-status-editable"><form><span class="fieldset"><p><input type="checkbox" value="check" id="chkMain" checked="checked" class="legacy-group-status optanon-status-checkbox"><label for="chkMain">Active</label></p></span></form></div><div class="optanon-status-always-active optanon-status-on"><p>Always Active</p></div></div></div></div><div class="optanon-main-info-text" role="tabpanel"></div></div><div class="optanon-bottom-spacer"></div></div></div><div id="optanon-popup-bottom"> <a href="https://onetrust.com/poweredbyonetrust" target="_blank" rel="noopener"><div id="optanon-popup-bottom-logo" alt="OneTrust Website" style="background: url(https://cdn.cookielaw.org/skins/6.26.0/default_flat_bottom_two_button_black/v2/images/cookie-collective-top-bottom.png);width:155px;height:35px;" title="powered by OneTrust"></div></a><div class="optanon-button-wrapper optanon-save-settings-button optanon-close optanon-close-consent"><div class="optanon-white-button-left"></div><div class="optanon-white-button-middle"><button title="Save Settings" aria-label="Save Settings" onclick="Optanon.TriggerGoogleAnalyticsEvent('OneTrust Cookie Consent', 'Preferences Save Settings');">Save Settings</button></div><div class="optanon-white-button-right"></div></div><div class="optanon-button-wrapper optanon-allow-all-button optanon-allow-all" style="display: none;"><div class="optanon-white-button-left"></div><div class="optanon-white-button-middle"><button title="Allow All" aria-label="Allow All" onclick="Optanon.TriggerGoogleAnalyticsEvent('OneTrust Cookie Consent', 'Preferences Allow All');">Allow All</button></div><div class="optanon-white-button-right"></div></div></div></div></div>
+  <div id="root" style="height: 100%;"><div data-test="compute-graph-provider" data-test-num-shadow-server-requests-counter="0" class=""><div class="app-root"><div class="sc-gYLSXn gkuxps search-nav " id="searchNav"><div id="search-nav-experimental-test-bar" class="sc-jzbOCt mffit"></div><div class="nav-left-container"><a class="wandb-logo" href="https://wandb.ai/"><div class="dots-column"><div class="dot small-dot"></div><div class="dot big-dot"></div><div class="dot small-dot"></div><div class="dot big-dot"></div><div class="dot small-dot"></div><div class="dot big-dot"></div><div class="dot big-dot"></div><div class="dot big-dot"></div></div><div class="dots-column"><div class="dot small-dot"></div><div class="dot big-dot"></div><div class="dot big-dot"></div><div class="dot small-dot"></div><div class="dot small-dot"></div><div class="dot small-dot"></div><div class="dot big-dot"></div><div class="dot small-dot"></div></div><div class="dots-column"><div class="dot small-dot"></div><div class="dot big-dot"></div><div class="dot small-dot"></div><div class="dot small-dot"></div><div class="dot small-dot"></div><div class="dot small-dot"></div><div class="dot big-dot"></div><div class="dot small-dot"></div></div></a><div class="sc-iFEzIi jRIfxa"><i aria-hidden="true" class="icon wbic-ic-search local-search-toggle"></i></div><div class="sc-gzoAbm bunVoE nav-breadcrumbs-wrapper"><div class="ui small breadcrumb nav-breadcrumbs"><div class="section"><a aria-current="page" class="active" href="https://wandb.ai/xmelicher-team">xmelicher-team</a></div><i aria-hidden="true" class="icon wbic-ic-next divider"></i><div class="section"><a href="https://wandb.ai/xmelicher-team/projects">Projects</a></div><i aria-hidden="true" class="icon wbic-ic-next divider"></i><div class="section"><span class="sc-izoikX bnHmku"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.5 15.25C10.0858 15.25 9.75 15.5858 9.75 16C9.75 16.4142 10.0858 16.75 10.5 16.75H13.5C13.9142 16.75 14.25 16.4142 14.25 16C14.25 15.5858 13.9142 15.25 13.5 15.25H10.5Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M6.25 8.02439V10.325C4.53832 10.6725 3.25 12.1858 3.25 14V18C3.25 20.0711 4.92893 21.75 7 21.75H17C19.0711 21.75 20.75 20.0711 20.75 18V14C20.75 12.1858 19.4617 10.6725 17.75 10.325V8.02439C17.75 4.84289 15.1749 2.25 12 2.25C8.82506 2.25 6.25 4.84289 6.25 8.02439ZM12 3.75C9.66037 3.75 7.75 5.66443 7.75 8.02439V10.25H16.25V8.02439C16.25 5.66443 14.3396 3.75 12 3.75ZM4.75 14C4.75 12.7574 5.75736 11.75 7 11.75H17C18.2426 11.75 19.25 12.7574 19.25 14V18C19.25 19.2426 18.2426 20.25 17 20.25H7C5.75736 20.25 4.75 19.2426 4.75 18V14Z" fill="currentColor"></path></svg></span><a aria-current="page" class="active" href="https://wandb.ai/xmelicher-team/zadanie2">zadanie2</a></div><i aria-hidden="true" class="icon wbic-ic-next divider"></i><div class="section"><a href="https://wandb.ai/xmelicher-team/zadanie2/reportlist">Reports</a></div><i aria-hidden="true" class="icon wbic-ic-next divider"></i><div class="section"><a aria-current="page" class="active" href="https://wandb.ai/xmelicher-team/zadanie2/reports/Neur-nov-siete-Z2--Vmlldzo0MDQ4NjU2">Neurónové siete Z2</a></div></div></div></div><div class="sc-jPqpmw dfyFIL"><span class="sc-iUScIm izkkcM"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="sc-eIgblV bYhCBb"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C12.4142 2 12.75 2.33579 12.75 2.75V3.28832C16.4017 3.66362 19.25 6.74918 19.25 10.5V13.5365L19.6397 13.7313C20.6266 14.2248 21.25 15.2335 21.25 16.3369C21.25 17.9458 19.9458 19.25 18.3369 19.25H15.6755C15.3287 20.9681 13.813 22.25 12 22.25C10.1868 22.25 8.67285 20.961 8.32511 19.25H5.66312C4.04577 19.25 2.75 17.9183 2.75 16.3179C2.75 15.2071 3.38016 14.2214 4.36033 13.7313L4.75 13.5365V10.5C4.75 6.74918 7.59833 3.66362 11.25 3.28832V2.75C11.25 2.33579 11.5858 2 12 2ZM18.3369 17.75C19.1173 17.75 19.75 17.1173 19.75 16.3369C19.75 15.8016 19.4476 15.3123 18.9688 15.0729L18.1646 14.6708C17.9105 14.5438 17.75 14.2841 17.75 14V10.5C17.75 7.32436 15.1756 4.75 12 4.75C8.82436 4.75 6.25 7.32436 6.25 10.5V14C6.25 14.2841 6.0895 14.5438 5.83541 14.6708L5.03115 15.0729C4.54567 15.3157 4.25 15.7901 4.25 16.3179C4.25 17.1069 4.89115 17.75 5.66312 17.75H18.3369ZM9.87828 19.25C10.1875 20.1235 11.0213 20.75 12 20.75C12.9812 20.75 13.8151 20.127 14.123 19.25H9.87828Z" fill="currentColor"></path></svg></span></div><div class="sc-gCgac kHJuKF"><button class="sc-eCuchx jHSbMz"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="sc-futmCW buzJvC"><path d="M10.4079 8.57257C10.684 7.96919 11.2931 7.54999 12 7.54999C12.9665 7.54999 13.75 8.33349 13.75 9.29999C13.75 9.77435 13.5623 10.2033 13.2554 10.5192C13.1738 10.6033 13.0828 10.6941 12.9864 10.7903C12.6766 11.0996 12.3104 11.4651 12.0162 11.8431C11.619 12.3535 11.25 13.0067 11.25 13.8V14.9C11.25 15.1761 11.4738 15.4 11.7499 15.4H12.2501C12.5262 15.4 12.75 15.1761 12.75 14.9V13.8C12.75 13.4887 12.8929 13.159 13.1999 12.7644C13.4313 12.4671 13.6991 12.1996 13.9915 11.9074C14.1015 11.7975 14.215 11.6842 14.3313 11.5644C14.8992 10.9799 15.25 10.1801 15.25 9.29999C15.25 7.50506 13.7949 6.04999 12 6.04999C10.5187 6.04999 9.26879 7.04106 8.8773 8.39632C8.74706 8.84715 8.97457 9.29999 9.50001 9.29999C10.0686 9.29999 10.2355 8.94922 10.4079 8.57257Z" fill="currentColor"></path><path d="M12.9 16.9C12.9 17.3971 12.4971 17.8 12 17.8C11.503 17.8 11.1 17.3971 11.1 16.9C11.1 16.4029 11.503 16 12 16C12.4971 16 12.9 16.4029 12.9 16.9Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M12 22.5C17.799 22.5 22.5 17.799 22.5 12C22.5 6.20101 17.799 1.5 12 1.5C6.20101 1.5 1.5 6.20101 1.5 12C1.5 17.799 6.20101 22.5 12 22.5ZM21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" fill="currentColor"></path></svg><div class="sc-jQliKr gVWMYl"></div></button></div><div class="viewer-dropdown"><div data-test="nav-profile" class="sc-hUBLZy hbOnYg"><img src="Neur%C3%B3nov%C3%A9%20siete%20Z2%20zadanie2%20%E2%80%93%20Weights%20&amp;%20Biases_files/unnamed.jpg" class="ui avatar image sc-iNZaTJ kJNiwu nav-propic"></div></div></div><div class="main"><div class="Toastify"></div><div class="report-page page-tabs report-width-readable read-only"><div class="report-page-top"><div class="report-header-view" data-test="report-page-view-header"><div data-test="report-page-edit-button" class="sc-icBnnU hJfqGt"><div style="display: contents;"><div class="sc-eNKQxu exNbZM"><i aria-hidden="true" class="icon wbic-ic-edit sc-elToUV jABGzl"></i>Edit</div></div><div style="display: contents;"><div class="sc-eNKQxu exNbZM"><i aria-hidden="true" class="icon wbic-ic-share sc-elToUV jABGzl"></i>Share</div></div></div><div class="report-header-view__content"><div class="report-header-view__title"><div class="report-header-view__title-name"><h1 class="text__single-line" title="Neurónové siete Z2">Neurónové siete Z2</h1><div class="report-header-view__description"><div class="editable-field   read-only"><span class="field-content">Druhé semestrálne zadanie z predmetu Neurónové siete 13.4.2023.</span></div></div><div class="report-header-view__meta"><div class="report-header-view__authors"><a class="report-header-view__author" href="https://wandb.ai/xcyprichr">Radovan Cyprich</a>, <a class="report-header-view__author" href="https://wandb.ai/xmelicher">Adam Melicher</a></div><div class="report-header-view__actions"><div class="report-header-view__action"><i aria-hidden="true" class="icon wbic-ic-chat"></i></div><div style="display: contents;"><div class="report-header-view__action"><i aria-hidden="true" class="icon wbic-ic-share"></i></div></div><div class="report-header-view__action"><i aria-hidden="true" class="icon wbic-ic-heart-outline"></i></div><div data-test="report-header-actions-overflow" class="report-header-view__action"><div class="wb-highlighted-icon"><i aria-hidden="true" class="icon wbic-ic-overflow"></i></div></div></div></div></div></div></div></div><div data-test="wbslate-report-content" class="sc-dcWOmZ iXOORk"><div data-test="report-hovering-toolbar" direction="up" class="sc-eiBfYF gQLETA" mode="viewing" contenteditable="false"><div class="sc-kggxBk bleYPG"><div data-test="inline-comment-button" class="sc-kSFjFC gDpHJZ"><i class="wbic-ic-chat sc-hGFGMM cVHWfC"></i><div class="sc-lfkeUN jwFdwj">Comment</div></div></div></div><div data-test="report-editable-content" class="sc-hQZJPO htpQsP" data-slate-editor="true" data-slate-node="value" zindex="-1" style="position: relative; outline: none; white-space: pre-wrap; overflow-wrap: break-word;" contenteditable="false"><div data-test="leading-paragraph" style="display: none;" class="sc-ksPlPm kdcUWs"><span data-slate-node="text"><span data-slate-leaf="true" class="sc-kRvFmb cchZWa"><span data-slate-zero-width="n" data-slate-length="0">﻿<br></span></span></span></div><h2 id="konvolučné-neurónové-siete" class="sc-gDqNik prcy"><i class="wbic-ic-link sc-juoUMJ efDmMu"></i><i class="wbic-ic-chevron-expanded sc-gGiJkG hUOkWq" contenteditable="false"></i><span data-slate-node="text"><span data-slate-leaf="true" class="sc-kRvFmb cchZWa"><span data-slate-string="true">Konvolučné neurónové siete</span></span></span></h2><div class="sc-ksPlPm kdcUWs"><span data-slate-node="text"><span data-slate-leaf="true" class="sc-kRvFmb cchZWa"><span data-slate-string="true">Našou úlohou bolo implementujtovať a natrénovať ľubovoľnú modifikáciu konvolučnej neurónovej siete, pre spracovanie sekvencií v nami zvolenom frameworku (TENSORFLOW) tak, že bude úspešná (&gt;&gt;lepšia ako náhoda) na nami  vybranom, cvičiacim schválenom, probléme.</span></span></span></div><h3 id="popis-dát" class="sc-iMedgv ilZRCA"><i class="wbic-ic-link sc-juoUMJ efDmMu"></i><i class="wbic-ic-chevron-expanded sc-gGiJkG hUOkWq" contenteditable="false"></i><span data-slate-node="text"><span data-slate-leaf="true" class="sc-kRvFmb cchZWa"><span data-slate-string="true">Popis dát</span></span></span></h3><div class="sc-ksPlPm kdcUWs"><span data-slate-node="text"><span data-slate-leaf="true" class="sc-kRvFmb cchZWa"><span data-slate-string="true">Vybrali sme si dáta z kaggle, ktoré sú dostupné na tomto linku:</span></span></span></div><div class="sc-ksPlPm kdcUWs"><span data-slate-node="text"><span data-slate-leaf="true" class="sc-kRvFmb cchZWa"><span data-slate-string="true"> </span></span></span><a data-slate-node="element" data-slate-inline="true" href="https://www.kaggle.com/datasets/misrakahmed/vegetable-image-dataset" target="_blank" class="sc-eosfuE lgIHpf"><span data-slate-node="text"><span data-slate-leaf="true" class="sc-kRvFmb cchZWa"><span data-slate-string="true">https://www.kaggle.com/datasets/misrakahmed/vegetable-image-dataset. </span></span></span></a><span data-slate-node="text"><span data-slate-leaf="true" class="sc-kRvFmb cchZWa"><span data-slate-zero-width="z" data-slate-length="0">﻿</span></span></span></div><div class="sc-ksPlPm kdcUWs"><span data-slate-node="text"><span data-slate-leaf="true" class="sc-kRvFmb cchZWa"><span data-slate-string="true">Dataset obsahuje obrázky 15 druhov bežnej zeleniny.</span></span></span></div><div class="sc-ksPlPm kdcUWs"><span data-slate-node="text"><span data-slate-leaf="true" class="sc-kRvFmb cchZWa"><span data-slate-string="true">Triedy - bean, bitter gourd, bottle gourd, brinjal, broccoli, cabbage, capsicum, carrot, cauliflower, cucumber, papaya, potato, pumpkin, radish and tomato</span></span></span></div><div class="sc-ksPlPm kdcUWs"><span data-slate-node="text"><span data-slate-leaf="true" class="sc-kRvFmb cchZWa"><span data-slate-string="true">Dataset celkovo obsahuje 21000 obrázkov z 15 tried, kde každá trieda obsahuje 1400 obrázkov veľkosti 224×224 a vo formáte *.jpg. Predtým ako sme dáta načítali sme urobili resize obrázkov na veľkosť 112x112 a následne sme výsledné obrázky normalizovali.</span></span></span></div><div class="sc-ksPlPm kdcUWs"><span data-slate-node="text"><span data-slate-leaf="true" class="sc-kRvFmb cchZWa"><span data-slate-string="true">Dataset bol predom rozdelený na trénovaciu validačnú a testovaciu množinu v pomere TRAIN 70% VALID 15% TEST 15%.</span></span></span></div><h2 id="model" class="sc-gDqNik prcy"><i class="wbic-ic-link sc-juoUMJ efDmMu"></i><i class="wbic-ic-chevron-expanded sc-gGiJkG hUOkWq" contenteditable="false"></i><span data-slate-node="text"><span data-slate-leaf="true" class="sc-kRvFmb cchZWa"><span data-slate-string="true">Model</span></span></span></h2><div class="sc-ksPlPm kdcUWs"><span data-slate-node="text"><span data-slate-leaf="true" class="sc-kRvFmb cchZWa"><span data-slate-string="true">Po zostavení modelu využívame optimizer Adam s learning rate 0.001, ktorý sa vďaka callbacku ReduceLROnPlateau redukuje podľa rýchlosti učenia sa modelu.</span></span></span></div><div class="sc-ksPlPm kdcUWs"><span data-slate-node="text"><span data-slate-leaf="true" class="sc-kRvFmb cchZWa"><span data-slate-string="true">Ako loss funkciu používame SparseCategoricalCrossentropy.</span></span></span></div><div class="sc-ksPlPm kdcUWs"><span data-slate-node="text"><span data-slate-leaf="true" class="sc-kRvFmb cchZWa"><span data-slate-zero-width="n" data-slate-length="0">﻿<br></span></span></span></div><div class="sc-fWHrfq cXqieI"><div data-slate-spacer="true" style="height: 0px; color: transparent; outline: none; position: absolute;"><span data-slate-node="text"><span data-slate-leaf="true"><span data-slate-zero-width="z" data-slate-length="0">﻿</span></span></span></div><div contenteditable="false"><div class="report-section panel-bank sc-ksznmL iSwRAP"><div class="grid-section-wrapper"><div><div class="grid-section"><div style="position: relative; height: 283px;"><div class="panel-bank__panel col-8 panel-bank__panel-id__iph2dqupo react-resizable drag-source" style="width: 358px; height: 283px; left: 0px; top: 0px;" draggable="false"><div><div style="width: 100%; height: 100%; border: 1px solid rgb(238, 238, 238); background-color: white;"></div></div> <span class="react-resizable-handle react-resizable-handle-se"></span></div><div class="panel-bank__panel col-8 panel-bank__panel-id__xca5kid1y react-resizable drag-source" style="width: 358px; height: 283px; left: 714px; top: 0px;" draggable="false"><div><div style="width: 100%; height: 100%; border: 1px solid rgb(238, 238, 238); background-color: white;"></div></div> <span class="react-resizable-handle react-resizable-handle-se"></span></div><div class="panel-bank__panel col-8 panel-bank__panel-id__49q6e6lpq react-resizable drag-source" style="width: 358px; height: 283px; left: 357px; top: 0px;" draggable="false"><div><div style="width: 100%; height: 100%; border: 1px solid rgb(238, 238, 238); background-color: white;"></div></div> <span class="react-resizable-handle react-resizable-handle-se"></span></div></div></div></div></div><div class="run-sets-wrapper active"><div class="run-sets"><div class="run-set-summaries"><div class="run-set-drop-target"><div class="run-set-drop-indicator"></div></div><div class="run-set-summary-container drag-source" draggable="false"><div class="drag-drop-handle "><div class="run-set-summary  active first-runset-summary"><div class="multi-state-checkbox "><i aria-hidden="true" class="icon wbic-ic-check"></i></div>Run set<div class="ui label count-label">1</div><i class="wbic-ic-overflow run-set-summary-overflow"></i></div></div></div><div class="run-set-drop-target"><div class="run-set-drop-indicator--active run-set-drop-indicator run-set-drop-indicator--last"></div></div></div><div class="slide down run-selector-box visible transition"><div style="height: 578px;"></div></div></div></div></div></div></div><h2 id="testovanie-" class="sc-gDqNik prcy"><i class="wbic-ic-link sc-juoUMJ efDmMu"></i><i class="wbic-ic-chevron-expanded sc-gGiJkG hUOkWq" contenteditable="false"></i><span data-slate-node="text"><span data-slate-leaf="true" class="sc-kRvFmb cchZWa"><span data-slate-string="true">Testovanie </span></span></span></h2><div class="sc-ksPlPm kdcUWs"><span data-slate-node="text"><span data-slate-leaf="true" class="sc-kRvFmb cchZWa"><span data-slate-string="true">Testovali sme viacero typov architektúr, aby sme zistili, ktorá performuje najlepšie. Už pri úvodnom nástrele sme zistili, že dataset, nie je príliš náročný na trénovanie kedže sme dosahovali accuracy okolo 94% na trénovacej množine.</span></span></span></div><div class="sc-ksPlPm kdcUWs"><span data-slate-node="text"><span data-slate-leaf="true" class="sc-kRvFmb cchZWa"><span data-slate-string="true">Preto sme vyskúšali viacero architektúr, ktoré načítavame z modulu models.py</span></span></span></div><ul data-slate-node="element" class="sc-cBYayr eVPJDi"><div class="sc-czgevV giohnb"><li class="sc-jHMygC hhnEbO"><div data-slate-node="element" class="sc-ksPlPm kdcUWs"><span data-slate-node="text"><span data-slate-leaf="true" class="sc-kRvFmb cchZWa"><span data-slate-string="true">FIRST_MODEL - 3convrelupool</span></span></span></div></li></div><div class="sc-czgevV giohnb"><li class="sc-jHMygC hhnEbO"><div data-slate-node="element" class="sc-ksPlPm kdcUWs"><span data-slate-node="text"><span data-slate-leaf="true" class="sc-kRvFmb cchZWa"><span data-slate-string="true">DEEPER_DENSE_MODEL - deeper_dense</span></span></span></div></li></div><div class="sc-czgevV giohnb"><li class="sc-jHMygC hhnEbO"><div data-slate-node="element" class="sc-ksPlPm kdcUWs"><span data-slate-node="text"><span data-slate-leaf="true" class="sc-kRvFmb cchZWa"><span data-slate-string="true">MORE_CONV_MODEL - more_conv</span></span></span></div></li></div><div class="sc-czgevV giohnb"><li class="sc-jHMygC hhnEbO"><div data-slate-node="element" class="sc-ksPlPm kdcUWs"><span data-slate-node="text"><span data-slate-leaf="true" class="sc-kRvFmb cchZWa"><span data-slate-string="true">SMALL_FILTERS_MODEL - small_filters</span></span></span></div></li></div><div class="sc-czgevV giohnb"><li class="sc-jHMygC hhnEbO"><div data-slate-node="element" class="sc-ksPlPm kdcUWs"><span data-slate-node="text"><span data-slate-leaf="true" class="sc-kRvFmb cchZWa"><span data-slate-string="true">LARGE_FILTERS_MODEL - large_filters</span></span></span></div></li></div><div class="sc-czgevV giohnb"><li class="sc-jHMygC hhnEbO"><div data-slate-node="element" class="sc-ksPlPm kdcUWs"><span data-slate-node="text"><span data-slate-leaf="true" class="sc-kRvFmb cchZWa"><span data-slate-string="true">DIFF_FILTER_NUM_MODEL - diff_filter_num </span></span></span></div></li></div><div class="sc-czgevV giohnb"><li class="sc-jHMygC hhnEbO"><div data-slate-node="element" class="sc-ksPlPm kdcUWs"><span data-slate-node="text"><span data-slate-leaf="true" class="sc-kRvFmb cchZWa"><span data-slate-string="true">LEAKY_RELU_FIRST_MODEL - leaky_relu_first</span></span></span></div></li></div><div class="sc-czgevV giohnb"><li class="sc-jHMygC hhnEbO"><div data-slate-node="element" class="sc-ksPlPm kdcUWs"><span data-slate-node="text"><span data-slate-leaf="true" class="sc-kRvFmb cchZWa"><span data-slate-string="true">LEAKY_RELU_DOUBLECONV_MODEL - leaky_relu_doubleconv</span></span></span></div></li></div><div class="sc-czgevV giohnb"><li class="sc-jHMygC hhnEbO"><div data-slate-node="element" class="sc-ksPlPm kdcUWs"><span data-slate-node="text"><span data-slate-leaf="true" class="sc-kRvFmb cchZWa"><span data-slate-string="true">LARGE_FILTERS_DIFF_STRIDES_MODEL - dropout_large_strides</span></span></span></div></li></div><div class="sc-czgevV giohnb"><li class="sc-jHMygC hhnEbO"><div data-slate-node="element" class="sc-ksPlPm kdcUWs"><span data-slate-node="text"><span data-slate-leaf="true" class="sc-kRvFmb cchZWa"><span data-slate-string="true">SMALL_FILTERS_DIFF_STRIDES_MODEL - dropout_small_filters</span></span></span></div></li></div><div class="sc-czgevV giohnb"><li class="sc-jHMygC hhnEbO"><div data-slate-node="element" class="sc-ksPlPm kdcUWs"><span data-slate-node="text"><span data-slate-leaf="true" class="sc-kRvFmb cchZWa"><span data-slate-string="true">DROPOUT_LARGE_STRIDES_MODEL - dropout_large_strides</span></span></span></div></li></div><div class="sc-czgevV giohnb"><li class="sc-jHMygC hhnEbO"><div data-slate-node="element" class="sc-ksPlPm kdcUWs"><span data-slate-node="text"><span data-slate-leaf="true" class="sc-kRvFmb cchZWa"><span data-slate-string="true">DROPOUT_SMALL_FILTERS_MODEL - dropout_small_filters</span></span></span></div></li></div><div class="sc-czgevV giohnb"><li class="sc-jHMygC hhnEbO"><div data-slate-node="element" class="sc-ksPlPm kdcUWs"><span data-slate-node="text"><span data-slate-leaf="true" class="sc-kRvFmb cchZWa"><span data-slate-string="true">DROPOUT_DIFF_FILTER_NUM_MODEL - dropout_diff_filter_num</span></span></span></div></li></div><div class="sc-czgevV giohnb"><li class="sc-jHMygC hhnEbO"><div data-slate-node="element" class="sc-ksPlPm kdcUWs"><span data-slate-node="text"><span data-slate-leaf="true" class="sc-kRvFmb cchZWa"><span data-slate-string="true">LARGE_FILTERS_DIFF_STRIDES_MODEL - large_filters_diff_strides</span></span></span></div></li></div><div class="sc-czgevV giohnb"><li class="sc-jHMygC hhnEbO"><div data-slate-node="element" class="sc-ksPlPm kdcUWs"><span data-slate-node="text"><span data-slate-leaf="true" class="sc-kRvFmb cchZWa"><span data-slate-string="true">SMALL_FILTERS_DIFF_STRIDES_MODEL - small_filters_diff_strides</span></span></span></div></li></div></ul><div class="sc-ksPlPm kdcUWs"><span data-slate-node="text"><span data-slate-leaf="true" class="sc-kRvFmb cchZWa"><span data-slate-string="true">Tieto architektúry sú navhnuté rôzne, skúšali sme  porovnávať vrstvy ReLU a Leaky ReLU ako aj architektúry s a bez dropoutu ako aj architektúry líšiace sa v počte filtrov.  Vyskúšali sme aj architektúry s pridanými strides, a aký to môže mať vplyv na efektivitu tréningu. Avšak môžeme skonštatovať, že všetky modely sa skôr, či neskôr dokázali naučiť veľmi dobre. Všetky modely sme trénovali v 30 epochách s batch_size 32 aj keď pri niektorých to bolo zbytočne veľa, keďže sme dosiahli 100% accuracy na trénovacej množine.</span></span></span></div><div class="sc-ksPlPm kdcUWs"><span data-slate-node="text"><span data-slate-leaf="true" class="sc-kRvFmb cchZWa"><span data-slate-zero-width="n" data-slate-length="0">﻿<br></span></span></span></div><h3 id="hĺbka-a-šírka-modelu" class="sc-iMedgv ilZRCA"><i class="wbic-ic-link sc-juoUMJ efDmMu"></i><i class="wbic-ic-chevron-expanded sc-gGiJkG hUOkWq" contenteditable="false"></i><span data-slate-node="text"><span data-slate-leaf="true" class="sc-kRvFmb cchZWa"><span data-slate-string="true">Hĺbka a šírka modelu</span></span></span></h3><div class="sc-ksPlPm kdcUWs"><span data-slate-node="text"><span data-slate-leaf="true" class="sc-kRvFmb cchZWa"><span data-slate-string="true">Ako prvé sme testovali modely podľa šírky filtrov. Tieto modely neboli lepšie oproti pôvodnému modelu. </span></span></span></div><div class="sc-ksPlPm kdcUWs"><span data-slate-node="text"><span data-slate-leaf="true" class="sc-kRvFmb cchZWa"><span data-slate-zero-width="n" data-slate-length="0">﻿<br></span></span></span></div><div class="sc-fWHrfq cXqieI"><div data-slate-spacer="true" style="height: 0px; color: transparent; outline: none; position: absolute;"><span data-slate-node="text"><span data-slate-leaf="true"><span data-slate-zero-width="z" data-slate-length="0">﻿</span></span></span></div><div contenteditable="false"><div class="report-section panel-bank sc-ksznmL iSwRAP"><div class="grid-section-wrapper"><div><div class="grid-section"><div style="position: relative; height: 283px;"><div class="panel-bank__panel col-8 panel-bank__panel-id__iph2dqupo react-resizable drag-source" style="width: 358px; height: 283px; left: 714px; top: 0px;" draggable="false"><div><div style="width: 100%; height: 100%; border: 1px solid rgb(238, 238, 238); background-color: white;"></div></div> <span class="react-resizable-handle react-resizable-handle-se"></span></div><div class="panel-bank__panel col-8 panel-bank__panel-id__xca5kid1y react-resizable drag-source" style="width: 358px; height: 283px; left: 357px; top: 0px;" draggable="false"><div><div style="width: 100%; height: 100%; border: 1px solid rgb(238, 238, 238); background-color: white;"></div></div> <span class="react-resizable-handle react-resizable-handle-se"></span></div><div class="panel-bank__panel col-8 panel-bank__panel-id__49q6e6lpq react-resizable drag-source" style="width: 358px; height: 283px; left: 0px; top: 0px;" draggable="false"><div><div style="width: 100%; height: 100%; border: 1px solid rgb(238, 238, 238); background-color: white;"></div></div> <span class="react-resizable-handle react-resizable-handle-se"></span></div></div></div></div></div><div class="run-sets-wrapper active"><div class="run-sets"><div class="run-set-summaries"><div class="run-set-drop-target"><div class="run-set-drop-indicator"></div></div><div class="run-set-summary-container drag-source" draggable="false"><div class="drag-drop-handle "><div class="run-set-summary  active first-runset-summary"><div class="multi-state-checkbox "><i aria-hidden="true" class="icon wbic-ic-check"></i></div>Run set<div class="ui label count-label">3</div><i class="wbic-ic-overflow run-set-summary-overflow"></i></div></div></div><div class="run-set-drop-target"><div class="run-set-drop-indicator--active run-set-drop-indicator run-set-drop-indicator--last"></div></div></div><div class="slide down run-selector-box visible transition"><div style="height: 270px;"></div></div></div></div></div></div></div><h3 id="rôzne-filtre" class="sc-iMedgv ilZRCA"><i class="wbic-ic-link sc-juoUMJ efDmMu"></i><i class="wbic-ic-chevron-expanded sc-gGiJkG hUOkWq" contenteditable="false"></i><span data-slate-node="text"><span data-slate-leaf="true" class="sc-kRvFmb cchZWa"><span data-slate-string="true">Rôzne filtre</span></span></span></h3><div class="sc-ksPlPm kdcUWs"><span data-slate-node="text"><span data-slate-leaf="true" class="sc-kRvFmb cchZWa"><span data-slate-string="true">Vyskúšali sme rôzne veľkosti filtrov ako aj ich počet a všímali sme si ako to ovplyvňuje  tréning. Napríklad model small_filters síce skončil tréning neskôr avšak na validačnej množine dosiahol najvyššiu accuracy až 97%.</span></span></span></div><div class="sc-fWHrfq cXqieI"><div data-slate-spacer="true" style="height: 0px; color: transparent; outline: none; position: absolute;"><span data-slate-node="text"><span data-slate-leaf="true"><span data-slate-zero-width="z" data-slate-length="0">﻿</span></span></span></div><div contenteditable="false"><div class="report-section panel-bank sc-ksznmL iSwRAP"><div class="grid-section-wrapper"><div><div class="grid-section"><div style="position: relative; height: 283px;"><div class="panel-bank__panel col-8 panel-bank__panel-id__iph2dqupo react-resizable drag-source" style="width: 358px; height: 283px; left: 357px; top: 0px;" draggable="false"><div><div style="width: 100%; height: 100%; border: 1px solid rgb(238, 238, 238); background-color: white;"></div></div> <span class="react-resizable-handle react-resizable-handle-se"></span></div><div class="panel-bank__panel col-8 panel-bank__panel-id__xca5kid1y react-resizable drag-source" style="width: 358px; height: 283px; left: 0px; top: 0px;" draggable="false"><div><div style="width: 100%; height: 100%; border: 1px solid rgb(238, 238, 238); background-color: white;"></div></div> <span class="react-resizable-handle react-resizable-handle-se"></span></div><div class="panel-bank__panel col-8 panel-bank__panel-id__49q6e6lpq react-resizable drag-source" style="width: 358px; height: 283px; left: 714px; top: 0px;" draggable="false"><div><div style="width: 100%; height: 100%; border: 1px solid rgb(238, 238, 238); background-color: white;"></div></div> <span class="react-resizable-handle react-resizable-handle-se"></span></div></div></div></div></div><div class="run-sets-wrapper active"><div class="run-sets"><div class="run-set-summaries"><div class="run-set-drop-target"><div class="run-set-drop-indicator"></div></div><div class="run-set-summary-container drag-source" draggable="false"><div class="drag-drop-handle "><div class="run-set-summary  active first-runset-summary"><div class="multi-state-checkbox "><i aria-hidden="true" class="icon wbic-ic-check"></i></div>Run set<div class="ui label count-label">4</div><i class="wbic-ic-overflow run-set-summary-overflow"></i></div></div></div><div class="run-set-drop-target"><div class="run-set-drop-indicator--active run-set-drop-indicator run-set-drop-indicator--last"></div></div></div><div class="slide down run-selector-box visible transition"><div style="height: 314px;"></div></div></div></div></div></div></div><h3 id="-dropout" class="sc-iMedgv ilZRCA"><i class="wbic-ic-link sc-juoUMJ efDmMu"></i><i class="wbic-ic-chevron-expanded sc-gGiJkG hUOkWq" contenteditable="false"></i><span data-slate-node="text"><span data-slate-leaf="true" class="sc-kRvFmb cchZWa"><span data-slate-string="true"> Dropout</span></span></span></h3><div class="sc-ksPlPm kdcUWs"><span data-slate-node="text"><span data-slate-leaf="true" class="sc-kRvFmb cchZWa"><span data-slate-string="true">Ďalšie v poradí bude porovnanie modelov s dropoutami oproti pôvodnému modelu. Tu môžeme vidieť, že sa model nenatrénoval úplne na 100 % ani na trénovacej množine. Vyskúšali sme taktiež pridať strides a všimli sme si, že keď sme dali vačšie strides tréning pokračoval aj napriek veľmi pomalému zlepšovaniu počas posledných 15 epoch. </span></span></span></div><div class="sc-fWHrfq cXqieI"><div data-slate-spacer="true" style="height: 0px; color: transparent; outline: none; position: absolute;"><span data-slate-node="text"><span data-slate-leaf="true"><span data-slate-zero-width="z" data-slate-length="0">﻿</span></span></span></div><div contenteditable="false"><div class="report-section panel-bank sc-ksznmL iSwRAP"><div class="grid-section-wrapper"><div><div class="grid-section"><div style="position: relative; height: 283px;"><div class="panel-bank__panel col-8 panel-bank__panel-id__xca5kid1y react-resizable drag-source" style="width: 358px; height: 283px; left: 714px; top: 0px;" draggable="false"><div><div style="width: 100%; height: 100%; border: 1px solid rgb(238, 238, 238); background-color: white;"></div></div> <span class="react-resizable-handle react-resizable-handle-se"></span></div><div class="panel-bank__panel col-8 panel-bank__panel-id__49q6e6lpq react-resizable drag-source" style="width: 358px; height: 283px; left: 357px; top: 0px;" draggable="false"><div><div style="width: 100%; height: 100%; border: 1px solid rgb(238, 238, 238); background-color: white;"></div></div> <span class="react-resizable-handle react-resizable-handle-se"></span></div><div class="panel-bank__panel col-8 panel-bank__panel-id__iph2dqupo react-resizable drag-source" style="width: 358px; height: 283px; left: 0px; top: 0px;" draggable="false"><div><div style="width: 100%; height: 100%; border: 1px solid rgb(238, 238, 238); background-color: white;"></div></div> <span class="react-resizable-handle react-resizable-handle-se"></span></div></div></div></div></div><div class="run-sets-wrapper active"><div class="run-sets"><div class="run-set-summaries"><div class="run-set-drop-target"><div class="run-set-drop-indicator"></div></div><div class="run-set-summary-container drag-source" draggable="false"><div class="drag-drop-handle "><div class="run-set-summary  active first-runset-summary"><div class="multi-state-checkbox "><i aria-hidden="true" class="icon wbic-ic-check"></i></div>Run set<div class="ui label count-label">4</div><i class="wbic-ic-overflow run-set-summary-overflow"></i></div></div></div><div class="run-set-drop-target"><div class="run-set-drop-indicator--active run-set-drop-indicator run-set-drop-indicator--last"></div></div></div><div class="slide down run-selector-box visible transition"><div style="height: 314px;"></div></div></div></div></div></div></div><h3 id="relu-a-leakyrelu" class="sc-iMedgv ilZRCA"><i class="wbic-ic-link sc-juoUMJ efDmMu"></i><i class="wbic-ic-chevron-expanded sc-gGiJkG hUOkWq" contenteditable="false"></i><span data-slate-node="text"><span data-slate-leaf="true" class="sc-kRvFmb cchZWa"><span data-slate-string="true">ReLu a LeakyRelu</span></span></span></h3><div class="sc-ksPlPm kdcUWs"><span data-slate-node="text"><span data-slate-leaf="true" class="sc-kRvFmb cchZWa"><span data-slate-string="true">Vyskúšali sme taktiež porovnať rovnaké modely s inými aktivačnými funkciami a to LeakyReLU.  Vidíme, že oproti pôvodnému modelu s aktivačnými funkciami ReLU LeakyReLU modely dosiahli mierne vyššiu accuracy, avšak tréning tohto modelu skončil oveľa neskôr.</span></span></span></div><div class="sc-fWHrfq cXqieI"><div data-slate-spacer="true" style="height: 0px; color: transparent; outline: none; position: absolute;"><span data-slate-node="text"><span data-slate-leaf="true"><span data-slate-zero-width="z" data-slate-length="0">﻿</span></span></span></div><div contenteditable="false"><div class="report-section panel-bank sc-ksznmL iSwRAP"><div class="grid-section-wrapper"><div><div class="grid-section"><div style="position: relative; height: 283px;"><div class="panel-bank__panel col-8 panel-bank__panel-id__xca5kid1y react-resizable drag-source" style="width: 358px; height: 283px; left: 0px; top: 0px;" draggable="false"><div><div style="width: 100%; height: 100%; border: 1px solid rgb(238, 238, 238); background-color: white;"></div></div> <span class="react-resizable-handle react-resizable-handle-se"></span></div><div class="panel-bank__panel col-8 panel-bank__panel-id__49q6e6lpq react-resizable drag-source" style="width: 358px; height: 283px; left: 714px; top: 0px;" draggable="false"><div><div style="width: 100%; height: 100%; border: 1px solid rgb(238, 238, 238); background-color: white;"></div></div> <span class="react-resizable-handle react-resizable-handle-se"></span></div><div class="panel-bank__panel col-8 panel-bank__panel-id__iph2dqupo react-resizable drag-source" style="width: 358px; height: 283px; left: 357px; top: 0px;" draggable="false"><div><div style="width: 100%; height: 100%; border: 1px solid rgb(238, 238, 238); background-color: white;"></div></div> <span class="react-resizable-handle react-resizable-handle-se"></span></div></div></div></div></div><div class="run-sets-wrapper active"><div class="run-sets"><div class="run-set-summaries"><div class="run-set-drop-target"><div class="run-set-drop-indicator"></div></div><div class="run-set-summary-container drag-source" draggable="false"><div class="drag-drop-handle "><div class="run-set-summary  active first-runset-summary"><div class="multi-state-checkbox "><i aria-hidden="true" class="icon wbic-ic-check"></i></div>Run set<div class="ui label count-label">3</div><i class="wbic-ic-overflow run-set-summary-overflow"></i></div></div></div><div class="run-set-drop-target"><div class="run-set-drop-indicator--active run-set-drop-indicator run-set-drop-indicator--last"></div></div></div><div class="slide down run-selector-box visible transition"><div style="height: 270px;"></div></div></div></div></div></div></div><div class="sc-ksPlPm kdcUWs"><span data-slate-node="text"><span data-slate-leaf="true" class="sc-kRvFmb cchZWa"><span data-slate-zero-width="n" data-slate-length="0">﻿<br></span></span></span></div><h3 id="rôzne-strides" class="sc-iMedgv ilZRCA"><i class="wbic-ic-link sc-juoUMJ efDmMu"></i><i class="wbic-ic-chevron-expanded sc-gGiJkG hUOkWq" contenteditable="false"></i><span data-slate-node="text"><span data-slate-leaf="true" class="sc-kRvFmb cchZWa"><span data-slate-string="true">Rôzne strides</span></span></span></h3><div class="sc-ksPlPm kdcUWs"><span data-slate-node="text"><span data-slate-leaf="true" class="sc-kRvFmb cchZWa"><span data-slate-string="true">Porovnávali sme aj dva modely s rôznymi filtrami a strides s našim pôvodným modelom. Pri týchto tréningoch nevidíme signifikantné rozdiely medzi výsledkami. </span></span></span></div><div class="sc-fWHrfq cXqieI"><div data-slate-spacer="true" style="height: 0px; color: transparent; outline: none; position: absolute;"><span data-slate-node="text"><span data-slate-leaf="true"><span data-slate-zero-width="z" data-slate-length="0">﻿</span></span></span></div><div contenteditable="false"><div class="report-section panel-bank sc-ksznmL iSwRAP"><div class="grid-section-wrapper"><div><div class="grid-section"><div style="position: relative; height: 283px;"><div class="panel-bank__panel col-8 panel-bank__panel-id__xca5kid1y react-resizable drag-source" style="width: 358px; height: 283px; left: 714px; top: 0px;" draggable="false"><div><div style="width: 100%; height: 100%; border: 1px solid rgb(238, 238, 238); background-color: white;"></div></div> <span class="react-resizable-handle react-resizable-handle-se"></span></div><div class="panel-bank__panel col-8 panel-bank__panel-id__49q6e6lpq react-resizable drag-source" style="width: 358px; height: 283px; left: 357px; top: 0px;" draggable="false"><div><div style="width: 100%; height: 100%; border: 1px solid rgb(238, 238, 238); background-color: white;"></div></div> <span class="react-resizable-handle react-resizable-handle-se"></span></div><div class="panel-bank__panel col-8 panel-bank__panel-id__iph2dqupo react-resizable drag-source" style="width: 358px; height: 283px; left: 0px; top: 0px;" draggable="false"><div><div style="width: 100%; height: 100%; border: 1px solid rgb(238, 238, 238); background-color: white;"></div></div> <span class="react-resizable-handle react-resizable-handle-se"></span></div></div></div></div></div><div class="run-sets-wrapper active"><div class="run-sets"><div class="run-set-summaries"><div class="run-set-drop-target"><div class="run-set-drop-indicator"></div></div><div class="run-set-summary-container drag-source" draggable="false"><div class="drag-drop-handle "><div class="run-set-summary  active first-runset-summary"><div class="multi-state-checkbox "><i aria-hidden="true" class="icon wbic-ic-check"></i></div>Run set<div class="ui label count-label">3</div><i class="wbic-ic-overflow run-set-summary-overflow"></i></div></div></div><div class="run-set-drop-target"><div class="run-set-drop-indicator--active run-set-drop-indicator run-set-drop-indicator--last"></div></div></div><div class="slide down run-selector-box visible transition"><div style="height: 270px;"></div></div></div></div></div></div></div><div class="sc-ksPlPm kdcUWs"><span data-slate-node="text"><span data-slate-leaf="true" class="sc-kRvFmb cchZWa"><span data-slate-zero-width="n" data-slate-length="0">﻿<br></span></span></span></div><h3 id="najlepší-model" class="sc-iMedgv ilZRCA"><i class="wbic-ic-link sc-juoUMJ efDmMu"></i><i class="wbic-ic-chevron-expanded sc-gGiJkG hUOkWq" contenteditable="false"></i><span data-slate-node="text"><span data-slate-leaf="true" class="sc-kRvFmb cchZWa"><span data-slate-string="true">Najlepší model</span></span></span></h3><div class="sc-ksPlPm kdcUWs"><span data-slate-node="text"><span data-slate-leaf="true" class="sc-kRvFmb cchZWa"><span data-slate-string="true">Vidíme, že model Leaky_relu_first nakoniec, síce skončil tréning neskôr avšak dosiahol mierne lepšiu accuracy  na validačnej množine. Preto sme tento model vyhodnotili ako najlepší.</span></span></span></div><div class="sc-fWHrfq cXqieI"><div data-slate-spacer="true" style="height: 0px; color: transparent; outline: none; position: absolute;"><span data-slate-node="text"><span data-slate-leaf="true"><span data-slate-zero-width="z" data-slate-length="0">﻿</span></span></span></div><div contenteditable="false"><div class="report-section panel-bank sc-ksznmL iSwRAP"><div class="grid-section-wrapper"><div><div class="grid-section"><div style="position: relative; height: 283px;"><div class="panel-bank__panel col-8 panel-bank__panel-id__xca5kid1y react-resizable drag-source" style="width: 358px; height: 283px; left: 714px; top: 0px;" draggable="false"><div><div style="width: 100%; height: 100%; border: 1px solid rgb(238, 238, 238); background-color: white;"></div></div> <span class="react-resizable-handle react-resizable-handle-se"></span></div><div class="panel-bank__panel col-8 panel-bank__panel-id__49q6e6lpq react-resizable drag-source" style="width: 358px; height: 283px; left: 357px; top: 0px;" draggable="false"><div><div style="width: 100%; height: 100%; border: 1px solid rgb(238, 238, 238); background-color: white;"></div></div> <span class="react-resizable-handle react-resizable-handle-se"></span></div><div class="panel-bank__panel col-8 panel-bank__panel-id__iph2dqupo react-resizable drag-source" style="width: 358px; height: 283px; left: 0px; top: 0px;" draggable="false"><div><div style="width: 100%; height: 100%; border: 1px solid rgb(238, 238, 238); background-color: white;"></div></div> <span class="react-resizable-handle react-resizable-handle-se"></span></div></div></div></div></div><div class="run-sets-wrapper active"><div class="run-sets"><div class="run-set-summaries"><div class="run-set-drop-target"><div class="run-set-drop-indicator"></div></div><div class="run-set-summary-container drag-source" draggable="false"><div class="drag-drop-handle "><div class="run-set-summary  active first-runset-summary"><div class="multi-state-checkbox "><i aria-hidden="true" class="icon wbic-ic-check"></i></div>Run set<div class="ui label count-label">2</div><i class="wbic-ic-overflow run-set-summary-overflow"></i></div></div></div><div class="run-set-drop-target"><div class="run-set-drop-indicator--active run-set-drop-indicator run-set-drop-indicator--last"></div></div></div><div class="slide down run-selector-box visible transition"><div style="height: 578px;"></div></div></div></div></div></div></div><h2 id="záver" class="sc-gDqNik prcy"><i class="wbic-ic-link sc-juoUMJ efDmMu"></i><i class="wbic-ic-chevron-expanded sc-gGiJkG hUOkWq" contenteditable="false"></i><span data-slate-node="text"><span data-slate-leaf="true" class="sc-kRvFmb cchZWa"><span data-slate-string="true">Záver</span></span></span></h2><div class="sc-ksPlPm kdcUWs"><span data-slate-node="text"><span data-slate-leaf="true" class="sc-kRvFmb cchZWa"><span data-slate-string="true">Pri práci na tomto zadaní sme si vyskúšali návrh rôznych architektúr konvolúčných neurónových sietí ako aj ich testovanie. Venovali sme sa viac rôznorodosti architektúr ako nastavovaniu hyperparametrov. Dosiahli sme veľmi dobré výsledky (v najlepšom prípade 97.5 % accuracy na validačnej množine), ktorých tréning sme porovnávali v grafoch uvedených vyššie. Na záver sme výsledky overovali na testovacej množine, kde sme zistili, ktoré obrázky model predikoval nesprávne. </span></span></span></div><div class="sc-ksPlPm kdcUWs"><span data-slate-node="text"><span data-slate-leaf="true" class="sc-kRvFmb cchZWa"><span data-slate-zero-width="n" data-slate-length="0">﻿<br></span></span></span></div><div class="sc-ksPlPm kdcUWs"><span data-slate-node="text"><span data-slate-leaf="true" class="sc-kRvFmb cchZWa"><span data-slate-zero-width="n" data-slate-length="0">﻿<br></span></span></span></div><div class="sc-ksPlPm kdcUWs"><span data-slate-node="text"><span data-slate-leaf="true" class="sc-kRvFmb cchZWa"><span data-slate-string="true">Reference: </span></span></span><a data-slate-node="element" data-slate-inline="true" href="https://www.researchgate.net/publication/352846889_DCNN-Based_Vegetable_Image_Classification_Using_Transfer_Learning_A_Comparative_Study" target="_blank" class="sc-eosfuE lgIHpf"><span data-slate-node="text"><span data-slate-leaf="true" class="sc-kRvFmb cchZWa"><span data-slate-string="true">https://www.researchgate.net/publication/352846889_DCNN-Based_Vegetable_Image_Classification_Using_Transfer_Learning_A_Comparative_Study</span></span></span></a><span data-slate-node="text"><span data-slate-leaf="true" class="sc-kRvFmb cchZWa"><span data-slate-zero-width="z" data-slate-length="0">﻿</span></span></span></div><div data-slate-node="element" data-test="trailing-paragraph" style="display: none;" class="sc-ksPlPm kdcUWs"><span data-slate-node="text"><span data-slate-leaf="true" class="sc-kRvFmb cchZWa"><span data-slate-zero-width="n" data-slate-length="0">﻿<br></span></span></span></div></div><div id="comments" class="report-discussion"><div class="discussion-cta"><div class="comment-pic"><img src="Neur%C3%B3nov%C3%A9%20siete%20Z2%20zadanie2%20%E2%80%93%20Weights%20&amp;%20Biases_files/unnamed.jpg" class="ui avatar image"></div><div class="discussion-cta-comment-box" title="">Write a comment...</div></div><div class="comment-frame" style="visibility: hidden;"><i aria-hidden="true" class="minus mini icon"></i><div class="comment-meta"><div class="comment-pic"><a href="https://wandb.ai/xcyprichr"><img src="Neur%C3%B3nov%C3%A9%20siete%20Z2%20zadanie2%20%E2%80%93%20Weights%20&amp;%20Biases_files/unnamed.jpg" class="ui avatar image"></a></div><div><a href="https://wandb.ai/xcyprichr"><span class="comment-username">Radovan Cyprich</span></a> </div></div><div class="comment-editor"><div style="position: relative; overflow-y: visible;" class="comment-mentions comment-mentions--multiLine"><div class="comment-mentions__control"><div style="position: relative; box-sizing: border-box; width: 100%; color: transparent; overflow: hidden; white-space: pre-wrap; overflow-wrap: break-word; border: 1px solid transparent; text-align: start;" class="comment-mentions__highlighter"> </div><textarea placeholder="Write a comment..." style="display: block; width: 100%; position: absolute; margin: 0px; top: 0px; left: 0px; box-sizing: border-box; background-color: transparent; font-family: inherit; font-size: inherit; letter-spacing: inherit; height: 100%; bottom: 0px; overflow: hidden; resize: none;" class="comment-mentions__input"></textarea></div></div><div class="comment-reply-actions"><button data-test="submit-comment" class="ui mini primary disabled button" disabled="disabled" tabindex="-1">Post comment</button><button class="ui mini button cancel">Cancel</button><div class="comment-shortcuts"><div><strong>&amp;</strong> to mention a panel</div></div></div></div></div></div></div><div class="show-on-print report-created-footer"><p>Created with <span class="heart" role="img" aria-label="heart">❤️</span> on Weights &amp; Biases.</p><a href="https://wandb.ai/xmelicher-team/zadanie2/reports/Neur-nov-siete-Z2--Vmlldzo0MDQ4NjU2">https://wandb.ai/xmelicher-team/zadanie2/reports/Neur-nov-siete-Z2--Vmlldzo0MDQ4NjU2</a></div></div></div></div></div></div></div>
+
+  <script class="define-insert-script">
+    window.insertScript = function insertScript(src) {
+      return new Promise((resolve, reject) => {
+        // Unconditionally add a script to the document.
+        var script = document.createElement('script');
+        script.src = src;
+        script.async = true;
+        script.onload = resolve;
+        script.onerror = reject;
+
+        document.body.appendChild(script);
+      })
+    };
+  </script>
+  <script>
+    window.Prism = window.Prism || {
+      highlightAll: function () { },
+    };
+  </script>
+  <script>
+    (async function () {
+      function insertCookieControlledScript(url, cookieControlGroupID, callback, async) {
+        // Use Optanon to conditionally insert tracking scripts. This is the "Onetrust"
+        // cookie consent platform (https://app.onetrust.com) that we use to get
+        // cookie consent from European users. Cookies can be enabled/disabled by
+        // category. Categories are configured in the OneTrust UI. cookieControlGroupID
+        // specifies the category.
+
+        window.Optanon.InsertScript(url, "body", callback, null, cookieControlGroupID, async || false)
+      }
+
+      function analyticsCallback() {
+        // Shutdown Fullstory script upon load, and only restart if user is logged in (util/analytics.ts).
+        if (window.FS != null && window.FS.shutdown != null && !window.dontShutdownFS) {
+          window.FS.shutdown();
+        }
+
+        if (window.document.cookie.indexOf('segment_logging') != -1) {
+          enableSegmentAnalyticsLogging()
+        }
+      }
+
+      function addSegmentAnalyticsMethods() {
+        var analytics = (window.analytics = window.analytics || []);
+        // Segment boilerplate. Add stubs for segment analytics methods so
+        // they can be called even if segment is disabled.
+        if (analytics.invoked) {
+          console.error('Segment snippet included twice.');
+        } else {
+          analytics.invoked = !0;
+          analytics.methods = [
+            'trackSubmit',
+            'trackClick',
+            'trackLink',
+            'trackForm',
+            'pageview',
+            'identify',
+            'reset',
+            'group',
+            'track',
+            'ready',
+            'alias',
+            'debug',
+            'page',
+            'once',
+            'off',
+            'on',
+            'use',
+            'init',
+            'user',
+            'anonymousId'
+          ];
+          analytics.factory = function (t) {
+            return function () {
+              var e = Array.prototype.slice.call(arguments);
+              e.unshift(t);
+              analytics.push(e);
+              return analytics;
+            };
+          };
+          for (var t = 0; t < analytics.methods.length; t++) {
+            var e = analytics.methods[t];
+            analytics[e] = analytics.factory(e);
+          }
+        }
+
+        if (window.document.cookie.indexOf('segment_logging') != -1) {
+          enableSegmentAnalyticsLogging()
+        }
+      }
+
+      function enableSegmentAnalytics() {
+        // Adds the segment analytics library. This is boilerplate.
+        if (!analytics.initialize) {
+          analytics.SNIPPET_VERSION = '4.0.0';
+          // this is segment's analytics.js library (https://github.com/segmentio/analytics.js-core) bundled with all of our integrations and settings.
+          // it can be retrieved from https://cdn.segment.com/analytics.js/v1/WmJvIs1MTqNjKAeQmEyw6TvqyRI5Su2z/analytics.min.js
+          // we serve it locally since cdn.segment.com is usually blocked by ad-blockers.
+          insertCookieControlledScript("/sa.min.js", 2, () => analyticsCallback());
+
+          // autotrack.js provides the trackers required below
+          insertCookieControlledScript("/autotrack.js", 2);
+          window.ga =
+            window.ga ||
+            function() {
+              window.ga.q = window.ga.q || [];
+              window.ga.q.push(arguments);
+            };
+          window.ga('require', 'eventTracker');
+          window.ga('require', 'outboundLinkTracker');
+          window.ga('require', 'urlChangeTracker');
+          window.ga('require', 'cleanUrlTracker');
+          window.ga('require', 'impressionTracker');
+          window.ga('require', 'maxScrollTracker');
+          window.ga('require', 'mediaQueryTracker');
+          window.ga('require', 'outboundFormTracker');
+          window.ga('require', 'pageVisibilityTracker');
+        }
+      }
+
+      function enableGoogleTagManager() {
+        // Google Tag Manager
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-TCTWFHR');
+        // Google Optimize
+  //       (function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+  //   h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+  //   (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+  // })(window,document.documentElement,'async-hide','dataLayer',4000,
+  //   {'OPT-NSHDK56':true});
+  //       insertCookieControlledScript("https://www.googleoptimize.com/optimize.js?id=OPT-NSHDK56", 2);
+        // Google Tag Manager noscript
+        const noscript = document.createElement('noscript');
+        noscript.innerText = '<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TCTWFHR" height="0" width="0" style="display:none;visibility:hidden"></iframe>';
+        document.body.appendChild(noscript);
+      }
+
+      function enableBeamerFeatureUpdates() {
+        // Beamer feature updates
+        window.beamer_config = {
+          product_id: "iTpiKrhl12143",
+          lazy: true,
+        };
+        insertCookieControlledScript("https://app.getbeamer.com/js/beamer-embed.js", 2);
+      }
+
+      function enableWebSights() {
+        insertCookieControlledScript("https://ws.zoominfo.com/pixel/qhXboAuxB56YVRvedMdX", 2);
+      }
+
+      function enablePendo() {
+        (function(apiKey){
+            (function(p,e,n,d,o){var v,w,x,y,z;o=p[d]=p[d]||{};o._q=o._q||[];
+            v=['initialize','identify','updateOptions','pageLoad','track'];for(w=0,x=v.length;w<x;++w)(function(m){
+                o[m]=o[m]||function(){o._q[m===v[0]?'unshift':'push']([m].concat([].slice.call(arguments,0)));};})(v[w]);
+                insertCookieControlledScript('https://cdn.pendo.io/agent/static/'+apiKey+'/pendo.js', 2, () => { 
+                  if (window.__INITIALIZE_PENDO != null) {
+                    window.__INITIALIZE_PENDO();
+                  }
+                }, true);
+              })(window,document,'script','pendo');
+        })('6cf55906-1f5f-4b4b-551a-75200e56ad3e');
+      }
+
+      function enableDatadog() {
+        // Datadog has an option to load their library with async CDN similar
+        // to other scripts in this file, however I found in testing that
+        // it was very flaky in actually reporting results back to the
+        // servers, so we are using the npm package and only initializing it
+        // if we've set this flag.
+        window.DatadogEnabled = true;
+      }
+
+      function enableZendeskChat() {
+        // Don't load on kaggle.com, colab.research.google.com, and iOS/Android
+        // (behavior borrowed from Intercom)
+        const kaggleRegex = /kaggle\.com/;
+        const colabRegex = /colab\.research\.google\.com/;
+        const mobileRegex = /iPhone|iPad|Android/;
+        const isKaggle = kaggleRegex.test(window.location.host);
+        const isColab = colabRegex.test(window.location.host);
+        const isMobile = mobileRegex.test(navigator.userAgent);
+        if (isKaggle || isColab || isMobile) {
+          return;
+        }
+
+        const src = "https://static.zdassets.com/ekr/snippet.js?key=a0a3439e-c6f9-4864-8d97-4bc7bef38531";
+        insertCookieControlledScript(src, 2, () => {
+          const scriptEl = document.querySelector(`script[src="${src}"]`);
+          if (scriptEl != null) {
+            // create custom launcher
+            const customLauncher = document.createElement('div');
+            customLauncher.id = 'zendesk-launcher';
+            customLauncher.className = 'wbic-ic-chat-fill'
+            customLauncher.onclick = () => openWidget();
+            // hide default launcher and set custom launcher behavior
+            const customLauncherScript = document.createElement('script');
+            customLauncherScript.type = 'text/javascript';
+            customLauncherScript.innerHTML = `zE('webWidget', 'hide')
+function openWidget() {
+  zE('webWidget', 'show');
+  zE('webWidget', 'open');
+  document.querySelector('#zendesk-launcher').style.display = 'none';
+}
+zE('webWidget:on', 'close', function() {
+  zE('webWidget', 'hide');
+  document.querySelector('#zendesk-launcher').style.display = 'block'
+})`;
+            // include launcher and behavior after zendesk chat script loads
+            scriptEl.after(customLauncher, customLauncherScript)
+          }
+        });
+        // the zendesk chat script explicitly needs the 'ze-snippet' ID set on the element
+        // before the script loads, otherwise it doesn't work.
+        const scriptEl = document.querySelector(`script[src="${src}"]`);
+        if (scriptEl != null) {
+          scriptEl.id = "ze-snippet";
+        }
+      }
+
+      function enableSegmentAnalyticsLogging() {
+        const analytics = window.analytics;
+        Object.getOwnPropertyNames(analytics)
+                .filter(p => {
+                  return typeof analytics[p] === 'function';
+                })
+                .forEach(p => {
+                  const f = analytics[p];
+                  analytics[p] = function () {
+                    if (p === 'page') {
+                      console.groupCollapsed('segment:' + p + ' ' + arguments[1]);
+                      console.log('category: ', arguments[0]);
+                      console.log('properties: ', arguments[2]);
+                      console.groupEnd();
+                    } else if (p === 'track' || p === 'group' || p === 'identify') {
+                      console.groupCollapsed('segment:' + p + ' ' + arguments[0]);
+                      console.log('properties: ', arguments[1]);
+                      console.groupEnd();
+                    }
+                    return f.apply(this, arguments);
+                  };
+                });
+      }
+
+      addSegmentAnalyticsMethods();
+
+      // Set analyticsOK to enable collection of local analytics
+      window.analyticsOK = !window.CONFIG?.DISABLE_TELEMETRY;
+      // Enable optanon cookie consent if third-party analytics are enabled. Optanon controls
+      // inserting all of the other scripts.
+      // Important we must set window.thirdPartyAnalyticsOK for the rest of the app
+      window.thirdPartyAnalyticsOK = !window.CONFIG?.ANALYTICS_DISABLED;
+      if (window.thirdPartyAnalyticsOK && !window.initializedScripts) {
+        // OneTrust Cookies Consent Notice
+        // OneTrust requires JQuery, and by default loads an outdated version along with its own script.
+        // We're turning off that default behavior and loading our own updated version of JQuery instead.
+        // We must ensure that JQuery is fully loaded before inserting the OneTrust script
+        // to avoid potential timing issues.
+        insertScript('https://code.jquery.com/jquery-3.6.0.min.js').then(() =>
+          insertScript("https://cdn.cookielaw.org/consent/da0f7ab4-835a-42da-beeb-767dcff7d1cc.js")
+        );
+
+        window.thirdPartyAnalyticsOK= false;
+        window.OptanonWrapper = function() {
+          window.thirdPartyAnalyticsOK= true;
+          // This function runs when the user changes their cookie consent settings,
+          // or when optanon determines we don't need to check for cookie consent.
+          enableGoogleTagManager();
+          enableSegmentAnalytics();
+          enableZendeskChat();
+          enableWebSights();
+          enableBeamerFeatureUpdates();
+          enablePendo();
+          enableDatadog();
+        }
+
+      }
+
+      window.initializedScripts = true;
+    })();
+  </script><script src="Neur%C3%B3nov%C3%A9%20siete%20Z2%20zadanie2%20%E2%80%93%20Weights%20&amp;%20Biases_files/jquery-3.6.0.min.js" async=""></script>
+
+  
+
+
+
+<script src="Neur%C3%B3nov%C3%A9%20siete%20Z2%20zadanie2%20%E2%80%93%20Weights%20&amp;%20Biases_files/da0f7ab4-835a-42da-beeb-767dcff7d1cc.js" async=""></script><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TCTWFHR" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script type="text/javascript" src="Neur%C3%B3nov%C3%A9%20siete%20Z2%20zadanie2%20%E2%80%93%20Weights%20&amp;%20Biases_files/sa.min.js"></script><script type="text/javascript" src="Neur%C3%B3nov%C3%A9%20siete%20Z2%20zadanie2%20%E2%80%93%20Weights%20&amp;%20Biases_files/autotrack.js"></script><script type="text/javascript" src="Neur%C3%B3nov%C3%A9%20siete%20Z2%20zadanie2%20%E2%80%93%20Weights%20&amp;%20Biases_files/snippet.js" id="ze-snippet"></script><div id="zendesk-launcher" class="wbic-ic-chat-fill" style="display: block;"></div><script type="text/javascript">zE('webWidget', 'hide')
+function openWidget() {
+  zE('webWidget', 'show');
+  zE('webWidget', 'open');
+  document.querySelector('#zendesk-launcher').style.display = 'none';
+}
+zE('webWidget:on', 'close', function() {
+  zE('webWidget', 'hide');
+  document.querySelector('#zendesk-launcher').style.display = 'block'
+})</script><script type="text/javascript" src="Neur%C3%B3nov%C3%A9%20siete%20Z2%20zadanie2%20%E2%80%93%20Weights%20&amp;%20Biases_files/qhXboAuxB56YVRvedMdX"></script><script type="text/javascript" src="Neur%C3%B3nov%C3%A9%20siete%20Z2%20zadanie2%20%E2%80%93%20Weights%20&amp;%20Biases_files/beamer-embed.js"></script><script type="text/javascript" src="Neur%C3%B3nov%C3%A9%20siete%20Z2%20zadanie2%20%E2%80%93%20Weights%20&amp;%20Biases_files/pendo.js" async=""></script>
+     <script type="text/javascript" id="" src="Neur%C3%B3nov%C3%A9%20siete%20Z2%20zadanie2%20%E2%80%93%20Weights%20&amp;%20Biases_files/bootstrap.js"></script><script type="text/javascript" id="">(function(a,e,b,f,g,c,d){a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)};c=e.createElement(f);c.async=1;c.src="https://www.clarity.ms/tag/"+g+"?ref\x3dgtm2";d=e.getElementsByTagName(f)[0];d.parentNode.insertBefore(c,d)})(window,document,"clarity","script","a6rlxhvc58");</script><script type="text/javascript" id="" src="Neur%C3%B3nov%C3%A9%20siete%20Z2%20zadanie2%20%E2%80%93%20Weights%20&amp;%20Biases_files/inlinks.js"></script>
+<script type="text/javascript" id="">!function(a,b){if(!a.rdt){var c=a.rdt=function(){c.sendEvent?c.sendEvent.apply(c,arguments):c.callQueue.push(arguments)};c.callQueue=[];a=b.createElement("script");a.src="https://www.redditstatic.com/ads/pixel.js";a.async=!0;b=b.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b)}}(window,document);rdt("init","t2_1mfpqk4e",{optOut:!1,useDecimalCurrencyValues:!0,aaid:"\x3cAAID-HERE\x3e",email:"\x3cEMAIL-HERE\x3e",externalId:"\x3cEXTERNAL-ID-HERE\x3e",idfa:"\x3cIDFA-HERE\x3e"});
+rdt("track","PageVisit");</script>
+
+
+<script type="text/javascript" id="">window._6si=window._6si||[];window._6si.push(["enableEventTracking",!0]);window._6si.push(["setToken","25c9fde52411526b0f457842ce534dca"]);window._6si.push(["setEndpoint","b.6sc.co"]);(function(){var a=document.createElement("script");a.type="text/javascript";a.async=!0;a.src="//j.6sc.co/6si.min.js";var b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b)})();</script><script type="text/javascript" id="">(function(){function b(){!1===c&&(c=!0,Munchkin.init("261-QHP-822"))}var c=!1,a=document.createElement("script");a.type="text/javascript";a.async=!0;a.src="//munchkin.marketo.net/munchkin.js";a.onreadystatechange=function(){"complete"!=this.readyState&&"loaded"!=this.readyState||b()};a.onload=b;document.getElementsByTagName("head")[0].appendChild(a)})();</script><iframe id="intercom-frame" style="position: absolute !important; opacity: 0 !important; width: 1px !important; height: 1px !important; top: 0 !important; left: 0 !important; border: none !important; display: block !important; z-index: -1 !important; pointer-events: none;" aria-hidden="true" tabindex="-1" title="Intercom"></iframe>
+<div class="intercom-lightweight-app"><style id="intercom-lightweight-app-style" type="text/css">
+  @keyframes intercom-lightweight-app-launcher {
+    from {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes intercom-lightweight-app-gradient {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes intercom-lightweight-app-messenger {
+    
+        0% {
+          opacity: 0;
+          transform: scale(0);
+        }
+        40% {
+          opacity: 1;
+        }
+        100% {
+          transform: scale(1);
+        }
+        
+  }
+
+  .intercom-lightweight-app {
+    position: fixed;
+    z-index: 2147483001;
+    width: 0;
+    height: 0;
+    font-family: intercom-font, "Helvetica Neue", "Apple Color Emoji", Helvetica, Arial, sans-serif;
+  }
+
+  .intercom-lightweight-app-gradient {
+    position: fixed;
+    z-index: 2147483002;
+    width: 500px;
+    height: 500px;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    background: radial-gradient(
+      ellipse at bottom left,
+      rgba(29, 39, 54, 0.16) 0%,
+      rgba(29, 39, 54, 0) 72%);
+    animation: intercom-lightweight-app-gradient 200ms ease-out;
+  }
+
+  .intercom-lightweight-app-launcher {
+    position: fixed;
+    z-index: 2147483003;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none;
+    bottom: 20px;
+    left: 20px;
+    max-width: 48px;
+    width: 48px;
+    max-height: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #e3e3e3;
+    cursor: pointer;
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.06), 0 2px 32px 0 rgba(0, 0, 0, 0.16);
+    transition: transform 167ms cubic-bezier(0.33, 0.00, 0.00, 1.00);
+    box-sizing: content-box;
+  }
+
+  
+        .intercom-lightweight-app-launcher:hover {
+          transition: transform 250ms cubic-bezier(0.33, 0.00, 0.00, 1.00);
+          transform: scale(1.1)
+        }
+
+        .intercom-lightweight-app-launcher:active {
+          transform: scale(0.85);
+          transition: transform 134ms cubic-bezier(0.45, 0, 0.2, 1);
+        }
+      
+
+
+  .intercom-lightweight-app-launcher:focus {
+    outline: none;
+
+    
+  }
+
+  .intercom-lightweight-app-launcher-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 48px;
+    height: 48px;
+    transition: transform 100ms linear, opacity 80ms linear;
+  }
+
+  .intercom-lightweight-app-launcher-icon-open {
+    
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+      
+  }
+
+  .intercom-lightweight-app-launcher-icon-open svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .intercom-lightweight-app-launcher-icon-open svg path {
+    fill: rgb(0, 0, 0);
+  }
+
+  .intercom-lightweight-app-launcher-icon-self-serve {
+    
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+      
+  }
+
+  .intercom-lightweight-app-launcher-icon-self-serve svg {
+    height: 44px;
+  }
+
+  .intercom-lightweight-app-launcher-icon-self-serve svg path {
+    fill: rgb(0, 0, 0);
+  }
+
+  .intercom-lightweight-app-launcher-custom-icon-open {
+    max-height: 24px;
+    max-width: 24px;
+
+    
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+      
+  }
+
+  .intercom-lightweight-app-launcher-icon-minimize {
+    
+        opacity: 0;
+        transform: rotate(-60deg) scale(0);
+      
+  }
+
+  .intercom-lightweight-app-launcher-icon-minimize svg path {
+    fill: rgb(0, 0, 0);
+  }
+
+  .intercom-lightweight-app-messenger {
+    position: fixed;
+    z-index: 2147483003;
+    overflow: hidden;
+    background-color: white;
+    animation: intercom-lightweight-app-messenger 250ms cubic-bezier(0, 1.2, 1, 1);
+    transform-origin: bottom right;
+    height: calc(100% - 40px);
+    
+        width: 400px;
+        height: calc(100% - 40px);
+        max-height: 704px;
+        min-height: 250px;
+        left: 20px;
+        bottom: 20px;
+        box-shadow: 0 5px 40px rgba(0,0,0,0.16);
+      
+
+    border-radius: 15px;
+  }
+
+  .intercom-lightweight-app-messenger-header {
+    height: 64px;
+    border-bottom: none;
+    background: #636363
+  }
+
+  .intercom-lightweight-app-messenger-footer{
+    position:absolute;
+    bottom:0;
+    width: 100%;
+    min-height: 81px;
+    background: #fff;
+    font-size: 14px;
+    line-height: 21px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.05);
+  }
+
+  @media print {
+    .intercom-lightweight-app {
+      display: none;
+    }
+  }
+</style></div><img src="Neur%C3%B3nov%C3%A9%20siete%20Z2%20zadanie2%20%E2%80%93%20Weights%20&amp;%20Biases_files/adsct.gif" style="display: none;" width="1" height="1"><img src="Neur%C3%B3nov%C3%A9%20siete%20Z2%20zadanie2%20%E2%80%93%20Weights%20&amp;%20Biases_files/adsct_002.gif" style="display: none;" width="1" height="1"><iframe data-product="web_widget" title="No content" tabindex="-1" allow="microphone *" aria-hidden="true" style="width: 0px; height: 0px; border: 0px none; position: absolute; top: -9999px;" src="Neur%C3%B3nov%C3%A9%20siete%20Z2%20zadanie2%20%E2%80%93%20Weights%20&amp;%20Biases_files/a_002.htm"></iframe><div style="width:0px; height:0px; display:none; visibility:hidden;" id="batBeacon105823110493"><img style="width:0px; height:0px; display:none; visibility:hidden;" id="batBeacon754210268352" alt="" src="Neur%C3%B3nov%C3%A9%20siete%20Z2%20zadanie2%20%E2%80%93%20Weights%20&amp;%20Biases_files/0" width="0" height="0"></div><iframe id="beamerUtilities" src="Neur%C3%B3nov%C3%A9%20siete%20Z2%20zadanie2%20%E2%80%93%20Weights%20&amp;%20Biases_files/utilities.htm" scrolling="no" width="0" height="0" frameborder="0"></iframe><div style="display: block;"><iframe title="Opens a widget where you can chat to one of our agents" id="launcher" tabindex="-1" style="color-scheme: light; width: 107px; height: 50px; padding: 0px; margin: 10px 20px; position: fixed; bottom: 30px; overflow: visible; opacity: 0; border: 0px none; z-index: 999998; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1); transition-property: opacity, top, bottom; top: -9999px; visibility: hidden;"></iframe></div></body></html>

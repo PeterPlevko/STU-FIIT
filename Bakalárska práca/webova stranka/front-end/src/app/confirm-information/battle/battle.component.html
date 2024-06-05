@@ -1,0 +1,92 @@
+<div class="makeLong center" *ngIf="battle===null">
+
+  <h1 class="elevate">Nie je nič na potvrdenie</h1>
+</div>
+
+<div class="displayFlex">
+  <div *ngIf="battle!==null" class="mainBlok">
+
+    <form  [formGroup]="battleForm" class="inputField  leftSideForm" (submit)="submit()">
+
+      <label for="GPS">GPS</label><br>
+      <mat-form-field id="GPS" appearance="fill">
+        <mat-label>Vlož GPS súradnice</mat-label>
+        <input pattern="^[-]?([1-8]?\d(\.\d+)?|90(\.0+)?) \s*[-]?(180(\.0+)?|((1[0-7]\d)|([1-9]?\d))(\.\d+)?)$" [ngModel]="battle.GPS" placeholder="48.902366 21.884031" matInput formControlName="GPS">
+      </mat-form-field>
+
+      <label for="name">Názov bitky</label><br>
+        <mat-form-field id="name" appearance="fill">
+          <mat-label>Vlož názov bitky</mat-label>
+          <input [ngModel]="battle.name" placeholder="Bitka o Humenné" matInput formControlName="name">
+        </mat-form-field>
+
+        <label for="startDate">Dátum začiatku bitky</label><br>
+        <mat-form-field id="startDate" appearance="fill">
+          <mat-label>Vlož dátum začiatku</mat-label>
+          <input placeholder="DD/MM/YYYY" [ngModel]="battle.startDate"  matInput formControlName="startDate">
+        </mat-form-field>
+
+      <label for="endDate">Dátum ukončenia bitky</label><br>
+        <mat-form-field id="endDate" appearance="fill">
+          <mat-label>Vlož Dátum ukončenia</mat-label>
+          <input placeholder="DD/MM/YYYY" [ngModel]="battle.endDate"  matInput formControlName="endDate">
+        </mat-form-field>
+
+        <label for="result">Výsledok boja</label><br>
+        <mat-form-field id="result" appearance="fill">
+          <mat-label>Vlož výsledok boja</mat-label>
+          <input [ngModel]="battle.result" placeholder="Víťazstvo R-U armády" matInput formControlName="result">
+        </mat-form-field>
+
+        <label for="austriaHungaryArmy">Zúčastnené jednotky R-U armády</label><br>
+        <mat-form-field id="austriaHungaryArmy" appearance="fill">
+          <mat-label>Vlož zúčastnené jednotky</mat-label>
+          <textarea [ngModel]="battle.austriaHungaryArmy" matInput placeholder="R-U 3. armáda; bojová skupina Krautwald, 6 práporov 200. honvédskej pešej divízie, prápor 29. a 101. pešieho pluku 34. pešej divízie, 4 útvary 17. domobraneckej pešej divízie" formControlName="austriaHungaryArmy"></textarea>
+        </mat-form-field>
+
+        <label for="austriaHungaryArmyNumber">Počet zúčastnených jednotiek R-U armády</label><br>
+        <mat-form-field id="austriaHungaryArmyNumber" appearance="fill">
+          <mat-label>Vlož počet zúčastnených jednotiek</mat-label>
+          <input [ngModel]="battle.austriaHungaryArmyNumber" placeholder="13000" type="number" matInput formControlName="austriaHungaryArmyNumber">
+        </mat-form-field>
+
+        <label for="russianArmyNumber">Počet zúčastnených jednotiek Rus armády</label><br>
+        <mat-form-field id="russianArmyNumber" appearance="fill">
+          <mat-label>Vlož počet zúčastnených jednotiek</mat-label>
+          <input [ngModel]="battle.russianArmyNumber" placeholder="14500" type="number" matInput formControlName="russianArmyNumber">
+        </mat-form-field>
+
+        <label for="russianArmy">Zúčastené jednotky Rus armády</label><br>
+        <mat-form-field id="russianArmy" appearance="fill">
+          <mat-label>Vlož zúčastnené jednotky</mat-label>
+          <textarea [ngModel]="battle.russianArmy" matInput placeholder="Ruská 8. armáda; 194. Troicko-sergijevský pluk, 2. zmiešaná kozácka divízia, 2. pŕapory 195. orovajského pluku 49. pešej divízie" formControlName="russianArmy"></textarea>
+        </mat-form-field>
+
+        <label for="note">Poznámka k bitke</label><br>
+        <mat-form-field id="note" appearance="fill">
+          <mat-label>Vlož poznámku k bitke</mat-label>
+          <textarea [ngModel]="battle.note" placeholder="Jedna z najväčších bitiek vojny na území dnešného Slovenska" matInput formControlName="note"></textarea>
+        </mat-form-field>
+
+        <div class="row">
+          <div>
+            <button mat-raised-button
+            [disabled]="!battleForm.valid"
+            class="buttonStyle"
+            color="primary"
+            type="submit">Potvrdiť</button>
+          </div>
+
+          <div>
+            <button mat-raised-button
+            class="buttonStyle"
+            color="primary"
+            (click)="remove()"
+            type="button">Zamietnuť</button>
+          </div>
+        </div>
+
+    </form>
+  </div>
+
+</div>

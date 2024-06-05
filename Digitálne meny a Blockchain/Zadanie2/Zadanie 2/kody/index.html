@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Battleship!</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="./web3.min.js"></script>
+    <script src="./abi-decoder.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdn.rawgit.com/sytelus/CryptoJS/master/rollups/sha256.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ethereumjs/browser-builds/dist/ethereumjs-tx/ethereumjs-tx-1.3.3.min.js"></script>
+    <script src="./constants.js"></script>
+  </head>
+  <body>
+    <div id="title-container">
+      <div id="sub-title-container">
+        <h1 id="title">Play Battleship!</h1>
+        <h2 id="subtitle"></h2>
+      </div>
+      <div id="game-controller">
+        <h3 class="player-title">Player 1:</h3>
+        <select id="player1-account" class="account"></select>
+        <p>Account Balance: <span id="player1-account-balance"></span></p>
+        <h3 class="player-title">Player 2:</h3>
+        <select id="player2-account" class="account"></select>
+        <p>Account Balance: <span id="player2-account-balance"></span></p>
+        <label for="bet">Bet in Eth:</label>
+        <input id="bet" type="text" />
+        <h5 id="message"></h5>
+        <button id="start-stop">Start Game</button>
+      </div>
+    </div>
+    <div id="game-container">
+      <div id="player1" class="player-container">
+        <h3 class="title">Player 1:</h3>
+        <h4 class="address"></h4>
+        <span class="their-board-label">opponent board</span>
+        <table class="their-board"></table>
+        <span class="my-board-label">my board</span>
+        <table class="my-board"></table>
+        <div class="controller"></div>
+      </div>
+      <div id="player2" class="player-container">
+        <h3 class="title">Player 2:</h3>
+        <h4 class="address"></h4>
+        <span class="their-board-label">opponent board</span>
+        <table class="their-board"></table>
+        <span class="my-board-label">my board</span>
+        <table class="my-board"></table>
+        <div class="controller"></div>
+      </div>
+    </div>
+    <script src="./utils.js"></script>
+    <script src="./BattleshipPlayer.js"></script>
+    <script src="./ui.js"></script>
+    <script src="./battleship-game.js"></script>
+  </body>
+</html>

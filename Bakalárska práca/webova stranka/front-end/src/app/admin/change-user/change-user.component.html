@@ -1,0 +1,93 @@
+<app-header></app-header>
+<div class="marginWhole">
+
+
+  <div class="centerMiddle">
+
+    <div class="container mat-elevation-z8">
+
+      <div class="form">
+        <mat-form-field floatPlaceholder="never" color="accent">
+          <input matInput #filter placeholder="Filter issues">
+        </mat-form-field>
+      </div>
+
+      <mat-table #table [dataSource]="dataSource" matSort class="mat-cell">
+        ng update @angular/cli @angular/core
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+
+        <!-- ID Column -->
+        <ng-container matColumnDef="id">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Id</mat-header-cell>
+          <mat-cell *matCellDef="let row" >{{row._id}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="userName">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Prihlasovacie meno</mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.username}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Meno</mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.firstname}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="surname">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Priezvisko</mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.surname}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="email">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Email</mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.email}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="userType">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Typ použivateľa</mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.userType}}</mat-cell>
+        </ng-container>
+
+
+
+
+
+        <!-- actions -->
+        <ng-container matColumnDef="actions">
+          <mat-header-cell *matHeaderCellDef>
+
+          </mat-header-cell>
+
+          <mat-cell *matCellDef="let row; let i=index;">
+            <button mat-icon-button color="accent" (click)="startEdit(i, row._id, row.surname, row.firstname, row.email, row.username, row.userType)">
+              <mat-icon aria-label="Edit">edit</mat-icon>
+            </button>
+
+            <button mat-icon-button color="accent" (click)="deleteItem(i, row._id, row.surname, row.firstname, row.email, row.username, row.userType)">
+              <mat-icon aria-label="Delete">delete</mat-icon>
+            </button>
+          </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+
+
+      <div class="no-results" [style.display]="dataSource!.renderedData.length == 0 ? '' : 'none'">
+        No results
+      </div>
+
+      <mat-paginator #paginator
+                     [length]="dataSource!.filteredData.length"
+                     [pageIndex]="0"
+                     [pageSize]="10"
+                     [pageSizeOptions]="[5, 10, 25, 100]">
+      </mat-paginator>
+    </div>
+
+  </div>
+
+
+</div>
+<app-footer></app-footer>

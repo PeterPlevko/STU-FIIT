@@ -1,0 +1,149 @@
+/* Structure */
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  word-break: break-word;
+}
+
+.marginWhole{
+  margin-top: 225px;
+  margin-bottom: 218px;
+}
+
+.centerMiddle{
+  display: flex;
+  justify-content: center;
+}
+/* Toolbar */
+.spacer {
+  flex: 1 1 auto;
+}
+
+/* Filter */
+.form {
+  min-height: 56px;
+  max-height: 56px;
+  display: flex;
+  align-items: center;
+  padding: 8px 24px 0;
+  font-size: 20px;
+  justify-content: space-between;
+  border-bottom: 1px solid transparent;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  flex-grow: 1;
+  margin-top: 8px;
+}
+
+/* Mat table */
+.no-results {
+  display: flex;
+  justify-content: center;
+  padding: 14px;
+  font-size: 14px;
+  font-style: italic;
+}
+
+.mat-cell:nth-child(1),
+.mat-header-cell:nth-child(1){
+  flex: 0 0 20%;
+}
+
+.mat-cell:nth-child(2),
+.mat-header-cell:nth-child(2){
+  flex: 0 0 14%;
+}
+
+.mat-cell:nth-child(3),
+.mat-header-cell:nth-child(3){
+  flex: 0 0 14%;
+}
+
+.mat-cell:nth-child(4),
+.mat-header-cell:nth-child(4){
+  flex: 0 0 14%;
+}
+
+.mat-cell:nth-child(5),
+.mat-header-cell:nth-child(5){
+  flex: 0 0 14%;
+}
+.mat-cell:nth-child(6),
+.mat-header-cell:nth-child(6){
+  flex: 0 0 14%;
+}
+.mat-cell:nth-child(7),
+.mat-header-cell:nth-child(7){
+  flex: 0 0 10%;
+}
+
+@media only screen and (max-width: 1400px) {
+  .container {
+    width: 100%;
+  }
+
+
+
+
+}
+
+@media only screen and (max-width: 1200px) {
+  .container {
+    width: 100%;
+  }
+  .mat-cell:nth-child(1),
+  .mat-header-cell:nth-child(1){
+    flex: 0 0 10%;
+  }
+
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+  }
+
+}
+
+@media only screen and (max-width: 576px) {
+  .container {
+    width: 100%;
+  }
+
+  .mat-cell:nth-child(1),
+.mat-header-cell:nth-child(1){
+  flex: 0 0 10%;
+}
+
+.mat-cell:nth-child(2),
+.mat-header-cell:nth-child(2){
+  flex: 0 0 15%;
+}
+
+.mat-cell:nth-child(3),
+.mat-header-cell:nth-child(3){
+  flex: 0 0 10%;
+}
+
+.mat-cell:nth-child(4),
+.mat-header-cell:nth-child(4){
+  flex: 0 0 10%;
+}
+
+.mat-cell:nth-child(5),
+.mat-header-cell:nth-child(5){
+  flex: 0 0 10%;
+}
+.mat-cell:nth-child(6),
+.mat-header-cell:nth-child(6){
+  flex: 0 0 15%;
+}
+.mat-cell:nth-child(7),
+.mat-header-cell:nth-child(7){
+  flex: 0 0 15%;
+}
+
+}

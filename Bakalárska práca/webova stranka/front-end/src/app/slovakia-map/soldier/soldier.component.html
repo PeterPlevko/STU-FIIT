@@ -1,0 +1,43 @@
+<app-header></app-header>
+
+<div class="displayFlex">
+  <div class="mainBlok">
+    <form [formGroup]="soldierForm" class="inputField"  (submit)="submit()">
+
+      <label for="name">Celé meno vojaka</label><br>
+      <mat-form-field id="name" appearance="fill">
+          <mat-label>Vlož Celé meno vojaka</mat-label>
+          <input placeholder="Michal Petráš" matInput formControlName="name">
+        </mat-form-field>
+
+        <label for="dateOfBirth">Dátum narodenia</label><br>
+        <mat-form-field id="dateOfBirth" appearance="fill">
+          <mat-label>Vlož dátum narodenia</mat-label>
+          <input placeholder="1/2/1895" matInput formControlName="dateOfBirth">
+        </mat-form-field>
+
+        <label for="dateOfDeath">Dátum úmrtia</label><br>
+        <mat-form-field id="dateOfDeath" appearance="fill">
+          <mat-label>Vlož dátum úmrtia</mat-label>
+          <input placeholder="1/10/1918" matInput formControlName="dateOfDeath">
+        </mat-form-field>
+
+        <label for="story">Príbeh vojaka</label><br>
+        <mat-form-field id="story" appearance="fill">
+          <mat-label>Vlož príbeh</mat-label>
+          <textarea placeholder="Dolnozemský Slovák Samuel Činčurák sa narodil v roku 1883 v Pivnici v Báčke (dnešné Srbsko), neskôr žil v Iloku na pravej strane Dunaja, kde sa vyučil za kolára. V roku 1903 narukoval do Stoličného Belehradu (Székesfehérvár), vrátil sa na jar 1905. Bol veľmi zbožný, zúčastňoval sa na podujatiach vnútromisijného spolku evanjelickej cirkvi Modrý kríž. Jeho túžbou bolo dostať sa na Slovensko, najmä do Starej Turej a spoznať sa so sestrami Royovými. To sa mu aj podarilo. Od roku 1912 sa natrvalo usadil na Slovensku, keď sa oženil so Zuzanou Betinovou z Ozdína v okrese Poltár. Mal päť detí a okrem toho, že sa zaoberal roľníctvom, stál v obci na čele odbočky Modrého kríža. Výrazným duchovným vplyvom na širokú verejnosť dosiahli napríklad aj to, že v Ozdíne nebola krčma.V literárnej tvorbe Samuela Činčuráka prevažuje náboženská tematika. Súhrn jeho prozaickej tvorby vyšiel od roku 1909 do roku 1948 v štrnástich tituloch. Zomrel v roku 1952. Pochovaný je v Ozdíne." matInput formControlName="story"></textarea>
+        </mat-form-field>
+
+        <div>
+          <button mat-raised-button
+          [disabled]="!soldierForm.valid"
+          class="buttonStyle"
+          color="primary"
+          type="submit">Odoslať</button>
+        </div>
+
+    </form>
+  </div>
+</div>
+
+<app-footer></app-footer>

@@ -1,0 +1,29 @@
+version: "3.8"
+
+services:
+  vnos-postgres:
+    image: postgres:14.1
+    container_name: vnos-postgres
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "pg_isready", "-q", "-d", "postgres", "-U", "postgres"]
+      timeout: 45s
+      interval: 10s
+      retries: 10
+    volumes:
+      - ./server-data/vnos-postgres:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+    ports:
+      - 5432:5432
+
+  vnos-grafana:
+    image: grafana/grafana-oss:latest
+    container_name: vnos-grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./server-data/grafana-data:/var/lib/grafana
+    restart: unless-stopped

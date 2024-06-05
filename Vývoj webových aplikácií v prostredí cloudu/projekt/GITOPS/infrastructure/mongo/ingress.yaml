@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: mongo-express
+spec:
+  ingressClassName: wac-hospital
+  rules:
+  - http:
+      paths:
+      - path: /mongoexpress
+        pathType: Prefix
+        backend:
+          service:
+            name: mongo-express-service
+            port: 
+              number: 8081

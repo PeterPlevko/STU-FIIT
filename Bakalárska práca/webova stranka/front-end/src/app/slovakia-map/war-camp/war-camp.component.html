@@ -1,0 +1,67 @@
+<app-header></app-header>
+
+<div class="displayFlex">
+  <div class="mainBlokBigger">
+    <h1>Klikni na mapu pre vlozenie GPS suradnic, GPS: {{currentGPS}}</h1>
+    <div class="displayFlex">
+      <div id="slovakiaMapWarCamp"></div>
+    </div>
+  </div>
+</div>
+
+<div class="displayFlex">
+  <div class="mainBlok">
+    <form [formGroup]="warCampForm" class="inputField leftSideForm" (submit)="submit()">
+
+        <label for="GPS">GPS</label><br>
+        <mat-form-field id="GPS" appearance="fill">
+          <mat-label>Vlož GPS súradnice</mat-label>
+          <input pattern="^[-]?([1-8]?\d(\.\d+)?|90(\.0+)?) \s*[-]?(180(\.0+)?|((1[0-7]\d)|([1-9]?\d))(\.\d+)?)$" placeholder="48.027423 17.314564" matInput formControlName="GPS">
+        </mat-form-field>
+
+        <label for="information">Typ zajatcov</label><br>
+        <mat-form-field appearance="fill">
+          <mat-label>Typ zajatcov</mat-label>
+          <mat-select [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedValue" name="information">
+            <mat-option *ngFor="let information of informationTypes" [value]="information.value">
+              {{information.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <label for="warCampEquipmentForm">Zaklikni vybavenie tábora</label><br>
+        <section class="equipment" [formGroup]="warCampEquipmentForm">
+          <mat-checkbox class="example-margin" formControlName="cemetery">Cintorín</mat-checkbox>
+          <mat-checkbox class="example-margin" formControlName="mausoleum">Mauzoleum</mat-checkbox>
+          <mat-checkbox class="example-margin" formControlName="desinfectStation">Dezinfekčná stanica</mat-checkbox>
+          <mat-checkbox class="example-margin" formControlName="hospital">Nemocnica</mat-checkbox>
+          <mat-checkbox class="example-margin" formControlName="lazaret">Lazaret</mat-checkbox>
+          <mat-checkbox class="example-margin" formControlName="crypt">Krypta</mat-checkbox>
+          <mat-checkbox class="example-margin" formControlName="mobileOperationComando">Mobilné operačné komando</mat-checkbox>
+        </section>
+
+        <label for="numberOfCaptives">Počet zajatcov</label><br>
+        <mat-form-field id="numberOfCaptives" appearance="fill">
+            <mat-label>Vlož počet zajatcov</mat-label>
+            <input placeholder="59574" type="number" matInput formControlName="numberOfCaptives">
+          </mat-form-field>
+
+          <label for="mainCaptiveNationality">Vačšinová národnosť zajatcov</label><br>
+          <mat-form-field id="mainCaptiveNationality" appearance="fill">
+              <mat-label>Vlož vačšinovú národnosť zajatcov</mat-label>
+              <input placeholder="Rus" matInput formControlName="mainCaptiveNationality">
+            </mat-form-field>
+
+        <div>
+          <button mat-raised-button
+          [disabled]="!warCampForm.valid"
+          class="buttonStyle"
+          color="primary"
+          type="submit">Odoslať</button>
+        </div>
+    </form>
+
+  </div>
+</div>
+
+<app-footer></app-footer>

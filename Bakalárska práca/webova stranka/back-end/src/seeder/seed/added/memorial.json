@@ -1,0 +1,77 @@
+[
+    {
+        "name": "meno 1",
+        "municipalityDescription": "popis obce 1",
+        "location": "popis lokality 1",
+        "GPS": "48.248963 17.807479",
+        "photoDescription": "popis snímky 1",
+        "deceasedList": [
+            "celé meno 1",
+            "celé meno 2",
+            "celé meno 3"
+        ],
+        "dateOfBirth": [
+            "dátum narodenia 1",
+            "dátum narodenia 2",
+            "dátum narodenia 3"
+        ],
+        "dateOfDeath": [
+            "dátum umrtia 1",
+            "dátum umrtia 2",
+            "dátum umrtia 3"
+        ],
+        "state": "confirmed",
+        "imagePath": "/meno 1/img1.jpg",
+        "addedBy": "kuntox"
+    },
+    {
+        "name": "meno 2",
+        "municipalityDescription": "popis obce 2",
+        "location": "popis lokality 2",
+        "GPS": "48.859796 19.466867",
+        "photoDescription": "popis snímky 2",
+        "deceasedList": [
+            "celé meno 4",
+            "celé meno 5",
+            "celé meno 6"
+        ],
+        "dateOfBirth": [
+            "dátum narodenia 4",
+            "dátum narodenia 5",
+            "dátum narodenia 6"
+        ],
+        "dateOfDeath": [
+            "dátum umrtia 4",
+            "dátum umrtia 5",
+            "dátum umrtia 6"
+        ],
+        "state": "confirmed",
+        "imagePath": "/meno 2/img1.jpg",
+        "addedBy": "kuntox"
+    },
+    {
+        "name": "meno 3",
+        "municipalityDescription": "popis obce 3",
+        "location": "popis lokality 3",
+        "GPS": "48.854877 21.730825",
+        "photoDescription": "popis snímky 3",
+        "deceasedList": [
+            "celé meno 7",
+            "celé meno 8",
+            "celé meno 9"
+        ],
+        "dateOfBirth": [
+            "dátum narodenia 7",
+            "dátum narodenia 8",
+            "dátum narodenia 9"
+        ],
+        "dateOfDeath": [
+            "dátum umrtia 7",
+            "dátum umrtia 8",
+            "dátum umrtia 9"
+        ],
+        "state": "confirmed",
+        "imagePath": "/meno 3/img1.jpg",
+        "addedBy": "kuntox"
+    }
+]

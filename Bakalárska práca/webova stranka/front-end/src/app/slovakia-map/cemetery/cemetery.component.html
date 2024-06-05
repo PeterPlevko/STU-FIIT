@@ -1,0 +1,91 @@
+<app-header></app-header>
+<div class="displayFlex">
+  <div class="mainBlokBigger">
+    <h1>Klikni na mapu pre vlozenie GPS suradnic, GPS: {{currentGPS}}</h1>
+    <div class="displayFlex">
+      <div id="slovakiaMapCemetery"></div>
+    </div>
+  </div>
+</div>
+
+
+<div class="displayFlex">
+  <div class="mainBlok">
+    <form [formGroup]="cemeteryForm" class="inputField  leftSideForm" (submit)="submit()">
+
+        <label for="GPS">GPS</label><br>
+        <mat-form-field id="GPS" appearance="fill">
+          <mat-label>Vlož GPS súradnice</mat-label>
+          <input pattern="^[-]?([1-8]?\d(\.\d+)?|90(\.0+)?) \s*[-]?(180(\.0+)?|((1[0-7]\d)|([1-9]?\d))(\.\d+)?)$" placeholder="49.430812 18.653097" matInput formControlName="GPS">
+        </mat-form-field>
+
+        <label for="cemeteryType">Typ cintorína</label><br>
+        <mat-form-field id="cemeteryType" appearance="fill">
+          <mat-label>Vlož typ cintorína</mat-label>
+          <input placeholder="rímskokatolícky obecný" matInput formControlName="cemeteryType">
+        </mat-form-field>
+
+        <label for="nationality">Národnosti vojakov</label><br>
+        <div class="row">
+          <mat-form-field id="nationality" appearance="fill">
+            <mat-label>Vlož národnosti vojakov</mat-label>
+            <input placeholder="8 čs." matInput formControlName="nationality">
+          </mat-form-field>
+          <button mat-raised-button
+          class="marginRight buttonStyle battleButton"
+          color="primary"
+          (click)="addNationality()"
+          type="button">Pridať</button>
+        </div>
+
+        <label for="reasonOfDeath">Dôvody úmrtí</label><br>
+        <div class="row">
+          <mat-form-field id="reasonOfDeath" appearance="fill">
+            <mat-label>Vlož dôvody úmrtí</mat-label>
+            <input placeholder="2x týfus" matInput formControlName="reasonOfDeath">
+          </mat-form-field>
+          <button mat-raised-button
+          class="marginRight buttonStyle battleButton"
+          color="primary"
+          (click)="addReasonOfDeath()"
+          type="button">Pridať</button>
+        </div>
+
+        <label for="dateOfDeath">Dátumy úmrtí</label><br>
+        <div class="row">
+          <mat-form-field id="dateOfDeath" appearance="fill">
+            <mat-label>Vlož dátumy úmrtí</mat-label>
+            <input placeholder="1/10/1918" matInput formControlName="dateOfDeath">
+          </mat-form-field>
+          <button mat-raised-button
+          class="marginRight buttonStyle battleButton"
+          color="primary"
+          (click)="addDateOfDeath()"
+          type="button">Pridať</button>
+        </div>
+
+        <label for="numberOfGraves">Počet hrobov</label><br>
+        <mat-form-field id="numberOfGraves" appearance="fill">
+          <mat-label>Vlož Počet hrobov</mat-label>
+          <input placeholder="2" type="number" matInput formControlName="numberOfGraves">
+        </mat-form-field>
+
+        <label for="numberOfBurried">Počet pochovaných</label><br>
+        <mat-form-field id="numberOfBurried" appearance="fill">
+          <mat-label>Vlož Počet pochovaných</mat-label>
+          <input placeholder="2" type="number" matInput formControlName="numberOfBurried">
+        </mat-form-field>
+
+      <div class="alignButtons">
+        <button mat-raised-button
+        [disabled]="!cemeteryForm.valid"
+        class="marginRight buttonStyle"
+        color="primary"
+        type="submit">Odoslať</button>
+      </div>
+    </form>
+
+</div>
+</div>
+
+<app-footer></app-footer>

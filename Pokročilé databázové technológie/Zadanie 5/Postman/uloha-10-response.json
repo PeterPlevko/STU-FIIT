@@ -1,0 +1,1984 @@
+{
+    "took": 7772,
+    "timed_out": false,
+    "_shards": {
+        "total": 3,
+        "successful": 3,
+        "skipped": 0,
+        "failed": 0
+    },
+    "hits": {
+        "total": {
+            "value": 1232,
+            "relation": "eq"
+        },
+        "max_score": 142.63434,
+        "hits": [
+            {
+                "_index": "tweets",
+                "_id": "-gCbCoUBstex5w2Towdg",
+                "_score": 142.63434,
+                "_source": {
+                    "source_id": 1497698752907390979,
+                    "author": {
+                        "id": 1450394162,
+                        "name": "🇺🇸 Reel Conquest 🇺🇸",
+                        "username": "ReelConquest",
+                        "description": "🇺🇸 US Army Veteran 🇺🇸 Patriot, 2nd Amendment advocate, MAGA #TrumpWon🐊🌴💯 🇺🇸🍻🎣🛥🚒🚑🚜🚓",
+                        "tweet_count": 36466,
+                        "listed_count": 3,
+                        "followers_count": 906,
+                        "following_count": 1115
+                    },
+                    "content": "@POTUS @JoeBiden Is working with #Putin to over throw #Ukraine Joe needs a mop up job since he is in the cross hairs for corruption 🙄 Why not let #Putin do the cleanup and in exchange Biden allows the oil and gas to continue to flow! ... https://t.co/9TecGOdi9d",
+                    "language": "en",
+                    "source": "Twitter for Android",
+                    "retweet_count": 0,
+                    "reply_count": 0,
+                    "like_count": 0,
+                    "quote_count": 0,
+                    "possibly_sensitive": false,
+                    "created_at": "2022-02-26T22:23:03+01:00",
+                    "hashtags": [
+                        "Putin",
+                        "Ukraine",
+                        "Putin"
+                    ],
+                    "links": [
+                        {
+                            "url": "https://twitter.com/ElijahSchaffer/status/1497690766113705985",
+                            "title": null,
+                            "description": null
+                        }
+                    ],
+                    "annotations": [
+                        {
+                            "type": "Person",
+                            "value": "Joe",
+                            "probability": 0.983
+                        },
+                        {
+                            "type": "Person",
+                            "value": "Biden",
+                            "probability": 0.984
+                        }
+                    ],
+                    "context_annotations": [
+                        {
+                            "domain": {
+                                "name": "Person",
+                                "description": "Named people in the world like Nelson Mandela"
+                            },
+                            "entity": {
+                                "name": "George Soros",
+                                "description": "George Soros"
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Political Body",
+                                "description": "A section of a government, like The Supreme Court"
+                            },
+                            "entity": {
+                                "name": "US Central Intelligence Agency",
+                                "description": "US Central Intelligence Agency"
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Ongoing News Story",
+                                "description": "Ongoing News Stories like 'Brexit'"
+                            },
+                            "entity": {
+                                "name": "Russo-Ukrainian conflict",
+                                "description": null
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Unified Twitter Taxonomy",
+                                "description": "A taxonomy view into the Semantic Core knowledge graph"
+                            },
+                            "entity": {
+                                "name": "Politics",
+                                "description": "Politics"
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Unified Twitter Taxonomy",
+                                "description": "A taxonomy view into the Semantic Core knowledge graph"
+                            },
+                            "entity": {
+                                "name": "US Central Intelligence Agency",
+                                "description": "US Central Intelligence Agency"
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Unified Twitter Taxonomy",
+                                "description": "A taxonomy view into the Semantic Core knowledge graph"
+                            },
+                            "entity": {
+                                "name": "Government institutions",
+                                "description": "Political Body"
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Person",
+                                "description": "Named people in the world like Nelson Mandela"
+                            },
+                            "entity": {
+                                "name": "Joe Biden",
+                                "description": "US President Joe Biden"
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Person",
+                                "description": "Named people in the world like Nelson Mandela"
+                            },
+                            "entity": {
+                                "name": "Vladimir Putin",
+                                "description": "President of Russia Vladimir Putin"
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Politician",
+                                "description": "Politicians in the world, like Joe Biden"
+                            },
+                            "entity": {
+                                "name": "Joe Biden",
+                                "description": "US President Joe Biden"
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Politician",
+                                "description": "Politicians in the world, like Joe Biden"
+                            },
+                            "entity": {
+                                "name": "Vladimir Putin",
+                                "description": "President of Russia Vladimir Putin"
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Ongoing News Story",
+                                "description": "Ongoing News Stories like 'Brexit'"
+                            },
+                            "entity": {
+                                "name": "Russo-Ukrainian conflict",
+                                "description": null
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Unified Twitter Taxonomy",
+                                "description": "A taxonomy view into the Semantic Core knowledge graph"
+                            },
+                            "entity": {
+                                "name": "Joe Biden",
+                                "description": "US President Joe Biden"
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Unified Twitter Taxonomy",
+                                "description": "A taxonomy view into the Semantic Core knowledge graph"
+                            },
+                            "entity": {
+                                "name": "Politics",
+                                "description": "Politics"
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Unified Twitter Taxonomy",
+                                "description": "A taxonomy view into the Semantic Core knowledge graph"
+                            },
+                            "entity": {
+                                "name": "Vladimir Putin",
+                                "description": "President of Russia Vladimir Putin"
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Unified Twitter Taxonomy",
+                                "description": "A taxonomy view into the Semantic Core knowledge graph"
+                            },
+                            "entity": {
+                                "name": "Political figures",
+                                "description": "Politician"
+                            }
+                        }
+                    ],
+                    "conversation_references": [
+                        {
+                            "id": 1497690766113705985,
+                            "type": "quoted",
+                            "author": {
+                                "id": 350822109,
+                                "name": "ELIJAH SCHAFFER",
+                                "username": "ElijahSchaffer"
+                            },
+                            "content": "Both sides are calling each other nazis  George Soros defending Ukraine  Congressperson spreads fake meme to promote propaganda  Nothing but lies from American media  Americans kept in dark about CIA involvement  Any questioning labels you pro-Putin  Anyone else suspicious?",
+                            "hashtags": null
+                        }
+                    ]
+                }
+            },
+            {
+                "_index": "tweets",
+                "_id": "UdVqC4UBstex5w2TvH8d",
+                "_score": 92.305695,
+                "_source": {
+                    "source_id": 1506237023463608330,
+                    "author": {
+                        "id": 196802928,
+                        "name": "(((Tam))) OvereducatedDeepStateAntifa",
+                        "username": "Tam_Resist",
+                        "description": "We do not see things as they are, we see them as we are - Anais Nin",
+                        "tweet_count": 487152,
+                        "listed_count": 337,
+                        "followers_count": 21521,
+                        "following_count": 11495
+                    },
+                    "content": "@blackintheempir @Attaphia What Nazis are on Russia’s borders?  Zelensky is a Jew and Putin is slaughtering Ukrainian Christians.  #ChristianNationalism #Ukraine #ActiveMeasures 🇷🇺🇨🇳🇮🇷 #ChinaChao #MoscowMitch #Rusal🇷🇺 #KY🇷🇺🇨🇳 https://t.co/SYSxgyZqnx",
+                    "language": "en",
+                    "source": "Twitter for iPad",
+                    "retweet_count": 2,
+                    "reply_count": 1,
+                    "like_count": 3,
+                    "quote_count": 0,
+                    "possibly_sensitive": false,
+                    "created_at": "2022-03-22T11:51:05+01:00",
+                    "hashtags": [
+                        "ChristianNationalism",
+                        "Ukraine",
+                        "ActiveMeasures",
+                        "ChinaChao",
+                        "MoscowMitch",
+                        "Rusal",
+                        "KY"
+                    ],
+                    "links": [
+                        {
+                            "url": "https://twitter.com/Tam_Resist/status/1506237023463608330/photo/1",
+                            "title": null,
+                            "description": null
+                        },
+                        {
+                            "url": "https://twitter.com/Tam_Resist/status/1506237023463608330/photo/1",
+                            "title": null,
+                            "description": null
+                        },
+                        {
+                            "url": "https://twitter.com/Tam_Resist/status/1506237023463608330/photo/1",
+                            "title": null,
+                            "description": null
+                        },
+                        {
+                            "url": "https://twitter.com/Tam_Resist/status/1506237023463608330/photo/1",
+                            "title": null,
+                            "description": null
+                        }
+                    ],
+                    "annotations": [
+                        {
+                            "type": "Person",
+                            "value": "Nazis",
+                            "probability": 0.381
+                        },
+                        {
+                            "type": "Place",
+                            "value": "Russia",
+                            "probability": 0.994
+                        },
+                        {
+                            "type": "Person",
+                            "value": "Putin",
+                            "probability": 0.988
+                        }
+                    ],
+                    "context_annotations": [
+                        {
+                            "domain": {
+                                "name": "Person",
+                                "description": "Named people in the world like Nelson Mandela"
+                            },
+                            "entity": {
+                                "name": "Volodymyr Zelensky",
+                                "description": null
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Politician",
+                                "description": "Politicians in the world, like Joe Biden"
+                            },
+                            "entity": {
+                                "name": "Volodymyr Zelensky",
+                                "description": null
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Ongoing News Story",
+                                "description": "Ongoing News Stories like 'Brexit'"
+                            },
+                            "entity": {
+                                "name": "Russo-Ukrainian conflict",
+                                "description": null
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Unified Twitter Taxonomy",
+                                "description": "A taxonomy view into the Semantic Core knowledge graph"
+                            },
+                            "entity": {
+                                "name": "Politics",
+                                "description": "Politics"
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Unified Twitter Taxonomy",
+                                "description": "A taxonomy view into the Semantic Core knowledge graph"
+                            },
+                            "entity": {
+                                "name": "Political figures",
+                                "description": "Politician"
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Unified Twitter Taxonomy",
+                                "description": "A taxonomy view into the Semantic Core knowledge graph"
+                            },
+                            "entity": {
+                                "name": "Volodymyr Zelensky",
+                                "description": null
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Person",
+                                "description": "Named people in the world like Nelson Mandela"
+                            },
+                            "entity": {
+                                "name": "Vladimir Putin",
+                                "description": "President of Russia Vladimir Putin"
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Politician",
+                                "description": "Politicians in the world, like Joe Biden"
+                            },
+                            "entity": {
+                                "name": "Vladimir Putin",
+                                "description": "President of Russia Vladimir Putin"
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Ongoing News Story",
+                                "description": "Ongoing News Stories like 'Brexit'"
+                            },
+                            "entity": {
+                                "name": "Russo-Ukrainian conflict",
+                                "description": null
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Unified Twitter Taxonomy",
+                                "description": "A taxonomy view into the Semantic Core knowledge graph"
+                            },
+                            "entity": {
+                                "name": "Politics",
+                                "description": "Politics"
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Unified Twitter Taxonomy",
+                                "description": "A taxonomy view into the Semantic Core knowledge graph"
+                            },
+                            "entity": {
+                                "name": "Vladimir Putin",
+                                "description": "President of Russia Vladimir Putin"
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Unified Twitter Taxonomy",
+                                "description": "A taxonomy view into the Semantic Core knowledge graph"
+                            },
+                            "entity": {
+                                "name": "Political figures",
+                                "description": "Politician"
+                            }
+                        }
+                    ],
+                    "conversation_references": [
+                        {
+                            "id": 1506114683979378691,
+                            "type": "replied_to",
+                            "author": {
+                                "id": 946018506268700672,
+                                "name": "Black in the Empire",
+                                "username": "blackintheempir"
+                            },
+                            "content": "Propaganda Russia attacks poor innocent Ukraine for no reason other than Putin is evil, but here comes the hero US to help Zelensky fight the bad guy. Reality Russia got tired of NATO breaking agreements, surrounding them with missiles and arming Nazis on their border",
+                            "hashtags": null
+                        }
+                    ]
+                }
+            },
+            {
+                "_index": "tweets",
+                "_id": "5eCBCoUBstex5w2T20rJ",
+                "_score": 74.61149,
+                "_source": {
+                    "source_id": 1498535572310310912,
+                    "author": {
+                        "id": 2889274562,
+                        "name": "Stand Tall n Roar",
+                        "username": "standtallnroar",
+                        "description": "This Is My Soapbox... Its Time For People To Wake Up!! If you don’t like what I post, then DON’T follow me!!",
+                        "tweet_count": 99346,
+                        "listed_count": 54,
+                        "followers_count": 493,
+                        "following_count": 159
+                    },
+                    "content": "I wonder how the Jews feel now that the Western world is on the neo-Nazi train? #Ukraine #Jew #Russia #USA #UK #Britain #EU #Europe #Putin #auspol #Biden #UkraineInvasion #UkraineCrisis https://t.co/rHTUImffKc",
+                    "language": "en",
+                    "source": "Twitter for iPad",
+                    "retweet_count": 1,
+                    "reply_count": 0,
+                    "like_count": 1,
+                    "quote_count": 0,
+                    "possibly_sensitive": false,
+                    "created_at": "2022-03-01T05:48:16+01:00",
+                    "hashtags": [
+                        "Ukraine",
+                        "Jew",
+                        "Russia",
+                        "USA",
+                        "UK",
+                        "Britain",
+                        "EU",
+                        "Europe",
+                        "Putin",
+                        "auspol",
+                        "Biden",
+                        "UkraineInvasion",
+                        "UkraineCrisis"
+                    ],
+                    "links": [
+                        {
+                            "url": "https://twitter.com/Babylon_BKA/status/1498389663001812993",
+                            "title": null,
+                            "description": null
+                        }
+                    ],
+                    "annotations": [
+                        {
+                            "type": "Person",
+                            "value": "Jews",
+                            "probability": 0.456
+                        }
+                    ],
+                    "context_annotations": [
+                        {
+                            "domain": {
+                                "name": "Brand",
+                                "description": "Brands and Companies"
+                            },
+                            "entity": {
+                                "name": "NPR",
+                                "description": "NPR"
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Ongoing News Story",
+                                "description": "Ongoing News Stories like 'Brexit'"
+                            },
+                            "entity": {
+                                "name": "Russo-Ukrainian conflict",
+                                "description": null
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Unified Twitter Taxonomy",
+                                "description": "A taxonomy view into the Semantic Core knowledge graph"
+                            },
+                            "entity": {
+                                "name": "NPR",
+                                "description": "NPR"
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Unified Twitter Taxonomy",
+                                "description": "A taxonomy view into the Semantic Core knowledge graph"
+                            },
+                            "entity": {
+                                "name": "News outlets",
+                                "description": null
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Person",
+                                "description": "Named people in the world like Nelson Mandela"
+                            },
+                            "entity": {
+                                "name": "Joe Biden",
+                                "description": "US President Joe Biden"
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Person",
+                                "description": "Named people in the world like Nelson Mandela"
+                            },
+                            "entity": {
+                                "name": "Vladimir Putin",
+                                "description": "President of Russia Vladimir Putin"
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Politician",
+                                "description": "Politicians in the world, like Joe Biden"
+                            },
+                            "entity": {
+                                "name": "Joe Biden",
+                                "description": "US President Joe Biden"
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Politician",
+                                "description": "Politicians in the world, like Joe Biden"
+                            },
+                            "entity": {
+                                "name": "Vladimir Putin",
+                                "description": "President of Russia Vladimir Putin"
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Ongoing News Story",
+                                "description": "Ongoing News Stories like 'Brexit'"
+                            },
+                            "entity": {
+                                "name": "Russo-Ukrainian conflict",
+                                "description": null
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Unified Twitter Taxonomy",
+                                "description": "A taxonomy view into the Semantic Core knowledge graph"
+                            },
+                            "entity": {
+                                "name": "Joe Biden",
+                                "description": "US President Joe Biden"
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Unified Twitter Taxonomy",
+                                "description": "A taxonomy view into the Semantic Core knowledge graph"
+                            },
+                            "entity": {
+                                "name": "Politics",
+                                "description": "Politics"
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Unified Twitter Taxonomy",
+                                "description": "A taxonomy view into the Semantic Core knowledge graph"
+                            },
+                            "entity": {
+                                "name": "Vladimir Putin",
+                                "description": "President of Russia Vladimir Putin"
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Unified Twitter Taxonomy",
+                                "description": "A taxonomy view into the Semantic Core knowledge graph"
+                            },
+                            "entity": {
+                                "name": "Political figures",
+                                "description": "Politician"
+                            }
+                        }
+                    ],
+                    "conversation_references": [
+                        {
+                            "id": 1498389663001812993,
+                            "type": "quoted",
+                            "author": {
+                                "id": 849783061,
+                                "name": "Babylon BKA",
+                                "username": "Babylon_BKA"
+                            },
+                            "content": "@ClaudiaJonesEdu @NPR They have gone public with there love for Nazis just like facebook https://t.co/zOld3N9zgP",
+                            "hashtags": null
+                        }
+                    ]
+                }
+            },
+            {
+                "_index": "tweets",
+                "_id": "o--NCoUBstex5w2TIFMo",
+                "_score": 73.587585,
+                "_source": {
+                    "source_id": 1505836703176663040,
+                    "author": {
+                        "id": 24403686,
+                        "name": "Kenneth Howells",
+                        "username": "fideidefensor",
+                        "description": "Animal Lover - against all Blood Sports - Need to see Hunting Law enforced - against Japans illegal whaling - Those who kill for fun get a life -don’t take one",
+                        "tweet_count": 33542,
+                        "listed_count": 46,
+                        "followers_count": 2374,
+                        "following_count": 2227
+                    },
+                    "content": "IMO #Putin will not survive to face trial - he has copied #Hitlers strategy in ruining his country &amp; will share same fate . #Russia #Ukraine https://t.co/orrI7AUsnc",
+                    "language": "en",
+                    "source": "Twitter for iPad",
+                    "retweet_count": 0,
+                    "reply_count": 0,
+                    "like_count": 1,
+                    "quote_count": 0,
+                    "possibly_sensitive": false,
+                    "created_at": "2022-03-21T09:20:21+01:00",
+                    "hashtags": [
+                        "Putin",
+                        "Hitlers",
+                        "Russia",
+                        "Ukraine"
+                    ],
+                    "links": [
+                        {
+                            "url": "https://twitter.com/fideidefensor/status/1498595752788041728",
+                            "title": null,
+                            "description": null
+                        }
+                    ],
+                    "annotations": null,
+                    "context_annotations": [
+                        {
+                            "domain": {
+                                "name": "Ongoing News Story",
+                                "description": "Ongoing News Stories like 'Brexit'"
+                            },
+                            "entity": {
+                                "name": "Russo-Ukrainian conflict",
+                                "description": null
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Person",
+                                "description": "Named people in the world like Nelson Mandela"
+                            },
+                            "entity": {
+                                "name": "Vladimir Putin",
+                                "description": "President of Russia Vladimir Putin"
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Politician",
+                                "description": "Politicians in the world, like Joe Biden"
+                            },
+                            "entity": {
+                                "name": "Vladimir Putin",
+                                "description": "President of Russia Vladimir Putin"
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Ongoing News Story",
+                                "description": "Ongoing News Stories like 'Brexit'"
+                            },
+                            "entity": {
+                                "name": "Russo-Ukrainian conflict",
+                                "description": null
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Unified Twitter Taxonomy",
+                                "description": "A taxonomy view into the Semantic Core knowledge graph"
+                            },
+                            "entity": {
+                                "name": "Politics",
+                                "description": "Politics"
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Unified Twitter Taxonomy",
+                                "description": "A taxonomy view into the Semantic Core knowledge graph"
+                            },
+                            "entity": {
+                                "name": "Vladimir Putin",
+                                "description": "President of Russia Vladimir Putin"
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Unified Twitter Taxonomy",
+                                "description": "A taxonomy view into the Semantic Core knowledge graph"
+                            },
+                            "entity": {
+                                "name": "Political figures",
+                                "description": "Politician"
+                            }
+                        }
+                    ],
+                    "conversation_references": [
+                        {
+                            "id": 1498595752788041728,
+                            "type": "quoted",
+                            "author": {
+                                "id": 24403686,
+                                "name": "Kenneth Howells",
+                                "username": "fideidefensor"
+                            },
+                            "content": "Vladimir #Putin and defence chiefs face life in jail if war crimes in Ukraine, warns UK - Evening Standard They should be hung same as Nazi war criminals . #Ukraine #Russia  https://t.co/bewqJjoaNJ",
+                            "hashtags": [
+                                "Putin",
+                                "Ukraine",
+                                "Russia"
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "_index": "tweets",
+                "_id": "OkDaCoUBstex5w2TZUDe",
+                "_score": 73.392426,
+                "_source": {
+                    "source_id": 1506419636551704588,
+                    "author": {
+                        "id": 1390419611758252034,
+                        "name": "Rick🖤🏴🇷🇼(dont confuse the flag)",
+                        "username": "BlackZorro07",
+                        "description": "Comments on current affairs, British politics! If I see injustice, I’ll comment on it. Zero time for performative antiracists! 🤷🏾‍♂️😎",
+                        "tweet_count": 49711,
+                        "listed_count": 5,
+                        "followers_count": 1924,
+                        "following_count": 4152
+                    },
+                    "content": "Another day in #Zelenskyy country The country being promoted as Christian, kind, blonde hair, blue eyes.. Hmm.. so that's how they treat people out there yeah? Oh and also #AzovBattalion roams the streets of #Ukraine (but oops not allowed to talk about it, makes you Putin bot) https://t.co/h2sxUEsAan",
+                    "language": "en",
+                    "source": "Twitter Web App",
+                    "retweet_count": 3,
+                    "reply_count": 2,
+                    "like_count": 11,
+                    "quote_count": 0,
+                    "possibly_sensitive": false,
+                    "created_at": "2022-03-22T23:56:43+01:00",
+                    "hashtags": [
+                        "Zelenskyy",
+                        "AzovBattalion",
+                        "Ukraine"
+                    ],
+                    "links": [
+                        {
+                            "url": "https://twitter.com/StubblyStephie/status/1506418683547160585",
+                            "title": null,
+                            "description": null
+                        }
+                    ],
+                    "annotations": [
+                        {
+                            "type": "Person",
+                            "value": "Putin",
+                            "probability": 0.971
+                        }
+                    ],
+                    "context_annotations": [
+                        {
+                            "domain": {
+                                "name": "Person",
+                                "description": "Named people in the world like Nelson Mandela"
+                            },
+                            "entity": {
+                                "name": "Volodymyr Zelensky",
+                                "description": null
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Politician",
+                                "description": "Politicians in the world, like Joe Biden"
+                            },
+                            "entity": {
+                                "name": "Volodymyr Zelensky",
+                                "description": null
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Ongoing News Story",
+                                "description": "Ongoing News Stories like 'Brexit'"
+                            },
+                            "entity": {
+                                "name": "Russo-Ukrainian conflict",
+                                "description": null
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Unified Twitter Taxonomy",
+                                "description": "A taxonomy view into the Semantic Core knowledge graph"
+                            },
+                            "entity": {
+                                "name": "Politics",
+                                "description": "Politics"
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Unified Twitter Taxonomy",
+                                "description": "A taxonomy view into the Semantic Core knowledge graph"
+                            },
+                            "entity": {
+                                "name": "Political figures",
+                                "description": "Politician"
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Unified Twitter Taxonomy",
+                                "description": "A taxonomy view into the Semantic Core knowledge graph"
+                            },
+                            "entity": {
+                                "name": "Volodymyr Zelensky",
+                                "description": null
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Person",
+                                "description": "Named people in the world like Nelson Mandela"
+                            },
+                            "entity": {
+                                "name": "Vladimir Putin",
+                                "description": "President of Russia Vladimir Putin"
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Politician",
+                                "description": "Politicians in the world, like Joe Biden"
+                            },
+                            "entity": {
+                                "name": "Vladimir Putin",
+                                "description": "President of Russia Vladimir Putin"
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Ongoing News Story",
+                                "description": "Ongoing News Stories like 'Brexit'"
+                            },
+                            "entity": {
+                                "name": "Russo-Ukrainian conflict",
+                                "description": null
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Unified Twitter Taxonomy",
+                                "description": "A taxonomy view into the Semantic Core knowledge graph"
+                            },
+                            "entity": {
+                                "name": "Politics",
+                                "description": "Politics"
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Unified Twitter Taxonomy",
+                                "description": "A taxonomy view into the Semantic Core knowledge graph"
+                            },
+                            "entity": {
+                                "name": "Vladimir Putin",
+                                "description": "President of Russia Vladimir Putin"
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Unified Twitter Taxonomy",
+                                "description": "A taxonomy view into the Semantic Core knowledge graph"
+                            },
+                            "entity": {
+                                "name": "Political figures",
+                                "description": "Politician"
+                            }
+                        }
+                    ],
+                    "conversation_references": [
+                        {
+                            "id": 1506418683547160585,
+                            "type": "quoted",
+                            "author": {
+                                "id": 1263456607033319427,
+                                "name": "Stubbly Stephie 🏳️‍⚧️🏳️‍🌈 #JusticeForChrisKaba",
+                                "username": "StubblyStephie"
+                            },
+                            "content": "Ukrainian neo-Nazi nationalists attack Roma women in broad daylight on Independence Square in central Kyiv. And this is the side we're backing...?!?! 🤬🤬🤬🤬🤬🤬🤬 https://t.co/TSdFzNgG5v",
+                            "hashtags": null
+                        }
+                    ]
+                }
+            },
+            {
+                "_index": "tweets",
+                "_id": "yIIgC4UBstex5w2TJ3lH",
+                "_score": 72.64669,
+                "_source": {
+                    "source_id": 1502125398267682829,
+                    "author": {
+                        "id": 100366402,
+                        "name": "Stephanie C.",
+                        "username": "tinkerbellsclar",
+                        "description": "I am a loving housewife,and a cosmetologist Who loves her family dearly.",
+                        "tweet_count": 57238,
+                        "listed_count": 26,
+                        "followers_count": 305,
+                        "following_count": 380
+                    },
+                    "content": "https://t.co/X4F2y58xES ... Video - Nazis in #Ukraine is who Putin is after... Listen to the woman speak . You can hear her say NAZI a few times. Now look at captions clearly it's not translated correctly. Because Names never change in translations. #WarinUkraine  /// Karma/Jews",
+                    "language": "en",
+                    "source": "Twitter for Android",
+                    "retweet_count": 0,
+                    "reply_count": 0,
+                    "like_count": 0,
+                    "quote_count": 0,
+                    "possibly_sensitive": false,
+                    "created_at": "2022-03-11T03:32:57+01:00",
+                    "hashtags": [
+                        "Ukraine",
+                        "WarinUkraine"
+                    ],
+                    "links": [
+                        {
+                            "url": "https://instagram.com/stories/tinkerbellclark/2790590865390456291?utm_source=ig_story_item_share&utm_medium=share_sheet",
+                            "title": "Watch this story by Stephanie Clark on Instagram before it disappears.",
+                            "description": "540 Followers, 367 Following, 5,634 Posts"
+                        }
+                    ],
+                    "annotations": [
+                        {
+                            "type": "Person",
+                            "value": "Putin",
+                            "probability": 0.907
+                        }
+                    ],
+                    "context_annotations": [
+                        {
+                            "domain": {
+                                "name": "Ongoing News Story",
+                                "description": "Ongoing News Stories like 'Brexit'"
+                            },
+                            "entity": {
+                                "name": "Russo-Ukrainian conflict",
+                                "description": null
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Person",
+                                "description": "Named people in the world like Nelson Mandela"
+                            },
+                            "entity": {
+                                "name": "Vladimir Putin",
+                                "description": "President of Russia Vladimir Putin"
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Politician",
+                                "description": "Politicians in the world, like Joe Biden"
+                            },
+                            "entity": {
+                                "name": "Vladimir Putin",
+                                "description": "President of Russia Vladimir Putin"
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Ongoing News Story",
+                                "description": "Ongoing News Stories like 'Brexit'"
+                            },
+                            "entity": {
+                                "name": "Russo-Ukrainian conflict",
+                                "description": null
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Unified Twitter Taxonomy",
+                                "description": "A taxonomy view into the Semantic Core knowledge graph"
+                            },
+                            "entity": {
+                                "name": "Politics",
+                                "description": "Politics"
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Unified Twitter Taxonomy",
+                                "description": "A taxonomy view into the Semantic Core knowledge graph"
+                            },
+                            "entity": {
+                                "name": "Vladimir Putin",
+                                "description": "President of Russia Vladimir Putin"
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Unified Twitter Taxonomy",
+                                "description": "A taxonomy view into the Semantic Core knowledge graph"
+                            },
+                            "entity": {
+                                "name": "Political figures",
+                                "description": "Politician"
+                            }
+                        }
+                    ],
+                    "conversation_references": [
+                        {
+                            "id": 1501774028889018372,
+                            "type": "replied_to",
+                            "author": {
+                                "id": 100366402,
+                                "name": "Stephanie C.",
+                                "username": "tinkerbellsclar"
+                            },
+                            "content": "I feel for the Innocent families caught in the middle of this terrible fight... #Ukraine vs #Russia /// Nazis wasp nest is being eradicated. 🕸️ https://t.co/BJH10zEDqu",
+                            "hashtags": [
+                                "Ukraine",
+                                "Russia"
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "_index": "tweets",
+                "_id": "F7FeCoUBstex5w2Tenea",
+                "_score": 67.08287,
+                "_source": {
+                    "source_id": 1503664826589065219,
+                    "author": {
+                        "id": 994680142906773505,
+                        "name": "SAMRI",
+                        "username": "SAMRIReports",
+                        "description": "South Asia Media Research Institute. All the News That's Unfit to Print, mainly from South Asia. Backup account @SAMRIBackup",
+                        "tweet_count": 57375,
+                        "listed_count": 109,
+                        "followers_count": 12236,
+                        "following_count": 3794
+                    },
+                    "content": "Pro-#Assad #Christian militia led by Nabeel Abdullah, now recruiting  volunteers  to fight for #Russia in #Ukraine, is also funded by French NGO  SOS Christians of the East  @SOSCdOrient, a  national defense partner  of #France's Defense Ministry.  https://t.co/9pd6Y1re96 https://t.co/Ny8zRCjGE4",
+                    "language": "en",
+                    "source": "Twitter Web App",
+                    "retweet_count": 1,
+                    "reply_count": 1,
+                    "like_count": 1,
+                    "quote_count": 1,
+                    "possibly_sensitive": false,
+                    "created_at": "2022-03-15T09:30:06+01:00",
+                    "hashtags": [
+                        "Assad",
+                        "Christian",
+                        "Russia",
+                        "Ukraine",
+                        "France"
+                    ],
+                    "links": [
+                        {
+                            "url": "https://www.paudal.com/2022/02/18/the-sos-chretiens-dorient-association-under-investigation-for-complicity-in-war-crimes/",
+                            "title": "The SOS Chrétiens d’Orient association under investigation for complicity in war crimes",
+                            "description": "The national anti-terrorist prosecutor's office has opened a preliminary investigation targeting the association SOS Chrétiens d'Orient for complicity in crimes"
+                        },
+                        {
+                            "url": "https://twitter.com/SAMRIReports/status/1503664826589065219/photo/1",
+                            "title": null,
+                            "description": null
+                        }
+                    ],
+                    "annotations": [
+                        {
+                            "type": "Person",
+                            "value": "Nabeel Abdullah",
+                            "probability": 0.969
+                        },
+                        {
+                            "type": "Organization",
+                            "value": "French NGO",
+                            "probability": 0.608
+                        }
+                    ],
+                    "context_annotations": [
+                        {
+                            "domain": {
+                                "name": "Interests and Hobbies Vertical",
+                                "description": "Top level interests and hobbies groupings, like Food or Travel"
+                            },
+                            "entity": {
+                                "name": "Careers",
+                                "description": "Careers"
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Interests and Hobbies Category",
+                                "description": "A grouping of interests and hobbies entities, like Novelty Food or Destinations"
+                            },
+                            "entity": {
+                                "name": "Recruitment",
+                                "description": "Recruitment"
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Ongoing News Story",
+                                "description": "Ongoing News Stories like 'Brexit'"
+                            },
+                            "entity": {
+                                "name": "Russo-Ukrainian conflict",
+                                "description": null
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Person",
+                                "description": "Named people in the world like Nelson Mandela"
+                            },
+                            "entity": {
+                                "name": "Bashar al-Assad",
+                                "description": "Syrian President Bashar al-Assad"
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Politician",
+                                "description": "Politicians in the world, like Joe Biden"
+                            },
+                            "entity": {
+                                "name": "Bashar al-Assad",
+                                "description": "Syrian President Bashar al-Assad"
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Ongoing News Story",
+                                "description": "Ongoing News Stories like 'Brexit'"
+                            },
+                            "entity": {
+                                "name": "Russo-Ukrainian conflict",
+                                "description": null
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Unified Twitter Taxonomy",
+                                "description": "A taxonomy view into the Semantic Core knowledge graph"
+                            },
+                            "entity": {
+                                "name": "Politics",
+                                "description": "Politics"
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Unified Twitter Taxonomy",
+                                "description": "A taxonomy view into the Semantic Core knowledge graph"
+                            },
+                            "entity": {
+                                "name": "Bashar al-Assad",
+                                "description": "Syrian President Bashar al-Assad"
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Unified Twitter Taxonomy",
+                                "description": "A taxonomy view into the Semantic Core knowledge graph"
+                            },
+                            "entity": {
+                                "name": "Political figures",
+                                "description": "Politician"
+                            }
+                        }
+                    ],
+                    "conversation_references": [
+                        {
+                            "id": 1503114423665410053,
+                            "type": "replied_to",
+                            "author": {
+                                "id": 994680142906773505,
+                                "name": "SAMRI",
+                                "username": "SAMRIReports"
+                            },
+                            "content": "Pro-#Assad #Christian militia leader Nabeel Abdullah: Same people who fought terrorists in #Syria are now fighting Nazis in #Ukraine. We are waiting for the orders from the wise #Syrian and #Russian leadership to go to #Ukraine. We will show them things never seen before. https://t.co/m5GZBiKIpq",
+                            "hashtags": [
+                                "Assad",
+                                "Christian",
+                                "Syria",
+                                "Ukraine",
+                                "Syrian",
+                                "Russian",
+                                "Ukraine"
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "_index": "tweets",
+                "_id": "_krkCoUBstex5w2T_51L",
+                "_score": 65.857666,
+                "_source": {
+                    "source_id": 1498715652345020420,
+                    "author": {
+                        "id": 1158562636113440768,
+                        "name": "Janie Blue USA~Call #Congress: 1-202-224-3121",
+                        "username": "JanieResists",
+                        "description": "USA Fact Researcher/Speed Reader/No BS   Email: https://t.co/yt2jCmrUO8 Call #Biden #WhiteHouse (202)-456-1111 #SupportUkraine #ArmUkraineNOW #Resistance",
+                        "tweet_count": 71543,
+                        "listed_count": 15,
+                        "followers_count": 4365,
+                        "following_count": 4982
+                    },
+                    "content": "#Jews #BabynYar #Ukraine #UkraineRussiaWar #Bombing #Russia https://t.co/nbJS4O8RkQ",
+                    "language": "qht",
+                    "source": "Twitter Web App",
+                    "retweet_count": 0,
+                    "reply_count": 0,
+                    "like_count": 0,
+                    "quote_count": 0,
+                    "possibly_sensitive": false,
+                    "created_at": "2022-03-01T17:43:50+01:00",
+                    "hashtags": [
+                        "Jews",
+                        "BabynYar",
+                        "Ukraine",
+                        "UkraineRussiaWar",
+                        "Bombing",
+                        "Russia"
+                    ],
+                    "links": [
+                        {
+                            "url": "https://twitter.com/LahavHarkov/status/1498686224462188549",
+                            "title": null,
+                            "description": null
+                        }
+                    ],
+                    "annotations": null,
+                    "context_annotations": [
+                        {
+                            "domain": {
+                                "name": "Person",
+                                "description": "Named people in the world like Nelson Mandela"
+                            },
+                            "entity": {
+                                "name": "Volodymyr Zelensky",
+                                "description": null
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Politician",
+                                "description": "Politicians in the world, like Joe Biden"
+                            },
+                            "entity": {
+                                "name": "Volodymyr Zelensky",
+                                "description": null
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Ongoing News Story",
+                                "description": "Ongoing News Stories like 'Brexit'"
+                            },
+                            "entity": {
+                                "name": "Russo-Ukrainian conflict",
+                                "description": null
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Unified Twitter Taxonomy",
+                                "description": "A taxonomy view into the Semantic Core knowledge graph"
+                            },
+                            "entity": {
+                                "name": "Politics",
+                                "description": "Politics"
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Unified Twitter Taxonomy",
+                                "description": "A taxonomy view into the Semantic Core knowledge graph"
+                            },
+                            "entity": {
+                                "name": "Political figures",
+                                "description": "Politician"
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Unified Twitter Taxonomy",
+                                "description": "A taxonomy view into the Semantic Core knowledge graph"
+                            },
+                            "entity": {
+                                "name": "Volodymyr Zelensky",
+                                "description": null
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Ongoing News Story",
+                                "description": "Ongoing News Stories like 'Brexit'"
+                            },
+                            "entity": {
+                                "name": "Russo-Ukrainian conflict",
+                                "description": null
+                            }
+                        }
+                    ],
+                    "conversation_references": [
+                        {
+                            "id": 1498686224462188549,
+                            "type": "quoted",
+                            "author": {
+                                "id": 315779591,
+                                "name": "Lahav Harkov",
+                                "username": "LahavHarkov"
+                            },
+                            "content": "Zelensky's chief of staff confirms that the Russians bombed Babyn Yar, where the Nazis massacred 30,000 Jews. Some denazification. https://t.co/yDIXLBK2If",
+                            "hashtags": null
+                        }
+                    ]
+                }
+            },
+            {
+                "_index": "tweets",
+                "_id": "yp05C4UBstex5w2TbGJR",
+                "_score": 64.51658,
+                "_source": {
+                    "source_id": 1498950132687114241,
+                    "author": {
+                        "id": 410640607,
+                        "name": "🇺🇦🇬🇧Elena Karacharova",
+                        "username": "ElenaKaracharow",
+                        "description": "Global Earth Liaison 🌍🌏🌎 exploring challenges of #StratCom and #DigitalDiplomacy.",
+                        "tweet_count": 47329,
+                        "listed_count": 92,
+                        "followers_count": 2564,
+                        "following_count": 2411
+                    },
+                    "content": "@SahashraBuddhe @emilykschrader Sadly you fall under the #Russian #disinformation #propaganda #fake news (or you are #bot/ #troll). Here are #Jews who fought in Azov, and now defend #Ukraine from the Russians. So who is the Nazi here, Russia attacking everyone or Ukraine run by Jewish president #Zelenskyy? https://t.co/yBgqa7U9GE",
+                    "language": "en",
+                    "source": "Twitter for Android",
+                    "retweet_count": 0,
+                    "reply_count": 1,
+                    "like_count": 1,
+                    "quote_count": 0,
+                    "possibly_sensitive": false,
+                    "created_at": "2022-03-02T09:15:35+01:00",
+                    "hashtags": [
+                        "Russian",
+                        "disinformation",
+                        "propaganda",
+                        "fake",
+                        "bot",
+                        "troll",
+                        "Jews",
+                        "Ukraine",
+                        "Zelenskyy"
+                    ],
+                    "links": [
+                        {
+                            "url": "https://twitter.com/ElenaKaracharow/status/1498950132687114241/photo/1",
+                            "title": null,
+                            "description": null
+                        }
+                    ],
+                    "annotations": [
+                        {
+                            "type": "Place",
+                            "value": "Azov",
+                            "probability": 0.683
+                        },
+                        {
+                            "type": "Place",
+                            "value": "Russia",
+                            "probability": 0.996
+                        },
+                        {
+                            "type": "Place",
+                            "value": "Ukraine",
+                            "probability": 0.996
+                        }
+                    ],
+                    "context_annotations": [
+                        {
+                            "domain": {
+                                "name": "Person",
+                                "description": "Named people in the world like Nelson Mandela"
+                            },
+                            "entity": {
+                                "name": "Volodymyr Zelensky",
+                                "description": null
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Politician",
+                                "description": "Politicians in the world, like Joe Biden"
+                            },
+                            "entity": {
+                                "name": "Volodymyr Zelensky",
+                                "description": null
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "News Vertical",
+                                "description": "News Categories like Entertainment or Technology"
+                            },
+                            "entity": {
+                                "name": "Russia national news",
+                                "description": null
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Ongoing News Story",
+                                "description": "Ongoing News Stories like 'Brexit'"
+                            },
+                            "entity": {
+                                "name": "Russo-Ukrainian conflict",
+                                "description": null
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Unified Twitter Taxonomy",
+                                "description": "A taxonomy view into the Semantic Core knowledge graph"
+                            },
+                            "entity": {
+                                "name": "Politics",
+                                "description": "Politics"
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Unified Twitter Taxonomy",
+                                "description": "A taxonomy view into the Semantic Core knowledge graph"
+                            },
+                            "entity": {
+                                "name": "Political figures",
+                                "description": "Politician"
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Unified Twitter Taxonomy",
+                                "description": "A taxonomy view into the Semantic Core knowledge graph"
+                            },
+                            "entity": {
+                                "name": "Russia national news",
+                                "description": null
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Unified Twitter Taxonomy",
+                                "description": "A taxonomy view into the Semantic Core knowledge graph"
+                            },
+                            "entity": {
+                                "name": "Volodymyr Zelensky",
+                                "description": null
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Ongoing News Story",
+                                "description": "Ongoing News Stories like 'Brexit'"
+                            },
+                            "entity": {
+                                "name": "Russo-Ukrainian conflict",
+                                "description": null
+                            }
+                        }
+                    ],
+                    "conversation_references": [
+                        {
+                            "id": 1498944686761062403,
+                            "type": "replied_to",
+                            "author": {
+                                "id": 1475390710845087747,
+                                "name": "Commando Beeru Sahashra Buddhe",
+                                "username": "SahashraBuddhe"
+                            },
+                            "content": "@ElenaKaracharow @emilykschrader Israel maintaining calmness on event Russian operation to denazify Ukraine from Azov Battalions. P.S. Azov is a Nazi military battalions with Haken Kruez symbols around them always.",
+                            "hashtags": null
+                        }
+                    ]
+                }
+            },
+            {
+                "_index": "tweets",
+                "_id": "FBKsC4UBstex5w2TyowT",
+                "_score": 63.521973,
+                "_source": {
+                    "source_id": 1498080991084220417,
+                    "author": {
+                        "id": 2849717548,
+                        "name": "✝Chenan ♡♡✨♡",
+                        "username": "VictoriousTiq",
+                        "description": "Judeo-Christian✝️, #Zionist✡️. I love all humanity & believe we are all equal. Vibing & Preaching the Un-filtered gospel of Jesus Christ...",
+                        "tweet_count": 36689,
+                        "listed_count": 41,
+                        "followers_count": 2163,
+                        "following_count": 1650
+                    },
+                    "content": "How in this world is putin stating Ukraine is a nazi country when its literally full of Jews &amp; the president is Jewish...he's the one whose a Nazi...putin is the hitler in disguise... #Israel #Ukraine #UkraineRussiaWar #Israelites #Israeli #IsraelUnderAttack https://t.co/yxNbhrNhHH",
+                    "language": "en",
+                    "source": "Twitter Web App",
+                    "retweet_count": 4,
+                    "reply_count": 1,
+                    "like_count": 5,
+                    "quote_count": 0,
+                    "possibly_sensitive": false,
+                    "created_at": "2022-02-27T23:41:55+01:00",
+                    "hashtags": [
+                        "Israel",
+                        "Ukraine",
+                        "UkraineRussiaWar",
+                        "Israelites",
+                        "Israeli",
+                        "IsraelUnderAttack"
+                    ],
+                    "links": [
+                        {
+                            "url": "https://twitter.com/HypeSir7/status/1498067512508002315",
+                            "title": null,
+                            "description": null
+                        }
+                    ],
+                    "annotations": [
+                        {
+                            "type": "Person",
+                            "value": "putin",
+                            "probability": 0.991
+                        },
+                        {
+                            "type": "Place",
+                            "value": "Ukraine",
+                            "probability": 0.985
+                        },
+                        {
+                            "type": "Person",
+                            "value": "Jews",
+                            "probability": 0.733
+                        },
+                        {
+                            "type": "Person",
+                            "value": "Nazi",
+                            "probability": 0.424
+                        },
+                        {
+                            "type": "Person",
+                            "value": "putin",
+                            "probability": 0.970
+                        }
+                    ],
+                    "context_annotations": [
+                        {
+                            "domain": {
+                                "name": "News Vertical",
+                                "description": "News Categories like Entertainment or Technology"
+                            },
+                            "entity": {
+                                "name": "Political News",
+                                "description": "Political News"
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Ongoing News Story",
+                                "description": "Ongoing News Stories like 'Brexit'"
+                            },
+                            "entity": {
+                                "name": "Russo-Ukrainian conflict",
+                                "description": null
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Person",
+                                "description": "Named people in the world like Nelson Mandela"
+                            },
+                            "entity": {
+                                "name": "Vladimir Putin",
+                                "description": "President of Russia Vladimir Putin"
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Politician",
+                                "description": "Politicians in the world, like Joe Biden"
+                            },
+                            "entity": {
+                                "name": "Vladimir Putin",
+                                "description": "President of Russia Vladimir Putin"
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Ongoing News Story",
+                                "description": "Ongoing News Stories like 'Brexit'"
+                            },
+                            "entity": {
+                                "name": "Russo-Ukrainian conflict",
+                                "description": null
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Unified Twitter Taxonomy",
+                                "description": "A taxonomy view into the Semantic Core knowledge graph"
+                            },
+                            "entity": {
+                                "name": "Politics",
+                                "description": "Politics"
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Unified Twitter Taxonomy",
+                                "description": "A taxonomy view into the Semantic Core knowledge graph"
+                            },
+                            "entity": {
+                                "name": "Vladimir Putin",
+                                "description": "President of Russia Vladimir Putin"
+                            }
+                        },
+                        {
+                            "domain": {
+                                "name": "Unified Twitter Taxonomy",
+                                "description": "A taxonomy view into the Semantic Core knowledge graph"
+                            },
+                            "entity": {
+                                "name": "Political figures",
+                                "description": "Politician"
+                            }
+                        }
+                    ],
+                    "conversation_references": [
+                        {
+                            "id": 1498067512508002315,
+                            "type": "quoted",
+                            "author": {
+                                "id": 353289134,
+                                "name": "Rashawn Copeland, Start Where You Are",
+                                "username": "HypeSir7"
+                            },
+                            "content": "A Jewish Ukrainian family had 4 brothers.  3 were murdered by the Nazis, only 1 survived.  His grandson would go on to become President Zelenskyy. https://t.co/pF6Sn0CsWs",
+                            "hashtags": null
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "aggregations": {
+        "hashtags": {
+            "doc_count": 521,
+            "pro-russia": {
+                "buckets": [
+                    {
+                        "key_as_string": "2022-02-21",
+                        "key": 1645401600000,
+                        "doc_count": 171,
+                        "hashtag": {
+                            "doc_count_error_upper_bound": 5,
+                            "sum_other_doc_count": 432,
+                            "buckets": [
+                                {
+                                    "key": "ukraine",
+                                    "doc_count": 171
+                                },
+                                {
+                                    "key": "putin",
+                                    "doc_count": 170
+                                },
+                                {
+                                    "key": "russia",
+                                    "doc_count": 40
+                                },
+                                {
+                                    "key": "ukraineunderattack",
+                                    "doc_count": 24
+                                },
+                                {
+                                    "key": "nato",
+                                    "doc_count": 14
+                                },
+                                {
+                                    "key": "kyiv",
+                                    "doc_count": 12
+                                },
+                                {
+                                    "key": "ukrainerussia",
+                                    "doc_count": 9
+                                },
+                                {
+                                    "key": "kiev",
+                                    "doc_count": 8
+                                },
+                                {
+                                    "key": "putinisawarcriminal",
+                                    "doc_count": 7
+                                },
+                                {
+                                    "key": "ukraineinvasion",
+                                    "doc_count": 7
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "key_as_string": "2022-02-28",
+                        "key": 1646006400000,
+                        "doc_count": 110,
+                        "hashtag": {
+                            "doc_count_error_upper_bound": 3,
+                            "sum_other_doc_count": 290,
+                            "buckets": [
+                                {
+                                    "key": "ukraine",
+                                    "doc_count": 110
+                                },
+                                {
+                                    "key": "putin",
+                                    "doc_count": 105
+                                },
+                                {
+                                    "key": "russia",
+                                    "doc_count": 57
+                                },
+                                {
+                                    "key": "nazis",
+                                    "doc_count": 40
+                                },
+                                {
+                                    "key": "ukrainerussiawar",
+                                    "doc_count": 40
+                                },
+                                {
+                                    "key": "israel",
+                                    "doc_count": 6
+                                },
+                                {
+                                    "key": "kyiv",
+                                    "doc_count": 6
+                                },
+                                {
+                                    "key": "russian",
+                                    "doc_count": 6
+                                },
+                                {
+                                    "key": "ukrainerussia",
+                                    "doc_count": 6
+                                },
+                                {
+                                    "key": "nato",
+                                    "doc_count": 5
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "key_as_string": "2022-03-07",
+                        "key": 1646611200000,
+                        "doc_count": 44,
+                        "hashtag": {
+                            "doc_count_error_upper_bound": 4,
+                            "sum_other_doc_count": 197,
+                            "buckets": [
+                                {
+                                    "key": "putin",
+                                    "doc_count": 44
+                                },
+                                {
+                                    "key": "ukraine",
+                                    "doc_count": 44
+                                },
+                                {
+                                    "key": "russia",
+                                    "doc_count": 20
+                                },
+                                {
+                                    "key": "stopputin",
+                                    "doc_count": 8
+                                },
+                                {
+                                    "key": "war",
+                                    "doc_count": 8
+                                },
+                                {
+                                    "key": "kyiv",
+                                    "doc_count": 6
+                                },
+                                {
+                                    "key": "nato",
+                                    "doc_count": 4
+                                },
+                                {
+                                    "key": "putinwarcriminal",
+                                    "doc_count": 4
+                                },
+                                {
+                                    "key": "warcrimes",
+                                    "doc_count": 4
+                                },
+                                {
+                                    "key": "genocide",
+                                    "doc_count": 3
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "key_as_string": "2022-03-14",
+                        "key": 1647216000000,
+                        "doc_count": 97,
+                        "hashtag": {
+                            "doc_count_error_upper_bound": 6,
+                            "sum_other_doc_count": 375,
+                            "buckets": [
+                                {
+                                    "key": "putin",
+                                    "doc_count": 97
+                                },
+                                {
+                                    "key": "ukraine",
+                                    "doc_count": 97
+                                },
+                                {
+                                    "key": "russia",
+                                    "doc_count": 41
+                                },
+                                {
+                                    "key": "ukraineunderattack",
+                                    "doc_count": 12
+                                },
+                                {
+                                    "key": "ukrainerussianwar",
+                                    "doc_count": 11
+                                },
+                                {
+                                    "key": "nato",
+                                    "doc_count": 10
+                                },
+                                {
+                                    "key": "ukrainewar",
+                                    "doc_count": 9
+                                },
+                                {
+                                    "key": "russianukrainianwar",
+                                    "doc_count": 8
+                                },
+                                {
+                                    "key": "war",
+                                    "doc_count": 7
+                                },
+                                {
+                                    "key": "biden",
+                                    "doc_count": 6
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "key_as_string": "2022-03-21",
+                        "key": 1647820800000,
+                        "doc_count": 99,
+                        "hashtag": {
+                            "doc_count_error_upper_bound": 4,
+                            "sum_other_doc_count": 307,
+                            "buckets": [
+                                {
+                                    "key": "ukraine",
+                                    "doc_count": 99
+                                },
+                                {
+                                    "key": "putin",
+                                    "doc_count": 97
+                                },
+                                {
+                                    "key": "russia",
+                                    "doc_count": 33
+                                },
+                                {
+                                    "key": "europe",
+                                    "doc_count": 9
+                                },
+                                {
+                                    "key": "nazi",
+                                    "doc_count": 9
+                                },
+                                {
+                                    "key": "russian",
+                                    "doc_count": 8
+                                },
+                                {
+                                    "key": "stopwar",
+                                    "doc_count": 7
+                                },
+                                {
+                                    "key": "israel",
+                                    "doc_count": 6
+                                },
+                                {
+                                    "key": "nato",
+                                    "doc_count": 6
+                                },
+                                {
+                                    "key": "nazis",
+                                    "doc_count": 6
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

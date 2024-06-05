@@ -1,0 +1,105 @@
+.wholeContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
+.container {
+  margin-top: 10px;
+  align-content: center;
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0px 20px;
+}
+
+.container h1{
+  margin: 0px;
+}
+
+.container p{
+  margin: 0px;
+  font-size: 20px;
+}
+
+.columnsContainer{
+  width: 100%;
+  display: flex;
+}
+
+.column{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.importantInfromation{
+  font-size: 20px;
+}
+
+.wholeContainer h1{
+  font-size: 30px;
+}
+
+/* Solid border */
+hr.solid {
+  width: 100%;
+  border-top: 3px solid #bbb;
+}
+
+p{
+  min-height: 20px;
+}
+
+.close-button{
+  float: right;
+  top:-24px;
+  right:-24px;
+}
+
+.close-icon {
+  transition: 1s ease-in-out;
+}
+
+.close-icon:hover {
+  transform: rotate(180deg);
+}
+
+::ng-deep .icon-outside .close-button{
+  float: right;
+  top:-52px;
+  right:-52px;
+}
+
+::ng-deep .icon-outside .mat-dialog-container {
+ overflow: unset
+}
+
+.containerTwoColumns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0px 20px;
+}
+
+@media only screen and (max-width: 1400px) {}
+
+@media only screen and (max-width: 1200px) {
+}
+
+@media only screen and (max-width: 768px) {}
+
+@media only screen and (max-width: 576px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .column{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

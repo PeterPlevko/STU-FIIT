@@ -1,0 +1,43 @@
+.mainBlok{
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+  background-color: white;
+  padding: 10px;
+  font-size: large;
+  padding: 10px;
+  border: 1px solid #009999;
+  text-align: center;
+  box-shadow:  -1px 1px #009999,
+       -2px 2px #009999,
+       -3px 3px #009999,
+       -4px 4px #009999,
+       -5px 5px #009999;
+}
+
+mat-form-field {
+  margin-top: 20px;
+  width: 50%;
+}
+
+.sendButton{
+  margin-bottom: 10px;
+}
+
+.displayFlex{
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button{
+  margin: 5px;
+  font-size: 20px;
+  min-height: 50px;
+  min-width: 200px;
+}

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="287.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <Label layoutX="34.0" layoutY="30.0" text="Operacny system:" />
+      <Label layoutX="34.0" layoutY="60.0" text="Meno pouzivatela:" />
+      <Label layoutX="34.0" layoutY="90.0" text="Java:" />
+      <Label layoutX="34.0" layoutY="120.0" text="Meno pouzivatelskeho priecinka:" />
+      <Label layoutX="34.0" layoutY="150.0" text="Velkost pouzivatelskeho priecinka:" />
+      <Label layoutX="34.0" layoutY="180.0" text="Pamat urcena pre JVM" />
+      <Label layoutX="34.0" layoutY="210.0" text="Dostupna pamat pre JVM" />
+      <Label layoutX="34.0" layoutY="240.0" text="Volna pamat pre alokaciou:" />
+      <Label fx:id="testOS" layoutX="247.0" layoutY="30.0" text="Label" />
+      <Label fx:id="name" layoutX="247.0" layoutY="60.0" text="Label" />
+      <Label fx:id="java" layoutX="247.0" layoutY="90.0" text="Label" />
+      <Label fx:id="userDIrName" layoutX="247.0" layoutY="120.0" text="Label" />
+      <Label fx:id="userDirSize" layoutX="247.0" layoutY="150.0" text="Label" />
+      <Label fx:id="memoryForJVM" layoutX="247.0" layoutY="180.0" text="Label" />
+      <Label fx:id="availMemoryJVM" layoutX="247.0" layoutY="210.0" text="Label" />
+      <Label fx:id="beforeAllocation" layoutX="247.0" layoutY="240.0" text="Label" />
+      <Line endY="136.0" layoutX="232.0" layoutY="129.0" startY="-115.0" />
+   </children>
+</Pane>

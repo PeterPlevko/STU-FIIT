@@ -1,0 +1,86 @@
+.itemTypes {
+    display: flex;
+    border-radius: 15px;
+    background-color: #1F2833;
+}
+
+.itemTypes div {
+    margin: 10px;
+}
+
+.imagePart {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.imagePart img {
+    max-width: 300px;
+}
+
+.xButton {
+    margin: 10px;
+    padding: 5px 10px;
+}
+
+.textPart h2 {
+    text-align: center;
+}
+
+.functionalPart {
+    width: 100%;
+    margin: 10px 0 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.summaryInfo {
+    background-color: #0B0C10;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.summaryInfo p{
+    margin-top: 30px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.leftPart {
+    display: flex;
+    width: 70%;
+}
+
+.middle{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.rightPart {
+    display: flex;
+    width: 30%;
+}
+
+.closePart{
+    width: 10%;
+}
+
+.smallButton {
+    margin: 0;
+    margin-left: 10px;
+    padding: 4px;
+}
+
+.textForAmount {
+    margin-left: 10px;
+}
+
+.moveDown {
+    margin-left: 10px;
+}
+

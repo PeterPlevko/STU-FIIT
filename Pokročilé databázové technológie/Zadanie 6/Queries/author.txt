@@ -1,0 +1,16 @@
+COPY(SELECT row_to_json(results) 
+FROM (
+		SELECT
+			 authors.id,
+			 regexp_replace(authors.name, E'[\\n\\r\\f\\u000B\\u0085\\u2028\\u2029"”]+', ' ', 'g' ) AS name,
+			 regexp_replace(authors.username, E'[\\n\\r\\f\\u000B\\u0085\\u2028\\u2029"”]+', ' ', 'g' ) AS username,
+			 regexp_replace(authors.description, E'[\\n\\r\\f\\u000B\\u0085\\u2028\\u2029"”]+', ' ', 'g' ) AS description,
+		     authors.followers_count,
+			 authors.following_count,
+			 authors.tweet_count,
+			 authors.listed_count
+	FROM conversations
+	INNER JOIN authors authors ON conversations.author_id = authors.id
+    WHERE created_at::date = '2022-02-24'
+	GROUP BY authors.id
+) results) TO 'D:\dump\mongo_authors.json' WITH (FORMAT text, HEADER FALSE);

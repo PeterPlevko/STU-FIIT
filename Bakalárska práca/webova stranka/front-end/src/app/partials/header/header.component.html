@@ -1,0 +1,12 @@
+<div class="headerCenter">
+  <div  *ngIf="appState$ | async as appState" class="header">
+    <a [routerLink]="['/']">Domov</a>
+    <a [routerLink]="['/slovakia']">Mapa</a>
+    <a [routerLink]="['/mapchange']">Zmena Európy</a>
+    <a *ngIf="appState.userType === ''" [routerLink]="['/login']">Prihlásenie</a>
+    <a (click)="showInformation(appState)" *ngIf="appState.userType !== ''" [routerLink]="['/']">Účet</a>
+    <a *ngIf="appState.userType === 'admin'" [routerLink]="['/admin']">Admin menu</a>
+    <mat-icon *ngIf="appState.userType === 'historian'" [routerLink]="['/confirminformation']" matBadge="{{confirmationCount}}" matBadgeColor="warn">notifications</mat-icon>
+  </div>
+</div>
+

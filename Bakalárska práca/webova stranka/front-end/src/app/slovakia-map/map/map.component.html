@@ -1,0 +1,59 @@
+
+<app-header></app-header>
+
+
+<div class="displayFlex">
+  <div class="mainBlok">
+
+    <div *ngIf="showDateFlag" class="centerMiddle">
+      <h1 id="battleDate">Začiatok bitky: {{ currentBattleDate }}</h1>
+    </div>
+
+    <div class="displayFlex">
+      <div id="slovakiaMap"></div>
+    </div>
+
+    <div class="center">
+
+
+        <div  *ngIf="appState$ | async as appState" class="header">
+          <button *ngIf="appState.userType === 'user' || appState.userType === 'historian'" [routerLink]="['/addinformation']"  mat-raised-button color="primary">Pridaj zdroj</button>
+        </div>
+
+        <div>
+          <button class="marginLeft" [routerLink]="['/deceasedList']"  mat-raised-button color="primary">Zobraz padlých</button>
+        </div>
+
+
+      <!-- { title: 'Predvolené hodnoty', activated: false, value: 'Predvolené hodnoty' }, -->
+    <!-- here starts the checkbox menu -->
+      <div class="menu">
+        <button #matMenuTrigger mat-raised-button color="primary"[matMenuTriggerFor]="menu"
+        (menuOpened)="onMenuOpened()"
+        (menuClosed)="onMenuClosed()">{{triggerButtonText}}</button>
+        <!-- #enddocregion mat-menu-trigger-for -->
+        <mat-menu  #menu="matMenu">
+        <div class="column">
+            <mat-checkbox  #menuItems
+              *ngFor="let item of options; let i = index;"
+              [(ngModel)]="item.activated"
+              (click)="$event.stopPropagation()"
+              (change)="onSelectValue()"
+              (keydown)="onMenuKeyDown($event, i)"
+              >{{ item.title }}</mat-checkbox
+            >
+        </div>
+      </mat-menu>
+        <!-- <p>{{ formattedSelectedVehicles }}</p> -->
+      </div>
+      <div class="defaultValues">
+        <mat-checkbox class="defaultValuesCss" [(ngModel)]="defaultValues">Predvolené hodnoty</mat-checkbox>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+<app-footer></app-footer>

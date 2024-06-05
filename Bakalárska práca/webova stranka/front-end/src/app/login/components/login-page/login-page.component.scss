@@ -1,0 +1,54 @@
+mat-button-toggle-group {
+    margin-left: 12px;
+  }
+
+.inputField{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.middle{
+  margin-top: 245px;
+  margin-bottom: 100px;
+  width: 30%;
+  background-color: white;
+  font-size: large;
+  padding: 20px;
+  border: 1px solid #009999;
+}
+
+.buttonStyle{
+  font-size: large;
+  margin-left: 5px;
+  margin-right: 5px;
+
+}
+
+mat-form-field {
+  margin-bottom: 20px;
+  width: 90%;
+}
+
+.alignButtons{
+  display: flex;
+}
+
+.displayFlex{
+  display: flex;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .middle {
+    width: 100%;
+    margin-top: 150px;
+    margin-bottom: 0px;
+  }
+}
+
+// @media only screen and (max-height: 834px) {
+//   .middle {
+//     margin-top: 150px;
+//   }
+// }

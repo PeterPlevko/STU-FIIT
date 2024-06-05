@@ -1,0 +1,112 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1712853371036,68,Home page - shmu.sk,200,"Number of samples in transaction : 2, number of failing samples : 0",Testovaci scenar 1-1,,true,,29943,1584,5,5,null,0,26005,11
+1712853384039,61,HTTP Request,200,OK,Testovaci scenar 1-1,text,true,,15181,1113,5,5,https://www.shmu.sk/sk/?page=1,14,0,11
+1712853384039,14,HTTP Request-0,302,Moved Temporarily,Testovaci scenar 1-1,,true,,131,370,5,5,http://www.shmu.sk/?page=1,14,0,11
+1712853384054,39,HTTP Request-1,301,Moved Permanently,Testovaci scenar 1-1,text,true,,288,370,5,5,https://www.shmu.sk/?page=1,39,0,30
+1712853384094,6,HTTP Request-2,200,OK,Testovaci scenar 1-1,text,true,,14762,373,5,5,https://www.shmu.sk/sk/?page=1,6,0,0
+1712853397102,7,HTTP Request,200,OK,Testovaci scenar 1-1,text,true,,14762,471,5,5,https://www.shmu.sk/sk/?page=1,6,0,0
+1712853372280,50,Home page - shmu.sk,200,"Number of samples in transaction : 2, number of failing samples : 0",Testovaci scenar 1-2,,true,,29974,1584,5,5,null,0,26013,3
+1712853385281,43,HTTP Request,200,OK,Testovaci scenar 1-2,text,true,,15212,1113,5,5,https://www.shmu.sk/sk/?page=1,9,0,3
+1712853385281,9,HTTP Request-0,302,Moved Temporarily,Testovaci scenar 1-2,,true,,131,370,5,5,http://www.shmu.sk/?page=1,9,0,3
+1712853385291,28,HTTP Request-1,301,Moved Permanently,Testovaci scenar 1-2,text,true,,319,370,5,5,https://www.shmu.sk/?page=1,28,0,24
+1712853385319,5,HTTP Request-2,200,OK,Testovaci scenar 1-2,text,true,,14762,373,5,5,https://www.shmu.sk/sk/?page=1,5,0,0
+1712853398335,7,HTTP Request,200,OK,Testovaci scenar 1-2,text,true,,14762,471,5,5,https://www.shmu.sk/sk/?page=1,7,0,0
+1712853373528,51,Home page - shmu.sk,200,"Number of samples in transaction : 2, number of failing samples : 0",Testovaci scenar 1-3,,true,,29974,1584,5,5,null,0,26017,4
+1712853386530,44,HTTP Request,200,OK,Testovaci scenar 1-3,text,true,,15212,1113,5,5,https://www.shmu.sk/sk/?page=1,7,0,4
+1712853386530,7,HTTP Request-0,302,Moved Temporarily,Testovaci scenar 1-3,,true,,131,370,5,5,http://www.shmu.sk/?page=1,7,0,4
+1712853386538,29,HTTP Request-1,301,Moved Permanently,Testovaci scenar 1-3,text,true,,319,370,5,5,https://www.shmu.sk/?page=1,29,0,24
+1712853386567,7,HTTP Request-2,200,OK,Testovaci scenar 1-3,text,true,,14762,373,5,5,https://www.shmu.sk/sk/?page=1,7,0,0
+1712853399589,7,HTTP Request,200,OK,Testovaci scenar 1-3,text,true,,14762,471,5,5,https://www.shmu.sk/sk/?page=1,7,0,0
+1712853374775,48,Home page - shmu.sk,200,"Number of samples in transaction : 2, number of failing samples : 0",Testovaci scenar 1-4,,true,,29974,1584,5,5,null,0,26010,5
+1712853387776,42,HTTP Request,200,OK,Testovaci scenar 1-4,text,true,,15212,1113,5,5,https://www.shmu.sk/sk/?page=1,9,0,5
+1712853387776,9,HTTP Request-0,302,Moved Temporarily,Testovaci scenar 1-4,,true,,131,370,5,5,http://www.shmu.sk/?page=1,9,0,5
+1712853387785,28,HTTP Request-1,301,Moved Permanently,Testovaci scenar 1-4,text,true,,319,370,5,5,https://www.shmu.sk/?page=1,28,0,24
+1712853387813,5,HTTP Request-2,200,OK,Testovaci scenar 1-4,text,true,,14762,373,5,5,https://www.shmu.sk/sk/?page=1,5,0,0
+1712853400826,6,HTTP Request,200,OK,Testovaci scenar 1-4,text,true,,14762,471,5,5,https://www.shmu.sk/sk/?page=1,6,0,0
+1712853376019,51,Home page - shmu.sk,200,"Number of samples in transaction : 2, number of failing samples : 0",Testovaci scenar 1-5,,true,,29974,1584,5,5,null,0,26010,5
+1712853389025,44,HTTP Request,200,OK,Testovaci scenar 1-5,text,true,,15212,1113,5,5,https://www.shmu.sk/sk/?page=1,8,0,5
+1712853389025,8,HTTP Request-0,302,Moved Temporarily,Testovaci scenar 1-5,,true,,131,370,5,5,http://www.shmu.sk/?page=1,8,0,5
+1712853389033,28,HTTP Request-1,301,Moved Permanently,Testovaci scenar 1-5,text,true,,319,370,5,5,https://www.shmu.sk/?page=1,28,0,24
+1712853389061,8,HTTP Request-2,200,OK,Testovaci scenar 1-5,text,true,,14762,373,5,5,https://www.shmu.sk/sk/?page=1,8,0,0
+1712853402072,7,HTTP Request,200,OK,Testovaci scenar 1-5,text,true,,14762,471,5,5,https://www.shmu.sk/sk/?page=1,7,0,0
+1712853397109,296,Vyhladat slovo Tatry,200,"Number of samples in transaction : 1, number of failing samples : 0",Testovaci scenar 1-1,,true,,8038,529,5,5,null,0,13002,0
+1712853410110,296,HTTP Request,200,OK,Testovaci scenar 1-1,text,true,,8038,529,5,5,https://www.shmu.sk/sk/?page=976&q=Tatry,296,0,0
+1712853398343,7,Vyhladat slovo Tatry,200,"Number of samples in transaction : 1, number of failing samples : 0",Testovaci scenar 1-2,,true,,8059,529,5,5,null,0,13007,0
+1712853411349,7,HTTP Request,200,OK,Testovaci scenar 1-2,text,true,,8059,529,5,5,https://www.shmu.sk/sk/?page=976&q=Tatry,7,0,0
+1712853399597,9,Vyhladat slovo Tatry,200,"Number of samples in transaction : 1, number of failing samples : 0",Testovaci scenar 1-3,,true,,8059,529,5,5,null,0,13004,0
+1712853412601,9,HTTP Request,200,OK,Testovaci scenar 1-3,text,true,,8059,529,5,5,https://www.shmu.sk/sk/?page=976&q=Tatry,9,0,0
+1712853400833,14,Vyhladat slovo Tatry,200,"Number of samples in transaction : 1, number of failing samples : 0",Testovaci scenar 1-4,,true,,8059,529,5,5,null,0,13001,0
+1712853413834,14,HTTP Request,200,OK,Testovaci scenar 1-4,text,true,,8059,529,5,5,https://www.shmu.sk/sk/?page=976&q=Tatry,14,0,0
+1712853402080,6,Vyhladat slovo Tatry,200,"Number of samples in transaction : 1, number of failing samples : 0",Testovaci scenar 1-5,,true,,8059,529,5,5,null,0,13006,0
+1712853415087,6,HTTP Request,200,OK,Testovaci scenar 1-5,text,true,,8059,529,5,5,https://www.shmu.sk/sk/?page=976&q=Tatry,6,0,0
+1712853410407,38,Klik na Predpoved pocasia pre Tatry,200,"Number of samples in transaction : 1, number of failing samples : 0",Testovaci scenar 1-1,,true,,9412,531,5,5,null,0,13002,0
+1712853423409,38,HTTP Request,200,OK,Testovaci scenar 1-1,text,true,,9412,531,5,5,https://www.shmu.sk/sk/?page=107,38,0,0
+1712853411357,7,Klik na Predpoved pocasia pre Tatry,200,"Number of samples in transaction : 1, number of failing samples : 0",Testovaci scenar 1-2,,true,,9433,531,5,5,null,0,13004,0
+1712853424360,7,HTTP Request,200,OK,Testovaci scenar 1-2,text,true,,9433,531,5,5,https://www.shmu.sk/sk/?page=107,7,0,0
+1712853412610,8,Klik na Predpoved pocasia pre Tatry,200,"Number of samples in transaction : 1, number of failing samples : 0",Testovaci scenar 1-3,,true,,9433,531,5,5,null,0,13005,0
+1712853425614,8,HTTP Request,200,OK,Testovaci scenar 1-3,text,true,,9433,531,5,5,https://www.shmu.sk/sk/?page=107,8,0,0
+1712853413849,12,Klik na Predpoved pocasia pre Tatry,200,"Number of samples in transaction : 1, number of failing samples : 0",Testovaci scenar 1-4,,true,,9433,531,5,5,null,0,13015,0
+1712853426864,12,HTTP Request,200,OK,Testovaci scenar 1-4,text,true,,9433,531,5,5,https://www.shmu.sk/sk/?page=107,12,0,0
+1712853415093,8,Klik na Predpoved pocasia pre Tatry,200,"Number of samples in transaction : 1, number of failing samples : 0",Testovaci scenar 1-5,,true,,9433,531,5,5,null,0,13003,0
+1712853428094,8,HTTP Request,200,OK,Testovaci scenar 1-5,text,true,,9433,531,5,5,https://www.shmu.sk/sk/?page=107,8,0,0
+1712853423448,44,klik na produkty SHMU - Meterologia - Model Aladin do 3 dni - Meteogram do 3 dni,200,"Number of samples in transaction : 1, number of failing samples : 0",Testovaci scenar 1-1,,true,,21811,523,5,5,null,0,13015,0
+1712853436463,44,HTTP Request,200,OK,Testovaci scenar 1-1,text,true,,21811,523,5,5,https://www.shmu.sk/sk/?page=769,43,0,0
+1712853424368,11,klik na produkty SHMU - Meterologia - Model Aladin do 3 dni - Meteogram do 3 dni,200,"Number of samples in transaction : 1, number of failing samples : 0",Testovaci scenar 1-2,,true,,21824,523,5,5,null,0,13008,0
+1712853437376,11,HTTP Request,200,OK,Testovaci scenar 1-2,text,true,,21824,523,5,5,https://www.shmu.sk/sk/?page=769,11,0,0
+1712853425623,8,klik na produkty SHMU - Meterologia - Model Aladin do 3 dni - Meteogram do 3 dni,200,"Number of samples in transaction : 1, number of failing samples : 0",Testovaci scenar 1-3,,true,,21824,523,5,5,null,0,13005,0
+1712853438629,8,HTTP Request,200,OK,Testovaci scenar 1-3,text,true,,21824,523,5,5,https://www.shmu.sk/sk/?page=769,8,0,0
+1712853426876,8,klik na produkty SHMU - Meterologia - Model Aladin do 3 dni - Meteogram do 3 dni,200,"Number of samples in transaction : 1, number of failing samples : 0",Testovaci scenar 1-4,,true,,21824,523,5,5,null,0,13002,0
+1712853439878,8,HTTP Request,200,OK,Testovaci scenar 1-4,text,true,,21824,523,5,5,https://www.shmu.sk/sk/?page=769,7,0,0
+1712853428103,7,klik na produkty SHMU - Meterologia - Model Aladin do 3 dni - Meteogram do 3 dni,200,"Number of samples in transaction : 1, number of failing samples : 0",Testovaci scenar 1-5,,true,,21824,523,5,5,null,0,13003,0
+1712853441106,7,HTTP Request,200,OK,Testovaci scenar 1-5,text,true,,21824,523,5,5,https://www.shmu.sk/sk/?page=769,6,0,0
+1712853436507,60,Vyber Mesto z comboboxu a zobraz predpoved pocasia,200,"Number of samples in transaction : 1, number of failing samples : 0",Testovaci scenar 1-1,,true,,21649,519,5,5,null,0,13004,11
+1712853449510,60,HTTP Request,200,OK,Testovaci scenar 1-1,text,true,,21649,519,5,5,https://www.shmu.sk/sk/?page=769&nwp_mesto=32437,50,0,11
+1712853437388,57,Vyber Mesto z comboboxu a zobraz predpoved pocasia,200,"Number of samples in transaction : 1, number of failing samples : 0",Testovaci scenar 1-2,,true,,21644,519,5,5,null,0,13015,11
+1712853450402,57,HTTP Request,200,OK,Testovaci scenar 1-2,text,true,,21644,519,5,5,https://www.shmu.sk/sk/?page=769&nwp_mesto=32737,57,0,11
+1712853438638,63,Vyber Mesto z comboboxu a zobraz predpoved pocasia,200,"Number of samples in transaction : 1, number of failing samples : 0",Testovaci scenar 1-3,,true,,21642,519,5,5,null,0,13013,15
+1712853451650,63,HTTP Request,200,OK,Testovaci scenar 1-3,text,true,,21642,519,5,5,https://www.shmu.sk/sk/?page=769&nwp_mesto=32537,60,0,15
+1712853439886,57,Vyber Mesto z comboboxu a zobraz predpoved pocasia,200,"Number of samples in transaction : 1, number of failing samples : 0",Testovaci scenar 1-4,,true,,21647,519,5,5,null,0,13013,11
+1712853452900,57,HTTP Request,200,OK,Testovaci scenar 1-4,text,true,,21647,519,5,5,https://www.shmu.sk/sk/?page=769&nwp_mesto=32637,53,0,11
+1712853441113,64,Vyber Mesto z comboboxu a zobraz predpoved pocasia,200,"Number of samples in transaction : 1, number of failing samples : 0",Testovaci scenar 1-5,,true,,21634,519,5,5,null,0,13004,11
+1712853454116,64,HTTP Request,200,OK,Testovaci scenar 1-5,text,true,,21634,519,5,5,https://www.shmu.sk/sk/?page=769&nwp_mesto=32638,60,0,11
+1712853449571,8,Klik na Kontakty,200,"Number of samples in transaction : 1, number of failing samples : 0",Testovaci scenar 1-1,,true,,10726,537,5,5,null,0,13004,0
+1712853462574,8,HTTP Request,200,OK,Testovaci scenar 1-1,text,true,,10726,537,5,5,https://www.shmu.sk/sk/?page=5,8,0,0
+1712853450460,7,Klik na Kontakty,200,"Number of samples in transaction : 1, number of failing samples : 0",Testovaci scenar 1-2,,true,,10726,537,5,5,null,0,13013,0
+1712853463471,7,HTTP Request,200,OK,Testovaci scenar 1-2,text,true,,10726,537,5,5,https://www.shmu.sk/sk/?page=5,7,0,0
+1712853451714,7,Klik na Kontakty,200,"Number of samples in transaction : 1, number of failing samples : 0",Testovaci scenar 1-3,,true,,10726,537,5,5,null,0,13009,0
+1712853464721,7,HTTP Request,200,OK,Testovaci scenar 1-3,text,true,,10726,537,5,5,https://www.shmu.sk/sk/?page=5,7,0,0
+1712853452957,10,Klik na Kontakty,200,"Number of samples in transaction : 1, number of failing samples : 0",Testovaci scenar 1-4,,true,,10726,537,5,5,null,0,13003,0
+1712853465958,10,HTTP Request,200,OK,Testovaci scenar 1-4,text,true,,10726,537,5,5,https://www.shmu.sk/sk/?page=5,10,0,0
+1712853454181,8,Klik na Kontakty,200,"Number of samples in transaction : 1, number of failing samples : 0",Testovaci scenar 1-5,,true,,10726,537,5,5,null,0,13010,0
+1712853467191,8,HTTP Request,200,OK,Testovaci scenar 1-5,text,true,,10726,537,5,5,https://www.shmu.sk/sk/?page=5,7,0,0
+1712853465969,13025,Home page - shmu.sk,200,,Testovaci scenar 1-4,,true,,15081,1113,5,5,null,0,0,0
+1712853478975,19,HTTP Request,200,OK,Testovaci scenar 1-4,text,true,,15081,1113,5,5,https://www.shmu.sk/sk/?page=1,7,0,3
+1712853478975,7,HTTP Request-0,302,Moved Temporarily,Testovaci scenar 1-4,,true,,131,370,5,5,http://www.shmu.sk/?page=1,7,0,3
+1712853478982,6,HTTP Request-1,301,Moved Permanently,Testovaci scenar 1-4,text,true,,319,370,5,5,https://www.shmu.sk/?page=1,6,0,0
+1712853478988,6,HTTP Request-2,200,OK,Testovaci scenar 1-4,text,true,,14631,373,5,5,https://www.shmu.sk/sk/?page=1,5,0,0
+1712853467199,13049,Home page - shmu.sk,200,,Testovaci scenar 1-5,,true,,15210,1113,4,4,null,0,0,0
+1712853480214,34,HTTP Request,200,OK,Testovaci scenar 1-5,text,true,,15210,1113,4,4,https://www.shmu.sk/sk/?page=1,16,0,13
+1712853480214,16,HTTP Request-0,302,Moved Temporarily,Testovaci scenar 1-5,,true,,131,370,4,4,http://www.shmu.sk/?page=1,16,0,13
+1712853480230,13,HTTP Request-1,301,Moved Permanently,Testovaci scenar 1-5,text,true,,319,370,4,4,https://www.shmu.sk/?page=1,13,0,0
+1712853480243,5,HTTP Request-2,200,OK,Testovaci scenar 1-5,text,true,,14760,373,4,4,https://www.shmu.sk/sk/?page=1,5,0,0
+1712853462583,34,Home page - shmu.sk,200,"Number of samples in transaction : 2, number of failing samples : 0",Testovaci scenar 1-1,,true,,29939,1584,3,3,null,0,26028,4
+1712853475598,27,HTTP Request,200,OK,Testovaci scenar 1-1,text,true,,15179,1113,5,5,https://www.shmu.sk/sk/?page=1,9,0,4
+1712853475598,9,HTTP Request-0,302,Moved Temporarily,Testovaci scenar 1-1,,true,,131,370,5,5,http://www.shmu.sk/?page=1,9,0,4
+1712853475608,12,HTTP Request-1,301,Moved Permanently,Testovaci scenar 1-1,text,true,,288,370,5,5,https://www.shmu.sk/?page=1,12,0,0
+1712853475620,5,HTTP Request-2,200,OK,Testovaci scenar 1-1,text,true,,14760,373,5,5,https://www.shmu.sk/sk/?page=1,5,0,0
+1712853488639,7,HTTP Request,200,OK,Testovaci scenar 1-1,text,true,,14760,471,3,3,https://www.shmu.sk/sk/?page=1,7,0,0
+1712853488646,0,Vyhladat slovo Tatry,,,Testovaci scenar 1-1,,true,,0,0,3,3,null,0,0,0
+1712853463479,31,Home page - shmu.sk,200,"Number of samples in transaction : 2, number of failing samples : 0",Testovaci scenar 1-2,,true,,29960,1584,2,2,null,0,26014,3
+1712853476481,24,HTTP Request,200,OK,Testovaci scenar 1-2,text,true,,15205,1113,5,5,https://www.shmu.sk/sk/?page=1,6,0,3
+1712853476481,6,HTTP Request-0,302,Moved Temporarily,Testovaci scenar 1-2,,true,,131,370,5,5,http://www.shmu.sk/?page=1,6,0,3
+1712853476487,12,HTTP Request-1,301,Moved Permanently,Testovaci scenar 1-2,text,true,,319,370,5,5,https://www.shmu.sk/?page=1,12,0,0
+1712853476499,6,HTTP Request-2,200,OK,Testovaci scenar 1-2,text,true,,14755,373,5,5,https://www.shmu.sk/sk/?page=1,5,0,0
+1712853489516,7,HTTP Request,200,OK,Testovaci scenar 1-2,text,true,,14755,471,2,2,https://www.shmu.sk/sk/?page=1,7,0,0
+1712853489524,0,Vyhladat slovo Tatry,,,Testovaci scenar 1-2,,true,,0,0,2,2,null,0,0,0
+1712853464729,30,Home page - shmu.sk,200,"Number of samples in transaction : 2, number of failing samples : 0",Testovaci scenar 1-3,,true,,29712,1584,1,1,null,0,26006,3
+1712853477734,23,HTTP Request,200,OK,Testovaci scenar 1-3,text,true,,15081,1113,5,5,https://www.shmu.sk/sk/?page=1,6,0,3
+1712853477734,6,HTTP Request-0,302,Moved Temporarily,Testovaci scenar 1-3,,true,,131,370,5,5,http://www.shmu.sk/?page=1,6,0,3
+1712853477741,7,HTTP Request-1,301,Moved Permanently,Testovaci scenar 1-3,text,true,,319,370,5,5,https://www.shmu.sk/?page=1,7,0,0
+1712853477748,9,HTTP Request-2,200,OK,Testovaci scenar 1-3,text,true,,14631,373,5,5,https://www.shmu.sk/sk/?page=1,9,0,0
+1712853490758,7,HTTP Request,200,OK,Testovaci scenar 1-3,text,true,,14631,471,1,1,https://www.shmu.sk/sk/?page=1,7,0,0
+1712853490765,0,Vyhladat slovo Tatry,,,Testovaci scenar 1-3,,true,,0,0,1,1,null,0,0,0

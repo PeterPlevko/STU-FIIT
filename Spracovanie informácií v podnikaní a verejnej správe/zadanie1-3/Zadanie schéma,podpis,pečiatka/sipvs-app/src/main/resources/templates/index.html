@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Reservation Form</title>
+    <link rel="stylesheet" type="text/css" href="../form.css">
+    <script src="https://www.slovensko.sk/static/zep/dbridge_js/v1.0/config.js"></script>
+    <script src="https://www.slovensko.sk/static/zep/dbridge_js/v1.0/dCommon.min.js"></script>
+    <script src="https://www.slovensko.sk/static/zep/dbridge_js/v1.0/dSigXades.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../form.css">
+</head>
+
+<body>
+<h1>Rezervácia športovej haly</h1>
+<hr />
+
+<!-- Generate XML from form to static path -->
+<form action="#" th:action="@{/}" th:object="${form}" method="post" id="mainForm">
+    <p>Zadajte prosím Vaše osobné údaje</p>
+    <p>Meno: <input type="text" th:field="*{firstName}" /></p>
+    <p>Priezvisko: <input type="text" th:field="*{lastName}" /></p>
+    <p>Email: <input type="text" th:field="*{emailAddreess}" oninput="validateEmail(this)" /></p>
+    <p>Dátum rezervácie: <input type="date" th:field="*{reservationDate}" /></p>
+    <p>Zapožičanie nástrojov: <input type="checkbox" th:field="*{wantsEquipment}" /></p>
+
+
+
+    <!-- Repeating section with reservation -->
+    <div class="reservations-wrapper">
+        <p>Zoznam rezervácií</p>
+        <div id="reservations" th:each="reservationItem, reservationItemStat : *{reservations}">
+            <div class="reservation">
+                <p>Meno športovca: <input type="text" th:field="*{reservations[__${reservationItemStat.index}__].sportsmanName}" /></p>
+                <p>Číslo kurtu: <input type="text" th:field="*{reservations[__${reservationItemStat.index}__].courtNumber}" oninput="validateReservation(this)" />
+                    <span>
+                        Vložte číslo kurtu 1 až 10
+                    </span>
+                </p>
+            </div>
+        </div>
+        <span id="reservation-error-message" style="color:red;"></span>
+        <p><input type="submit" value="+ Pridaj rezerváciu" onclick="addReservationSection()" formaction="/add" /></p>
+    </div>
+
+    <p><input type="submit" value="Generuj XML" formaction="/generate" /></p>
+    <p><input type="submit" value="Validuj XML" formaction="/validate" /></p>
+    <p><span th:text="${validationSuccess}" style="color:green" /></p>
+    <p><span th:text="${validationError}" style="color:red" /></p>
+
+    <p><input type="submit" value="Generuj HTML" formaction="/html" /></p>
+    <p><input type="submit" value="Časová pečiatka" formaction="/timestamp" /></p>
+
+
+</form>
+
+<div class="attachments">
+    <div class="grid-container">
+        <div>
+            <label for="file-xml" class="custom-file-upload" id="label-xml">Nahrať XML</label>
+            <input class="custom-file-input" type="file" id="file-xml" accept=".xml" onchange="changeColor('file-xml', 'label-xml')"/>
+        </div>
+        <div>
+            <label for="file-xsd" class="custom-file-upload" id="label-xsd">Nahrať XSD</label>
+            <input class="custom-file-input" type="file" id="file-xsd" accept=".xsd" onchange="changeColor('file-xsd', 'label-xsd')"/>
+        </div>
+        <div>
+            <label for="file-xsl" class="custom-file-upload" id="label-xsl">Nahrať XSL</label>
+            <input class="custom-file-input" type="file" id="file-xsl" accept=".xsl" onchange="changeColor('file-xsl', 'label-xsl')"/>
+        </div>
+        <div>
+            <label for="file-pdf" class="custom-file-upload" id="label-pdf">Nahrať PDF</label>
+            <input class="custom-file-input" type="file" id="file-pdf" accept=".pdf" onchange="changeColor('file-pdf', 'label-pdf')"/>
+        </div>
+    </div>
+    <button id="sign-button" onclick="signDocument()"> Podpísať </button>
+</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<script>
+
+    function changeColor(inputId, labelId) {
+        var input = document.getElementById(inputId);
+        var label = document.getElementById(labelId);
+        if (input.value.length > 0) {
+            label.style.color = "green";
+        } else {
+            label.style.color = "black";
+        }
+    }
+
+    function validateReservation(input) {
+        var reservation = input.value;
+        var errorMessage = document.getElementById("reservation-error-message");
+
+        if (reservation < 1 || reservation > 10) {
+            errorMessage.textContent = "Číslo tenisového kurtu musí byť z intervalu 1 až 10.";
+        } else {
+            errorMessage.textContent = "";
+        }
+    }
+    function validateEmail(input)
+    {
+        var email = input.value;
+        var errorMessage = document.getElementById("reservation-error-message");
+
+        if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))
+        {
+            errorMessage.textContent = "";
+        }
+        else {
+            errorMessage.textContent = "E-mail je zadaný v nesprávnom tvare";
+        }
+    }
+
+    function addReservationSection() {
+        var reservationsDiv = document.getElementById("reservations");
+        var newIndex = reservationsDiv.children.length;
+        var newSection = document.createElement("div");
+        newSection.className = "reservation";
+        newSection.innerHTML = `
+                <p>Meno sportovca: <input type="text" name="form.reservations[${newIndex}].sportsmanName" /></p>
+                <p>Cislo kurtu: <input type="text" name="form.reservations[${newIndex}].courtNumber" oninput="validateReservation(this)" /></p>
+            `;
+        reservationsDiv.appendChild(newSection);
+    }
+
+    // adding signature
+    function Callback(onSuccess) {
+        this.onSuccess = onSuccess;
+        this.onError = function(e) {
+            alert("Error: " + e);
+        }
+    }
+
+
+    // Function to read file content
+    const readFileContent = (file, readMethod = 'Text', shouldSplit = false) => {
+        return new Promise((resolve) => {
+            if (file) {
+                let fileReader = new FileReader();
+                fileReader[`readAs${readMethod}`](file, "UTF-8");
+                fileReader.onload = () => {
+                    // If shouldSplit flag is true, split the result at comma
+                    resolve(shouldSplit ? fileReader.result.split(',')[1] : fileReader.result);
+                }
+            }
+        });
+    };
+
+    var signDocument = () => {
+        // Define IDs of files, methods to read files, and flags for splitting
+        const fileElementIds = ['file-xml', 'file-xsd', 'file-xsl', 'file-pdf'];
+        const fileReadMethods = ['Text', 'Text', 'Text', 'DataURL'];
+        const splitFlags = [false, false, false, true];
+
+        // Create an array of promises to read all files
+        const fileReadPromises = fileElementIds.map((id, index) => {
+            const file = document.getElementById(id).files[0];
+            return readFileContent(file, fileReadMethods[index], splitFlags[index]);
+        });
+        // Check if all files are selected
+        const filesSelected = fileElementIds.every(id => !!document.getElementById(id).files[0]);
+        if (!filesSelected) {
+            alert("Prosím, vložte všetky potrebné súbory.");
+            return;
+        }
+
+        // Once all files are read
+        Promise.all(fileReadPromises).then(([xmlContent, xsdContent, xslContent, pdfContent]) => {
+            // Deploy dSigXadesJs
+            ditec.dSigXadesJs.deploy(null, new Callback(() => {
+                // Initialize dSigXadesJs
+                ditec.dSigXadesJs.initialize(new Callback(() => {
+                    // Add XML object
+                    ditec.dSigXadesJs.addXmlObject2("id_0", "XML formulár: ", xmlContent, xsdContent, "http://sipvs-projekt.com/sipvs-teamABBBC", "http://sipvs-projekt.com/form.xsd", xslContent, "http://sipvs-projekt.com/form.xsl", "HTML", new Callback(() => {
+                        // Add PDF object
+                        ditec.dSigXadesJs.addPdfObject("id_1", "PDF súbor: ", pdfContent, "", "http://sipvs-projekt.com/pdf", 0, true, new Callback(() => {
+                            // Sign
+                            ditec.dSigXadesJs.sign20("id_signature", "http://www.w3.org/2001/04/xmlenc#sha256", "urn:oid:1.3.158.36061701.1.2.3", "id_signature_envelope", "http://sipvs-projekt.com/signatureEnvelope", "dáta obálky", new Callback(() => {
+                                // Get signed XML with envelope
+                                ditec.dSigXadesJs.getSignedXmlWithEnvelope(new Callback((signedXml) => {
+                                    // Create a blob from the signedXml
+                                    var signedXmlBlob = new Blob([signedXml], {
+                                        type: "text/plain",
+                                    });
+                                    // Create a download link for the blob
+                                    const downloadLink = document.createElement("a");
+                                    downloadLink.href = URL.createObjectURL(signedXmlBlob);
+                                    downloadLink.download = "signed.xml";
+                                    downloadLink.click();
+
+                                    $.ajax({
+                                        type : 'POST',
+                                        url : "/sign",
+                                        contentType: 'text/xml',
+                                        data: signedXml,
+                                        cache : false,
+                                        processData: false
+                                    });
+                                    // Revoke the URL to free up resources
+                                    URL.revokeObjectURL(downloadLink.href);
+                                }));
+                            }));
+                        }));
+                    }));
+                }));
+            }));
+        });
+    };
+</script>

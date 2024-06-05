@@ -1,0 +1,24 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- namespace.yaml # namespace je tiež zdrojom pre tento klaster
+- ../../infrastructure/ufe-controller # kustomization pre ufe-controller
+- ../../apps/pprerko-ambulance-frontend # kustomization pre projekt-frontend
+- ../../apps/pprerko-ambulance-backend # kustomization pre projekt-backend
+- ../../infrastructure/mongo
+commonLabels:
+  system: wac-hospital
+namespace: wac-hospital # všetky zdroje pre túto konfiguráciu 
+# budú umiestnené v namespace "wac-hospital"
+
+patchesStrategicMerge:
+- patches/ufe-controller.service.yaml # úprava služby ufe-controller
+- patches/projekt-backend.service.yaml # <== pridaný patch
+# the markers (comments) below, marks the lines which will be automatically updated by flux
+images:
+- name: xrericha/projekt-ufe
+  newName: xrericha/projekt-ufe # {"$imagepolicy": "flux-system:projekt-ufe:name"}
+  newTag: 1.0.0-63 # {"$imagepolicy": "flux-system:projekt-ufe:tag"}
+- name: xrericha/projekt-backend
+  newName: xrericha/projekt-backend # {"$imagepolicy": "flux-system:projekt-backend:name"}
+  newTag: 1.0.0-56 # {"$imagepolicy": "flux-system:projekt-backend:tag"}

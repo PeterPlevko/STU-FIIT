@@ -1,0 +1,12 @@
+SELECT '0' as count, pg_size_pretty( pg_database_size('pdt2') ) as size, '_size_all' as table_name UNION 
+SELECT count(*)::varchar(255) as count, pg_size_pretty( pg_table_size('annotations') ) as size, 'annotations' as table_name FROM annotations UNION 
+SELECT count(*)::varchar(255) as count, pg_size_pretty( pg_table_size('authors') ) as size, 'authors' as table_name FROM authors UNION 
+SELECT count(*)::varchar(255) as count, pg_size_pretty( pg_table_size('context_annotations') ) as size, 'context_annotations' as table_name FROM context_annotations UNION 
+SELECT count(*)::varchar(255) as count, pg_size_pretty( pg_table_size('context_domains') ) as size, 'context_domains' as table_name FROM context_domains UNION 
+SELECT count(*)::varchar(255) as count, pg_size_pretty( pg_table_size('context_entities') ) as size, 'context_entities' as table_name FROM context_entities UNION 
+SELECT count(*)::varchar(255) as count, pg_size_pretty( pg_table_size('conversation_hashtags') ) as size, 'conversation_hashtags' as table_name FROM conversation_hashtags UNION 
+SELECT count(*)::varchar(255) as count, pg_size_pretty( pg_table_size('conversation_references') ) as size, 'conversation_references' as table_name FROM conversation_references UNION 
+SELECT count(*)::varchar(255) as count, pg_size_pretty( pg_table_size('conversations') ) as size, 'conversations' as table_name FROM conversations UNION 
+SELECT '0' as count, (round(count(*)/32800800.0 * 100))::varchar(255) as count, '_percentage' as table_name FROM conversations UNION 
+SELECT count(*)::varchar(255) as count, pg_size_pretty( pg_table_size('hashtags') ) as size, 'hashtags' as table_name FROM hashtags UNION 
+SELECT count(*)::varchar(255) as count, pg_size_pretty( pg_table_size('links') ) as size, 'links' as table_name FROM links ORDER BY table_name 

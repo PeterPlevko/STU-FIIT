@@ -1,0 +1,22 @@
+ 1. Store bid -gucci
+ 2. Forfeit -gucci
+
+ 3. Claim win ak si vyhral - gucci
+ 4. Claim win ak si nepolozil 10 lodi ale trafil si 10 - gucci
+ 5. Claim win ak si polozil 10 lodi ale netrafil si 10	- gucci
+ 6. Claim win ak si nepolozil 10 a netrafil si 10	- gucci
+ 7. Claim win na zaciatku	- gucci
+
+ 8. Accuse cheating ak si este nespravil tah	- gucci
+ 9. Accuse cheating ak necheatuje	- gucci
+
+10. Claim winnings ak neubehla minuta - gucci
+11. Claim winnings ak ubehla minuta	- gucci
+12. Claim winnings ak nebol nikto accused	- gucci
+13. Claim winnings ak bolo handled	- gucci
+14. Handle timeout ak uz ubehla minuta - gucci
+
+15. Posle jeden viac ako druhy v bide
+16. Posle jeden menej ako druhy v bide
+
+Otasky pre kika - nakolko mam kontrolovat veci uz v javascripte

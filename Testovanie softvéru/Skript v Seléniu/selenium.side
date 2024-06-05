@@ -1,0 +1,355 @@
+{
+  "id": "032b5913-52b1-43a5-b159-73665c5408d8",
+  "version": "2.0",
+  "name": "Plevko Peter",
+  "url": "https://demo.serenity.is",
+  "tests": [{
+    "id": "c679b70f-6001-4f9b-afa5-ff87f86b6723",
+    "name": "Peter Plevko",
+    "commands": [{
+      "id": "d05181ba-f8ba-4ec1-afc8-be5dfe86905f",
+      "comment": "",
+      "command": "open",
+      "target": "/Account/Login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c319ee2f-a53f-4177-9e4e-a4d95653f0fc",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1048",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "eb8f53ef-40fb-4e9d-a183-1a313dbbada9",
+      "comment": "",
+      "command": "click",
+      "target": "id=LoginPanel0_LoginButton",
+      "targets": [
+        ["id=LoginPanel0_LoginButton", "id"],
+        ["css=#LoginPanel0_LoginButton", "css:finder"],
+        ["xpath=//button[@id='LoginPanel0_LoginButton']", "xpath:attributes"],
+        ["xpath=//form[@id='LoginPanel0_Form']/div[3]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Sign In')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ab332d29-3c8b-4627-a3bc-079570bf6cc8",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=h1",
+      "targets": [
+        ["css=h1", "css:finder"],
+        ["xpath=//body[@id='s-DashboardPage']/main/section/section/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Dashboard')]", "xpath:innerText"]
+      ],
+      "value": "Dashboard"
+    }, {
+      "id": "71097e4d-234b-458a-8b7e-b63301d76c81",
+      "comment": "",
+      "command": "click",
+      "target": "css=#nav_menu1_2 > .s-sidebar-item:nth-child(1) > .s-sidebar-link > .s-sidebar-link-text",
+      "targets": [
+        ["css=#nav_menu1_2 > .s-sidebar-item:nth-child(1) > .s-sidebar-link > .s-sidebar-link-text", "css:finder"],
+        ["xpath=//ul[@id='nav_menu1_2']/li/a/span", "xpath:idRelative"],
+        ["xpath=//li[2]/ul/li/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Northwind')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8250ad11-e898-4dbc-9abf-d1f3a8060fa3",
+      "comment": "",
+      "command": "click",
+      "target": "css=#nav_menu1_2_1 > .s-sidebar-item:nth-child(6) .s-sidebar-link-text",
+      "targets": [
+        ["css=#nav_menu1_2_1 > .s-sidebar-item:nth-child(6) .s-sidebar-link-text", "css:finder"],
+        ["xpath=//ul[@id='nav_menu1_2_1']/li[6]/a/span", "xpath:idRelative"],
+        ["xpath=//li[6]/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Categories')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0c21b52d-462d-4acc-9a11-0fa8a4d009bd",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=.title-text",
+      "targets": [
+        ["css=.title-text", "css:finder"],
+        ["xpath=//div[@id='GridDiv']/div/div", "xpath:idRelative"],
+        ["xpath=//section/div/div/div", "xpath:position"]
+      ],
+      "value": "Categories"
+    }, {
+      "id": "78b039c4-57b5-4e03-9e62-597c9689bb9a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.add-button > .button-inner",
+      "targets": [
+        ["css=.add-button > .button-inner", "css:finder"],
+        ["xpath=//div[@id='GridDiv']/div[2]/div[2]/div/span", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'New Category')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "aef0b20d-544e-4ea6-8a42-223b364088ba",
+      "comment": "",
+      "command": "click",
+      "target": "id=Serenity_Demo_Northwind_CategoryDialog4_CategoryName",
+      "targets": [
+        ["id=Serenity_Demo_Northwind_CategoryDialog4_CategoryName", "id"],
+        ["name=CategoryName", "name"],
+        ["css=#Serenity_Demo_Northwind_CategoryDialog4_CategoryName", "css:finder"],
+        ["xpath=//input[@id='Serenity_Demo_Northwind_CategoryDialog4_CategoryName']", "xpath:attributes"],
+        ["xpath=//div[@id='Serenity_Demo_Northwind_CategoryDialog4_PropertyGrid']/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0e55994a-3c23-4c6f-9610-eaf48bedd6e8",
+      "comment": "",
+      "command": "type",
+      "target": "id=Serenity_Demo_Northwind_CategoryDialog4_CategoryName",
+      "targets": [
+        ["id=Serenity_Demo_Northwind_CategoryDialog4_CategoryName", "id"],
+        ["name=CategoryName", "name"],
+        ["css=#Serenity_Demo_Northwind_CategoryDialog4_CategoryName", "css:finder"],
+        ["xpath=//input[@id='Serenity_Demo_Northwind_CategoryDialog4_CategoryName']", "xpath:attributes"],
+        ["xpath=//div[@id='Serenity_Demo_Northwind_CategoryDialog4_PropertyGrid']/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/div/div/input", "xpath:position"]
+      ],
+      "value": "Peter Plevko"
+    }, {
+      "id": "ea6ce14a-04d5-44d6-b949-350d8317328d",
+      "comment": "",
+      "command": "click",
+      "target": "id=Serenity_Demo_Northwind_CategoryDialog4_Description",
+      "targets": [
+        ["id=Serenity_Demo_Northwind_CategoryDialog4_Description", "id"],
+        ["name=Description", "name"],
+        ["css=#Serenity_Demo_Northwind_CategoryDialog4_Description", "css:finder"],
+        ["xpath=//input[@id='Serenity_Demo_Northwind_CategoryDialog4_Description']", "xpath:attributes"],
+        ["xpath=//div[@id='Serenity_Demo_Northwind_CategoryDialog4_PropertyGrid']/div/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a0f0f10f-8779-4d7f-a9a4-2d4f71ef3f58",
+      "comment": "",
+      "command": "click",
+      "target": "id=Serenity_Demo_Northwind_CategoryDialog4_Description",
+      "targets": [
+        ["id=Serenity_Demo_Northwind_CategoryDialog4_Description", "id"],
+        ["name=Description", "name"],
+        ["css=#Serenity_Demo_Northwind_CategoryDialog4_Description", "css:finder"],
+        ["xpath=//input[@id='Serenity_Demo_Northwind_CategoryDialog4_Description']", "xpath:attributes"],
+        ["xpath=//div[@id='Serenity_Demo_Northwind_CategoryDialog4_PropertyGrid']/div/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8c604dbf-e2b9-49e4-8f1d-dde030a51c41",
+      "comment": "",
+      "command": "type",
+      "target": "id=Serenity_Demo_Northwind_CategoryDialog4_Description",
+      "targets": [
+        ["id=Serenity_Demo_Northwind_CategoryDialog4_Description", "id"],
+        ["name=Description", "name"],
+        ["css=#Serenity_Demo_Northwind_CategoryDialog4_Description", "css:finder"],
+        ["xpath=//input[@id='Serenity_Demo_Northwind_CategoryDialog4_Description']", "xpath:attributes"],
+        ["xpath=//div[@id='Serenity_Demo_Northwind_CategoryDialog4_PropertyGrid']/div/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "Peter Plevko"
+    }, {
+      "id": "82caee6f-1bca-4d5c-b16a-11ca946083dc",
+      "comment": "",
+      "command": "click",
+      "target": "css=.fa-check-circle",
+      "targets": [
+        ["css=.fa-check-circle", "css:finder"],
+        ["xpath=//div[@id='Serenity_Demo_Northwind_CategoryDialog4_Toolbar']/div/div/span/i", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/span/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "50fea2de-c211-4a33-8567-5679f15a1dde",
+      "comment": "",
+      "command": "click",
+      "target": "id=Serenity_Demo_Northwind_CategoryGrid0_QuickSearchInput",
+      "targets": [
+        ["id=Serenity_Demo_Northwind_CategoryGrid0_QuickSearchInput", "id"],
+        ["css=#Serenity_Demo_Northwind_CategoryGrid0_QuickSearchInput", "css:finder"],
+        ["xpath=//input[@id='Serenity_Demo_Northwind_CategoryGrid0_QuickSearchInput']", "xpath:attributes"],
+        ["xpath=//div[@id='GridDiv']/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div/div[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "252b44e9-83ba-4adb-bc03-ff44804ac483",
+      "comment": "",
+      "command": "type",
+      "target": "id=Serenity_Demo_Northwind_CategoryGrid0_QuickSearchInput",
+      "targets": [
+        ["id=Serenity_Demo_Northwind_CategoryGrid0_QuickSearchInput", "id"],
+        ["css=#Serenity_Demo_Northwind_CategoryGrid0_QuickSearchInput", "css:finder"],
+        ["xpath=//input[@id='Serenity_Demo_Northwind_CategoryGrid0_QuickSearchInput']", "xpath:attributes"],
+        ["xpath=//div[@id='GridDiv']/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div/div[2]/div/input", "xpath:position"]
+      ],
+      "value": "peter plevko"
+    }, {
+      "id": "d903582b-35a2-4b5f-b1f8-d6c6ce666242",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=Serenity_Demo_Northwind_CategoryGrid0_QuickSearchInput",
+      "targets": [
+        ["id=Serenity_Demo_Northwind_CategoryGrid0_QuickSearchInput", "id"],
+        ["css=#Serenity_Demo_Northwind_CategoryGrid0_QuickSearchInput", "css:finder"],
+        ["xpath=//input[@id='Serenity_Demo_Northwind_CategoryGrid0_QuickSearchInput']", "xpath:attributes"],
+        ["xpath=//div[@id='GridDiv']/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div/div[2]/div/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "c735af85-ce51-457b-9bf1-71c529e040cf",
+      "comment": "",
+      "command": "verifyText",
+      "target": "linkText=Peter Plevko",
+      "targets": [
+        ["linkText=Peter Plevko", "linkText"],
+        ["css=.l1 > .s-EditLink", "css:finder"],
+        ["xpath=//a[contains(text(),'Peter Plevko')]", "xpath:link"],
+        ["xpath=//div[@id='GridDiv']/div[3]/div[5]/div/div/div[2]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#Demo-Northwind-Category/81')])[2]", "xpath:href"],
+        ["xpath=//div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Peter Plevko')]", "xpath:innerText"]
+      ],
+      "value": "Peter Plevko"
+    }, {
+      "id": "f188f47c-c53c-4f9f-9bfc-9e534c9c940c",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Peter Plevko",
+      "targets": [
+        ["linkText=Peter Plevko", "linkText"],
+        ["css=.l1 > .s-EditLink", "css:finder"],
+        ["xpath=//a[contains(text(),'Peter Plevko')]", "xpath:link"],
+        ["xpath=//div[@id='GridDiv']/div[3]/div[5]/div/div/div[2]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#Demo-Northwind-Category/81')])[2]", "xpath:href"],
+        ["xpath=//div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Peter Plevko')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5b0ba445-b783-4261-a39c-fbe382d894e4",
+      "comment": "",
+      "command": "verifyValue",
+      "target": "id=Serenity_Demo_Northwind_CategoryDialog58_CategoryName",
+      "targets": [
+        ["id=Serenity_Demo_Northwind_CategoryDialog58_CategoryName", "id"],
+        ["name=CategoryName", "name"],
+        ["css=#Serenity_Demo_Northwind_CategoryDialog58_CategoryName", "css:finder"],
+        ["xpath=//input[@id='Serenity_Demo_Northwind_CategoryDialog58_CategoryName']", "xpath:attributes"],
+        ["xpath=//div[@id='Serenity_Demo_Northwind_CategoryDialog58_PropertyGrid']/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/div/div/input", "xpath:position"]
+      ],
+      "value": "Peter Plevko"
+    }, {
+      "id": "f630661f-800c-48ff-8b80-eb43ff03f241",
+      "comment": "",
+      "command": "click",
+      "target": "id=Serenity_Demo_Northwind_CategoryDialog58_Description",
+      "targets": [
+        ["id=Serenity_Demo_Northwind_CategoryDialog58_Description", "id"],
+        ["name=Description", "name"],
+        ["css=#Serenity_Demo_Northwind_CategoryDialog58_Description", "css:finder"],
+        ["xpath=//input[@id='Serenity_Demo_Northwind_CategoryDialog58_Description']", "xpath:attributes"],
+        ["xpath=//div[@id='Serenity_Demo_Northwind_CategoryDialog58_PropertyGrid']/div/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "33b61298-288c-48e1-9a6c-b9517c7f4518",
+      "comment": "",
+      "command": "verifyValue",
+      "target": "id=Serenity_Demo_Northwind_CategoryDialog58_Description",
+      "targets": [
+        ["id=Serenity_Demo_Northwind_CategoryDialog58_Description", "id"],
+        ["name=Description", "name"],
+        ["css=#Serenity_Demo_Northwind_CategoryDialog58_Description", "css:finder"],
+        ["xpath=//input[@id='Serenity_Demo_Northwind_CategoryDialog58_Description']", "xpath:attributes"],
+        ["xpath=//div[@id='Serenity_Demo_Northwind_CategoryDialog58_PropertyGrid']/div/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "Peter Plevko"
+    }, {
+      "id": "2402b399-6dd3-414e-aa03-5a9b2a0a099a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.delete-button > .button-inner",
+      "targets": [
+        ["css=.delete-button > .button-inner", "css:finder"],
+        ["xpath=//div[@id='Serenity_Demo_Northwind_CategoryDialog58_Toolbar']/div/div[3]/span", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div[3]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Delete')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1e43ad10-18ab-442b-b34f-b2f129e4f0f1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=(//button[@type='button'])[4]", "xpath:attributes"],
+        ["xpath=//body[@id='s-Page']/div[2]/div/div/div[3]/button", "xpath:idRelative"],
+        ["xpath=//div[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Yes')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7b857101-c949-4223-899b-d16aa05cb09c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.s-user-profile-link > .s-sidebar-band-icon",
+      "targets": [
+        ["css=.s-user-profile-link > .s-sidebar-band-icon", "css:finder"],
+        ["xpath=//aside[@id='s-sidebar']/div/ul[2]/li[3]/div/a/i", "xpath:idRelative"],
+        ["xpath=//li[3]/div/a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e2ff7909-c033-4045-8909-0f43601a8cc6",
+      "comment": "",
+      "command": "click",
+      "target": "css=.show > .dropdown-item:nth-child(4) > span",
+      "targets": [
+        ["css=.show > .dropdown-item:nth-child(4) > span", "css:finder"],
+        ["xpath=//aside[@id='s-sidebar']/div/ul[2]/li[3]/div/div/a[3]/span", "xpath:idRelative"],
+        ["xpath=//a[3]/span", "xpath:position"],
+        ["xpath=//span[contains(.,' Logout')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5b483ec1-e669-44ef-82a3-9b877ec01454",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "6094a94d-0cff-4d3b-9af3-0de014adb6dd",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["c679b70f-6001-4f9b-afa5-ff87f86b6723"]
+  }],
+  "urls": ["https://demo.serenity.is/"],
+  "plugins": []
+}

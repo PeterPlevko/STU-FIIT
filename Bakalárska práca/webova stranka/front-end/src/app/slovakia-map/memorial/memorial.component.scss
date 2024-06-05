@@ -1,0 +1,108 @@
+mat-button-toggle-group {
+  margin-left: 12px;
+}
+
+.column{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.buttonStyle{
+  font-size: large;
+  margin-bottom: 20px;
+  margin-left: 5px;
+}
+
+mat-form-field {
+  min-width: 300px;
+}
+
+.row{
+  display: flex;
+  align-items: center;
+}
+
+.mainBlok{
+  margin-top: 50px;
+  width: 30%;
+  background-color: white;
+  font-size: large;
+  padding: 10px;
+  border: 1px solid #009999;
+  text-align: center;
+}
+
+.file-input {
+  display: none;
+}
+
+.redText{
+  color: red;
+}
+
+.tooltip{
+  margin-bottom: 21px;
+}
+
+.mainBlokBigger{
+  margin-top: 50px;
+  width: 50%;
+  background-color: white;
+  padding: 10px;
+  font-size: large;
+  border: 1px solid #009999;
+  text-align: center;
+}
+
+#slovakiaMapMemorial {
+  height: 60vh;
+  width: 100%;
+}
+
+.displayFlex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (max-width: 1400px) {
+  .mainBlok {
+    width: 40%;
+  }
+  .mainBlokBigger {
+    width: 40%;
+  }
+
+}
+
+@media only screen and (max-width: 1200px) {
+  .mainBlok {
+    width: 50%;
+  }
+  .mainBlokBigger {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .mainBlok {
+    width: 80%;
+  }
+  .mainBlokBigger {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .mainBlok {
+    width: 100%;
+  }
+  .mainBlokBigger {
+    padding: 0px;
+    width: 100%;
+  }
+  mat-form-field {
+    min-width: 200px;
+  }
+}

@@ -1,0 +1,190 @@
+mat-button-toggle-group {
+  margin-left: 12px;
+}
+
+.inputField{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.buttonStyle{
+  font-size: large;
+  margin-bottom: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+mat-form-field {
+  min-width: 300px;
+}
+
+.elevate{
+  background-color: white;
+  border: 1px solid #009999;
+  padding: 10px;
+}
+
+.makeLong{
+  margin-top: 322px;
+  margin-bottom: 300px;
+}
+
+.center {
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+
+.mainBlok{
+  margin-top: 50px;
+  background-color: white;
+  font-size: large;
+  width: 50%;
+  padding: 10px;
+  border: 1px solid #009999;
+  text-align: center;
+}
+
+.row{
+  display: flex;
+
+}
+
+.column{
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.column .buttonStyle{
+  margin-bottom: 5px;
+}
+
+
+
+.displayFlex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+::ng-deep .cdk-virtual-scroll-content-wrapper {
+  max-width: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  contain: content;
+}
+
+::ng-deep .cdk-virtual-scroll-viewport{
+  overflow-x: hidden;
+  margin-top: 10px;
+}
+
+.example-item p:first-child {
+  width: 45%;
+}
+
+.example-viewport {
+  align-items: center;
+  height: 200px;
+  width: 500px;
+  background-color: white;
+  font-size: large;
+  padding: 20px;
+  border: 1px solid #009999;
+}
+
+.wholeItem{
+  margin-top: 10px;
+}
+
+.example-item {
+  width: 100%;
+  display: flex;
+  height: 50px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.fightsScrollList{
+  font-size: 1px;
+  margin-bottom: 5px;
+}
+
+
+.fightsScrollList ::ng-deep .mat-form-field {
+  font-size: 12px;
+}
+
+.hide{
+  visibility: hidden;
+}
+
+.example-item mat-form-field {
+  min-width: 100px;
+}
+
+@media only screen and (max-width: 1400px) {
+  .mainBlok {
+    width: 60%;
+  }
+  .mainBlokBigger {
+    width: 60%;
+  }
+
+}
+
+@media only screen and (max-width: 1200px) {
+  .mainBlok {
+    width: 60%;
+  }
+  .mainBlokBigger {
+    width: 60%;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .mainBlok {
+    width: 70%;
+  }
+  .mainBlokBigger {
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .mainBlok {
+    width: 100%;
+  }
+  .mainBlokBigger {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .mainBlok {
+    width: 100%;
+  }
+  .mainBlokBigger {
+    padding: 0px;
+    width: 100%;
+  }
+  mat-form-field {
+    min-width: 200px;
+  }
+
+  .example-viewport{
+    width: 300px;
+  }
+
+  .fightsScrollList .buttonStyle{
+    font-size: medium;
+    margin-left: 1px;
+    margin-right: 1px;
+  }
+}

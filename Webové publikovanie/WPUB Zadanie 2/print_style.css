@@ -1,0 +1,41 @@
+@page {
+    size:landscape;
+    margin: 1cm;
+}
+/* page break avoid zabranuje lamaniu tabulky cez stranu*/
+table, th, td {
+    border: 0.5mm solid black;
+    border-collapse: collapse;
+    text-align: center;
+
+    page-break-after: avoid;
+}
+
+table ul {
+    display: inline-block;
+}
+
+li.red, td.starts {
+    text-align: left;
+}
+
+th {
+    color: black !important;
+    font-style: normal !important;
+}
+
+td, tr, table, ul, li, span {
+
+    color: black !important;
+    font-weight: normal !important;
+    font-style: normal !important;
+}
+
+h1 {
+    width: 100%;
+    text-align: center;
+}
+
+div.div-left, div.div-right {
+    page-break-inside: avoid;
+}

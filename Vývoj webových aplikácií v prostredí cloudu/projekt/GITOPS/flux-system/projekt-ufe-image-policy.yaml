@@ -1,0 +1,11 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  name: projekt-ufe
+  namespace: flux-system
+spec:
+  imageRepositoryRef:
+    name: projekt-ufe
+  policy:
+    semver:
+      range: '^1.0.0-0'  # selects latest version matching 1.0.0-<number>

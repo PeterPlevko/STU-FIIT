@@ -1,0 +1,158 @@
+.indexTable {
+    width: 100%;
+    background-color: #1F2833;
+}
+
+.indexTable table {
+    width: 100%;
+}
+
+.indexTable table td {
+    padding-left: 10px;
+}
+
+.indexTable table th {
+    padding-left: 10px;
+}
+
+.indexTable table tr td, .indexTable table th {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #66FCF1;
+    color: white;
+}
+
+.indexTable table tbody tr:last-of-type td {
+    border-bottom: 0;
+}
+
+.newHeader {
+    display: flex;
+}
+
+.buttonYellow {
+    border: 0;
+    text-align: center;
+    text-decoration: none !important;
+    color: black !important;
+    margin: 5px;
+    padding: 5px;
+    background-color: #f3f323;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.buttonRed {
+    border: 0;
+    text-align: center;
+    text-decoration: none !important;
+    color: black !important;
+    margin: 5px;
+    padding: 5px;
+    background-color: #ff0000;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.buttonGroup {
+    display: flex;
+}
+
+.createSection {
+    background-color: #1F2833;
+}
+
+.createSection form, .createSection h1 {
+    margin: 20px;
+}
+
+.createSection form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.createSection form div {
+    width: 100%;
+}
+
+.createSection ul li {
+    color: white;
+}
+
+.createSection ul {
+    margin-top: 20px;
+    background-color: #681313;
+}
+
+.question {
+    margin-right: 2px;
+    height: auto;
+    position: fixed;
+    right: 0px;
+    border-radius: 15px;
+    z-index: 10;
+    background-color: #1F2833;
+    border: 2px solid #45A29E;
+}
+
+.question form {
+    display: none;
+    margin-right: 30px;
+    padding: 30px;
+}
+
+.question .img {
+    pointer-events: none;
+    right: 0;
+    width: 25px;
+    height: 25px;
+    margin: 10px;
+    position: absolute;
+    background-image: url("/images/mainPage/left.png");
+    background-size: 25px;
+}
+
+.question h2 {
+    pointer-events: none;
+    right: -28px;
+    top: 76px;
+    position: absolute;
+    height: 47px;
+    width: 100px;
+    z-index: 10;
+    transform: translate(-0.5px, 0px) rotate(90deg);
+}
+
+.question fieldset p {
+    padding: 10px;
+    background-color: #405a7a;
+    border-radius: 5px;
+}
+
+.question fieldset legend {
+    font-size: 2rem;
+}
+
+.question > input {
+    width: 45px;
+    height: 200px;
+    z-index: 11;
+    opacity: 0;
+    float: right;
+    cursor: pointer;
+}
+
+.question > input:checked ~ form {
+    display: block;
+}
+
+.question > input:checked ~ h2 {
+    display: none;
+}
+
+.question > input:checked ~ .img {
+    background-image: url("/images/mainPage/right.png");
+}
+

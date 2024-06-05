@@ -1,0 +1,57 @@
+{
+	"info": {
+		"_postman_id": "44bfecc1-9973-4265-a643-edf03bd4121e",
+		"name": "uloha 3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14763343"
+	},
+	"item": [
+		{
+			"name": "create mapping",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"dynamic\": \"strict\",\r\n    \"properties\": {\r\n        \"source_id\": {\r\n            \"type\": \"keyword\"\r\n        },\r\n        \"author\": {\r\n            \"type\": \"nested\",\r\n            \"properties\": {\r\n                \"id\": {\r\n                    \"type\": \"keyword\"\r\n                },\r\n                \"name\": {\r\n                    \"type\": \"text\"\r\n                },\r\n                \"username\": {\r\n                    \"type\": \"text\"\r\n                },\r\n                \"description\": {\r\n                    \"type\": \"text\"\r\n                },\r\n                \"tweet_count\": {\r\n                    \"type\": \"integer\"\r\n                },\r\n                \"listed_count\": {\r\n                    \"type\": \"integer\"\r\n                },\r\n                \"followers_count\": {\r\n                    \"type\": \"integer\"\r\n                },\r\n                \"following_count\": {\r\n                    \"type\": \"integer\"\r\n                }\r\n            }\r\n        },\r\n        \"content\": {\r\n            \"type\": \"text\"\r\n        },\r\n        \"language\": {\r\n            \"type\": \"text\"\r\n        },\r\n        \"source\": {\r\n            \"type\": \"text\"\r\n        },\r\n        \"retweet_count\": {\r\n            \"type\": \"integer\"\r\n        },\r\n        \"reply_count\": {\r\n            \"type\": \"integer\"\r\n        },\r\n        \"like_count\": {\r\n            \"type\": \"integer\"\r\n        },\r\n        \"quote_count\": {\r\n            \"type\": \"integer\"\r\n        },\r\n        \"possibly_sensitive\": {\r\n            \"type\": \"boolean\"\r\n        },\r\n        \"created_at\": {\r\n            \"type\": \"date\"\r\n        },\r\n        \"hashtags\": {\r\n            \"type\": \"keyword\"\r\n        },\r\n        \"links\": {\r\n            \"type\": \"nested\",\r\n            \"properties\": {\r\n                \"url\": {\r\n                    \"type\": \"text\"\r\n                },\r\n                \"title\": {\r\n                    \"type\": \"text\"\r\n                },\r\n                \"description\": {\r\n                    \"type\": \"text\"\r\n                }\r\n            }\r\n        },\r\n        \"annotations\": {\r\n            \"type\": \"nested\",\r\n            \"properties\": {\r\n                \"type\": {\r\n                    \"type\": \"text\"\r\n                },\r\n                \"value\": {\r\n                    \"type\": \"text\"\r\n                },\r\n                \"probability\": {\r\n                    \"type\": \"float\"\r\n                }\r\n            }\r\n        },\r\n        \"context_annotations\": {\r\n            \"type\": \"nested\",\r\n            \"properties\": {\r\n                \"domain\": {\r\n                    \"type\": \"nested\",\r\n                    \"properties\": {\r\n                        \"name\": {\r\n                            \"type\": \"text\"\r\n                        },\r\n                        \"description\": {\r\n                            \"type\": \"text\"\r\n                        }\r\n                    }\r\n                },\r\n                \"entity\": {\r\n                    \"type\": \"nested\",\r\n                    \"properties\": {\r\n                        \"name\": {\r\n                            \"type\": \"text\"\r\n                        },\r\n                        \"description\": {\r\n                            \"type\": \"text\"\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        },\r\n        \"conversation_references\": {\r\n            \"type\": \"nested\",\r\n            \"properties\": {\r\n                \"id\": {\r\n                    \"type\": \"keyword\"\r\n                },\r\n                \"type\": {\r\n                    \"type\": \"text\"\r\n                },\r\n                \"author\": {\r\n                    \"properties\": {\r\n                        \"id\": {\r\n                            \"type\": \"keyword\"\r\n                        },\r\n                        \"name\": {\r\n                            \"type\": \"text\"\r\n                        },\r\n                        \"username\": {\r\n                            \"type\": \"text\"\r\n                        }\r\n                    }\r\n                },\r\n                \"content\": {\r\n                    \"type\": \"text\"\r\n                },\r\n                \"hashtags\": {\r\n                    \"type\": \"keyword\"\r\n                }\r\n            }\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9200/tweets/_mapping",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"tweets",
+						"_mapping"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get mapping",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9200/tweets/_mapping",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"tweets",
+						"_mapping"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

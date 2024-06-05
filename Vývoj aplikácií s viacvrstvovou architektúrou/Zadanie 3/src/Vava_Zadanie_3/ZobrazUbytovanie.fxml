@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="466.0" prefWidth="1184.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Vava_Zadanie_3.ZobrazUbytovanieController">
+   <children>
+      <TableView fx:id="ubytovanie" layoutX="64.0" layoutY="34.0" prefHeight="200.0" prefWidth="971.0">
+         <columns>
+            <TableColumn fx:id="zakaznik" prefWidth="75.0" text="zakaznik" />
+            <TableColumn fx:id="kategoriaIzby" prefWidth="118.0" text="kategoria izby" />
+            <TableColumn fx:id="cisloIzby" prefWidth="107.0" text="cislo izby" />
+            <TableColumn fx:id="info" prefWidth="98.0" text="info" />
+            <TableColumn fx:id="cenaIzby" prefWidth="77.0" text="cena izby" />
+            <TableColumn fx:id="rezervaciaOd" prefWidth="132.0" text="rezervacia od" />
+            <TableColumn fx:id="rezervaciaDo" prefWidth="134.0" text="rezervacia do" />
+            <TableColumn fx:id="cena" prefWidth="116.0" text="cena" />
+            <TableColumn fx:id="isZaplatena" prefWidth="113.0" text="zaplatena" />
+         </columns>
+      </TableView>
+      <Button layoutX="96.0" layoutY="315.0" mnemonicParsing="false" onAction="#zrusRezervaciu" text="naspet do menu" />
+   </children>
+</AnchorPane>

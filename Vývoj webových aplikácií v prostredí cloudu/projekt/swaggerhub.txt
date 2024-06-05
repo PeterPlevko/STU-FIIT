@@ -1,0 +1,391 @@
+openapi: 3.0.0
+servers:
+  # Added by API Auto Mocking Plugin
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/PPLEVKO/AmbulanceWaitingList/1.0.0
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/SAMUELRERICHA/Projekt/1.0.0
+info:
+  description: Projekt management
+  version: "1.0.0"
+  title: Projekt Api
+  contact:
+    email: aa@bb.com
+  license:
+    name: CC BY 4.0
+    url: 'https://creativecommons.org/licenses/by/4.0/'
+tags:
+  - name: ambulanceAdmins
+    description: Secured Admin-only calls
+  - name: ambulanceUsers
+    description: Operations available to regular users
+paths:
+  '/doctor/':
+    get:
+      tags:
+        - ambulanceAdmins
+      summary: Provides the list of all ambulances
+      operationId: getAmbulanceEntries
+      description: get list of all ambulances
+      responses:
+        '200':
+          description: value of the ambulance list entries
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Ambulance'
+              examples:
+                response:
+                  value:
+                    - id: "x456789"
+                      name: "doktor-oetker-sobrance"
+                      doctorName: "Doktor Oetker"
+                      location: "Sobrance"
+                    - id: "48x922"
+                      name: "doctor-plevko-skalite"
+                      doctorName: "Peter Plevko"
+                      location: "Skalite"
+                    - id: "979x879"
+                      name: "doctor-deli-cadca"
+                      doctorName: "Matej Delincak"
+                      location: "Cadca"
+        '404':
+          description: Ambulance with such ID does not exists
+    post:
+      tags:
+        - ambulanceAdmins
+      summary: Creates new ambulance
+      operationId: createAmbulance
+      description: create new ambulance
+      responses:
+        '200':
+          description: ambulance create
+        '403':
+          description: Ambulance with such ID already exists
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Ambulance'
+        description: Ambulance template
+        required: true    
+  '/doctor/{ambulanceId}':
+    get: 
+      tags:
+        - ambulanceAdmins
+      summary: Provides details of the ambulance
+      operationId: getAmbulance
+      description: get ambulance info
+      parameters:
+        - in: path
+          name: ambulanceId
+          description: pass id of the ambulance
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: info about the ambulance
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ambulanceWithAppointmentInfo'
+              examples:
+                response:
+                  value:
+                    ambulance: 
+                      id: "x456789"
+                      name: "doktor-oetker-sobrance"
+                      doctorName: "Doktor Oetker"
+                      location: "Sobrance"
+                    appointments:
+                      - id: "x321ab43"
+                        patientName: "Jožko Vajda"
+                        ambulanceId: "doktor-oetker-sobrance"
+                        type: "Preventivka"
+                        dateTime: "2038-12-24T10:05:00Z"
+                        cost: 1234
+                        paidBy: "insurance"
+                      - id: "x321ab435"
+                        patientName: "Jožko Vajda"
+                        ambulanceId: "doktor-oetker-sobrance"
+                        type: "Preventivka"
+                        dateTime: "2038-12-24T10:05:00Z"
+                        cost: 12345
+                        paidBy: "insurance"
+                      - id: "x321ab443"
+                        patientName: "Jožko Vajda"
+                        ambulanceId: "doktor-oetker-sobrance"
+                        type: "Preventivka"
+                        dateTime: "2038-12-24T10:05:00Z"
+                        cost: 123456
+                        paidBy: "insurance"
+                    moneySum: 12345789
+        '404':
+          description: Ambulance with such ID does not exist    
+    put:
+      tags:
+        - ambulanceAdmins
+      summary: Updates an ambulance
+      operationId: updateAmbulance
+      description: update an ambulance
+      parameters:
+        - in: path
+          name: ambulanceId
+          description: pass id of the ambulance
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: ambulance updated
+        '404':
+          description: Ambulance with such ID does not exist
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Ambulance'
+        description: Ambulance template
+        required: true   
+    delete:
+      tags:
+        - ambulanceAdmins
+      summary: Deletes ambulance
+      operationId: deleteAmbulance
+      description: Use this method to delete the ambulance
+      parameters:
+        - in: path
+          name: ambulanceId
+          description: pass id of the ambulance
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Item deleted
+        '404':
+          description: Ambulance with such ID does not exist
+  '/appointments/':
+    get:
+      tags:
+        - ambulanceUsers
+      summary: Provides the ambulance waiting list
+      operationId: getAppointmentEntries
+      description: get all appointments
+      responses:
+        '200':
+          description: value of the waiting list entries
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/MedicalAppointment'
+              examples:
+                response:
+                  value:
+                    - id: "x321ab43"
+                      patientName: "Jožko Vajda"
+                      ambulanceId: "doktor-oetker-sobrance"
+                      type: "Preventivka"
+                      dateTime: "2038-12-24T10:05:00Z"
+                      cost: 1234
+                      paidBy: "insurance"
+                    - id: "x321ab4"
+                      patientName: "Jožko Vajda2"
+                      ambulanceId: "doctor-plevko-skalite"
+                      type: "Preventivka"
+                      dateTime: "2038-12-24T10:05:00Z"
+                      cost: 12345
+                      paidBy: "insurance"
+                    - id: "x321ab4"
+                      patientName: "Jožko Vajda3"
+                      ambulanceId: "doctor-deli-cadca"
+                      type: "Preventivka"
+                      dateTime: "2038-12-24T10:05:00Z"
+                      cost: "12345"
+                      paidBy: "insurance"
+        '404':
+          description: Ambulance with such ID does not exists
+    post:
+      tags:
+        - ambulanceUsers
+      summary: Creates new appointment
+      operationId: createAppointment
+      description: create new ambulance
+      responses:
+        '200':
+          description: appointment create
+        '403':
+          description: appointment with such ID already exists
+        '404':
+          description: ambulance with such ID does not exist
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MedicalAppointment'
+        description: Ambulance template
+        required: true
+  '/appointments/{appointmentId}':
+    get:
+      tags:
+       - ambulanceUsers
+      summary: Provides details of the ambulance
+      operationId: getAppointment
+      description: get appointment info
+      parameters:
+        - in: path
+          name: appointmentId
+          description: pass id of the appointment
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: info about the appointment
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MedicalAppointment'
+              examples:
+                response:
+                  value:
+                    id: "x321ab43"
+                    patientName: "Jožko Vajda"
+                    ambulanceId: "doctor-deli-cadca"
+                    type: "Preventivka"
+                    dateTime: '2038-12-24T10:05:00Z'
+                    cost: 1234
+                    paidBy: "insurance"
+        '404':
+          description: Appointment with such ID does not exist    
+    put:
+      tags:
+        - ambulanceUsers
+      summary: Updates an appointment
+      operationId: updateAppointment
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MedicalAppointment'
+      description: update an appointment
+      parameters:
+        - in: path
+          name: appointmentId
+          description: pass id of the appointment
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: appointment updated
+        '404':
+          description: appointment with such ID does not exist, or ambulance with such ID does not exist
+    delete:
+      tags:
+        - ambulanceUsers
+      summary: Deletes appointment
+      operationId: deleteAppointment
+      description: Use this method to delete the appointment
+      parameters:
+        - in: path
+          name: appointmentId
+          description: pass id of the appointment
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Item deleted
+        '404':
+          description: Appointment with such ID does not exist  
+  
+components:
+  schemas:
+    Ambulance:
+      type: object
+      required:
+        - id
+        - name
+        - doctorName
+        - location
+      properties:
+        id:
+          type: string
+          example: doktor-oetker-sobrance
+          description: Id of the ambulance
+        name:
+          type: string
+          example: Name of the ambulance
+          description: Human readable display name of the ambulance
+        doctorName:
+          type: string
+          example: Doktor Oetker
+          description: Name of the doctor
+        location:
+          type: string
+          example: Sobrance
+          description: Where it's at
+    ambulanceWithAppointmentInfo:
+      type: object
+      required:
+        - moneySum
+        - ambulance
+        - appointment
+      properties:
+        moneySum:
+          type: integer
+          format: int32
+          example: 1500
+          description: cost in cents
+        ambulance:
+          $ref: '#/components/schemas/Ambulance'
+        appointments:
+          type: array
+          items:
+            $ref: '#/components/schemas/MedicalAppointment'
+    MedicalAppointment:
+      type: object
+      required:
+        - id
+        - patientName
+        - ambulanceId
+        - type
+        - dateTime
+        - cost
+        - paidBy
+      properties:
+        id:
+          type: string
+          example: x321ab3
+          description: Unique id of the entry
+        patientName:
+          type: string
+          example: Jožko Vajda
+          description: Name of patient
+        ambulanceId:
+          type: string
+          example: doktor-oetker-sobrance
+          description: id of ambulance where the appointment happened
+        type:
+          type: string
+          example: Preventivka
+          description: Type of the appointment
+        dateTime:
+          type: string
+          format: date-time
+          example: '2038-12-24T10:05:00Z'
+          description: date
+        cost:
+          type: integer
+          example: 1234
+          description: cost paid in euros
+        paidBy:
+          type: string
+          example: insurance
+          description: who paid for the appointment

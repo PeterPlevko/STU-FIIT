@@ -1,0 +1,53 @@
+[
+    {
+        "GPS": "48.197727 17.400686",
+        "campType": "vojaci",
+        "equipment": [
+            "cemetery",
+            "mausoleum",
+            "desinfectStation",
+            "hospital",
+            "lazaret",
+            "crypt",
+            "mobileOperationComando"
+        ],
+        "numberOfCaptives": 100,
+        "mainCaptiveNationality": "národnost",
+        "state": "confirmed",
+        "addedBy": "kuntox"
+    },
+    {
+        "GPS": "48.540756 18.752998",
+        "campType": "vojaci",
+        "equipment": [
+            "cemetery",
+            "mausoleum",
+            "desinfectStation",
+            "hospital",
+            "lazaret",
+            "crypt",
+            "mobileOperationComando"
+        ],
+        "numberOfCaptives": 100,
+        "mainCaptiveNationality": "národnost",
+        "state": "confirmed",
+        "addedBy": "kuntox"
+    },
+    {
+        "GPS": "48.881475 21.039835",
+        "campType": "vojaci-dôstojníci",
+        "equipment": [
+            "cemetery",
+            "mausoleum",
+            "desinfectStation",
+            "hospital",
+            "lazaret",
+            "crypt",
+            "mobileOperationComando"
+        ],
+        "numberOfCaptives": 100,
+        "mainCaptiveNationality": "národnost",
+        "state": "confirmed",
+        "addedBy": "kuntox"
+    }
+]

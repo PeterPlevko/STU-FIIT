@@ -1,0 +1,466 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     19606,        458]
+NotebookOptionsPosition[     18100,        422]
+NotebookOutlinePosition[     18602,        441]
+CellTagsIndexPosition[     18559,        438]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["\<\
+\[CapitalUAcute]loha na samostatn\[EAcute] po\[CHacek]\[IAcute]tanie -treba \
+realizova\[THacek] aj verziu procedur\[AAcute]lnu, aj verziu \
+funkcion\[AAcute]lnu\
+\>", "Subsection",
+ CellChangeTimes->{{3.467891704926418*^9, 3.4678917075356593`*^9}, {
+  3.467895464781723*^9, 3.4678954651879625`*^9}, {3.4678977771742096`*^9, 
+  3.467897777627329*^9}, {3.4679038379008245`*^9, 3.4679038382758226`*^9}, {
+  3.5593616673972893`*^9, 3.5593616694272923`*^9}, {3.5593619708667154`*^9, 
+  3.5593619712367163`*^9}, {3.5944480362937975`*^9, 3.594448067353841*^9}, {
+  3.8454510323382215`*^9, 
+  3.8454510551650467`*^9}},ExpressionUUID->"147e92c9-1959-40c2-9dfb-\
+b2479e36ddf1"],
+
+Cell[TextData[{
+ "Dan\[EAcute] je jednorozmern\[EAcute] pole ",
+ Cell[BoxData[
+  FormBox["a", TraditionalForm]],ExpressionUUID->
+  "d7856efd-bc1b-463c-a3d2-89f0e5639f10"],
+ ", ktor\[EAcute]ho prvky s\[UAcute] dan\[EAcute] predpisom ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", "3"}], "x"}], "+", "1", "+", 
+    SqrtBox[
+     RowBox[{
+      SuperscriptBox["x", "2"], "+", "4"}]]}], TraditionalForm]],
+  ExpressionUUID->"b7e52337-a018-4415-8dad-5e19a31ac1b2"],
+ " ak ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{" ", 
+    RowBox[{"x", "\[Element]", 
+     RowBox[{"[", 
+      RowBox[{
+       RowBox[{"-", "5"}], ",", "17"}], "]"}], " "}]}], TraditionalForm]],
+  ExpressionUUID->"252eb2c3-5a51-4799-800d-43f95db49a41"],
+ "sa men\[IAcute] s krokom 2. \n- Vytvorte toto pole a nakreslite jeho prvky. \
+\nZistite \n- po\[CHacek]et prvkov po\:013ea ",
+ Cell[BoxData[
+  FormBox["a", TraditionalForm]],ExpressionUUID->
+  "81ccd3e5-459b-4f2f-b3b7-351d89d2122b"],
+ ", ktor\[YAcute]ch hodnota je z intervalu ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"-", "14"}], ",", "0"}], "]"}], TraditionalForm]],ExpressionUUID->
+  "e107ffe4-aa98-4d13-813a-331d03769b6f"],
+ ".\n- s\[UAcute]\[CHacek]et z\[AAcute]porn\[YAcute]ch prvkov v poli.\n- po\
+\[CHacek]et prvkov po\:013ea ",
+ Cell[BoxData[
+  FormBox["a", TraditionalForm]],ExpressionUUID->
+  "7f6d3e15-789b-434c-ba08-07e1cd949834"],
+ "\n- siedmy prvok od za\[CHacek]iatku po\:013ea ",
+ Cell[BoxData[
+  FormBox["a", TraditionalForm]],ExpressionUUID->
+  "a7ddd1a1-22a6-4655-b27e-7fcf0d97f0f8"],
+ " a \[SHacek]tvrt\[YAcute] prvok od konca po\:013ea ",
+ Cell[BoxData[
+  FormBox["a", TraditionalForm]],ExpressionUUID->
+  "c395cf1f-37ee-4920-8a46-213fee73eee1"],
+ "\n- do jednorozmern\[EAcute]ho po\:013ea ",
+ Cell[BoxData[
+  FormBox["c", TraditionalForm]],ExpressionUUID->
+  "280e1224-b5fd-4512-8075-18d6bcef7b06"],
+ " vyberte a zap\[IAcute]\[SHacek]te \[SHacek]iesty, siedmy a \[OHat]smy \
+prvok po\:013ea ",
+ Cell[BoxData[
+  FormBox["a", TraditionalForm]],ExpressionUUID->
+  "c929216e-19e8-49d5-ad5e-db66c4a2b49c"],
+ " (aspo\[NHacek] tromi sp\[OHat]sobmi)\n- miesto (poz\[IAcute]ciu), kde sa v \
+poli nach\[AAcute]dza prvok -16.7805\n- maxim\[AAcute]lny a minim\[AAcute]lny \
+prvok\n- s\[UAcute]\[CHacek]et v\[SHacek]etk\[YAcute]ch prvkov ",
+ Cell[BoxData[
+  FormBox["a", TraditionalForm]],ExpressionUUID->
+  "ab11ef82-9e2f-4321-b2d4-2ef2b7949d20"],
+ " \n- aritmetick\[YAcute] priemer v\[SHacek]etk\[YAcute]ch prvkov\n- po\
+\[CHacek]et prvkov z po\:013ea ",
+ Cell[BoxData[
+  FormBox["a", TraditionalForm]],ExpressionUUID->
+  "5041cc53-f54c-4ac9-be81-ca02668d1743"],
+ ", ktor\[YAcute]ch hodnota je men\[SHacek]ia ako -10\n- \
+s\[UAcute]\[CHacek]et prvkov z po\:013ea ",
+ Cell[BoxData[
+  FormBox["a", TraditionalForm]],ExpressionUUID->
+  "d26d48df-29d6-4779-bde4-f7fef119c02f"],
+ ", ktor\[YAcute]ch hodnota je men\[SHacek]ia ako -10"
+}], "Text",
+ CellChangeTimes->{{3.4678925069819546`*^9, 3.467892527152926*^9}, {
+  3.467897985327795*^9, 3.467897986265283*^9}, {3.467898178294075*^9, 
+  3.4678981901532984`*^9}, {3.467903532855902*^9, 3.4679036939486213`*^9}, {
+  3.4679037244328012`*^9, 3.4679038214321804`*^9}, {3.4679038643381557`*^9, 
+  3.467903958650052*^9}, {3.4679040046653824`*^9, 3.46790402305589*^9}, {
+  3.467904222835861*^9, 3.467904254835656*^9}, {3.5593615827871714`*^9, 
+  3.5593615943671875`*^9}, {3.559361631477239*^9, 3.55936163237724*^9}, {
+  3.5593617275673738`*^9, 3.559361871863576*^9}, {3.5593623452382402`*^9, 
+  3.5593623453082404`*^9}, {3.559364046706623*^9, 
+  3.5593640748566628`*^9}},ExpressionUUID->"bacbe534-9b71-4db1-8689-\
+739ba6678a82"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\[CapitalUAcute]loha na samostatn\[EAcute] po\[CHacek]\[IAcute]tanie", \
+"Subsection",
+ CellChangeTimes->{{3.467891704926418*^9, 3.4678917075356593`*^9}, {
+   3.467895464781723*^9, 3.4678954651879625`*^9}, {3.4678977771742096`*^9, 
+   3.467897777627329*^9}, {3.4679038379008245`*^9, 3.4679038382758226`*^9}, {
+   3.4679043040384665`*^9, 3.467904304444714*^9}, {3.5593619597867002`*^9, 
+   3.559361968766712*^9}, 
+   3.845451066625075*^9},ExpressionUUID->"ae5d0351-6fe8-44e2-af23-\
+9bd6d07ed13e"],
+
+Cell[TextData[{
+ "V s\[UAcute]bore data1.txt, s\[UAcute] ulo\[ZHacek]en\[EAcute] d\[AAcute]ta \
+poch\[AAcute]dzaj\[UAcute]ce z merania.  Na\[CHacek]\[IAcute]tajte tieto d\
+\[AAcute]ta do po\:013ea ",
+ Cell[BoxData[
+  FormBox["b", TraditionalForm]],ExpressionUUID->
+  "3f115efb-229d-437e-a4b0-14b39dc94ec5"],
+ " a nakreslite jeho prvky.\nZistite:\n- po\[CHacek]et prvkov po\:013ea ",
+ Cell[BoxData[
+  FormBox["b", TraditionalForm]],ExpressionUUID->
+  "4f46757a-837f-4f81-bcdf-b5fb2cf5f212"],
+ ", ktor\[YAcute]ch hodnota je z intervalu ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"-", "14"}], ",", "4"}], "]"}], TraditionalForm]],ExpressionUUID->
+  "c70a52d9-dc16-4a93-a5fe-ad3a7de44470"],
+ ".\n- s\[UAcute]\[CHacek]et kladn\[YAcute]ch prvkov v poli.\n- po\[CHacek]et \
+prvkov po\:013ea ",
+ Cell[BoxData[
+  FormBox["b", TraditionalForm]],ExpressionUUID->
+  "8adac5da-92d5-441e-a4bd-5dbeec623a85"],
+ "\n- piaty prvok od za\[CHacek]iatku po\:013ea ",
+ Cell[BoxData[
+  FormBox["b", TraditionalForm]],ExpressionUUID->
+  "63ae2d1b-3bf0-4da0-8842-4f40a69fbcdc"],
+ " a \[SHacek]tvrt\[YAcute] prvok od konca po\:013ea ",
+ Cell[BoxData[
+  FormBox["b", TraditionalForm]],ExpressionUUID->
+  "20bbfb7c-adf0-4cf0-aff8-58a1b3bdb56d"],
+ "\n- do jednorozmern\[EAcute]ho po\:013ea ",
+ Cell[BoxData[
+  FormBox["c", TraditionalForm]],ExpressionUUID->
+  "67168aa2-d786-4391-8b2d-bc2012dff37c"],
+ " vyberte a zap\[IAcute]\[SHacek]te \[SHacek]iesty, siedmy a \[OHat]smy \
+prvok po\:013ea ",
+ Cell[BoxData[
+  FormBox["a", TraditionalForm]],ExpressionUUID->
+  "e2eff41b-33c2-438d-83dc-0f1c85f6bda7"],
+ " (aspo\[NHacek] tromi sp\[OHat]sobmi)\n- miesto (poz\[IAcute]ciu), kde sa v \
+poli nach\[AAcute]dza prvok -2\n- maxim\[AAcute]lny a minim\[AAcute]lny prvok\
+\n- s\[UAcute]\[CHacek]et v\[SHacek]etk\[YAcute]ch prvkov ",
+ Cell[BoxData[
+  FormBox["b", TraditionalForm]],ExpressionUUID->
+  "b0646f86-1e17-42fa-a471-6f3d625b72f9"],
+ " \n- aritmetick\[YAcute] priemer v\[SHacek]etk\[YAcute]ch prvkov\n- po\
+\[CHacek]et prvkov z po\:013ea ",
+ Cell[BoxData[
+  FormBox["b", TraditionalForm]],ExpressionUUID->
+  "efb0e231-90d4-4724-860b-99b8798d1b85"],
+ ", ktor\[YAcute]ch hodnota je men\[SHacek]ia ako - 2\n- \
+s\[UAcute]\[CHacek]et prvkov z po\:013ea ",
+ Cell[BoxData[
+  FormBox["b", TraditionalForm]],ExpressionUUID->
+  "3fbb0cc7-f81b-45e1-902c-833bc958670e"],
+ ", ktor\[YAcute]ch hodnota je v\[ADoubleDot]\[CHacek]\[SHacek]ia ako +1"
+}], "Text",
+ CellChangeTimes->{{3.4678925069819546`*^9, 3.467892527152926*^9}, {
+   3.467897985327795*^9, 3.467897986265283*^9}, {3.467898178294075*^9, 
+   3.4678981901532984`*^9}, {3.467903532855902*^9, 3.4679036939486213`*^9}, {
+   3.4679037244328012`*^9, 3.4679038214321804`*^9}, {3.4679038643381557`*^9, 
+   3.467903958650052*^9}, {3.4679040046653824`*^9, 3.46790402305589*^9}, {
+   3.467904222835861*^9, 3.467904254835656*^9}, {3.467904324960208*^9, 
+   3.467904328991432*^9}, 3.4679044271001787`*^9, {3.5593613674448695`*^9, 
+   3.5593613733248777`*^9}, {3.559361916873639*^9, 3.5593619287166567`*^9}, {
+   3.559361979656728*^9, 3.5593620391928115`*^9}, {3.5593623423982363`*^9, 
+   3.5593623425082364`*^9}, {3.5593627562648163`*^9, 
+   3.5593627627948256`*^9}, {3.55936401581658*^9, 3.5593640370766096`*^9}, 
+   3.8454511175029287`*^9, {3.845467712172949*^9, 
+   3.8454677124940405`*^9}},ExpressionUUID->"04a75359-305b-499d-b8a2-\
+d55a89d8f86c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\[CapitalUAcute]loha na samostatn\[EAcute] po\[CHacek]\[IAcute]tanie", \
+"Subsection",
+ CellChangeTimes->{{3.467891704926418*^9, 3.4678917075356593`*^9}, {
+   3.467895464781723*^9, 3.4678954651879625`*^9}, {3.4678977771742096`*^9, 
+   3.467897777627329*^9}, {3.4679038379008245`*^9, 3.4679038382758226`*^9}, {
+   3.4679043040384665`*^9, 3.467904304444714*^9}, {3.5593619597867002`*^9, 
+   3.559361968766712*^9}, 
+   3.8454510885267115`*^9},ExpressionUUID->"5bf925ca-fb82-4a9b-ba10-\
+ed1f6cab9163"],
+
+Cell[TextData[{
+ "V s\[UAcute]bore data3.txt, s\[UAcute] ulo\[ZHacek]en\[EAcute] d\[AAcute]ta \
+poch\[AAcute]dzaj\[UAcute]ce z merania.  Na\[CHacek]\[IAcute]tajte tieto d\
+\[AAcute]ta do po\:013ea ",
+ Cell[BoxData[
+  FormBox["c", TraditionalForm]],ExpressionUUID->
+  "248b0aa7-152e-429a-ad22-98e5ca4efa94"],
+ " a nakreslite jeho prvky.\nZistite:\n- po\[CHacek]et prvkov po\:013ea ",
+ Cell[BoxData[
+  FormBox["c", TraditionalForm]],ExpressionUUID->
+  "6d14e038-83b8-4563-8db1-7a94c5b36072"],
+ ", ktor\[YAcute]ch hodnota je z intervalu ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"-", "5"}], ",", "2"}], "]"}], TraditionalForm]],ExpressionUUID->
+  "f3ee0634-a233-42a6-8437-bf0b79be2b76"],
+ ".\n- s\[UAcute]\[CHacek]et z\[AAcute]porn\[YAcute]ch prvkov v poli.\n- s\
+\[UAcute]\[CHacek]et maxim\[AAcute]lneho a minim\[AAcute]lneho prvku\n- s\
+\[UAcute]\[CHacek]et v\[SHacek]etk\[YAcute]ch prvkov ",
+ Cell[BoxData[
+  FormBox["c", TraditionalForm]],ExpressionUUID->
+  "7724bdc3-b414-41aa-a0c9-2bf93c24fdb4"],
+ ", ktor\[EAcute] sa nach\[AAcute]dzaj\[UAcute] na p\[AAcute]rnych poz\
+\[IAcute]ci\[AAcute]ch, t.j. ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"c", "[", 
+      RowBox[{"[", "2", "]"}], "]"}], "+", 
+     RowBox[{"c", "[", 
+      RowBox[{"[", "4", "]"}], "]"}], "+"}], "..."}], TraditionalForm]],
+  ExpressionUUID->"2532457c-b1c3-4329-b774-0d78719ad554"],
+ "\n- s\[UAcute]\[CHacek]in v\[SHacek]etk\[YAcute]ch prvkov ",
+ Cell[BoxData[
+  FormBox["c", TraditionalForm]],ExpressionUUID->
+  "b1fa80d1-aa89-42cd-9a4b-9ccb498a008c"],
+ ", ktor\[EAcute] sa nach\[AAcute]dzaj\[UAcute] na nep\[AAcute]rnych poz\
+\[IAcute]ci\[AAcute]ch, t.j. ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"c", "[", 
+      RowBox[{"[", "1", "]"}], "]"}], "+", 
+     RowBox[{"c", "[", 
+      RowBox[{"[", "3", "]"}], "]"}], "+"}], "..."}], TraditionalForm]],
+  ExpressionUUID->"dbd85f4c-5adb-4873-9bdd-bde9b0681ce4"],
+ "\n- nakresli do grafu v\[SHacek]etky prvky nach\[AAcute]dzaj\[UAcute]ce sa \
+na nep\[AAcute]rnych poz\[IAcute]ci\[AAcute]ch\n- smerodajn\[UAcute] odch\
+\[YAcute]lku s\[UAcute]boru ",
+ Cell[BoxData[
+  FormBox[
+   SqrtBox[
+    RowBox[{" ", 
+     RowBox[{
+      FractionBox["1", 
+       RowBox[{"n", "-", "1"}]], 
+      UnderoverscriptBox[
+       RowBox[{" ", "\[Sum]"}], 
+       RowBox[{"i", "=", "1"}], "n"], 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"x", "-", 
+         OverscriptBox["x", "_"]}], ")"}], "2"]}]}]], TraditionalForm]],
+  ExpressionUUID->"14026eff-d1a4-43e2-a7f1-ed405bd3adb0"],
+ "\n- po\[CHacek]et prvkov z po\:013ea ",
+ Cell[BoxData[
+  FormBox["c", TraditionalForm]],ExpressionUUID->
+  "f58dc3d5-8742-4ce0-8dbf-63735f6a7d67"],
+ ", ktor\[YAcute]ch hodnota je v\[ADoubleDot]\[CHacek]\[SHacek]ia ako - 2 a z\
+\[AAcute]rove\[NHacek] men\[SHacek]ia ako 3\n- s\[UAcute]\[CHacek]in prvkov z \
+po\:013ea ",
+ Cell[BoxData[
+  FormBox["c", TraditionalForm]],ExpressionUUID->
+  "bf33fa9a-2970-4b0d-89d6-c3ac1accde60"],
+ ", ktor\[YAcute]ch hodnota je v\[ADoubleDot]\[CHacek]\[SHacek]ia ako +1"
+}], "Text",
+ CellChangeTimes->{{3.4678925069819546`*^9, 3.467892527152926*^9}, {
+   3.467897985327795*^9, 3.467897986265283*^9}, {3.467898178294075*^9, 
+   3.4678981901532984`*^9}, {3.467903532855902*^9, 3.4679036939486213`*^9}, {
+   3.4679037244328012`*^9, 3.4679038214321804`*^9}, {3.4679038643381557`*^9, 
+   3.467903958650052*^9}, {3.4679040046653824`*^9, 3.46790402305589*^9}, {
+   3.467904222835861*^9, 3.467904254835656*^9}, {3.467904324960208*^9, 
+   3.467904328991432*^9}, 3.4679044271001787`*^9, {3.5593613674448695`*^9, 
+   3.5593613733248777`*^9}, {3.559361916873639*^9, 3.5593619287166567`*^9}, {
+   3.559361979656728*^9, 3.5593620391928115`*^9}, {3.559362076022863*^9, 
+   3.5593620764328637`*^9}, {3.55936230945719*^9, 3.5593627515948095`*^9}, 
+   3.5593640868966794`*^9, 
+   3.8454511107179537`*^9},ExpressionUUID->"be9c78da-566e-4b20-b300-\
+a3a066ff6a1f"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\[CapitalUAcute]loha na samostatn\[EAcute] po\[CHacek]\[IAcute]tanie", \
+"Subsection",
+ CellChangeTimes->{{3.467891704926418*^9, 3.4678917075356593`*^9}, {
+   3.467895464781723*^9, 3.4678954651879625`*^9}, {3.4678977771742096`*^9, 
+   3.467897777627329*^9}, {3.4679038379008245`*^9, 3.4679038382758226`*^9}, {
+   3.4679043040384665`*^9, 3.467904304444714*^9}, {3.5593619597867002`*^9, 
+   3.559361968766712*^9}, {3.559362838835932*^9, 3.559362839505933*^9}, 
+   3.845451264179404*^9},ExpressionUUID->"fb825193-a6e5-48d4-bbee-\
+f82f2972f8f1"],
+
+Cell[TextData[{
+ "D\[AAcute]ta ulo\[ZHacek]en\[EAcute] v s\[UAcute]bore",
+ StyleBox[" vzduch.xls",
+  FontWeight->"Bold"],
+ " boli z\[IAcute]skan\[EAcute] pri meran\[IAcute] pra\[SHacek]nosti v ovzdu\
+\[SHacek]\[IAcute]. Norme vyhovuj\[UAcute] len tie merania, v ktor\[YAcute]ch \
+je obsah prachu nez\[AAcute]porn\[YAcute] a men\[SHacek]\[IAcute] ako 75 \
+mikrogramov na meter kubick\[YAcute] vzduchu.V s\[UAcute]bore je 47 hodn\
+\[OHat]t.\nNa\[CHacek]\[IAcute]tajte d\[AAcute]ta zo s\[UAcute]boru a \
+zostavte program, ktor\[YAcute] : \n1. zist\[IAcute] minim\[AAcute]lnu a \
+maxim\[AAcute]lnu hodnotu s\[UAcute]boru aj ich poz\[IAcute]ciu.\n2. Vy\
+\[SHacek]etr\[IAcute] ak\[YAcute] po\[CHacek]et vzoriek v s\[UAcute]bore \
+vyhovuje norme.\n3. Zist\[IAcute] percentu\[AAcute]lnu hodnotu nevyhovuj\
+\[UAcute]cich vzoriek. Ak je priemern\[AAcute] hodnota vy\[SHacek]\[SHacek]ia \
+ako 100 mikrogramov na meter kubick\[YAcute] vyd\[AAcute] varovanie o \
+\[SHacek]kodlivosti ovzdu\[SHacek]ia."
+}], "Text",
+ CellChangeTimes->{{3.594448374677271*^9, 3.5944484585393887`*^9}, {
+  3.594448980780136*^9, 
+  3.5944489826901393`*^9}},ExpressionUUID->"f54c8faa-4a73-4d39-8bf9-\
+e620af294d8b"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\[CapitalUAcute]loha na samostatn\[EAcute] po\[CHacek]\[IAcute]tanie", \
+"Subsection",
+ CellChangeTimes->{{3.467891704926418*^9, 3.4678917075356593`*^9}, {
+   3.467895464781723*^9, 3.4678954651879625`*^9}, {3.4678977771742096`*^9, 
+   3.467897777627329*^9}, {3.55936163924725*^9, 3.559361659327278*^9}, 
+   3.845450996788259*^9},ExpressionUUID->"8d30e26d-acaf-46b4-9e57-\
+80262c1cbb4f"],
+
+Cell[TextData[{
+ "Hriade\:013e s\[NonBreakingSpace]menovitou hodnotou priemeru ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"d", " ", "=", " ", 
+    RowBox[{"24", " ", "mm"}]}], TraditionalForm]],ExpressionUUID->
+  "41bac387-9597-45a8-bf65-302214270955"],
+ " m\[AAcute] pri vo\:013enej\[SHacek]om ulo\[ZHacek]en\[IAcute] dovolen\
+\[UAcute] odch\[YAcute]lku v\[NonBreakingSpace]hraniciach ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"-", "0.20"}], " ", "mm"}], TraditionalForm]],ExpressionUUID->
+  "0d7b7055-e90f-41d5-a5f5-57000076498d"],
+ " a\[ZHacek] ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"-", " ", "0.41"}], " ", "mm"}], TraditionalForm]],ExpressionUUID->
+  "3669e3c3-8d40-4f49-bc26-b369148da774"],
+ " (ani menej, ani viac !).  Pri kontrole vzorky v\[YAcute]robkov, ktor\
+\[AAcute] pozost\[AAcute]va z\[NonBreakingSpace] 250 n\[AAcute]hodne vybran\
+\[YAcute]ch hriade\:013eov, boli nameran\[EAcute] priemery ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["d", "i"], TraditionalForm]],ExpressionUUID->
+  "6c95aea7-023f-4299-b3c6-dd3ca0fba312"],
+ " pre ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"i", " ", "=", " ", "1"}], ",", "2", ",", "...", ",", "250"}], 
+   TraditionalForm]],ExpressionUUID->"353731b4-4632-4183-b9d0-cbcb1fbed4d0"],
+ " , ktor\[EAcute] s\[UAcute] ulo\[ZHacek]en\[EAcute] v\[NonBreakingSpace]s\
+\[UAcute]bore ",
+ StyleBox["priemer.txt",
+  FontWeight->"Bold"],
+ " \n\nVypo\[CHacek]\[IAcute]tajte (postupne)\na)\tak\[YAcute] po\[CHacek]et \
+hriade\:013eov z celkov\[EAcute]ho po\[CHacek]tu hriade\:013eov v\
+\[NonBreakingSpace]uvedenej vzorke m\[AAcute] priemer men\[SHacek]\[IAcute] \
+ako mu dovo\:013euje odch\[YAcute]lka, \nb)\tpercentu\[AAcute]lnu hodnotu \
+nevyhovuj\[UAcute]cich hriade\:013eov,\nc)\tpriemern\[UAcute] hodnotu \
+priemeru hriade\:013ea ",
+ Cell[BoxData[
+  FormBox["d", TraditionalForm]],ExpressionUUID->
+  "f3d56032-e833-44b0-ae61-ed531ec9e834"],
+ " v uvedenej vzorke.\nV\[YAcute]sledky v\[YAcute]po\[CHacek]tov bud\[UAcute] \
+vyp\[IAcute]san\[EAcute] na monitor."
+}], "Text",
+ CellChangeTimes->{{3.4678925069819546`*^9, 3.467892527152926*^9}, {
+  3.467897985327795*^9, 3.467897986265283*^9}, {3.467898178294075*^9, 
+  3.4678981901532984`*^9}, {3.467903532855902*^9, 3.4679036939486213`*^9}, {
+  3.4679037244328012`*^9, 3.4679038214321804`*^9}, {3.559361446784981*^9, 
+  3.5593614471849813`*^9}, {3.559361551255127*^9, 3.5593615717071557`*^9}, {
+  3.5593638184863033`*^9, 3.5593638279663167`*^9}, {3.5593639520064907`*^9, 
+  3.559363953086492*^9}},ExpressionUUID->"4f047fd9-4755-4c34-b1f6-\
+696cc9aade42"]
+}, Open  ]]
+},
+WindowSize->{1050, 732},
+WindowMargins->{{259, Automatic}, {69, Automatic}},
+PrintingCopies->1,
+PrintingPageRange->{Automatic, Automatic},
+TaggingRules->{"SlideshowSettings" -> {"Toolbar" -> True}},
+Magnification->1.0499999523162842`,
+FrontEndVersion->"12.0 for Microsoft Windows (64-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 678, 12, 56, "Subsection",ExpressionUUID->"147e92c9-1959-40c2-9dfb-b2479e36ddf1"],
+Cell[1248, 36, 3649, 86, 345, "Text",ExpressionUUID->"bacbe534-9b71-4db1-8689-739ba6678a82"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4934, 127, 501, 8, 56, "Subsection",ExpressionUUID->"ae5d0351-6fe8-44e2-af23-9bd6d07ed13e"],
+Cell[5438, 137, 3384, 71, 313, "Text",ExpressionUUID->"04a75359-305b-499d-b8a2-d55a89d8f86c"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8859, 213, 503, 8, 56, "Subsection",ExpressionUUID->"5bf925ca-fb82-4a9b-ba10-ed1f6cab9163"],
+Cell[9365, 223, 3950, 92, 307, "Text",ExpressionUUID->"be9c78da-566e-4b20-b300-a3a066ff6a1f"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13352, 320, 547, 8, 56, "Subsection",ExpressionUUID->"fb825193-a6e5-48d4-bbee-f82f2972f8f1"],
+Cell[13902, 330, 1179, 20, 174, "Text",ExpressionUUID->"f54c8faa-4a73-4d39-8bf9-e620af294d8b"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15118, 355, 392, 6, 56, "Subsection",ExpressionUUID->"8d30e26d-acaf-46b4-9e57-80262c1cbb4f"],
+Cell[15513, 363, 2571, 56, 221, "Text",ExpressionUUID->"4f047fd9-4755-4c34-b1f6-696cc9aade42"]
+}, Open  ]]
+}
+]
+*)
+

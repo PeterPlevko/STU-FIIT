@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="285.0" prefWidth="246.0" xmlns="http://javafx.com/javafx/8.0.171"
+            xmlns:fx="http://javafx.com/fxml/1">
+   <ImageView fx:id="imageView" fitHeight="200.0" fitWidth="150.0" layoutX="48.0" pickOnBounds="true"
+              preserveRatio="true"/>
+   <Label fx:id="authorLabel" alignment="TOP_CENTER" layoutY="204.0" prefHeight="38.0" prefWidth="246.0" text="Autor"
+          textAlignment="CENTER" wrapText="true"/>
+   <Label fx:id="titleLabel" alignment="TOP_CENTER" layoutY="247.0" prefHeight="38.0" prefWidth="246.0"
+          text="Nazov knihy" textAlignment="CENTER" wrapText="true"/>
+</AnchorPane>

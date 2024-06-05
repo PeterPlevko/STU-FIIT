@@ -1,0 +1,46 @@
+<button mat-icon-button class="close-button" [mat-dialog-close]="true">
+  <mat-icon class="close-icon" color="warn">close</mat-icon>
+</button>
+
+<div class="wholeContainer">
+  <h1>Pamätník</h1>
+  <hr class="solid">
+  <div class="importantInfromation">
+      <p><b>Názov:</b> {{data.element.name}}</p>
+      <p><b>GPS:</b> {{data.element.GPS}}</p>
+      <p><b>Popis lokality:</b> {{data.element.location}}</p>
+      <p><b>Popis obce:</b> {{data.element.municipalityDescription}}</p>
+  </div>
+    <hr class="solid">
+    <div class="displayFlexPContent">
+      <img class="image" [src]="data.imageToShow">
+      <div class="floatRight">
+        <p>{{data.element.photoDescription}}</p>
+      </div>
+    </div>
+    <hr class="solid">
+    <div class="container">
+
+      <div class="column">
+        <h1>Mená padlých</h1>
+        <div *ngFor="let deceased of data.element.deceasedList" class="deceasedList">
+          <p>{{deceased}}</p>
+        </div>
+      </div>
+
+      <div class="column">
+        <h1>Dátumy narodení</h1>
+        <div *ngFor="let birth of data.element.dateOfBirth" class="birth">
+          <p>{{birth}}</p>
+        </div>
+      </div>
+
+      <div class="column">
+        <h1>Dátumy úmrtí</h1>
+        <div *ngFor="let Death of data.element.dateOfDeath" class="Death">
+          <p>{{Death}}</p>
+        </div>
+      </div>
+  </div>
+
+</div>

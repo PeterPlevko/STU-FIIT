@@ -1,0 +1,42 @@
+body,html {
+  margin: 0;
+  font-family: sans-serif;
+  padding: 1em;
+}
+
+ul {
+  padding: 0;
+  width: 100%;
+}
+
+li {
+  display: inline;
+}
+
+a {
+  outline: none;
+  text-decoration: none;
+  display: inline-block;
+  width: 19.5%;
+  margin-right: 0.625%;
+  text-align: center;
+  line-height: 3;
+  color: black;
+}
+
+li:last-child a {
+  margin-right: 0;
+}
+
+a:link, a:visited, a:focus {
+  background: yellow;
+}
+
+a:hover {     
+  background: orange;
+}
+
+a:active {
+  background: red;
+  color: white;
+}

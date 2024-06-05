@@ -1,0 +1,59 @@
+.map{
+    size: 1205px;
+    height: 500px;
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    justify-items: center;
+
+}
+
+main section {
+    background-color:  #0B0C10;
+}
+
+.buttons{
+    margin: 50px 0 0 0;
+    align-items: flex-start;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    height: auto;
+}
+
+.button {
+    margin: 5px;
+    background: url("../../images/shopNetwork/city.jpg") no-repeat;
+    height: 100px;
+    width: 130px;
+    color: white;
+    border: 2px solid #66FCF1;
+}
+
+.button:hover {
+    transform: scale(1.1);
+}
+
+.copy{
+    border: none;
+    height: 15px;
+    width: 12px;
+    background: url("../../images/shopNetwork/copy.jpg") no-repeat;
+    outline:none;
+}
+
+.copy:active:focus, button:focus {
+    outline: none;
+    box-shadow: none;
+    background-color: white;
+}
+
+section h6{
+    color: #66FCF1;
+}
+
+iframe {
+    max-width: 90%;
+}

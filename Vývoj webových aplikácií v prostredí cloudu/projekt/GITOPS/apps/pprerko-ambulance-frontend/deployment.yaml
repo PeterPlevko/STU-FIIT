@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pprerko-deployment      # meno deployment-u od ktorého sa odvádza meno podu
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+        pod: pprerko-ambulance-frontend-label    # tento riadok je len označenie štítku 
+                                    # key-value pair pod=ambualnce ufe
+                                    # určený pre výber podov s rovnakým štítkom
+  template:                    # šablóna pre vytvorenie replík podov
+    metadata:
+      labels: 
+        pod: pprerko-ambulance-frontend-label    # štítky podu
+    spec:
+      containers:
+      - name: pprerko-ambulance-frontend-container # meno kontaineru - v pod-e ich môže byť viac
+        image: xrericha/projekt-ufe
+        imagePullPolicy: Always
+        ports:
+        - name: http
+          containerPort: 80
+        resources:                  # určenie kvót pre využívané fyzické prostriedky
+                                    # je dôležité pre riadenie záťaže v rámci kubernetes
+                                    # klastra
+            requests:               
+                memory: "32M"
+                cpu: "0.1"
+            limits:
+                memory: "320M"
+                cpu: "0.3"

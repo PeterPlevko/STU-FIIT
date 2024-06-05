@@ -1,0 +1,88 @@
+<app-header></app-header>
+
+<div class="displayFlex">
+  <div class="middle">
+
+    <form [formGroup]="registerForm" class="inputField" (submit)="submit()">
+
+      <label for="username">Prihlasovacie meno</label><br>
+      <mat-form-field id="username" appearance="fill">
+          <mat-label>Vloz prihlasovacie meno</mat-label>
+          <input matInput formControlName="username">
+          <mat-error *ngIf="registerForm.get('username')!.hasError('required')">
+            Vlož meno
+          </mat-error>
+        </mat-form-field>
+
+        <label for="email">Emailová adresa</label><br>
+        <mat-form-field id="email" appearance="fill">
+          <mat-label>Vlož email</mat-label>
+          <input matInput formControlName="email">
+          <mat-error *ngIf="registerForm.get('email')!.hasError('required')">
+            Vlož email
+          </mat-error>
+          <mat-error *ngIf="registerForm.get('email')!.hasError('email')">
+            Vlož platný email
+          </mat-error>
+
+        </mat-form-field>
+        <label for="password">Heslo</label><br>
+        <mat-form-field id="password" appearance="fill">
+          <mat-label>Vloz heslo</mat-label>
+          <input type="password" matInput formControlName="password">
+          <mat-error *ngIf="registerForm.get('password')!.hasError('required')">
+            Vlož heslo
+          </mat-error>
+          <mat-error *ngIf="registerForm.get('password')!.hasError('minlength')">
+            Heslo musí obsahovať aspoň 8 znakov
+          </mat-error>
+        </mat-form-field>
+
+        <label for="confirmPassword">Potvrď heslo</label><br>
+        <mat-form-field id="confirmPassword" appearance="fill">
+          <mat-label>Potvrď heslo</mat-label>
+          <input type="password" matInput formControlName="confirmPassword" [errorStateMatcher]="passwordMatcher">
+          <mat-error *ngIf="registerForm.hasError('notSame')">
+            Hesla sa nezhodujú
+          </mat-error>
+        </mat-form-field>
+
+        <label for="firstname">Napíš meno</label><br>
+        <mat-form-field id="firstname" appearance="fill">
+          <mat-label>Napíš meno</mat-label>
+          <input matInput formControlName="firstname">
+          <mat-error *ngIf="registerForm.get('firstname')!.hasError('required')">
+            Vlož meno
+          </mat-error>
+        </mat-form-field>
+
+        <label for="surname">Napíš priezvisko</label><br>
+        <mat-form-field id="surname" appearance="fill">
+          <mat-label>Napíš priezvisko</mat-label>
+          <input matInput formControlName="surname">
+          <mat-error *ngIf="registerForm.get('surname')!.hasError('required')">
+            Vlož priezvisko
+          </mat-error>
+        </mat-form-field>
+
+        <div class="alignButtons">
+          <button mat-raised-button
+          [routerLink]="['/login']"
+          class="marginRight buttonStyle"
+          color="primary"
+          type="button">Prihlasenie</button>
+          <button
+          mat-raised-button
+          class="marginLeft buttonStyle"
+          color="primary"
+          type="submit"
+          >Registrácia</button>
+        </div>
+
+    </form>
+
+</div>
+</div>
+
+
+<app-footer></app-footer>

@@ -1,0 +1,220 @@
+<div class="makeLong center" *ngIf="cemetery===null">
+
+  <h1>Nie je nič na potvrdenie</h1>
+</div>
+
+
+<div *ngIf="cemetery!==null" class="displayFlex">
+  <div  class="mainBlok">
+
+    <form [formGroup]="cemeteryForm" class="inputField  leftSideForm" (submit)="submit()">
+
+        <label for="GPS">GPS</label><br>
+        <mat-form-field id="GPS" appearance="fill">
+          <mat-label>Vlož GPS súradnice</mat-label>
+          <input ngModel pattern="^[-]?([1-8]?\d(\.\d+)?|90(\.0+)?) \s*[-]?(180(\.0+)?|((1[0-7]\d)|([1-9]?\d))(\.\d+)?)$" [ngModel]="cemetery.GPS" placeholder="49.430812 18.653097" matInput formControlName="GPS">
+        </mat-form-field>
+
+        <label for="cemeteryType">Typ cintorína</label><br>
+        <mat-form-field id="cemeteryType" appearance="fill">
+          <mat-label>Vlož typ cintorína</mat-label>
+          <input [ngModel]="cemetery.cemeteryType" placeholder="rímskokatolícky obecný" matInput formControlName="cemeteryType">
+        </mat-form-field>
+
+        <label for="nationality">Národnosť pochovaného</label><br>
+        <div class="row">
+          <mat-form-field id="nationality" appearance="fill">
+            <mat-label>Vloz Národnosť pochovaného</mat-label>
+            <input placeholder="domácí" matInput formControlName="nationality">
+          </mat-form-field>
+          <div class="column">
+            <button mat-raised-button
+            class="marginRight buttonStyle battleButton"
+            color="primary"
+            (click)="addNationality()"
+            type="button">Pridať</button>
+            <button mat-raised-button
+            class="marginRight buttonStyle battleButton"
+            color="primary"
+            (click)="changeNationality()"
+            type="button">Upraviť</button>
+          </div>
+        </div>
+
+        <div class=" fightsScrollList" *ngIf="nationalityFlag">
+          <h1>Národnosť</h1>
+          <cdk-virtual-scroll-viewport  itemSize="auto" class="example-viewport">
+          <div class="wholeItem" *ngFor="let nationality of nationalityes">
+              <div class="example-item">
+                <mat-form-field class="smallerMatForm"  appearance="fill">
+                  <input [ngModelOptions]="{standalone: true}" id="{{nationality}}" #newValue [ngModel]="nationality" matInput>
+                </mat-form-field>
+
+                <button mat-raised-button
+                #deleteButton
+                id="{{nationality}}"
+                class="buttonStyle"
+                color="primary"
+                (click)="onClickDeleteNationality(deleteButton)"
+                type="button">Delete</button>
+
+                <button mat-raised-button
+                #updateButton
+                id="{{nationality}}"
+                class="buttonStyle"
+                color="primary"
+                (click)="onClickUpdateNationality(updateButton, newValue.value)"
+                type="button">Update</button>
+              </div>
+          </div>
+        </cdk-virtual-scroll-viewport>
+        </div>
+
+        <label for="reasonOfDeath">Dôvod úmrtia</label><br>
+        <div class="row">
+          <mat-form-field id="reasonOfDeath" appearance="fill">
+            <mat-label>Vlož dôvod úmrtia</mat-label>
+            <input placeholder="horúčka" matInput formControlName="reasonOfDeath">
+          </mat-form-field>
+          <div class="column">
+            <button mat-raised-button
+            class="marginRight buttonStyle battleButton"
+            color="primary"
+            (click)="addReasonOfDeath()"
+            type="button">Pridať</button>
+            <button mat-raised-button
+            class="marginRight buttonStyle battleButton"
+            color="primary"
+            (click)="changeReasonOfDeath()"
+            type="button">Upraviť</button>
+          </div>
+        </div>
+
+        <div class=" fightsScrollList" *ngIf="reasonOfDeathFlag">
+          <h1>Dôvod úmrtia</h1>
+          <cdk-virtual-scroll-viewport  itemSize="auto" class="example-viewport">
+          <div class="wholeItem" *ngFor="let reasonOfDeath of deathReasons">
+              <div class="example-item">
+                <mat-form-field class="smallerMatForm"  appearance="fill">
+                  <input [ngModelOptions]="{standalone: true}" id="{{reasonOfDeath}}" #newValue [ngModel]="reasonOfDeath" matInput>
+                </mat-form-field>
+
+                <button mat-raised-button
+                #deleteButton
+                id="{{reasonOfDeath}}"
+                class="buttonStyle"
+                color="primary"
+                (click)="onClickDeleteReason(deleteButton)"
+                type="button">Delete</button>
+
+                <button mat-raised-button
+                #updateButton
+                id="{{reasonOfDeath}}"
+                class="buttonStyle"
+                color="primary"
+                (click)="onClickUpdateReason(updateButton, newValue.value)"
+                type="button">Update</button>
+              </div>
+          </div>
+        </cdk-virtual-scroll-viewport>
+        </div>
+
+
+
+        <label for="dateOfDeath">Dátum úmrtia</label><br>
+        <div class="row">
+          <mat-form-field id="dateOfDeath" appearance="fill">
+            <mat-label>Vlož dátum úmrtia</mat-label>
+            <input placeholder="1/10/1918"  matInput formControlName="dateOfDeath">
+          </mat-form-field>
+          <div class="column">
+            <button mat-raised-button
+            class="marginRight buttonStyle battleButton"
+            color="primary"
+            (click)="addDateOfDeath()"
+            type="button">Pridať</button>
+            <button mat-raised-button
+            class="marginRight buttonStyle battleButton"
+            color="primary"
+            (click)="changeDateOfDeath()"
+            type="button">Upraviť</button>
+          </div>
+        </div>
+
+        <div class=" fightsScrollList" *ngIf="dateOfDeathFlag">
+          <h1>Dátum úmrtia</h1>
+          <cdk-virtual-scroll-viewport  itemSize="auto" class="example-viewport">
+          <div class="wholeItem" *ngFor="let deathDate of deathDates">
+              <div class="example-item">
+                <mat-form-field class="smallerMatForm"  appearance="fill">
+                  <input [ngModelOptions]="{standalone: true}" id="{{deathDate.id}}" #newValue [ngModel]="deathDate.element" matInput>
+                </mat-form-field>
+
+                <button mat-raised-button
+                #deleteButton
+                id="{{deathDate.id}}"
+                class="buttonStyle"
+                color="primary"
+                (click)="onClickDeleteDate(deleteButton)"
+                type="button">Delete</button>
+
+                <button mat-raised-button
+                #updateButton
+                id="{{deathDate.id}}"
+                class="buttonStyle"
+                color="primary"
+                (click)="onClickUpdateDate(updateButton, newValue.value)"
+                type="button">Update</button>
+              </div>
+          </div>
+        </cdk-virtual-scroll-viewport>
+        </div>
+
+
+
+
+
+        <label for="numberOfGraves">Počet hrobov</label><br>
+        <mat-form-field id="numberOfGraves" appearance="fill">
+          <mat-label>Vlož Počet hrobov</mat-label>
+          <input [ngModel]="cemetery.numberOfGraves" placeholder="2" type="number" matInput formControlName="numberOfGraves">
+        </mat-form-field>
+
+        <label for="numberOfBurried">Počet pochovaných</label><br>
+        <mat-form-field id="numberOfBurried" appearance="fill">
+          <mat-label>Vlož Počet pochovaných</mat-label>
+          <input [ngModel]="cemetery.numberOfBurried" placeholder="2" type="number" matInput formControlName="numberOfBurried">
+        </mat-form-field>
+
+        <div class="row">
+          <div>
+            <button mat-raised-button
+            [disabled]="!cemeteryForm.valid"
+            class="buttonStyle"
+            color="primary"
+            type="submit">Potvrdiť</button>
+          </div>
+
+          <div>
+            <button mat-raised-button
+            class="buttonStyle"
+            color="primary"
+            (click)="remove()"
+            type="button">Zamietnuť</button>
+          </div>
+        </div>
+
+    </form>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,100 @@
+mat-button-toggle-group {
+  margin-left: 12px;
+}
+
+.inputField{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.buttonStyle{
+  font-size: large;
+  margin-bottom: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+mat-form-field {
+  min-width: 300px;
+}
+
+.mainBlok{
+  margin-top: 50px;
+  width: 30%;
+  background-color: white;
+  padding: 10px;
+  font-size: large;
+  border: 1px solid #009999;
+  text-align: center;
+}
+
+.row{
+  display: flex;
+}
+
+.elevate{
+  background-color: white;
+  border: 1px solid #009999;
+  padding: 10px;
+}
+
+.makeLong{
+  margin-top: 322px;
+  margin-bottom: 300px;
+}
+
+.displayFlex{
+  display: flex;
+  justify-content: center;
+}
+
+.center {
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+
+@media only screen and (max-width: 1400px) {
+  .mainBlok {
+    width: 40%;
+  }
+  .mainBlokBigger {
+    width: 40%;
+  }
+
+}
+
+@media only screen and (max-width: 1200px) {
+  .mainBlok {
+    width: 50%;
+  }
+  .mainBlokBigger {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .mainBlok {
+    width: 80%;
+  }
+  .mainBlokBigger {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .mainBlok {
+    width: 100%;
+  }
+  .mainBlokBigger {
+    padding: 0px;
+    width: 100%;
+  }
+  mat-form-field {
+    min-width: 200px;
+  }
+
+}

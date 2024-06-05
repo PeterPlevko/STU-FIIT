@@ -1,0 +1,8 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImageRepository
+metadata:
+  name: projekt-backend
+  namespace: flux-system
+spec:
+  image: xrericha/projekt-backend
+  interval: 1m0s

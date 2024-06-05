@@ -1,0 +1,142 @@
+.close-button{
+  float: right;
+  top:-24px;
+  right:-24px;
+}
+
+.close-icon {
+  transition: 1s ease-in-out;
+}
+
+p{
+  min-height: 20px;
+}
+
+.close-icon:hover {
+  transform: rotate(180deg);
+}
+
+::ng-deep .icon-outside .close-button{
+  float: right;
+  top:-52px;
+  right:-52px;
+}
+
+::ng-deep .icon-outside .mat-dialog-container {
+ overflow: unset
+}
+
+//  here end close btn
+
+/* Solid border */
+hr.solid {
+  width: 100%;
+  border-top: 3px solid #bbb;
+}
+
+.wholeContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
+.importantInfromation{
+  align-items: flex-start;
+  font-size: 20px;
+}
+
+.fightArmy{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.bold{
+  font-weight: bold;
+}
+
+.alignImporantInformation{
+  display: flex;
+}
+
+.wholeContainer h1{
+  font-size: 30px;
+}
+p{
+  font-size: 20px;
+}
+
+.containerTwoColumns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0px 20px;
+}
+
+.example-margin{
+  pointer-events: none;
+}
+
+.image{
+  height: 250px;
+  width: 250px;
+}
+
+.floatRight{
+  float: right;
+  margin-left: 10px;
+  width: 50%;
+}
+
+.container {
+  margin-top: 10px;
+  align-content: center;
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0px 20px;
+}
+
+.column{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.displayFlexPContent{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+@media only screen and (max-width: 1400px) {}
+
+@media only screen and (max-width: 1200px) {
+}
+
+@media only screen and (max-width: 768px) {}
+
+@media only screen and (max-width: 576px) {
+  .displayFlexPContent{
+    flex-direction: column;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .column{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .column h1{
+    font-size: 25px;
+  }
+}

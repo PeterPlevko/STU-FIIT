@@ -1,0 +1,152 @@
+{
+	"info": {
+		"_postman_id": "3bccebb8-b170-4ae6-b0b4-2be898f1b7e2",
+		"name": "uloha 9",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14763343"
+	},
+	"item": [
+		{
+			"name": "search",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9200/tweets/_doc/6c71ddbc-19ce-49a5-8510-c5ba858ef4d9",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"tweets",
+						"_doc",
+						"6c71ddbc-19ce-49a5-8510-c5ba858ef4d9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "count",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9200/tweets/_count",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"tweets",
+						"_count"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "turn of replicas",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"index\" : {\r\n        \"number_of_replicas\" : 0\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9200/_settings",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"_settings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get settings",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9200/_settings",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"_settings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete all",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:9200/*",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"*"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "allow delete all",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"transient\": {\r\n\t\"action.destructive_requires_name\":false\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9200/_cluster/settings",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"_cluster",
+						"settings"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

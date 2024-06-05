@@ -1,0 +1,46 @@
+p
+2
+trojizbovy apartman
+Ivanka pri Dunaji
+Stefanikova 56
+132
+238555
+novostavba
+v
+n 
+v
+p
+2
+garsonka
+Kamenica nad Cirochou
+Estonska 32
+45
+32000
+renovacia kupelne
+v
+p
+2
+chata
+Kamenna Poruba
+Hlavna 1
+123
+65000
+celorocne obyvatelna chata
+v
+h
+180000
+h
+30000
+a
+STARY
+celorocne obyvatelna chata
+Stary Smokovec
+Tatranska 340/A
+158
+195000
+drevena novostavba v perfektnom stave
+v
+z
+Amen
+v
+k

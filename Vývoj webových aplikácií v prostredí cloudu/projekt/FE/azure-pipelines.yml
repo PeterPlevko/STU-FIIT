@@ -1,0 +1,33 @@
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: Npm@1
+  inputs:
+    command: 'install'
+
+- task: Npm@1
+  displayName: npm build
+  inputs:
+     command: 'custom'
+     customCommand: 'run build'
+
+- task: Npm@1
+  displayName: Run unit tests
+  inputs:
+     command: 'custom'
+     customCommand: 'test'
+
+- task: Docker@2
+  inputs:
+      containerRegistry: 'Docker Hub Registry'
+      repository: 'xrericha/projekt-ufe'
+      command: 'buildAndPush'
+      Dockerfile: 'Dockerfile'
+      tags: |
+         1.0.0-$(Build.BuildId)
+         latest
+         dev-latest

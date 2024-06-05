@@ -1,0 +1,13 @@
+:host {
+  display: block;
+  margin: 10px;
+  min-height: 75vh;
+}
+
+.listItem{
+  height: 100%;
+}
+
+mwc-icon.hospitalIcon{
+  color: red;
+}

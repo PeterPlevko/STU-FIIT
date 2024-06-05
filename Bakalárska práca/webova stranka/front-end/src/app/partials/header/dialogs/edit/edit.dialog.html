@@ -1,0 +1,14 @@
+<div class="container">
+  <h1><b>Informácie o uživateľovi</b></h1>
+  <p><b>Použivateľské meno:</b> {{data.user.username}}</p>
+  <p><b>Meno:</b> {{data.user.firstname}}</p>
+  <p><b>Priezvisko:</b> {{data.user.surname}}</p>
+  <p><b>Email:</b> {{data.user.email}}</p>
+  <p><b>Typ použivateľa:</b> {{data.user.userType}}</p>
+
+
+    <div mat-dialog-actions>
+      <button mat-button [mat-dialog-close]="1" (click)="stopEdit()">Odhlásiť</button>
+      <button mat-button (click)="onNoClick()" tabindex="-1">Zrušiť</button>
+    </div>
+</div>

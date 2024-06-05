@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lezec.sk</title>
+    <link rel="stylesheet" type="text/css" href="../libs/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/basic/mainTheme.css">
+    <link rel="stylesheet" type="text/css" href="../css/responsive/mainThemeResponsive.css">
+    <link rel="stylesheet" href="../css/basic/clientRegistration.css">
+    <link rel="stylesheet" href="../css/responsive/clientRegistrationResponsive.css">
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="../pics/mainPage/Logo.png" alt="Lezec.sk" width="200" >
+            </a>
+            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a href="products.html">Produkty</a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#bestOfWeek">Zľavy</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a href="shoppingCard.html">Košík 🛒</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="login.html">Prihlásenie</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<main>
+    <section class="mainForm">
+        <form  class="registrationForm" method="post">
+                <label for="name">Meno</label>
+                <input type="text" id="name" name="name" value=""><br>
+
+                <label for="surName">Priezvisko</label>
+                <input type="text" id="surName" name="surName" value=""><br>
+
+                <label for="Street">Ulica</label>
+                <input type="text" id="Street" name="Street" value=""><br>
+
+                <div class="cityPostalDiv">
+                    <div class="left">
+                        <label for="postalCode">PSČ</label>
+                        <input class="postalInput" type="text" id="postalCode" name="postalCode" value=""><br>
+                    </div>
+
+                    <div class="right">
+                        <label for="city">Mesto</label>
+                        <input class="cityInput" type="text" id="city" name="city" value=""><br>
+                    </div>
+
+                </div><br>
+
+                <label for="email">Emailová adresa</label>
+                <input type="text" id="email" name="email" value=""><br>
+
+                <label for="passWord">Heslo</label>
+                <input type="text" id="passWord" name="passWord" value=""><br>
+
+                <label for="repeatPassWord">Zopakovať heslo</label>
+                <input type="text" id="repeatPassWord" name="repeatPassWord" value=""><br>
+
+                <label for="captcha" >Zadaj captchu: </label>
+                <label style="text-decoration: line-through" for="captcha" id="lblCaptcha"></label>
+                <input type="text" id="captcha" name="captcha" value=""><br>
+
+                <input type="hidden" id="captchaCode" value="">
+
+                <input class="buttonBlack" type="submit" value="Obnoviť heslo">
+            </form>
+    </section>
+
+</main>
+<footer>
+    <section class="bottomInfo">
+        <div class="footerLinksDiv">
+            <a href="contact.html">Kontakt</a>
+            <a href="contact.html">Obchodné podmienky</a>
+            <a href="shopNetwork.html">Predajná sieť</a>
+            <a href="contact.html">Reklamácia</a>
+        </div>
+        <p class="copyright">Copyright (c) 2021</p>
+    </section>
+    <section class="bottomLogoSection">
+        <img class="eshopLogo" src="../pics/mainPage/Logo.png" alt="shop logo" width="200" >
+    </section>
+</footer>
+
+<script type="text/javascript" src="../libs/jquery/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../libs/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../libs/helperMethods.js"></script>
+<script>
+    randomBackground();
+    document.getElementById('captchaCode').value = Math.floor(Math.random() * 1000);
+    document.getElementById('lblCaptcha').innerHTML = document.getElementById('captchaCode').value;
+</script>
+</body>
+</html>

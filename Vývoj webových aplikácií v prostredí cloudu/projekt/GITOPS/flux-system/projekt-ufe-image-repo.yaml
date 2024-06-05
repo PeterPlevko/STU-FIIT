@@ -1,0 +1,8 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImageRepository
+metadata:
+  name: projekt-ufe
+  namespace: flux-system
+spec:
+  image: xrericha/projekt-ufe
+  interval: 1m0s

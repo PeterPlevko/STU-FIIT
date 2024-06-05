@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="805.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.TeacherEnvironmentController">
+   <children>
+      <TabPane prefHeight="400.0" prefWidth="805.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="menu 1">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button layoutX="14.0" layoutY="28.0" mnemonicParsing="false" onAction="#printPay" text="plat" />
+                        <Button layoutX="16.0" layoutY="84.0" mnemonicParsing="false" onAction="#explaintSubject" text="vysvetli latku" />
+                        <Button layoutX="15.0" layoutY="139.0" mnemonicParsing="false" onAction="#shout" text="zazjap" />
+                        <Button layoutX="15.0" layoutY="186.0" mnemonicParsing="false" onAction="#printMessage" text="sprava" />
+                        <Label fx:id="payLabel" layoutX="75.0" layoutY="29.0" prefHeight="24.0" prefWidth="296.0" />
+                        <Label fx:id="explainSubjectLabel" layoutX="128.0" layoutY="83.0" prefHeight="26.0" prefWidth="325.0" />
+                        <Label fx:id="shoutLabel" layoutX="91.0" layoutY="140.0" prefHeight="22.0" prefWidth="355.0" />
+                        <Label fx:id="messageLabel" layoutX="103.0" layoutY="187.0" prefHeight="24.0" prefWidth="240.0" />
+                        <Label fx:id="hasMessageLabel" layoutX="97.0" layoutY="208.0" prefHeight="24.0" prefWidth="141.0" text="Prisla nova sprava" visible="false" />
+                        <Button layoutX="721.0" layoutY="332.0" mnemonicParsing="false" onAction="#signOut" text="odlasenie " />
+                        <Button layoutX="15.0" layoutY="255.0" mnemonicParsing="false" onAction="#setTimetable" text="nastav rozvrh" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="menu 2">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ComboBox fx:id="comboBoxStudents" layoutX="26.0" layoutY="47.0" prefWidth="150.0" />
+                        <ComboBox fx:id="comboBoxThings" layoutX="311.0" layoutY="47.0" prefWidth="150.0" />
+                        <Label layoutX="33.0" layoutY="21.0" prefHeight="17.0" prefWidth="140.0" text="vyber studenta" />
+                        <Label layoutX="332.0" layoutY="21.0" prefHeight="17.0" prefWidth="142.0" text="vyber co mu chces zmenit" />
+                        <ListView fx:id="studentListView" layoutX="554.0" layoutY="2.0" prefHeight="369.0" prefWidth="251.0" />
+                        <Button layoutX="26.0" layoutY="134.0" mnemonicParsing="false" onAction="#findOut" text="odoslat" />
+                        <Button layoutX="470.0" layoutY="47.0" mnemonicParsing="false" onAction="#chooseAction" text="potvrd" />
+                        <TextField fx:id="firstLabel" layoutX="29.0" layoutY="95.0" />
+                        <TextField fx:id="secondLabel" layoutX="312.0" layoutY="95.0" />
+                        <Button layoutX="192.0" layoutY="47.0" mnemonicParsing="false" onAction="#setStudent" text="potvrd" />
+                        <Button layoutX="14.0" layoutY="332.0" mnemonicParsing="false" onAction="#signOut" text="odhlasenie" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,48 @@
+<!-- Author:Radovan CYPRICH-->
+<!ELEMENT olympics (language,athletes)>
+<!ELEMENT language EMPTY>
+<!ATTLIST language language CDATA #FIXED "EN">
+
+<!ELEMENT athletes (athlete*)>
+
+<!ELEMENT athlete (name,informations,date-of-birth,sport,country,olympic-starts)>
+<!ATTLIST athlete rank CDATA #IMPLIED>
+<!ATTLIST athlete league CDATA #IMPLIED>
+<!ATTLIST athlete team CDATA #IMPLIED>  
+<!ATTLIST athlete trainers-name CDATA #IMPLIED>
+<!ATTLIST athlete id-athlete ID #REQUIRED>
+<!ELEMENT sport (name-of-sport)>
+<!ATTLIST sport type-of-sport (winter|summer) #REQUIRED>
+<!ELEMENT country (name-of-country,continent)>                 
+
+<!ELEMENT name (first-name,last-name)>
+<!ELEMENT date-of-birth (day,month,year)>
+<!ATTLIST athlete sex (male|female) #REQUIRED>
+<!ELEMENT olympic-starts (start?, start?, start?, start?, start?)>
+<!ELEMENT start (city,name-of-country,continent,year)>
+<!ELEMENT informations (additional-info*)>
+
+<!ATTLIST informations height CDATA #REQUIRED> 
+<!ATTLIST informations weight CDATA #REQUIRED>
+<!ATTLIST informations position CDATA #IMPLIED> 
+<!ATTLIST informations playstyle CDATA #IMPLIED> 
+<!ATTLIST informations status CDATA #IMPLIED>   
+<!ELEMENT additional-info (#PCDATA|EMPTY)*> 
+<!ATTLIST additional-info infoID ID #IMPLIED> 
+<!ATTLIST additional-info athlete IDREF #IMPLIED> 
+
+
+<!ELEMENT city (#PCDATA)>
+<!ELEMENT name-of-country (#PCDATA)> 
+<!ELEMENT continent (#PCDATA)>
+<!ELEMENT first-name (#PCDATA)>
+<!ELEMENT last-name (#PCDATA)>
+<!ELEMENT day (#PCDATA)>
+<!ELEMENT month (#PCDATA)>
+<!ELEMENT winter (#PCDATA)>
+<!ELEMENT summer (#PCDATA)>
+<!ELEMENT year (#PCDATA)>
+<!ELEMENT male (#PCDATA)>
+<!ELEMENT female (#PCDATA)>
+<!ELEMENT name-of-sport (#PCDATA)>
+<!ELEMENT team (#PCDATA)>

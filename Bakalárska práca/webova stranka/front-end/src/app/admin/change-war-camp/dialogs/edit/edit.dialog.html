@@ -1,0 +1,55 @@
+<div class="container">
+  <h3 mat-dialog-title>Issue id: {{data._id}}</h3>
+
+  <form class="mat-dialog-content" (ngSubmit)="submit" #formControl="ngForm">
+
+    <div class="form">
+      <mat-form-field color="accent">
+        <mat-label>Vlož GPS súradnice</mat-label>
+        <input pattern="^[-]?([1-8]?\d(\.\d+)?|90(\.0+)?) \s*[-]?(180(\.0+)?|((1[0-7]\d)|([1-9]?\d))(\.\d+)?)$" required matInput placeholder="48.027423 17.314564" [(ngModel)]="data.GPS" name="surname">
+      </mat-form-field>
+  </div>
+
+  <div class="form">
+
+    <mat-form-field color="accent">
+      <mat-label>Vlož Typ väznených</mat-label>
+      <input matInput placeholder="vojaci-dôstojníci" [(ngModel)]="data.campType" name="campType">
+    </mat-form-field>
+</div>
+
+  <div class="form row">
+    <mat-form-field color="accent">
+      <mat-label>Vlož vybavenie tábora oddelené čiarkou</mat-label>
+      <input matInput placeholder="cemetery,mausoleum" [(ngModel)]="data.equipment" name="equipment">
+    </mat-form-field>
+    <mat-icon class="tooltip" matTooltip=" Všetky typy vybavenia: cemetery, mausoleum, desinfectStation, hospital, lazaret, crypt, mobileOperationComando">info</mat-icon>
+  </div>
+
+<div class="form">
+  <mat-form-field color="accent">
+    <mat-label>Vlož Najväčšiu národnosť zajatých</mat-label>
+    <input matInput placeholder="Rus" [(ngModel)]="data.mainCaptiveNationality" name="mainCaptiveNationality">
+  </mat-form-field>
+</div>
+
+<div class="form">
+  <mat-form-field color="accent">
+    <mat-label>Vlož počet Počet zajatých</mat-label>
+    <input type="number" matInput placeholder="60700" [(ngModel)]="data.numberOfCaptives" name="numberOfCaptives">
+  </mat-form-field>
+</div>
+
+<div class="form">
+  <mat-form-field color="accent">
+    <mat-label>Vlož kto záznam pridal</mat-label>
+    <input matInput placeholder="developer" [(ngModel)]="data.addedBy" name="firstname">
+  </mat-form-field>
+</div>
+
+    <div mat-dialog-actions>
+      <button mat-button  [disabled]="!formControl.valid" [mat-dialog-close]="1" (click)="stopEdit()">Potvrdiť</button>
+      <button mat-button (click)="onNoClick()" tabindex="-1">Zrušiť</button>
+    </div>
+  </form>
+</div>

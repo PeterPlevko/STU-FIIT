@@ -1,0 +1,32 @@
+.mainBlok{
+  margin-top: 100px;
+  width: 60%;
+  background-color: white;
+  font-size: large;
+  padding: 10px;
+  border: 1px solid #009999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image{
+  max-width: 1000px;
+  max-height: 500px;
+  width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+  .image {
+    max-width: 500px;
+    max-height: 500px;
+  }
+  .mainBlok{
+    width: 100%;
+  }
+}
+
+.displayFlex{
+  display: flex;
+  justify-content: center;
+}

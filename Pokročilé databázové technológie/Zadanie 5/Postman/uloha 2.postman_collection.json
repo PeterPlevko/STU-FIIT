@@ -1,0 +1,57 @@
+{
+	"info": {
+		"_postman_id": "a7f1283b-cf37-4601-a882-056afeca1d86",
+		"name": "uloha 2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14763343"
+	},
+	"item": [
+		{
+			"name": "create tweets db",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"settings\": {\r\n        \"number_of_shards\": 3,\r\n        \"number_of_replicas\": 1\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9200/tweets/",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"tweets",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "close index",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:9200/tweets/_close",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"tweets",
+						"_close"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,27 @@
+1. 
+//athlete[sport/(@type-of-sport)= "summer"  and count(.//start) >2]/name
+
+prechadza vsetky elementy athlete a vypise mena sportovcov ktory boli na letnych olympijskych hrach viac ako 2x
+2.
+//athlete[child::informations[number(@height)> 185 and number(@weight)>85] and @sex!="female"]/name 
+
+prechadza vsetky elementy athlete a vypise mena sportovcov ktori su vyssi ako 185 a tazsi ako 85 kg a zaroven su to muzi.
+3.
+//start[(position()=last() or position()=1) and ancestor::athlete/informations[@status="married"]]/concat(ancestor::athlete/name,",",city)
+
+vypise mesto posledneho a prveho olympijskeho startu daneho sportovca ktory je zaroven zenaty 
+4.
+//athlete[preceding::athlete[4] and following::athlete [3]]/name/concat(name,",",sport/name-of-sport)
+
+prechadza vsetky elementy athlete a vypise mena a nazvy sportu sportovcov ktory sa nachadzaju v strede dokumentu presnejsie preceding::athlete[4] nam eliminuje prvych 4 atletov kedze ideme odzadu 
+a following::athlete[3] eliminuje poslednych troch lebo ideme zo zaciatku fukcia concat spaja dva stringy(kvoli vypisu)
+
+5.
+//athlete[informations[not(count(additional-info)=0)] and preceding-sibling::*[4]]/name
+
+prechadza vsetky elementy athlete a vypise mena sportovcov pre ktorych sa v elemente athlete nachadza podelement element additional-info bez prvych styroch sportovcov,tych nevypise tak ci tak
+6.
+//athlete[informations[count(additional-info)=0 and (@status="married" or @playstyle="agressive attack")] and @sex="female"]/name
+
+prechadza vsetky elementy athlete a vypise mena sportovcov pre ktorych sa v elemente athlete nenachadza podelement additional-info a zaroven 
+atribut(elementu informations) status je married alebo atribut(elementu informations) playstyle je agressive attack a zaroven je to zena (atribut elementu athlete)

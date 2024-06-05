@@ -1,0 +1,30 @@
+CREATE INDEX annotations_conversation_id
+ON annotations (conversation_id);
+
+CREATE INDEX context_annotations_conversation_id
+ON context_annotations (conversation_id);
+
+CREATE INDEX context_annotations_context_domain_id
+ON context_annotations (context_domain_id);
+
+CREATE INDEX context_annotations_context_entity_id
+ON context_annotations (context_entity_id);
+
+CREATE INDEX conversation_hashtags_conversation_id
+ON conversation_hashtags (conversation_id);
+
+CREATE INDEX conversation_hashtags_hashtag_id
+ON conversation_hashtags (hashtag_id);
+
+CREATE INDEX conversation_references_conversation_id
+ON conversation_references (conversation_id);
+
+CREATE INDEX conversation_references_parent_id
+ON conversation_references (parent_id);
+
+CREATE INDEX conversations_author_id
+ON conversations (author_id);
+
+CREATE INDEX links_conversation_id
+ON links (conversation_id);
+

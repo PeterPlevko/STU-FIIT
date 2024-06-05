@@ -1,0 +1,43 @@
+<app-header></app-header>
+
+<div class="displayFlex">
+  <div class="mainBlok" [ngClass]="{moveFooter: !selectedValue}">
+    <form>
+      <h1>Potvrdenie zdroja</h1>
+      <mat-form-field appearance="fill">
+        <mat-label>Vyber typ zdroja</mat-label>
+        <mat-select [(ngModel)]="selectedValue" name="information">
+          <mat-option *ngFor="let information of informationTypes" [value]="information.value">
+            {{information.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <h1>Vybraty zdroj: {{selectedValue}}</h1>
+    </form>
+  </div>
+</div>
+
+
+<div *ngIf="selectedValue == 'Cintorín'">
+  <app-cemetery></app-cemetery>
+
+</div>
+
+<div *ngIf="selectedValue == 'Boj'">
+  <app-battle></app-battle>
+</div>
+
+<div *ngIf="selectedValue == 'Pamätník'">
+  <app-memorial></app-memorial>
+</div>
+
+<div *ngIf="selectedValue == 'Vojak'">
+  <app-soldier></app-soldier>
+</div>
+
+<div *ngIf="selectedValue == 'Zajatecký tábor'">
+  <app-war-camp></app-war-camp>
+</div>
+
+<app-footer></app-footer>

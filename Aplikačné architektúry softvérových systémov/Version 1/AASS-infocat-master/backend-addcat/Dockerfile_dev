@@ -1,0 +1,41 @@
+ARG NODE_IMAGE=node:16.13.1-alpine
+
+FROM $NODE_IMAGE AS base
+RUN apk --no-cache add dumb-init
+RUN mkdir -p /home/node/app && chown node:node /home/node/app
+WORKDIR /home/node/app
+USER node
+RUN mkdir tmp
+
+FROM base AS dependencies
+COPY --chown=node:node ./package*.json ./
+RUN npm ci
+COPY --chown=node:node . .
+
+FROM dependencies AS build
+RUN node ace build --production --ignore-ts-errors
+
+FROM base AS production
+ENV PORT=
+ENV HOST=
+ENV NODE_ENV=
+ENV APP_KEY=
+ENV DRIVE_DISK=
+ENV DB_CONNECTION=
+ENV PG_HOST=
+ENV PG_PORT=
+ENV PG_USER=
+ENV PG_PASSWORD=
+ENV PG_DB_NAME=
+ENV API_TOKEN=
+ENV SMTP_HOST=
+ENV SMTP_PORT=
+ENV SMTP_USERNAME=
+ENV SMTP_PASSWORD=
+ENV CACHE_VIEWS=
+
+COPY --chown=node:node ./package*.json ./
+RUN npm ci --production
+COPY --chown=node:node --from=build /home/node/app/build .
+
+CMD [ "dumb-init", "npm", "start" ]

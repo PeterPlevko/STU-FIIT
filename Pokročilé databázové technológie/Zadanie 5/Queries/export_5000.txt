@@ -1,0 +1,89 @@
+COPY(SELECT row_to_json(results) 
+FROM (
+	SELECT *
+	FROM (
+		SELECT conversations.id as source_id, jsonb_build_object(
+			 'id', authors.id,
+			 'name', regexp_replace(authors.name, E'[\\n\\r\\f\\u000B\\u0085\\u2028\\u2029"”]+', ' ', 'g' ),
+			 'username', regexp_replace(authors.username, E'[\\n\\r\\f\\u000B\\u0085\\u2028\\u2029"”]+', ' ', 'g' ),
+			 'description', regexp_replace(authors.description, E'[\\n\\r\\f\\u000B\\u0085\\u2028\\u2029"”]+', ' ', 'g' ),
+		     'followers_count', authors.followers_count,
+			 'following_count', authors.following_count,
+			 'tweet_count', authors.tweet_count,
+			 'listed_count', authors.listed_count
+		 ) as author, regexp_replace(conversations.content, E'[\\n\\r\\f\\u000B\\u0085\\u2028\\u2029"”]+', ' ', 'g' ) as content, conversations.language , conversations.source, conversations.retweet_count, conversations.reply_count, conversations.like_count, conversations.quote_count, conversations.possibly_sensitive, conversations.created_at
+	FROM conversations
+	INNER JOIN authors authors ON conversations.author_id = authors.id
+	ORDER BY conversations.author_id
+	LIMIT 5000
+	) conversation LEFT JOIN LATERAL (
+		select 
+		array_agg(hashtags.tag) as hashtags
+		from conversation_hashtags LEFT join hashtags on conversation_hashtags.hashtag_id = hashtags.id
+		where source_id = conversation_hashtags.conversation_id
+	) hashtags on true LEFT JOIN LATERAL (
+		select json_agg(jsonb_build_object( 
+			 'url', links.url,
+			 'title', regexp_replace(links.title, E'[\\n\\r\\f\\u000B\\u0085\\u2028\\u2029"”]+', ' ', 'g' ), 
+			 'description', regexp_replace(links.description, E'[\\n\\r\\f\\u000B\\u0085\\u2028\\u2029"”]+', ' ', 'g' )
+		 )) as links
+		from links
+		where source_id = links.conversation_id
+	) links on true LEFT JOIN LATERAL (
+		select json_agg(jsonb_build_object( 
+			 'value', regexp_replace(annotations.value, E'[\\n\\r\\f\\u000B\\u0085\\u2028\\u2029"”]+', ' ', 'g' ),
+			 'type', regexp_replace(annotations.type, E'[\\n\\r\\f\\u000B\\u0085\\u2028\\u2029"”]+', ' ', 'g' ),
+			 'probability', annotations.probability
+		 )) as annotations
+		from annotations
+		where source_id = annotations.conversation_id
+	) annotations on true LEFT JOIN LATERAL (
+        SELECT 
+        json_agg (jsonb_build_object(
+            'domain', jsonb_build_object(
+                'name', regexp_replace(context_domains.name, E'[\n\r\f\u000B\u0085\u2028\u2029"”]+', ' ', 'g' ),
+                'description',  regexp_replace(context_domains.description, E'[\n\r\f\u000B\u0085\u2028\u2029"”]+', ' ', 'g' )
+            ),
+            'entity', jsonb_build_object(
+                'name', regexp_replace(context_entities.name, E'[\n\r\f\u000B\u0085\u2028\u2029"”]+', ' ', 'g' ),
+                'description',  regexp_replace(context_entities.description, E'[\n\r\f\u000B\u0085\u2028\u2029"”]+', ' ', 'g' )
+            )
+        )) as context_annotations
+        FROM context_annotations context_annotations 
+        INNER JOIN context_domains context_domains ON context_annotations.context_domain_id = context_domains.id
+        INNER JOIN context_entities context_entities ON context_annotations.context_entity_id = context_entities.id
+        WHERE context_annotations.conversation_id = source_id
+    ) context_annotations ON true LEFT JOIN LATERAL (
+		select json_agg(jsonb_build_object(
+			'id', parent_id, 
+			'type', type, 	
+			'author', author, 	
+			'content', regexp_replace(content, E'[\\n\\r\\f\\u000B\\u0085\\u2028\\u2029"”]+', ' ', 'g' ), 	
+			'hashtags', hashtags
+		)) as conversation_references
+		from (
+			select * 
+		from (
+			select *
+		from conversation_references
+		where source_id = conversation_references.conversation_id
+		) as conversation_references_inner LEFT JOIN LATERAL(
+			select * 
+		from conversations
+		where conversations.id = conversation_references_inner.parent_id
+		) as conversations_inner on true LEFT JOIN LATERAL (
+			select jsonb_build_object(
+			 'id', authors.id,
+			 'name', regexp_replace(authors.name, E'[\\n\\r\\f\\u000B\\u0085\\u2028\\u2029"”]+', ' ', 'g' ),
+			 'username', regexp_replace(authors.username, E'[\\n\\r\\f\\u000B\\u0085\\u2028\\u2029"”]+', ' ', 'g' )
+		 ) as author
+		from authors
+		where authors.id = conversations_inner.author_id
+		) as author_inner on true LEFT JOIN LATERAL (
+		select array_agg(hashtags.tag) as hashtags
+		from conversation_hashtags LEFT join hashtags on conversation_hashtags.hashtag_id = hashtags.id
+		where conversations_inner.id = conversation_hashtags.conversation_id
+	) hashtags_inner on true
+		) as final
+	) conversation_references on true
+) results) TO 'D:\dump\normalized_tweets_5000.json' WITH (FORMAT text, HEADER FALSE);

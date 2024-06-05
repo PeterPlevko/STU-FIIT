@@ -1,0 +1,40 @@
+<div class="container">
+  <h3 mat-dialog-title>Add new Issue</h3>
+
+  <form class="mat-dialog-content" (ngSubmit)="submit" #formControl="ngForm">
+
+    <div class="form">
+      <mat-form-field color="accent">
+        <mat-label>Meno vojaka</mat-label>
+        <input  required matInput placeholder="Fridrich Kubovič" [(ngModel)]="data.name" name="name">
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field color="accent">
+        <mat-label>Dátum narodenia</mat-label>
+        <input matInput placeholder="11/11/2020" [(ngModel)]="data.dateOfBirth" name="dateOfBirth">
+      </mat-form-field>
+  </div>
+
+
+  <div class="form">
+    <mat-form-field color="accent">
+      <mat-label>Dátum úmrtia</mat-label>
+      <input matInput placeholder="11/20/1520" [(ngModel)]="data.dateOfDeath" name="dateOfDeath">
+    </mat-form-field>
+</div>
+
+<div class="form">
+  <mat-form-field color="accent">
+    <mat-label>Príbeh</mat-label>
+    <input matInput placeholder="príbeh" [(ngModel)]="data.story" name="story">
+  </mat-form-field>
+</div>
+
+    <div mat-dialog-actions>
+      <button mat-button  [disabled]="!formControl.valid" [mat-dialog-close]="1" (click)="confirmAdd()">Potvrdiť</button>
+      <button mat-button (click)="onNoClick()" tabindex="-1">Zrušiť</button>
+    </div>
+  </form>
+</div>

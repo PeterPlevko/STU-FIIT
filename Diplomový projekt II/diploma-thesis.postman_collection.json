@@ -1,0 +1,561 @@
+{
+	"info": {
+		"_postman_id": "f8a46967-3fdb-4ec0-8d96-7f388593d9a6",
+		"name": "diploma-thesis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14763343"
+	},
+	"item": [
+		{
+			"name": "firebase/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"admin@gmail.com\",\r\n    \"password\": \"admin@gmail.com\",\r\n    \"returnSecureToken\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDY41_EznVxI7Vhpm6jCdg2IVpTntB4zcI",
+					"protocol": "https",
+					"host": [
+						"identitytoolkit",
+						"googleapis",
+						"com"
+					],
+					"path": [
+						"v1",
+						"accounts:signInWithPassword"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "AIzaSyDY41_EznVxI7Vhpm6jCdg2IVpTntB4zcI"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "annotation/getAnnotations",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{firebaseToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/annotation/getAnnotations",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"annotation",
+						"getAnnotations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "annotation/createAnnotation",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{firebaseToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firebaseUserUID\": \"w4stJpoiKYaH31FdifH1Ql6yOCK2\",\r\n    \"name\": \"name\",\r\n    \"shortcut\": \"shortcut\",\r\n    \"description\": \"description\",\r\n    \"relatedTo\": \"f5g6h7i8-j9k0l1m2n3o4s\",\r\n    \"createdAt\": \"2023-12-20T13:14:26.358Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/annotation/createAnnotation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"annotation",
+						"createAnnotation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "annotation/deleteAnnotation",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{firebaseToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/annotation/deleteAnnotation/k1l2m3n4o5-p6q7r8s9t0u1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"annotation",
+						"deleteAnnotation",
+						"k1l2m3n4o5-p6q7r8s9t0u1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "annotation/connectAnnotations",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{firebaseToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"annotationParent\": \"k1l2m3n4o5-p6q7r8s9t0u1asdasd\",\r\n    \"annotationChild\": \"a1d2_i3d4e5n6t7i8f9i0e1r2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/annotation/connectAnnotations",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"annotation",
+						"connectAnnotations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "annotation/getColumnAnnotations",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{firebaseToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"datasetId\": \"jloUpYvlndz8Of1NQv1M\",\r\n    \"columnName\": \"cost_of_click\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/annotation/getColumnAnnotations",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"annotation",
+						"getColumnAnnotations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "annotation/annotateColumn",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{firebaseToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firebaseDatasetID\": \"jloUpYvlndz8Of1NQv1M\",\r\n    \"columns\": [\r\n        {\r\n            \"columnName\": \"uid\",\r\n            \"columnDescription\": \"Unique Identifier: A unique alphanumeric code assigned to each visitor for identification purposes.\",\r\n            \"selectedAnnotationId\": null\r\n        },\r\n        {\r\n            \"columnName\": \"visit_date\",\r\n            \"columnDescription\": \"Visit Date: The date when the visitor accessed the website or platform.\",\r\n            \"selectedAnnotationId\": \"j0k1l2m3n4-j5o6p7q8r9s0\"\r\n        },\r\n        {\r\n            \"columnName\": \"utm_source\",\r\n            \"columnDescription\": \"UTM Source: The specific source that directed the visitor to the website, often used in UTM parameters for tracking marketing efforts (e.g., \\\"facebook\\\", \\\"google\\\").\",\r\n            \"selectedAnnotationId\": null\r\n        },\r\n        {\r\n            \"columnName\": \"utm_medium\",\r\n            \"columnDescription\": \"UTM Medium: The general category of the marketing medium that brought the visitor to the website (e.g., \\\"email\\\", \\\"cpc\\\").\",\r\n            \"selectedAnnotationId\": null\r\n        },\r\n        {\r\n            \"columnName\": \"utm_campaign\",\r\n            \"columnDescription\": \"UTM Campaign: The specific marketing campaign or promotion that led to the visit (e.g., \\\"summer_sale\\\", \\\"holiday_promo\\\").\",\r\n            \"selectedAnnotationId\": \"f5g6h7i8-j9k0l1m2n3o4s\"\r\n        },\r\n        {\r\n            \"columnName\": \"converted\",\r\n            \"columnDescription\": \"Conversion Status: Indicates whether the visitor completed a desired action or goal on the website (e.g., true for conversion, false for non-conversion).\",\r\n            \"selectedAnnotationId\": null\r\n        },\r\n        {\r\n            \"columnName\": \"cost_of_click\",\r\n            \"columnDescription\": \"Cost of Click: The monetary cost incurred for each click associated with the marketing campaign or source that brought the visitor to the website.\",\r\n            \"selectedAnnotationId\": null\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/annotation/annotateColumn",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"annotation",
+						"annotateColumn"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "annotation/getExport",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{firebaseToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/annotation/getExport/jloUpYvlndz8Of1NQv1M",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"annotation",
+						"getExport",
+						"jloUpYvlndz8Of1NQv1M"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "column/getColumnDescription",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{firebaseToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/column/getColumnDescription?columnName=converted&datasetId=jloUpYvlndz8Of1NQv1M",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"column",
+						"getColumnDescription"
+					],
+					"query": [
+						{
+							"key": "columnName",
+							"value": "converted"
+						},
+						{
+							"key": "datasetId",
+							"value": "jloUpYvlndz8Of1NQv1M"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "column/updateOrCreate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{firebaseToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firebaseDatasetID\": \"jloUpYvlndz8Of1NQv1M\",\r\n    \"columns\": [\r\n        {\r\n            \"columnName\": \"uid\",\r\n            \"columnDescription\": \"Unique Identifier: A unique alphanumeric code assigned to each visitor for identification purposes.\",\r\n            \"selectedAnnotationId\": null\r\n        },\r\n        {\r\n            \"columnName\": \"visit_date\",\r\n            \"columnDescription\": \"Visit Date: The date when the visitor accessed the website or platform.\",\r\n            \"selectedAnnotationId\": null\r\n        },\r\n        {\r\n            \"columnName\": \"utm_source\",\r\n            \"columnDescription\": \"UTM Source: The specific source that directed the visitor to the website, often used in UTM parameters for tracking marketing efforts (e.g., \\\"facebook\\\", \\\"google\\\").\",\r\n            \"selectedAnnotationId\": null\r\n        },\r\n        {\r\n            \"columnName\": \"utm_medium\",\r\n            \"columnDescription\": \"UTM Medium: The general category of the marketing medium that brought the visitor to the website (e.g., \\\"email\\\", \\\"cpc\\\").\",\r\n            \"selectedAnnotationId\": null\r\n        },\r\n        {\r\n            \"columnName\": \"utm_campaign\",\r\n            \"columnDescription\": \"UTM Campaign: The specific marketing campaign or promotion that led to the visit (e.g., \\\"summer_sale\\\", \\\"holiday_promo\\\").\",\r\n            \"selectedAnnotationId\": null\r\n        },\r\n        {\r\n            \"columnName\": \"converted\",\r\n            \"columnDescription\": \"Conversion Status: Indicates whether the visitor completed a desired action or goal on the website (e.g., true for conversion, false for non-conversion).\",\r\n            \"selectedAnnotationId\": null\r\n        },\r\n        {\r\n            \"columnName\": \"cost_of_click\",\r\n            \"columnDescription\": \"Cost of Click: The monetary cost incurred for each click associated with the marketing campaign or source that brought the visitor to the website.\",\r\n            \"selectedAnnotationId\": null\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/column/updateOrCreate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"column",
+						"updateOrCreate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "dataset/createDataset",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{firebaseToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"datasetName\": \"dataset\",\r\n    \"firebaseUserUID\": \"w4stJpoiKYaH31FdifH1Ql6yOCK2\",\r\n    \"firebaseDatasetID\": \"IRBI5FA3VtAbWHJHxNt8\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/dataset/createDataset",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"dataset",
+						"createDataset"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "dataset/getDatasetDescription",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{firebaseToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/dataset/getDatasetDescription/i11dedyswB5bQ7RVTkD0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"dataset",
+						"getDatasetDescription",
+						"i11dedyswB5bQ7RVTkD0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "dataset/updateDatasetDescription",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{firebaseToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"datasetDescription\": \"Ecommerce Customers dataset description\",\r\n    \"id\": \"i11dedyswB5bQ7RVTkD0\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/dataset/updateDatasetDescription",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"dataset",
+						"updateDatasetDescription"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "firebase/register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"returnSecureToken\": true,\r\n    \"email\": \"register@gmail.com\",\r\n    \"password\": \"register@gmail.com\",\r\n    \"clientType\": \"CLIENT_TYPE_WEB\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDY41_EznVxI7Vhpm6jCdg2IVpTntB4zcI",
+					"protocol": "https",
+					"host": [
+						"identitytoolkit",
+						"googleapis",
+						"com"
+					],
+					"path": [
+						"v1",
+						"accounts:signUp"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "AIzaSyDY41_EznVxI7Vhpm6jCdg2IVpTntB4zcI"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "firebase/setUserRole/admin",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{firebaseToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"data\": {\r\n        \"uid\": \"w4stJpoiKYaH31FdifH1Ql6yOCK2\",\r\n        \"role\": {\r\n            \"admin\": true\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-diploma-thesis-project-c46d9.cloudfunctions.net/SetUserRole",
+					"protocol": "https",
+					"host": [
+						"us-central1-diploma-thesis-project-c46d9",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"SetUserRole"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "firebase/setUserRole/user",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{firebaseToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"data\": {\r\n        \"uid\": \"w4stJpoiKYaH31FdifH1Ql6yOCK2\",\r\n        \"role\": {\r\n            \"user\": true\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-diploma-thesis-project-c46d9.cloudfunctions.net/SetUserRole",
+					"protocol": "https",
+					"host": [
+						"us-central1-diploma-thesis-project-c46d9",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"SetUserRole"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

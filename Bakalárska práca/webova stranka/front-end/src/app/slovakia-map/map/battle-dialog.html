@@ -1,0 +1,39 @@
+<button mat-icon-button class="close-button" [mat-dialog-close]="true">
+  <mat-icon class="close-icon" color="warn">close</mat-icon>
+</button>
+
+<div class="wholeContainer">
+  <h1>Boj</h1>
+  <hr class="solid">
+  <div class="importantInfromation containerTwoColumns">
+    <div>
+      <p>Názov: </p>
+      <p>GPS: </p>
+      <p>Začiatok boja: </p>
+      <p>Koniec boja: </p>
+      <p>Výsledok: </p>
+    </div>
+    <div>
+      <p>{{data.name}} </p>
+      <p>{{data.GPS}} </p>
+      <p>{{data.startDate}} </p>
+      <p>{{data.endDate}} </p>
+      <p>{{data.result}} </p>
+    </div>
+  </div>
+    <hr class="solid">
+    <div class="fightArmy">
+      <p><b>Zúčastnené jednotky Rakúsko-Uhorskej armády:</b> {{data.austriaHungaryArmy}}</p>
+      <p><b>Veľkost Rakúsko-Uhorskej armády:</b> {{data.austriaHungaryArmyNumber}}</p>
+      <p><b>Zúčastnené jednotky Ruskej armády:</b> {{data.austriaHungaryArmy}}</p>
+      <p><b>Veľkost Ruskej armády:</b> {{data.russianArmyNumber}}</p>
+    </div>
+    <hr class="solid">
+    <div>
+      <p>Poznámka: {{data.note}}</p>
+    </div>
+
+
+
+
+</div>

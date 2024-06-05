@@ -1,0 +1,11 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: ufe-controller
+subjects:
+- kind: ServiceAccount
+  name: ufe-controller-account
+roleRef:
+  kind: ClusterRole
+  name: webcomponents-reader
+  apiGroup: rbac.authorization.k8s.io

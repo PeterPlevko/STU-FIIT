@@ -1,0 +1,68 @@
+mat-button-toggle-group {
+  margin-left: 12px;
+}
+
+.inputField{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.middle{
+margin-top: 100px;
+width: 30%;
+background-color: white;
+font-size: large;
+padding-top: 10px;
+padding-bottom: 10px;
+border: 1px solid #009999;
+}
+.buttonStyle{
+  font-size: large;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+mat-form-field {
+  width: 90%;
+}
+
+::ng-deep .footer {
+  color: red;
+  margin: 13px 25% 0 25% !important;
+}
+
+.alignButtons{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+}
+
+@media only screen and (max-width: 992px) {
+  .middle{
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .alignButtons {
+    flex-direction: column;
+    align-items: center;
+  }
+  .middle{
+    width: 100%;
+  }
+  .alignButtons button{
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  .middle{
+    margin-bottom: 0px;
+  }
+}
+
+.displayFlex{
+  display: flex;
+  justify-content: center;
+}

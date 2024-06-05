@@ -1,0 +1,8 @@
+import lxml.etree as ET
+from django.http import HttpResponse
+
+
+def transformation(request):
+    xml = ET.parse("file.xml")
+    xslt_transformation = ET.XSLT(ET.parse('transformation.xsl'))
+    return HttpResponse(xslt_transformation(xml))

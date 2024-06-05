@@ -1,0 +1,34 @@
+[
+    {
+        "surname": "admin",
+        "firstname": "admin",
+        "password": "$2b$10$8DLQ7NHuvjnDOiyPNfZlyOQdkSNSki07mF3SHHLNTXVTsy4G8D.RC",
+        "email": "admin@admin.com",
+        "username": "admin",
+        "userType": "admin"
+    },
+    {
+        "surname": "user",
+        "firstname": "user",
+        "password": "$2b$10$w2g/JMxEHSSN/R.rJCloLeUrZGfMiMzw0I0YE//gEfdovXN3SoUN.",
+        "email": "user@user.com",
+        "username": "user",
+        "userType": "user"
+    },
+    {
+        "surname": "historian",
+        "firstname": "historian",
+        "password": "$2b$10$jlwLoGHocIUg4GQeDCk1ZeGYLhj9VHpz./B/a1J4PmzqQeplNU6AK",
+        "email": "historian@historian.com",
+        "username": "historian",
+        "userType": "historian"
+    },
+    {
+        "surname": "Plevko",
+        "firstname": "Peter",
+        "password": "$2b$10$aOXFC64Lle/v051ouL/7F.OKmta1ypDP04NTwI01sgUJT.1Upylwm",
+        "email": "pplevko@gmail.com",
+        "username": "kuntox",
+        "userType": "user"
+    }
+]

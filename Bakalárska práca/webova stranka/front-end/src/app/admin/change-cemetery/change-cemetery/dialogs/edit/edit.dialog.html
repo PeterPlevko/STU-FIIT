@@ -1,0 +1,72 @@
+<div class="container">
+  <h3 mat-dialog-title>Id záznamu: {{data._id}}</h3>
+
+  <form class="mat-dialog-content" (ngSubmit)="submit" #formControl="ngForm">
+
+    <div class="form">
+      <mat-form-field color="accent">
+        <mat-label>Vlož GPS súradnice</mat-label>
+        <input pattern="^[-]?([1-8]?\d(\.\d+)?|90(\.0+)?) \s*[-]?(180(\.0+)?|((1[0-7]\d)|([1-9]?\d))(\.\d+)?)$" required matInput placeholder="48.848494 18.2252" [(ngModel)]="data.GPS" name="GPS">
+      </mat-form-field>
+  </div>
+
+  <div class="form">
+    <mat-form-field color="accent">
+      <mat-label>Vlož typ cintorína</mat-label>
+      <input matInput placeholder="obecný" [(ngModel)]="data.cemeteryType" name="cemeteryType">
+    </mat-form-field>
+</div>
+
+<div class="form">
+  <mat-form-field color="accent">
+    <mat-label>Vlož národnosti vojakov oddelené čiarkou</mat-label>
+    <input matInput placeholder="10 slov., srb. zajatec" [(ngModel)]="data.nationality" name="nationality">
+  </mat-form-field>
+</div>
+
+<div class="form">
+  <mat-form-field color="accent">
+    <mat-label>Vlož dátumi úmrtí oddelené čiarkou</mat-label>
+    <input matInput placeholder="1915,1918" [(ngModel)]="data.dateOfDeath" name="dateOfDeath">
+  </mat-form-field>
+</div>
+
+
+
+
+<div class="form">
+  <mat-form-field color="accent">
+    <mat-label>Vlož dôvody úmrtí oddelené čiarkou</mat-label>
+    <input matInput placeholder="2x týfus, zastrelený" [(ngModel)]="data.reasonOfDeath" name="reasonOfDeath">
+  </mat-form-field>
+</div>
+
+
+<div class="form">
+  <mat-form-field color="accent">
+    <mat-label>Vlož počet hrobov</mat-label>
+    <input type="number" matInput placeholder="3" [(ngModel)]="data.numberOfGraves" name="numberOfGraves">
+  </mat-form-field>
+</div>
+
+<div class="form">
+  <mat-form-field color="accent">
+    <mat-label>Vlož počet pochovaných</mat-label>
+    <input type="number" matInput placeholder="2" [(ngModel)]="data.numberOfBurried" name="numberOfBurried">
+  </mat-form-field>
+</div>
+
+
+  <div class="form">
+    <mat-form-field color="accent">
+      <mat-label>Vlož kto záznam pridal</mat-label>
+      <input matInput placeholder="Pridané pouzivateľom" [(ngModel)]="data.addedBy" name="admin">
+    </mat-form-field>
+</div>
+
+    <div mat-dialog-actions>
+      <button mat-button  [disabled]="!formControl.valid" [mat-dialog-close]="1" (click)="stopEdit()">Potvrdiť</button>
+      <button mat-button (click)="onNoClick()" tabindex="-1">Zrušiť</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,87 @@
+
+.column{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.buttonStyle{
+font-size: large;
+margin-bottom: 20px;
+}
+
+mat-form-field {
+  min-width: 300px;
+}
+
+.displayFlex{
+  display: flex;
+  justify-content: center;
+}
+
+
+.mainBlok{
+  margin-top: 50px;
+  width: 30%;
+  background-color: white;
+  font-size: large;
+  padding: 10px;
+  border: 1px solid #009999;
+  text-align: center;
+}
+
+.mainBlokBigger{
+  margin-top: 50px;
+  width: 50%;
+  background-color: white;
+  font-size: large;
+  padding: 10px;
+  border: 1px solid #009999;
+  text-align: center;
+}
+
+#slovakiaMapBattle {
+  height: 60vh;
+  width: 100%;
+}
+
+@media only screen and (max-width: 1400px) {
+  .mainBlok {
+    width: 40%;
+  }
+  .mainBlokBigger {
+    width: 40%;
+  }
+
+}
+
+@media only screen and (max-width: 1200px) {
+  .mainBlok {
+    width: 50%;
+  }
+  .mainBlokBigger {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .mainBlok {
+    width: 80%;
+  }
+  .mainBlokBigger {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .mainBlok {
+    width: 100%;
+  }
+  .mainBlokBigger {
+    padding: 0px;
+    width: 100%;
+  }
+  mat-form-field {
+  min-width: 200px;
+  }
+}

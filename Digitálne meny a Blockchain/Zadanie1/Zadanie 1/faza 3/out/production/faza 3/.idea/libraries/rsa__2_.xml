@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="rsa (2)">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/rsa.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

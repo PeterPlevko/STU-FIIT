@@ -1,0 +1,128 @@
+<app-header></app-header>
+<div class="marginWhole">
+
+
+  <div class="centerMiddle">
+
+    <div class="container mat-elevation-z8">
+
+      <div class="form">
+        <mat-form-field floatPlaceholder="never" color="accent">
+          <input matInput #filter placeholder="Filter issues">
+        </mat-form-field>
+      </div>
+
+      <mat-table #table [dataSource]="dataSource" matSort class="mat-cell">
+        ng update @angular/cli @angular/core
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+
+        <!-- ID Column -->
+        <ng-container matColumnDef="id">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>id</mat-header-cell>
+          <mat-cell *matCellDef="let row" >{{row._id}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="GPS">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>GPS</mat-header-cell>
+          <mat-cell *matCellDef="let row" >{{row.GPS}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="addedBy">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Pridané použivateľom</mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.addedBy}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="cemeteryType">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Typ cintorína</mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.cemeteryType}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="dateOfDeath">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Dátum úmrtia</mat-header-cell>
+          <mat-cell *matCellDef="let row">
+            <span *ngFor="let date of row.dateOfDeath;">
+              {{ date }}
+           </span>
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="nationality">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Národnosť</mat-header-cell>
+          <mat-cell *matCellDef="let row">
+            <span *ngFor="let nationality of row.nationality;">
+              {{ nationality }}
+           </span>
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="numberOfBurried">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Počet pochovaných</mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.numberOfBurried}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="numberOfGraves">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Počet hrobov</mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.numberOfGraves}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="reasonOfDeath">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Dôvod úmrtia</mat-header-cell>
+          <mat-cell *matCellDef="let row">
+            <span *ngFor="let reasonOfDeath of row.reasonOfDeath">
+              {{ reasonOfDeath }}
+           </span>
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="state">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Stav</mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.state}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="_id">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Id</mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row._id}}</mat-cell>
+        </ng-container>
+
+    <!-- actions -->
+    <ng-container matColumnDef="actions">
+      <mat-header-cell *matHeaderCellDef>
+        <button mat-icon-button color="primary" (click)="addNew()">
+          <mat-icon aria-label="Example icon-button with a heart icon">add</mat-icon>
+        </button>
+      </mat-header-cell>
+
+          <mat-cell *matCellDef="let row; let i=index;">
+            <button mat-icon-button color="accent" (click)="startEdit(i, row._id, row.GPS, row.addedBy, row.cemeteryType, row.dateOfDeath, row.nationality, row.numberOfBurried, row.numberOfGraves, row.reasonOfDeath, row.state)">
+              <mat-icon aria-label="Edit">edit</mat-icon>
+            </button>
+
+            <button mat-icon-button color="accent" (click)="deleteItem(i, row._id, row.GPS, row.addedBy, row.cemeteryType, row.dateOfDeath, row.nationality, row.numberOfBurried, row.numberOfGraves, row.reasonOfDeath, row.state)">
+              <mat-icon aria-label="Delete">delete</mat-icon>
+            </button>
+          </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+
+
+      <div class="no-results" [style.display]="dataSource!.renderedData.length == 0 ? '' : 'none'">
+        No results
+      </div>
+
+      <mat-paginator #paginator
+                     [length]="dataSource!.filteredData.length"
+                     [pageIndex]="0"
+                     [pageSize]="10"
+                     [pageSizeOptions]="[5, 10, 25, 100]">
+      </mat-paginator>
+    </div>
+
+  </div>
+
+
+</div>
+<app-footer></app-footer>

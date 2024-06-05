@@ -1,0 +1,77 @@
+<div>
+  <button mat-icon-button class="close-button" [mat-dialog-close]="true">
+    <mat-icon class="close-icon" color="warn">close</mat-icon>
+  </button>
+
+  <div class="wholeContainer">
+    <h1>Cintorín</h1>
+    <hr class="solid">
+    <div class="importantInfromation containerTwoColumns">
+      <div>
+        <p>GPS: </p>
+        <p>Počet pochovaných: </p>
+        <p>Počet hrobov: </p>
+        <p>Typ cintorína: </p>
+      </div>
+      <div>
+        <p>{{data.GPS}}</p>
+        <p>{{data.numberOfBurried}}</p>
+        <p>{{data.numberOfGraves}}</p>
+        <p>{{data.cemeteryType}}</p>
+      </div>
+
+    </div>
+    <hr class="solid">
+
+      <div class="container">
+        <div class="column">
+          <h1>Národnosti</h1>
+          <div *ngFor="let nationality of data.nationality" class="nationality">
+            <p>{{nationality}}</p>
+          </div>
+        </div>
+
+        <div class="column">
+          <h1>Dátumy úmrtí</h1>
+          <div *ngFor="let date of data.dateOfDeath" class="dateOfDeath">
+            <p>{{date}}</p>
+          </div>
+        </div>
+
+        <div class="column">
+          <h1>Dôvody úmrtí</h1>
+          <div *ngFor="let reason of data.reasonOfDeath" class="reasonOfDeath">
+            <p>{{reason}}</p>
+          </div>
+        </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <h1 mat-dialog-title>Hi {{data.numberOfBurried}}</h1>
+<div mat-dialog-content>
+  <p>What's your favorite animal?</p>
+   <mat-form-field appearance="fill">
+    <mat-label>Favorite Animal</mat-label>
+    <input matInput [(ngModel)]="data.animal">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+   <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button>
+</div> -->

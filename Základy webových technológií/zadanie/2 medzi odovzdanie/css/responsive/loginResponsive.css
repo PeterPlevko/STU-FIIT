@@ -1,0 +1,29 @@
+@media (max-width: 1400px) {
+
+}
+
+@media (max-width: 1200px) {
+
+}
+
+@media (max-width: 992px) {
+    .wholeLogin{
+        flex-direction: column-reverse;
+        margin-top: 0px;
+    }
+    .halfBlock {
+        width: 80%;
+    }
+
+    .leftSide {
+        margin: 20px 0 0 0 ;
+    }
+}
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 576px) {
+
+}

@@ -1,0 +1,33 @@
+{
+  "components": [
+    {
+      "label": "Farba macky",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0b455af",
+        "columns": 6
+      },
+      "id": "Field_0n36qb5",
+      "key": "cat_color"
+    },
+    {
+      "action": "submit",
+      "label": "Add cat",
+      "type": "button",
+      "layout": {
+        "row": "Row_1jgfg9a",
+        "columns": null
+      },
+      "id": "Field_0ie88pb"
+    }
+  ],
+  "type": "default",
+  "id": "Form_0jabdxo",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.21.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.20.0",
+  "schemaVersion": 15
+}

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="700.0" maxWidth="1300.0" minHeight="700.0" minWidth="1300.0" prefHeight="700.0" prefWidth="1300.0" stylesheets="@../Graphic/style_sheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.controller.organizerControllers.AddEventController">
+   <DatePicker fx:id="datePickerFrom" layoutX="40.0" layoutY="339.0" onAction="#showDatesTo" prefHeight="31.0" prefWidth="301.0" />
+   <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#showMenu" styleClass="button_back">
+      <graphic>
+         <ImageView fitHeight="50.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@../../images/other/back_button.png" />
+         </ImageView>
+      </graphic></Button>
+   <TextArea fx:id="noteArea" layoutX="41.0" layoutY="418.0" prefHeight="200.0" prefWidth="301.0" wrapText="true" />
+   <ComboBox fx:id="comboBox" layoutX="40.0" layoutY="112.0" onAction="#showDatesFrom" prefHeight="31.0" prefWidth="301.0" />
+   <ListView fx:id="listView" layoutX="753.0" layoutY="17.0" prefHeight="666.0" prefWidth="533.0" styleClass="list-view_transparent" />
+   <Label fx:id="text1" layoutX="40.0" layoutY="79.0" text="%chooseRoomLabel" />
+   <Label fx:id="text3" layoutX="40.0" layoutY="185.0" text="%EventNameLabel" />
+   <Label fx:id="text4" layoutX="40.0" layoutY="301.0" text="%StartDateLabel" />
+   <Label fx:id="text6" layoutX="41.0" layoutY="389.0" text="%text6" />
+   <RadioButton fx:id="exchangeRB" layoutX="191.0" layoutY="20.0" mnemonicParsing="false" onAction="#radioClicked" text="%exchange">
+      <toggleGroup>
+         <ToggleGroup fx:id="group" />
+      </toggleGroup>
+   </RadioButton>
+   <RadioButton fx:id="discussionRB" layoutX="451.0" layoutY="20.0" mnemonicParsing="false" onAction="#radioClicked" text="%discussion" toggleGroup="$group" />
+   <TextArea fx:id="nameArea" layoutX="41.0" layoutY="215.0" prefHeight="73.0" prefWidth="301.0" wrapText="true" />
+   <DatePicker fx:id="datePickerTo" layoutX="376.0" layoutY="339.0" onAction="#showBtn" prefHeight="31.0" prefWidth="301.0" />
+   <Label fx:id="text5" layoutX="376.0" layoutY="301.0" text="%EndDateLabel" />
+   <TextArea fx:id="hostArea" layoutX="376.0" layoutY="112.0" prefHeight="73.0" prefWidth="301.0" wrapText="true" />
+   <Label fx:id="hostLabel" layoutX="376.0" layoutY="79.0" text="%hostname" />
+   <Button fx:id="btn" layoutX="412.0" layoutY="534.0" mnemonicParsing="false" onAction="#createEvent" prefHeight="84.0" prefWidth="229.0" styleClass="button_basic" text="%btn" />
+   <Label fx:id="infoLabel" alignment="CENTER" layoutX="376.0" layoutY="418.0" prefHeight="50.0" prefWidth="301.0" text="%error" textAlignment="CENTER" textFill="RED" wrapText="true" />
+   <Text fx:id="text2" fontSmoothingType="LCD" layoutX="40.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="%capacityText" />
+   <Text fx:id="capacity" layoutX="109.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="99.45315110683441" />
+   <Button layoutX="620.0" layoutY="19.0" mnemonicParsing="false" onAction="#languageSK" prefHeight="0.0" prefWidth="0.0" styleClass="button_lg">
+      <graphic>
+         <ImageView fitHeight="36.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@../../images/other/sk.png" />
+         </ImageView>
+      </graphic>
+   </Button>
+   <Button layoutX="688.0" layoutY="19.0" mnemonicParsing="false" onAction="#languageEN" prefHeight="12.0" prefWidth="17.0" styleClass="button_lg">
+      <graphic>
+         <ImageView fitHeight="36.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@../../images/other/us.png" />
+         </ImageView>
+      </graphic>
+   </Button>
+</AnchorPane>

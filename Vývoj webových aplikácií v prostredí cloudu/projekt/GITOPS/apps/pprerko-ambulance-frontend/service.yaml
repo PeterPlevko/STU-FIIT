@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: pprerko-ambulance-frontend   #  určuje aj záznam DNS v rámci virtuálne siete klastra
+spec:  
+  selector:
+    pod: pprerko-ambulance-frontend-label     # zhoduje sa s metadata.labels šablóny pod-u
+  ports:
+  - name: http
+    protocol: TCP
+    port: 80            # port pomenovanej služby, môže sa líšiť 
+                        # od portu na ktorom počúva kontajner
+    targetPort: http    # viď meno portu v deployment.yaml

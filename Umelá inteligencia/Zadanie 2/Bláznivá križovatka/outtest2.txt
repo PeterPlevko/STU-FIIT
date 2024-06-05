@@ -1,0 +1,130 @@
+----------------------------------------------------------------------------------------------------
+Aktuálna maximálna håbka: 1
+----------------------------------------------------------------------------------------------------
+Aktuálna maximálna håbka: 2
+----------------------------------------------------------------------------------------------------
+Aktuálna maximálna håbka: 3
+----------------------------------------------------------------------------------------------------
+Aktuálna maximálna håbka: 4
+----------------------------------------------------------------------------------------------------
+Aktuálna maximálna håbka: 5
+----------------------------------------------------------------------------------------------------
+Aktuálna maximálna håbka: 6
+----------------------------------------------------------------------------------------------------
+Aktuálna maximálna håbka: 7
+
+Bolo nájdené riešenie:
+
+1 0 1 1 
+1 1 1 1 
+1 1 0 1 
+1 1 1 1 
+
+x: 0 y: 3 dåžka: 3 orientácia: r
+x: 0 y: 0 dåžka: 1 orientácia: l
+x: 0 y: 1 dåžka: 1 orientácia: d
+x: 0 y: 2 dåžka: 2 orientácia: r
+x: 2 y: 1 dåžka: 2 orientácia: l
+x: 2 y: 0 dåžka: 1 orientácia: d
+x: 3 y: 0 dåžka: 1 orientácia: r
+x: 3 y: 3 dåžka: 3 orientácia: u
+
+0 1 1 1 
+1 1 1 1 
+1 1 0 1 
+1 1 1 1 
+
+x: 0 y: 3 dåžka: 3 orientácia: r
+x: 1 y: 0 dåžka: 1 orientácia: l
+x: 0 y: 1 dåžka: 1 orientácia: d
+x: 0 y: 2 dåžka: 2 orientácia: r
+x: 2 y: 1 dåžka: 2 orientácia: l
+x: 2 y: 0 dåžka: 1 orientácia: d
+x: 3 y: 0 dåžka: 1 orientácia: r
+x: 3 y: 3 dåžka: 3 orientácia: u
+
+1 1 1 1 
+0 1 1 1 
+1 1 0 1 
+1 1 1 1 
+
+x: 0 y: 3 dåžka: 3 orientácia: r
+x: 1 y: 0 dåžka: 1 orientácia: l
+x: 0 y: 0 dåžka: 1 orientácia: d
+x: 0 y: 2 dåžka: 2 orientácia: r
+x: 2 y: 1 dåžka: 2 orientácia: l
+x: 2 y: 0 dåžka: 1 orientácia: d
+x: 3 y: 0 dåžka: 1 orientácia: r
+x: 3 y: 3 dåžka: 3 orientácia: u
+
+1 1 1 1 
+1 1 0 1 
+1 1 0 1 
+1 1 1 1 
+
+x: 0 y: 3 dåžka: 3 orientácia: r
+x: 1 y: 0 dåžka: 1 orientácia: l
+x: 0 y: 0 dåžka: 1 orientácia: d
+x: 0 y: 2 dåžka: 2 orientácia: r
+x: 1 y: 1 dåžka: 2 orientácia: l
+x: 2 y: 0 dåžka: 1 orientácia: d
+x: 3 y: 0 dåžka: 1 orientácia: r
+x: 3 y: 3 dåžka: 3 orientácia: u
+
+1 1 0 1 
+1 1 1 1 
+1 1 0 1 
+1 1 1 1 
+
+x: 0 y: 3 dåžka: 3 orientácia: r
+x: 1 y: 0 dåžka: 1 orientácia: l
+x: 0 y: 0 dåžka: 1 orientácia: d
+x: 0 y: 2 dåžka: 2 orientácia: r
+x: 1 y: 1 dåžka: 2 orientácia: l
+x: 2 y: 1 dåžka: 1 orientácia: d
+x: 3 y: 0 dåžka: 1 orientácia: r
+x: 3 y: 3 dåžka: 3 orientácia: u
+
+1 1 1 0 
+1 1 1 1 
+1 1 0 1 
+1 1 1 1 
+
+x: 0 y: 3 dåžka: 3 orientácia: r
+x: 1 y: 0 dåžka: 1 orientácia: l
+x: 0 y: 0 dåžka: 1 orientácia: d
+x: 0 y: 2 dåžka: 2 orientácia: r
+x: 1 y: 1 dåžka: 2 orientácia: l
+x: 2 y: 1 dåžka: 1 orientácia: d
+x: 2 y: 0 dåžka: 1 orientácia: r
+x: 3 y: 3 dåžka: 3 orientácia: u
+
+1 1 1 1 
+1 1 1 1 
+1 1 0 1 
+1 1 1 0 
+
+x: 0 y: 3 dåžka: 3 orientácia: r
+x: 1 y: 0 dåžka: 1 orientácia: l
+x: 0 y: 0 dåžka: 1 orientácia: d
+x: 0 y: 2 dåžka: 2 orientácia: r
+x: 1 y: 1 dåžka: 2 orientácia: l
+x: 2 y: 1 dåžka: 1 orientácia: d
+x: 2 y: 0 dåžka: 1 orientácia: r
+x: 3 y: 2 dåžka: 3 orientácia: u
+
+1 1 1 1 
+1 1 1 1 
+1 1 0 1 
+0 1 1 1 
+
+x: 1 y: 3 dåžka: 3 orientácia: r
+x: 1 y: 0 dåžka: 1 orientácia: l
+x: 0 y: 0 dåžka: 1 orientácia: d
+x: 0 y: 2 dåžka: 2 orientácia: r
+x: 1 y: 1 dåžka: 2 orientácia: l
+x: 2 y: 1 dåžka: 1 orientácia: d
+x: 2 y: 0 dåžka: 1 orientácia: r
+x: 3 y: 2 dåžka: 3 orientácia: u
+
+Èas: 0:00:00 [hh:mm:ss]

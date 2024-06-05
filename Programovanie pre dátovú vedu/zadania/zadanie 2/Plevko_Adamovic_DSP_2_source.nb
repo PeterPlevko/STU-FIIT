@@ -1,0 +1,125 @@
+Notebook[{Cell[
+BoxData[RowBox[{RowBox[{"(*",RowBox[{"Vyexportujeme"," ","aplik\[AAcute]ciu"," ",RowBox[
+{"do"," ",".","cdf"}]," ","form\[AAcute]tu"}],"*)"}],"\n",RowBox[{RowBox[{RowBox[
+{"Export","[",RowBox[{"\"numberSystems.cdf\"",",","\n","\n",RowBox[{"(*",RowBox[{RowBox[
+{"Pre"," ","pekn\[EAcute]"," ","a"," ","jednoduch\[EAcute]"," ","u\[ZHacek]\[IAcute]vate\:013esk\[EAcute]"," ","rozhranie"," ","pou\[ZHacek]ijeme"," ","funkciu"," ","Manipulate"}],","," ",RowBox[
+{"pri"," ","ktorej"," ","si"," ","vie","\n","u\[ZHacek]\[IAcute]vate\:013e"," ","\:013eahko"," ","navoli\[THacek]"," ","parametre"}],","," ",RowBox[
+{"ktor\[EAcute]"," ",RowBox[{"potrebuje","."}]}]}],"*)"}],"\n",RowBox[{"Manipulate","[","\n",RowBox[
+{RowBox[{"Column","["," ",RowBox[{"{",RowBox[{"\"Vyber si s\[UAcute]stavy z ktor\[YAcute]ch chce\[SHacek] generova\[THacek].\"",",","\n","\n",RowBox[
+{"(*",RowBox[{"Inkrementuj\[UAcute]ci"," ","sa"," ","seed"," ","zabezpe\[CHacek]uj\[UAcute]ci"," ","n\[AAcute]hodnos\[THacek]"," ","pr\[IAcute]kladov"}],"*)"}],"\n",RowBox[
+{RowBox[{"SeedRandom","[","randomSeed","]"}],";","\n",RowBox[{"digits"," ","="," ",RowBox[
+{"10"," ","-"," ",RowBox[{"Ceiling","[",RowBox[{"from"," ","/","2"}],"]"}]}]}],";","\n","\n",RowBox[
+{"(*",RowBox[{"Priprav\[IAcute]me"," ","si"," ","premenn\[EAcute]"," ","na"," ","r\[OHat]zne"," ","interpret\[AAcute]cie"," ","n\[AAcute]\[SHacek]ho"," ","\[CHacek]\[IAcute]sla"," ",RowBox[
+{"(",RowBox[{"interpret\[AAcute]cia"," ","cel\[EAcute]ho"," ","\[CHacek]\[IAcute]sla"," ","v"," ","10"," ","s\[UAcute]stave"," ","a","\n","interpret\[AAcute]cia"," ","stringu"," ","v"," ","\:013eubovo\:013enej"," ","s\[UAcute]stave"}],")"}]}],"*)"}],"\n",RowBox[
+{"taskInt"," ","="," ","0"}],";","\n",RowBox[{"taskString"," ","="," ","\"\""}],";","\n","\n",RowBox[
+{"(*",RowBox[{"Cyklus"," ","zodpovedn\[YAcute]"," ","za"," ","generovanie"," ","pr\[IAcute]kladu"}],"*)"}],"\n",RowBox[
+{"For","[",RowBox[{RowBox[{"i"," ","="," ","0"}],","," ",RowBox[{"i"," ","<"," ","digits"}],",",RowBox[
+{"i","++"}],",","\n",RowBox[{RowBox[{"randomAddInt"," ","="," ",RowBox[{"RandomInteger","[",RowBox[
+{"from"," ","-"," ","1"}],"]"}]}],";","\n","\n",RowBox[{"(*",RowBox[{"Prv\[AAcute]"," ","nem\[OHat]\[ZHacek]e"," ","by\[THacek]"," ","nula"}],"*)"}],"\n",RowBox[
+{"While","[",RowBox[{RowBox[{RowBox[{"i"," ","=="," ","0"}]," ","&&"," ",RowBox[{"randomAddInt"," ","=="," ","0"}]}],",",RowBox[
+{RowBox[{"randomAddInt"," ","="," ",RowBox[{"RandomInteger","[",RowBox[{"from"," ","-"," ","1"}],"]"}]}],";"}]}],"]"}],";","\n","\n",RowBox[
+{"(*",RowBox[{RowBox[{"Ak"," ","generujeme"," ","v\[ADoubleDot]\[CHacek]\[SHacek]ie"," ","\[CHacek]\[IAcute]slo"," ","ako"," ","9"}],","," ",RowBox[
+{RowBox[{RowBox[{"mus\[IAcute]me"," ","z"," ","neho"," ","spravi\[THacek]"," ","p\[IAcute]smenko"}]," ",".."}]," ","vyu\[ZHacek]ijeme"," ","ASCII"}]}],"*)"}],"\n",RowBox[
+{"If","[",RowBox[{RowBox[{"randomAddInt",">","9"}],",",RowBox[{"randomAddString"," ","="," ",RowBox[
+{"FromCharacterCode","[",RowBox[{"randomAddInt"," ","+"," ","55"}],"]"}]}],","," ",RowBox[
+{RowBox[{"randomAddString"," ","=",RowBox[{"ToString","[","randomAddInt","]"}]}],";"}]}],"]"}],";","\n","\n",RowBox[
+{"(*",RowBox[{"Postupne"," ","sa"," ","pos\[UAcute]vame"," ","na"," ","\[DHacek]al\[SHacek]ie"," ","a"," ","\[DHacek]al\[SHacek]ie"," ","cifry"}],"*)"}],"\n",RowBox[
+{"taskInt"," ","*="," ","from"}],";","\n",RowBox[{"taskInt"," ","+=","randomAddInt"}],";","\n",RowBox[
+{"taskString"," ","="," ",RowBox[{"taskString"," ","<>","randomAddString"}]}],";"}]}],"\n","]"}],";","\n","\n",RowBox[
+{"(*",RowBox[{RowBox[{"Premenn\[AAcute]"," ","sl\[UAcute]\[ZHacek]iaca"," ","na"," ","vyp\[IAcute]sanie"," ","konkr\[EAcute]tneho"," ","step"}],"-","by","-",RowBox[
+{"step"," ","rie\[SHacek]enia"}]}],"*)"}],"\n",RowBox[{"mathProcess","=",RowBox[{"\"Konkr\[EAcute]tny postup:\\nNa\[SHacek]e zadanie je previes\[THacek] \""," ","<>","taskString","<>","\" z \""," ","<>",RowBox[
+{"ToString","[","from","]"}],"<>"," ","\" s\[UAcute]stavy do \""," ","<>",RowBox[
+{"ToString","[","to","]"}],"<>","\" s\[UAcute]stavy.\\n\"","<>","\n","\"\[CapitalCHacek]\[IAcute]slo v 10 s\[UAcute]stave: \"","<>",RowBox[
+{"ToString","[","taskInt","]"}]," ","<>","\"\\n\\n\""}]}],";","\n","\n",RowBox[{"(*",RowBox[
+{"Premenn\[EAcute]",","," ",RowBox[{"ktor\[EAcute]"," ","budeme"," ",RowBox[{"pou\[ZHacek]\[IAcute]va\[THacek]","."," ","Do"}]," ","premennej"," ","result"," ","postupne"," ","vklad\[AAcute]me"," ","cifry"}],","," ",RowBox[
+{"\[CHacek]\[IAcute]m"," ","n\[AAcute]m"," ","pomaly"," ","vznik\[AAcute]"," ",RowBox[
+{"v\[YAcute]sledok",".","\n","Premenn\[AAcute]"}]," ","highestPossible"," ","si"," ","udr\[ZHacek]iava"," ","inform\[AAcute]ciu"}],","," ",RowBox[
+{"ak\[UAcute]"," ","najv\[ADoubleDot]\[CHacek]\[SHacek]iu"," ","mocninu"," ","\[CHacek]\[IAcute]sla"," ","danej"," ","s\[UAcute]stavy"," ","vieme"," ","vlo\[ZHacek]i\[THacek]","\n","do"," ","zostatku"," ",RowBox[
+{"(",RowBox[{"premenn\[AAcute]"," ","remainder"}],")"}]}],","," ",RowBox[{"\[CHacek]o"," ","je"," ","z\[AAcute]rove\[NHacek]"," ","aj"," ","inform\[AAcute]ciou"}],","," ",RowBox[
+{"na"," ","ktorej"," ","cifre"," ","v\[YAcute]sledku"," ","sa"," ","pr\[AAcute]ve","\n",RowBox[
+{"nach\[AAcute]dzame","."," ","Aby"}]," ","sme"," ","to"," ","v\[SHacek]ak"," ","nemuseli"," ","neust\[AAcute]le"," ","po\[CHacek]\[IAcute]ta\[THacek]"}],","," ",RowBox[
+{"uklad\[AAcute]me"," ","inform\[AAcute]ciu"," ","o"," ","cifre"," ","do"," ","premennej"," ","whichPlace"}]}],"*)"}],"\n",RowBox[
+{"result"," ","="," ","\"\""}],";","\n",RowBox[{"highestPossible"," ","="," ","to"}],";","\n",RowBox[
+{"whichPlace"," ","="," ","0"}],";","\n","\n",RowBox[{"(*",RowBox[{RowBox[{"Vypo\[CHacek]\[IAcute]tame"," ","si"," ","najv\[ADoubleDot]\[CHacek]\[SHacek]iu"," ","mo\[ZHacek]n\[UAcute]"," ","mocninu"," ","\[CHacek]\[IAcute]sla"," ","s\[UAcute]stavy"}],","," ",RowBox[
+{"do"," ","ktorej"," ","prev\[AAcute]dzame"}],","," ",RowBox[{"ktor\[AAcute]"," ","sa"," ","z\[AAcute]rove\[NHacek]","\n","mus\[IAcute]"," ","zmesti\[THacek]"," ","do"," ","\[CHacek]\[IAcute]sla"}],","," ",RowBox[
+{"ktor\[EAcute]"," ","prev\[AAcute]dzame"," ",RowBox[{RowBox[{"(","taskInt",")"}],"."}]}]}],"*)"}],"\n",RowBox[
+{"While","[",RowBox[{RowBox[{"highestPossible"," ","<"," ","taskInt"}],","," ",RowBox[
+{RowBox[{"highestPossible"," ","*="," ","to"}],";"," ",RowBox[{"whichPlace","++"}]}]}],"]"}],";","\n",RowBox[
+{"highestPossible"," ","/="," ","to"}],";","\n","\n",RowBox[{"(*",RowBox[{RowBox[
+{"Na"," ","za\[CHacek]iatku"," ","je"," ","zostatok"," ","cel\[EAcute]"," ","\[CHacek]\[IAcute]slo"}],","," ",RowBox[
+{"ktor\[EAcute]"," ","chceme"," ",RowBox[{"previes\[THacek]","."}]}]}],"*)"}],"\n",RowBox[
+{"remainder"," ","=","taskInt"}],";"," ","\n","\n",RowBox[{"(*",RowBox[{RowBox[{"Ako"," ","sme"," ","spom\[IAcute]nali"}],","," ",RowBox[
+{"premenn\[AAcute]"," ","highestPossible"," ","m\[AAcute]"," ","v"," ","sebe"," ","aj"," ","inform\[AAcute]ciu"," ","o"," ","tom"}],","," ",RowBox[
+{"na"," ","ktorej","\n","cifre"," ","sa"," ",RowBox[{"nach\[AAcute]dzame","."," ","V\[DHacek]aka"}]," ","tomu"," ","ju"," ","vieme"," ","pou\[ZHacek]i\[THacek]"," ","do"," ","podmienky"," ","cyklu"}],","," ",RowBox[
+{"ktor\[YAcute]"," ","postupne","\n","rie\[SHacek]i"}],","," ",RowBox[{"na"," ","ktor\[EAcute]"," ","miesto"," ","\[CHacek]o"," ",RowBox[
+{"zap\[IAcute]sa\[THacek]","."}]}]}],"*)"}],"\n",RowBox[{"While","[",RowBox[{RowBox[
+{RowBox[{"Floor","[","highestPossible","]"}]," ",">"," ","0"}],",","\n","\n",RowBox[
+{"(*",RowBox[{RowBox[{"Na"," ","za\[CHacek]iatku"," ","si"," ","povieme"}],","," ",RowBox[
+{"\[ZHacek]e"," ","ideme"," ","zapisova\[THacek]"," ","0."," ","Postupne"," ","budeme"," ","sk\[UAcute]\[SHacek]a\[THacek]"}],","," ",RowBox[
+{"ko\:013eko"," ","sa","\n","n\[AAcute]m"," ","zmest\[IAcute]"," ","do"," ","zvy\[SHacek]ku"," ","a"," ","toto"," ","\[CHacek]\[IAcute]slo"," ",RowBox[
+{"inkremenova\[THacek]","."}]}]}],"*)"}],"\n",RowBox[{RowBox[{"whatToWrite"," ","="," ","0"}],";","\n","\n",RowBox[
+{"(*",RowBox[{RowBox[{"Postupn\[EAcute]"," ","inkrementovanie"," ","whatToWrite"," ","pod\:013ea"," ","toho"}],","," ",RowBox[
+{"ko\:013ekokr\[AAcute]t"," ","vieme"," ","zmesti\[THacek]"," ","dan\[UAcute]","\n","mocninu"," ","\[CHacek]\[IAcute]sla"," ","s\[UAcute]stavy"}],","," ",RowBox[
+{"do"," ","ktorej"," ","prev\[AAcute]dzame"," ","na"," ","konkr\[EAcute]tne"," ","miesto"," ","vo"," ",RowBox[
+{"v\[YAcute]sledku","."}]}]}],"*)"}],"\n",RowBox[{"While","[",RowBox[{RowBox[{RowBox[
+{RowBox[{"(",RowBox[{"whatToWrite","+","1"}],")"}],"*",RowBox[{"Power","[",RowBox[
+{"to",",","whichPlace"}],"]"}]}]," ","\[LessEqual]","remainder"}],","," ",RowBox[
+{"whatToWrite","++"}]}],"]"}],";","\n","\n",RowBox[{"(*",RowBox[{"Pridanie"," ","konkr\[EAcute]tneho"," ","cyklu"," ","do"," ","v\[YAcute]pisu"," ","ako"," ","jeden"," ","krok"," ","v"," ","rie\[SHacek]en\[IAcute]"}],"*)"}],"\n",RowBox[
+{"mathProcess"," ","="," ",RowBox[{"mathProcess"," ","<>"," ","\"V danom momente (vzh\:013eadom na cifru) najv\[ADoubleDot]\[CHacek]\[SHacek]ia mo\[ZHacek]n\[AAcute] mocnina \[CHacek]\[IAcute]sla \""," ","<>",RowBox[
+{"ToString","[","to","]"}],"<>","\n","\", ktor\[AAcute] sa m\[OHat]\[ZHacek]e (ale nemus\[IAcute]) zmesti\[THacek] do zvy\[SHacek]ku \""," ","<>",RowBox[
+{"ToString","[","remainder","]"}],"<>","\", je \""," ","<>",RowBox[{"ToString","[","highestPossible","]"}]," ","<>","\"\\n\""," ","<>","\"Mocnina \"","<>","\n",RowBox[
+{"ToString","[","highestPossible","]"}],"<>","\" sa zmest\[IAcute] do zvy\[SHacek]ku \""," ","<>",RowBox[
+{"ToString","[","whatToWrite","]"}]," ","<>"," ","\" kr\[AAcute]t, tak\[ZHacek]e budeme zapisova\[THacek] \[CHacek]\[IAcute]slo \"","<>","\n",RowBox[
+{"ToString","[","whatToWrite","]"}],"<>","\".\\n\""," ","<>","\"Od zvy\[SHacek]ku \""," ","<>",RowBox[
+{"ToString","[","remainder","]"}],"<>","\" odpo\[CHacek]\[IAcute]tame \""," ","<>",RowBox[
+{"ToString","[","whatToWrite","]"}]," ","<>"," ","\" x \"","<>","\n",RowBox[{"ToString","[","highestPossible","]"}],"<>","\" \[Rule] \"","<>",RowBox[
+{"ToString","[",RowBox[{"whatToWrite"," ","*"," ","highestPossible"}],"]"}],"<>","\"\\n\""}]}]," ",";","\n","\n",RowBox[
+{"(*",RowBox[{RowBox[{"Odpo\[CHacek]\[IAcute]tame"," ","od"," ","zvy\[SHacek]ku"," ","hodnotu"}],","," ",RowBox[
+{"ktor\[UAcute]"," ","sme"," ","vyjadrili"," ","z\[AAcute]pisom"," ","na"," ","dan\[UAcute]"," ","cifru"}]}],"*)"}],"\n",RowBox[
+{"remainder"," ","-="," ",RowBox[{"whatToWrite"," ","*",RowBox[{"Power","[",RowBox[
+{"to",",","whichPlace"}],"]"}]}]}],";","\n","\n",RowBox[{"(*",RowBox[{RowBox[{"Presunieme"," ","sa"," ","na"," ","ni\[ZHacek]\[SHacek]iu"," ","cifru"}],","," ",RowBox[
+{"teda"," ","dekrementujeme"," ","premenn\[UAcute]"," ","whichPlace"," ","a"," ","taktie\[ZHacek]"," ","predel\[IAcute]me","\n","mocninu"," ","s\[UAcute]stavy"," ",RowBox[
+{"(","highestPossible",")"}]," ","\[CHacek]\[IAcute]slom"," ","s\[UAcute]stavy"}]}],"*)"}],"\n",RowBox[
+{"whichPlace","--"}],";","\n",RowBox[{"highestPossible"," ","/=","to"}],";","\n","\n",RowBox[
+{"(*",RowBox[{RowBox[{"Do"," ","v\[YAcute]sledku"," ","zap\[IAcute]\[SHacek]eme"}],","," ",RowBox[
+{"\[CHacek]o"," ","sme"," ",RowBox[{"vypo\[CHacek]\[IAcute]tali","."," ","Ak"}]," ","n\[AAcute]m"," ","vy\[SHacek]lo"," ","\[CHacek]\[IAcute]slo"," ","v\[ADoubleDot]\[CHacek]\[SHacek]ie"," ","ako"," ","je"," ","9"}],","," ",RowBox[
+{"znovu"," ","ho"," ","transformujeme","\n","do"," ","reprezent\[AAcute]cie"," ","p\[IAcute]smen"," ","pomocou"," ",RowBox[
+{"ASCII","."}]}]}],"*)"}],"\n",RowBox[{"If","[",RowBox[{RowBox[{"whatToWrite"," ",">","9"}],",",RowBox[
+{"result"," ","="," ",RowBox[{"result"," ","<>"," ",RowBox[{"ToString","[",RowBox[
+{"FromCharacterCode","[",RowBox[{"whatToWrite"," ","+"," ","55"}],"]"}],"]"}]}]}],","," ",RowBox[
+{"result"," ","="," ",RowBox[{"result","<>",RowBox[{"ToString","[","whatToWrite","]"}]}]}]}],"]"}],";","\n","\n",RowBox[
+{"(*",RowBox[{RowBox[{"Do"," ","v\[YAcute]pisu"," ","prid\[AAcute]me"," ","medziv\[YAcute]sledok"}],","," ",RowBox[
+{"aby"," ","u\[ZHacek]\[IAcute]vate\:013e"," ","lep\[SHacek]ie"," ","pochopil"}],","," ",RowBox[
+{"\[CHacek]o"," ","sa"," ",RowBox[{"deje","."}]}]}],"*)"}],"\n",RowBox[{"mathProcess"," ","="," ",RowBox[
+{"mathProcess"," ","<>"," ","\"N\[AAcute]\[SHacek] medziv\[YAcute]sledok: \""," ","<>","result","<>","\"\\n\\n\""}]}],";"}]}],"\n","]"}],";","\n","\n",RowBox[
+{"(*",RowBox[{"Po"," ","skon\[CHacek]en\[IAcute]"," ","cyklu"," ","prid\[AAcute]me"," ","do"," ","v\[YAcute]pisu"," ","fin\[AAcute]lny"," ",RowBox[
+{"v\[YAcute]sledok","."}]}],"*)"}],"\n",RowBox[{"mathProcess"," ","="," ",RowBox[
+{"mathProcess"," ","<>"," ","\"Fin\[AAcute]lne rie\[SHacek]enie: \"","<>","result"}]}],";","\n","\n",RowBox[
+{"(*",RowBox[{RowBox[{"Na"," ","za\[CHacek]iatok"," ","v\[YAcute]pisu"," ","d\[AAcute]me"," ","v\[SHacek]eobecn\[YAcute]"," ","postup"}],","," ",RowBox[
+{"pod\:013ea"," ","ktor\[EAcute]ho"," ","n\[AAcute]\[SHacek]"," ","program"," ","dan\[EAcute]"," ","pr\[IAcute]klady"," ",RowBox[
+{"rie\[SHacek]i","."}]}]}],"*)"}],"\n",RowBox[{"genericProcess"," ","="," ","\" V\[SHacek]eobecn\[YAcute] postup:\\n -prevedieme \[CHacek]\[IAcute]slo do 10 s\[UAcute]stavy, s ktor\[YAcute]m budeme pracova\[THacek]\\n -n\[AAcute]jdeme najv\[ADoubleDot]\[CHacek]\[SHacek]iu mocninu \[CHacek]\[IAcute]sla s\[UAcute]stavy, do ktorej ideme \[CHacek]\[IAcute]slo prev\[AAcute]dza\[THacek] a ktor\[AAcute] sa zmest\[IAcute] do n\[AAcute]\[SHacek]ho zbytku\\n -vypo\[CHacek]\[IAcute]tame, ko\:013ekokr\[AAcute]t sa t\[AAcute]to najv\[ADoubleDot]\[CHacek]\[SHacek]ia mocnina zmest\[IAcute] do n\[AAcute]\[SHacek]ho zbytku a tak\[EAcute] \[CHacek]\[IAcute]slo nap\[IAcute]\[SHacek]eme\\n -predel\[IAcute]me na\[SHacek]u najv\[ADoubleDot]\[CHacek]\[SHacek]iu mo\[ZHacek]n\[UAcute] mocninu \[CHacek]\[IAcute]slom s\[UAcute]stavy, do ktorej prev\[AAcute]dzame\\n -prejdeme na \[DHacek]al\[SHacek]iu cifru\\n\\n\""}],";","\n","\n","\n",RowBox[
+{"(*",RowBox[{RowBox[{"Zadanie"," ","s"," ","v\[YAcute]sledkom"," ","posklad\[AAcute]me"," ","do"," ","premennej"," ","final"}],","," ",RowBox[
+{"ktor\[AAcute]"," ","sa"," ","vyp\[IAcute]\[SHacek]e"," ","u\[ZHacek]\[IAcute]vate\:013eovi"}]}],"*)"}],"\n",RowBox[
+{"final"," ","=",RowBox[{"Column","[",RowBox[{"{",RowBox[{RowBox[{"\"Preve\[DHacek] toto \[CHacek]\[IAcute]slo z \""," ","<>"," ",RowBox[
+{"ToString","[","from","]"}]," ","<>"," ","\" s\[UAcute]stavy do \""," ","<>"," ",RowBox[
+{"ToString","[","to","]"}]," ","<>","\" s\[UAcute]stavy:\\n\""," ","<>"," ","taskString"}],",","\n",RowBox[
+{"If","[",RowBox[{"showResult",","," ",RowBox[{"genericProcess"," ","<>","mathProcess"}],","," ","\"\""}],"]"}]}],"}"}],"\n","]"}]}],";","\n","final"}]}],"\n","}"}],"]"}],",","\n","\n",RowBox[
+{"(*",RowBox[{RowBox[{"R\[OHat]zne"," ","paramtre"," ","na"," ","v\[YAcute]ber"," ","pre"," ","u\[ZHacek]\[IAcute]vate\:013ea"}],","," ",RowBox[
+{"v"," ","r\[AAcute]mci"," ","funkcie"," ","Manipulate"}]}],"*)"}],"\n",RowBox[{"{",RowBox[
+{RowBox[{"{",RowBox[{"from",","," ","10",","," ","\"Za\[CHacek]iato\[CHacek]n\[AAcute] s\[UAcute]stava\""}],"}"}],","," ","2",","," ","16",","," ","1",",",RowBox[
+{"Appearance"," ","\[Rule]"," ","\"Open\""}]}],"}"}],",","\n",RowBox[{"{",RowBox[
+{RowBox[{"{",RowBox[{"to",","," ","2",","," ","\"Cie\:013eov\[AAcute] s\[UAcute]stava\""}],"}"}],","," ","2",","," ","16",","," ","1",","," ",RowBox[
+{"Appearance"," ","\[Rule]"," ","\"Open\""}]}],"}"}],",","\n",RowBox[{"{",RowBox[
+{RowBox[{"{",RowBox[{"showResult",","," ","False",","," ","\"Zobrazi\[THacek] v\[YAcute]sledok\""}],"}"}],","," ",RowBox[
+{"{",RowBox[{"True",",","False"}],"}"}]}],"}"}],",","\n",RowBox[{"{",RowBox[{"{",RowBox[
+{"randomSeed",","," ","0",","," ","\"Random seed\""}],"}"}],"}"}],",","\n","\n",RowBox[
+{"(*",RowBox[{RowBox[{"Tla\[CHacek]idlo"," ","pre"," ","vygenerovanie"," ","pr\[IAcute]kladu"," ","zv\[YAcute]\[SHacek]i"," ","premenn\[UAcute]"," ","randomSeed"}],","," ",RowBox[
+{"\[CHacek]o"," ","znovu"," ","zbehne"," ","funkciu"," ","Manipulate"," ","s"," ","nov\[YAcute]mi"," ","n\[AAcute]hodn\[YAcute]mi"," ","\[CHacek]\[IAcute]slami"}]}],"*)"}],"\n",RowBox[
+{"Button","[",RowBox[{"\"Vygenerova\[THacek] pr\[IAcute]klad\"",",",RowBox[{"randomSeed"," ","+="," ","1"}]}],"]"}],",","\n","\n",RowBox[
+{"(*",RowBox[{RowBox[{"TrackedSymbols"," ","n\[AAcute]m"," ","zabezpe\[CHacek]uje"}],","," ",RowBox[
+{"\[ZHacek]e"," ","funkcia"," ","sa"," ","zopakuje"," ","a\[ZHacek]"," ","potom"}],","," ",RowBox[
+{"ako"," ","u\[ZHacek]\[IAcute]vate\:013e"," ","klikne"," ","na"," ","tla\[CHacek]idlo"," ","a"," ","nie"}],","," ",RowBox[
+{"ke\[DHacek]"," ","len"," ","vyber\[AAcute]"," ","parametre"}]}],"*)"}],"\n",RowBox[
+{"TrackedSymbols"," ","\[RuleDelayed]"," ",RowBox[{"{",RowBox[{"showResult",","," ","randomSeed"}],"}"}]}]}],"]"}]}],"\n","]"}],";"}],"\n"}]}]],
+"Input",CellLabel -> "In[3]:= ",ExpressionUUID -> "89eab871-12bf-4716-b2b1-ff553930cd45",
+CloudRendering -> "InteractiveBoxes"]},StyleDefinitions -> "Default.nb",FrontEndVersion -> "13. for Wolfram Cloud 1.61.2 (November 30, 2021)"]

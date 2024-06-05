@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: pprerko-projekt-backend
+spec:
+  type: ClusterIP
+  selector:
+    pod: pprerko-projekt-backend-label
+  ports:
+    - name: webapi-s-port
+      protocol: TCP
+      port: 80
+      targetPort: 8080

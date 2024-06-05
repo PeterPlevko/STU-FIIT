@@ -1,0 +1,38 @@
+1. cvicenie
+	1. ako rozlisit ci je typ honoty premennej a cislo alebo retazec
+	2. inkrementujte premennu i od 0 do 100 a vypiste jej hodnotu
+	3. vyuzite try/catch blok a ukazte jeho pouzitie
+2. cvicenie
+	1. pridajte na lubovolnu stranku canvas
+	2. pridajte tlacidlo na vykreslenie obdlzniku
+3 cvicenie
+	1. nainstalovat node.js
+	2. vytvorit zakladny http server
+	3. poslanie jednoducheho retazca obsahujuceho inkrementovane cislo zo serveru na klienta po stlaceni tlacitka
+4. cvicenie
+	1. vytvorte jednoduchu funkciu vracajucu Promise, ktora bude nieco "dlho" vykonavat (setTimeout)
+	2. -||- nech robi nieco trochu ine
+	3. spojte spracovanie promisov
+5. cvicenie
+	1. obohatime zakladny HTTP server o WS server
+	2. stranka index.html nech obsahuje input (pre login) a tlacitko
+	3. po stlaceni tlacitka nech sa z WS vrati hashed login
+6 cvicenie 
+	1. vytvorit jednoduchy HTTP server s pouzitim kniznice express, ktory bude vraciat /data
+	2. mysql DB kde budu data
+	3. cele cez docker
+7. cvicenie
+	1. vytvorit React aplikaciu
+	2. pridat input a tlacitko a po jeho stlaceni pridat/zmenit text na stranke podla hodnoty inputu
+8. cvicenie
+	1. pouzijeme z prednasky
+	2. pridame delete hodnotu
+	3. pridame update hodnotu
+9. cvicenie
+	1. nainstalujte typescript
+	2. vytvorte jednoduchu React aplikaciu s TypeScriptom, ktora bude vypisovat aktualny cas, ktory bude Date
+10. cvicenie
+	1. dobrovolna dnes nie je
+11. cvicenie
+	1. vytvorit Electron app, ktora po stlaceni tlacidla nacita obsah suboru a zobrazi ho na "stranke"
+

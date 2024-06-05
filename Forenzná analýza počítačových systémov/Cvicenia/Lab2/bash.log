@@ -1,0 +1,1004 @@
+Script started on 2021-02-27 09:14:52+0000
+[1;36msansforensics@siftworkstation[0m: [32m~/Documents/lab2[0m
+$ dd if=/~/[K[K[K~/disk.img of=/dev/sdb[C[C[1@s[1@u[C[C[1@d[1@o[1@ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C bs=1M conv=nor[Kerror,sync
+512+0 records in
+512+0 records out
+536870912 bytes (537 MB, 512 MiB) copied, 146.384 s, 3.7 MB/s
+[1;36msansforensics@siftworkstation[0m: [32m~/Documents/lab2[0m
+$ sudo lsblk -b /dev/sdb
+NAME   MAJ:MIN RM       SIZE RO TYPE MOUNTPOINT
+sdb      8:16   1 8053063680  0 disk 
+├─sdb1   8:17   1  103809536  0 part 
+└─sdb2   8:18   1  430964736  0 part 
+[1;36msansforensics@siftworkstation[0m: [32m~/Documents/lab2[0m
+$ sudo lsblk -b /dev/sdb[K[K[K[K[K[K[K[K[K[K[K-fs /dev/sdb
+NAME FSTYPE LABEL UUID MOUNTPOINT
+sdb                    
+[1;36msansforensics@siftworkstation[0m: [32m~/Documents/lab2[0m
+$ sudo lsblk -fs /dev/sdb[K[K[K[K[K[K[K[K[K[K
+NAME   FSTYPE  LABEL UUID                                 MOUNTPOINT
+loop0  squashf                                            /snap/gnome-calculator
+loop1  squashf                                            /snap/core18/1668
+loop2  squashf                                            /snap/gtk-common-theme
+loop3  squashf                                            /snap/core/8689
+loop4  squashf                                            /snap/gnome-3-28-1804/
+loop5  squashf                                            /snap/gtk-common-theme
+loop6  squashf                                            /snap/gnome-3-28-1804/
+loop7  squashf                                            /snap/gnome-system-mon
+loop8  squashf                                            /snap/core/10823
+loop9  squashf                                            /snap/gnome-logs/103
+loop10 squashf                                            /snap/core18/1988
+loop11 squashf                                            /snap/gnome-3-26-1604/
+loop12 squashf                                            /snap/gnome-characters
+loop13 squashf                                            /snap/gnome-3-34-1804/
+loop14 squashf                                            /snap/gnome-3-26-1604/
+loop15 squashf                                            /snap/gnome-logs/81
+loop16 squashf                                            /snap/gnome-characters
+loop17 squashf                                            /snap/gnome-calculator
+loop18 squashf                                            /snap/gnome-system-mon
+sda                                                       
+└─sda1 ext4          34bde50c-3409-419d-ba1a-0d8efdac3460 /
+sdb                                                       
+├─sdb1 vfat          00C7-F2DF                            
+└─sdb2 ext2          10c63a0c-9cf3-4779-8074-6fa6fd752c20 
+[1;36msansforensics@siftworkstation[0m: [32m~/Documents/lab2[0m
+$ sudo lsblk -fs
+NAME   FSTYPE  LABEL UUID                                 MOUNTPOINT
+loop0  squashf                                            /snap/gnome-calculator
+loop1  squashf                                            /snap/core18/1668
+loop2  squashf                                            /snap/gtk-common-theme
+loop3  squashf                                            /snap/core/8689
+loop4  squashf                                            /snap/gnome-3-28-1804/
+loop5  squashf                                            /snap/gtk-common-theme
+loop6  squashf                                            /snap/gnome-3-28-1804/
+loop7  squashf                                            /snap/gnome-system-mon
+loop8  squashf                                            /snap/core/10823
+loop9  squashf                                            /snap/gnome-logs/103
+loop10 squashf                                            /snap/core18/1988
+loop11 squashf                                            /snap/gnome-3-26-1604/
+loop12 squashf                                            /snap/gnome-characters
+loop13 squashf                                            /snap/gnome-3-34-1804/
+loop14 squashf                                            /snap/gnome-3-26-1604/
+loop15 squashf                                            /snap/gnome-logs/81
+loop16 squashf                                            /snap/gnome-characters
+loop17 squashf                                            /snap/gnome-calculator
+loop18 squashf                                            /snap/gnome-system-mon
+sda1   ext4          34bde50c-3409-419d-ba1a-0d8efdac3460 /
+└─sda                                                     
+sdb1   vfat          00C7-F2DF                            
+└─sdb                                                     
+sdb2   ext2          10c63a0c-9cf3-4779-8074-6fa6fd752c20 
+└─sdb                                                     
+[1;36msansforensics@siftworkstation[0m: [32m~/Documents/lab2[0m
+$ sudo lsblk -fs[K[Kt /dev/sdb
+NAME  ALIGNMENT MIN-IO OPT-IO PHY-SEC LOG-SEC ROTA SCHED       RQ-SIZE  RA WSAME
+sdb           0    512      0     512     512    1 mq-deadline       2 128    0B
+├─sdb1
+│             0    512      0     512     512    1 mq-deadline       2 128    0B
+└─sdb2
+              0    512      0     512     512    1 mq-deadline       2 128    0B
+[1;36msansforensics@siftworkstation[0m: [32m~/Documents/lab2[0m
+$ sudo lsblk -t /dev/sdb[K[K[K[K[K[K[K[K[K[KS /dev/sdb
+NAME HCTL       TYPE VENDOR   MODEL             REV TRAN
+sdb  31:0:0:0   disk Flash    USB Disk         6.90 usb
+[1;36msansforensics@siftworkstation[0m: [32m~/Documents/lab2[0m
+$ sudo d[Khdparm -iI --verbose /dev/sdb
+
+/dev/sdb:
+APT: USB ID = 0x8690:0x3a04 (0x000)
+APT: Unsupported device
+outgoing cdb:  85 08 0e 00 00 00 01 00 00 00 00 00 00 40 ec 00
+SG_IO: ATA_16 status=0x2, host_status=0x0, driver_status=0x8
+SG_IO: sb[]:  70 00 05 00 00 00 00 0a 00 00 00 00 24 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+incoming_data:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+SG_IO: bad/missing sense data, sb[]:  70 00 05 00 00 00 00 0a 00 00 00 00 24 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+SG_IO: desc[]:  00 00
+      ATA_16 stat=00 err=00 nsect=00 lbal=00 lbam=00 lbah=00 dev=00
+ HDIO_GET_IDENTITY failed: Invalid argument
+
+ATA device, with non-removable media
+Standards:
+	Likely used: 1
+Configuration:
+	Logical		max	current
+	cylinders	0	0
+	heads		0	0
+	sectors/track	0	0
+	--
+	Logical/Physical Sector size:           512 bytes
+	device size with M = 1024*1024:           0 MBytes
+	device size with M = 1000*1000:           0 MBytes 
+	cache/buffer size  = unknown
+Capabilities:
+	IORDY not likely
+	Cannot perform double-word IO
+	R/W multiple sector transfer: not supported
+	DMA: not supported
+	PIO: pio0 
+[1;36msansforensics@siftworkstation[0m: [32m~/Documents/lab2[0m
+$ sudo smartctl -a /dev/sdb
+smartctl 6.6 2016-05-31 r4324 [x86_64-linux-5.4.0-66-generic] (local build)
+Copyright (C) 2002-16, Bruce Allen, Christian Franke, www.smartmontools.org
+
+/dev/sdb: Unknown USB bridge [0x8690:0x3a04 (0x000)]
+Please specify device type with the -d option.
+
+Use smartctl -h to get a usage summary
+
+[1;36msansforensics@siftworkstation[0m: [32m~/Documents/lab2[0m
+$ lsusb
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 001 Device 002: ID 8690:3a04  
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+[1;36msansforensics@siftworkstation[0m: [32m~/Documents/lab2[0m
+$ lssci[Ksi
+[30:0:0:0]   disk    VBOX     HARDDISK         1.0   /dev/sda 
+[31:0:0:0]   disk    Flash    USB Disk         6.90  /dev/sdb 
+[1;36msansforensics@siftworkstation[0m: [32m~/Documents/lab2[0m
+$ sudo uwfac[K[K[K[K[Keq[Kwfe[Kacquire -D "USB1" -e "/mi[K[K[Kmiso" -C "001" -m rmeovable[K[K[K[K[K[K[K[Kemovable -M physical -y[Kt USB1  -d sha256 -u /dev/sdb
+ewfacquire 20140811
+
+Device information:
+Bus type:				USB
+Vendor:					
+Model:					
+Serial:					
+
+Storage media information:
+Type:					Device
+Media type:				Fixed
+Media size:				8.0 GB (8053063680 bytes)
+Bytes per sector:			512
+
+Acquiry started at: Feb 27, 2021 09:33:18
+This could take a while.
+
+Status: at 0%.
+        acquired 42 MiB (44793856 bytes) of total 7.5 GiB (8053063680 bytes).
+
+Status: at 1%.
+        acquired 89 MiB (94339072 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 13 minute(s) and 12 second(s) with 9.6 MiB/s (10066329 bytes/second).
+
+Status: at 1%.
+        acquired 134 MiB (140738560 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 19 minute(s) and 48 second(s) with 6.4 MiB/s (6710886 bytes/second).
+
+Status: at 2%.
+        acquired 183 MiB (192905216 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 13 minute(s) and 4 second(s) with 9.6 MiB/s (10066329 bytes/second).
+
+Status: at 3%.
+        acquired 234 MiB (245497856 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 10 minute(s) and 46 second(s) with 11 MiB/s (12091687 bytes/second).
+
+Status: at 3%.
+        acquired 283 MiB (297238528 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 12 minute(s) and 56 second(s) with 9.6 MiB/s (10066329 bytes/second).
+
+Status: at 4%.
+        acquired 331 MiB (348028928 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 11 minute(s) and 12 second(s) with 10 MiB/s (11504376 bytes/second).
+
+Status: at 4%.
+        acquired 381 MiB (399605760 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 12 minute(s) and 48 second(s) with 9.6 MiB/s (10066329 bytes/second).
+
+Status: at 5%.
+        acquired 426 MiB (447184896 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 11 minute(s) and 24 second(s) with 10 MiB/s (11184810 bytes/second).
+
+Status: at 6%.
+        acquired 471 MiB (494895104 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 10 minute(s) and 26 second(s) with 11 MiB/s (12091687 bytes/second).
+
+Status: at 6%.
+        acquired 520 MiB (545751040 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 11 minute(s) and 29 second(s) with 10 MiB/s (10986444 bytes/second).
+
+Status: at 7%.
+        acquired 569 MiB (597655552 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 10 minute(s) and 37 second(s) with 11 MiB/s (11756297 bytes/second).
+
+Status: at 8%.
+        acquired 620 MiB (650608640 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 9 minute(s) and 58 second(s) with 11 MiB/s (12389328 bytes/second).
+
+Status: at 8%.
+        acquired 671 MiB (704086016 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 10 minute(s) and 44 second(s) with 10 MiB/s (11504376 bytes/second).
+
+Status: at 9%.
+        acquired 722 MiB (757563392 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 10 minute(s) and 6 second(s) with 11 MiB/s (12091687 bytes/second).
+
+Status: at 10%.
+        acquired 768 MiB (806322176 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 9 minute(s) and 36 second(s) with 12 MiB/s (12582912 bytes/second).
+
+Status: at 10%.
+        acquired 812 MiB (851640320 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 10 minute(s) and 12 second(s) with 11 MiB/s (11842740 bytes/second).
+
+Status: at 11%.
+        acquired 862 MiB (904364032 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 9 minute(s) and 42 second(s) with 11 MiB/s (12313553 bytes/second).
+
+Status: at 11%.
+        acquired 910 MiB (955219968 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 10 minute(s) and 14 second(s) with 11 MiB/s (11671106 bytes/second).
+
+Status: at 12%.
+        acquired 961 MiB (1008173056 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 9 minute(s) and 46 second(s) with 11 MiB/s (12091687 bytes/second).
+
+Status: at 13%.
+        acquired 1010 MiB (1059946496 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 9 minute(s) and 22 second(s) with 11 MiB/s (12466042 bytes/second).
+
+Status: at 13%.
+        acquired 1.0 GiB (1116635136 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 9 minute(s) and 48 second(s) with 11 MiB/s (11912816 bytes/second).
+
+Status: at 14%.
+        acquired 1.0 GiB (1165983744 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 9 minute(s) and 25 second(s) with 11 MiB/s (12257326 bytes/second).
+
+Status: at 15%.
+        acquired 1.1 GiB (1218150400 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 9 minute(s) and 4 second(s) with 12 MiB/s (12582912 bytes/second).
+
+Status: at 15%.
+        acquired 1.1 GiB (1269792768 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 9 minute(s) and 26 second(s) with 11 MiB/s (12091687 bytes/second).
+
+Status: at 16%.
+        acquired 1.2 GiB (1322483712 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 9 minute(s) and 6 second(s) with 11 MiB/s (12389328 bytes/second).
+
+Status: at 17%.
+        acquired 1.2 GiB (1374126080 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 8 minute(s) and 47 second(s) with 12 MiB/s (12681990 bytes/second).
+
+Status: at 17%.
+        acquired 1.3 GiB (1427079168 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 9 minute(s) and 6 second(s) with 11 MiB/s (12238698 bytes/second).
+
+Status: at 18%.
+        acquired 1.3 GiB (1478950912 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 8 minute(s) and 48 second(s) with 11 MiB/s (12504757 bytes/second).
+
+Status: at 18%.
+        acquired 1.4 GiB (1524334592 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 9 minute(s) and 6 second(s) with 11 MiB/s (12091687 bytes/second).
+
+Status: at 19%.
+        acquired 1.4 GiB (1576239104 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 8 minute(s) and 48 second(s) with 11 MiB/s (12351324 bytes/second).
+
+Status: at 20%.
+        acquired 1.5 GiB (1632862208 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 8 minute(s) and 32 second(s) with 12 MiB/s (12582912 bytes/second).
+
+Status: at 20%.
+        acquired 1.5 GiB (1688174592 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 8 minute(s) and 48 second(s) with 11 MiB/s (12201611 bytes/second).
+
+Status: at 21%.
+        acquired 1.6 GiB (1740603392 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 8 minute(s) and 31 second(s) with 11 MiB/s (12446775 bytes/second).
+
+Status: at 22%.
+        acquired 1.6 GiB (1789100032 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 8 minute(s) and 16 second(s) with 12 MiB/s (12662049 bytes/second).
+
+Status: at 22%.
+        acquired 1.7 GiB (1827635200 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 8 minute(s) and 30 second(s) with 11 MiB/s (12313553 bytes/second).
+
+Status: at 23%.
+        acquired 1.7 GiB (1875083264 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 8 minute(s) and 15 second(s) with 11 MiB/s (12524204 bytes/second).
+
+Status: at 23%.
+        acquired 1.8 GiB (1924366336 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 8 minute(s) and 28 second(s) with 11 MiB/s (12201611 bytes/second).
+
+Status: at 24%.
+        acquired 1.8 GiB (1966833664 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 8 minute(s) and 14 second(s) with 11 MiB/s (12389328 bytes/second).
+
+Status: at 25%.
+        acquired 1.9 GiB (2019262464 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 8 minute(s) and 0 second(s) with 12 MiB/s (12582912 bytes/second).
+
+Status: at 25%.
+        acquired 1.9 GiB (2071953408 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 8 minute(s) and 12 second(s) with 11 MiB/s (12276011 bytes/second).
+
+Status: at 26%.
+        acquired 1.9 GiB (2122809344 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 7 minute(s) and 58 second(s) with 11 MiB/s (12466042 bytes/second).
+
+Status: at 26%.
+        acquired 2.0 GiB (2169470976 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 8 minute(s) and 9 second(s) with 11 MiB/s (12183152 bytes/second).
+
+Status: at 27%.
+        acquired 2.0 GiB (2217410560 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 7 minute(s) and 55 second(s) with 11 MiB/s (12370297 bytes/second).
+
+Status: at 28%.
+        acquired 2.1 GiB (2266464256 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 7 minute(s) and 42 second(s) with 11 MiB/s (12543712 bytes/second).
+
+Status: at 28%.
+        acquired 2.1 GiB (2314829824 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 7 minute(s) and 53 second(s) with 11 MiB/s (12257326 bytes/second).
+
+Status: at 29%.
+        acquired 2.2 GiB (2366341120 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 7 minute(s) and 40 second(s) with 11 MiB/s (12427567 bytes/second).
+
+Status: at 30%.
+        acquired 2.2 GiB (2417983488 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 7 minute(s) and 28 second(s) with 12 MiB/s (12582912 bytes/second).
+
+Status: at 30%.
+        acquired 2.3 GiB (2470150144 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 7 minute(s) and 37 second(s) with 11 MiB/s (12332409 bytes/second).
+
+Status: at 31%.
+        acquired 2.3 GiB (2521006080 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 7 minute(s) and 25 second(s) with 11 MiB/s (12485370 bytes/second).
+
+Status: at 31%.
+        acquired 2.4 GiB (2573336576 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 7 minute(s) and 34 second(s) with 11 MiB/s (12238698 bytes/second).
+
+Status: at 32%.
+        acquired 2.4 GiB (2625503232 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 7 minute(s) and 22 second(s) with 11 MiB/s (12389328 bytes/second).
+
+Status: at 33%.
+        acquired 2.4 GiB (2669379584 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 7 minute(s) and 10 second(s) with 11 MiB/s (12543712 bytes/second).
+
+Status: at 33%.
+        acquired 2.5 GiB (2721546240 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 7 minute(s) and 18 second(s) with 11 MiB/s (12313553 bytes/second).
+
+Status: at 34%.
+        acquired 2.6 GiB (2781839360 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 7 minute(s) and 7 second(s) with 11 MiB/s (12446775 bytes/second).
+
+Status: at 35%.
+        acquired 2.6 GiB (2838986752 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 6 minute(s) and 56 second(s) with 12 MiB/s (12582912 bytes/second).
+
+Status: at 35%.
+        acquired 2.7 GiB (2898231296 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 7 minute(s) and 3 second(s) with 11 MiB/s (12370297 bytes/second).
+
+Status: at 36%.
+        acquired 2.7 GiB (2957737984 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 6 minute(s) and 52 second(s) with 11 MiB/s (12504757 bytes/second).
+
+Status: at 37%.
+        acquired 2.8 GiB (3011477504 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 6 minute(s) and 41 second(s) with 12 MiB/s (12642172 bytes/second).
+
+Status: at 38%.
+        acquired 2.8 GiB (3070984192 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 6 minute(s) and 31 second(s) with 12 MiB/s (12762383 bytes/second).
+
+Status: at 38%.
+        acquired 2.9 GiB (3129966592 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 6 minute(s) and 38 second(s) with 11 MiB/s (12543712 bytes/second).
+
+Status: at 39%.
+        acquired 2.9 GiB (3189473280 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 6 minute(s) and 27 second(s) with 12 MiB/s (12681990 bytes/second).
+
+Status: at 40%.
+        acquired 3.0 GiB (3248455680 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 6 minute(s) and 18 second(s) with 12 MiB/s (12782640 bytes/second).
+
+Status: at 41%.
+        acquired 3.0 GiB (3304292352 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 6 minute(s) and 8 second(s) with 12 MiB/s (12905550 bytes/second).
+
+Status: at 41%.
+        acquired 3.1 GiB (3364847616 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 6 minute(s) and 14 second(s) with 12 MiB/s (12701993 bytes/second).
+
+Status: at 42%.
+        acquired 3.1 GiB (3415179264 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 6 minute(s) and 4 second(s) with 12 MiB/s (12823349 bytes/second).
+
+Status: at 43%.
+        acquired 3.2 GiB (3466035200 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 5 minute(s) and 55 second(s) with 12 MiB/s (12926265 bytes/second).
+
+Status: at 43%.
+        acquired 3.2 GiB (3524493312 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 6 minute(s) and 0 second(s) with 12 MiB/s (12742189 bytes/second).
+
+Status: at 44%.
+        acquired 3.3 GiB (3585835008 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 5 minute(s) and 51 second(s) with 12 MiB/s (12843801 bytes/second).
+
+Status: at 45%.
+        acquired 3.4 GiB (3644817408 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 5 minute(s) and 42 second(s) with 12 MiB/s (12947047 bytes/second).
+
+Status: at 45%.
+        acquired 3.4 GiB (3700391936 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 5 minute(s) and 47 second(s) with 12 MiB/s (12762383 bytes/second).
+
+Status: at 46%.
+        acquired 3.5 GiB (3750985728 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 5 minute(s) and 38 second(s) with 12 MiB/s (12864318 bytes/second).
+
+Status: at 47%.
+        acquired 3.5 GiB (3809181696 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 5 minute(s) and 29 second(s) with 12 MiB/s (12967896 bytes/second).
+
+Status: at 48%.
+        acquired 3.6 GiB (3866263552 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 5 minute(s) and 20 second(s) with 12 MiB/s (13073155 bytes/second).
+
+Status: at 48%.
+        acquired 3.6 GiB (3919052800 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 5 minute(s) and 25 second(s) with 12 MiB/s (12884901 bytes/second).
+
+Status: at 49%.
+        acquired 3.7 GiB (3971448832 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 5 minute(s) and 16 second(s) with 12 MiB/s (12988812 bytes/second).
+
+Status: at 50%.
+        acquired 3.7 GiB (4028071936 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 5 minute(s) and 8 second(s) with 12 MiB/s (13073155 bytes/second).
+
+Status: at 50%.
+        acquired 3.8 GiB (4081025024 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 5 minute(s) and 12 second(s) with 12 MiB/s (12905550 bytes/second).
+
+Status: at 50%.
+        acquired 3.8 GiB (4105142272 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 5 minute(s) and 46 second(s) with 11 MiB/s (11637375 bytes/second).
+
+Status: at 51%.
+        acquired 3.8 GiB (4152066048 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 5 minute(s) and 36 second(s) with 11 MiB/s (11739159 bytes/second).
+
+Status: at 52%.
+        acquired 3.9 GiB (4196728832 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 5 minute(s) and 26 second(s) with 11 MiB/s (11842740 bytes/second).
+
+Status: at 52%.
+        acquired 3.9 GiB (4248797184 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 5 minute(s) and 30 second(s) with 11 MiB/s (11705034 bytes/second).
+
+Status: at 53%.
+        acquired 4.0 GiB (4301750272 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 5 minute(s) and 21 second(s) with 11 MiB/s (11790722 bytes/second).
+
+Status: at 54%.
+        acquired 4.0 GiB (4353392640 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 5 minute(s) and 11 second(s) with 11 MiB/s (11895219 bytes/second).
+
+Status: at 54%.
+        acquired 4.1 GiB (4404772864 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 5 minute(s) and 15 second(s) with 11 MiB/s (11756297 bytes/second).
+
+Status: at 55%.
+        acquired 4.1 GiB (4455530496 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 5 minute(s) and 6 second(s) with 11 MiB/s (11842740 bytes/second).
+
+Status: at 55%.
+        acquired 4.2 GiB (4508057600 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 5 minute(s) and 9 second(s) with 11 MiB/s (11722072 bytes/second).
+
+Status: at 56%.
+        acquired 4.2 GiB (4559175680 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 5 minute(s) and 0 second(s) with 11 MiB/s (11808011 bytes/second).
+
+Status: at 57%.
+        acquired 4.3 GiB (4610818048 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 4 minute(s) and 51 second(s) with 11 MiB/s (11895219 bytes/second).
+
+Status: at 57%.
+        acquired 4.3 GiB (4663771136 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 4 minute(s) and 54 second(s) with 11 MiB/s (11773484 bytes/second).
+
+Status: at 58%.
+        acquired 4.4 GiB (4715151360 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 4 minute(s) and 45 second(s) with 11 MiB/s (11860182 bytes/second).
+
+Status: at 59%.
+        acquired 4.4 GiB (4772298752 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 4 minute(s) and 36 second(s) with 11 MiB/s (11948165 bytes/second).
+
+Status: at 59%.
+        acquired 4.5 GiB (4824137728 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 4 minute(s) and 39 second(s) with 11 MiB/s (11825350 bytes/second).
+
+Status: at 60%.
+        acquired 4.5 GiB (4875845632 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 4 minute(s) and 30 second(s) with 11 MiB/s (11912816 bytes/second).
+
+Status: at 61%.
+        acquired 4.6 GiB (4927815680 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 4 minute(s) and 22 second(s) with 11 MiB/s (11983725 bytes/second).
+
+Status: at 61%.
+        acquired 4.6 GiB (4983062528 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 4 minute(s) and 24 second(s) with 11 MiB/s (11877675 bytes/second).
+
+Status: at 62%.
+        acquired 4.7 GiB (5036015616 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 4 minute(s) and 16 second(s) with 11 MiB/s (11948165 bytes/second).
+
+Status: at 63%.
+        acquired 4.7 GiB (5088968704 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 4 minute(s) and 7 second(s) with 11 MiB/s (12037464 bytes/second).
+
+Status: at 63%.
+        acquired 4.8 GiB (5145329664 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 4 minute(s) and 10 second(s) with 11 MiB/s (11912816 bytes/second).
+
+Status: at 64%.
+        acquired 4.8 GiB (5194088448 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 4 minute(s) and 1 second(s) with 11 MiB/s (12001585 bytes/second).
+
+Status: at 65%.
+        acquired 4.9 GiB (5241241600 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 3 minute(s) and 53 second(s) with 11 MiB/s (12073558 bytes/second).
+
+Status: at 65%.
+        acquired 4.9 GiB (5292916736 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 3 minute(s) and 55 second(s) with 11 MiB/s (11965919 bytes/second).
+
+Status: at 66%.
+        acquired 4.9 GiB (5344624640 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 3 minute(s) and 47 second(s) with 11 MiB/s (12037464 bytes/second).
+
+Status: at 67%.
+        acquired 5.0 GiB (5396463616 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 3 minute(s) and 39 second(s) with 11 MiB/s (12109870 bytes/second).
+
+Status: at 67%.
+        acquired 5.0 GiB (5440733184 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 3 minute(s) and 41 second(s) with 11 MiB/s (12001585 bytes/second).
+
+Status: at 68%.
+        acquired 5.1 GiB (5491884032 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 3 minute(s) and 33 second(s) with 11 MiB/s (12073558 bytes/second).
+
+Status: at 68%.
+        acquired 5.1 GiB (5527011328 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 3 minute(s) and 35 second(s) with 11 MiB/s (11965919 bytes/second).
+
+Status: at 69%.
+        acquired 5.1 GiB (5577867264 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 3 minute(s) and 27 second(s) with 11 MiB/s (12037464 bytes/second).
+
+Status: at 69%.
+        acquired 5.2 GiB (5631344640 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 3 minute(s) and 29 second(s) with 11 MiB/s (11930464 bytes/second).
+
+Status: at 70%.
+        acquired 5.2 GiB (5682921472 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 3 minute(s) and 21 second(s) with 11 MiB/s (12001585 bytes/second).
+
+Status: at 71%.
+        acquired 5.3 GiB (5735677952 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 3 minute(s) and 13 second(s) with 11 MiB/s (12073558 bytes/second).
+
+Status: at 71%.
+        acquired 5.3 GiB (5787844608 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 3 minute(s) and 15 second(s) with 11 MiB/s (11965919 bytes/second).
+
+Status: at 72%.
+        acquired 5.4 GiB (5837881344 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 3 minute(s) and 7 second(s) with 11 MiB/s (12037464 bytes/second).
+
+Status: at 72%.
+        acquired 5.4 GiB (5873041408 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 3 minute(s) and 9 second(s) with 11 MiB/s (11930464 bytes/second).
+
+Status: at 73%.
+        acquired 5.5 GiB (5923373056 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 3 minute(s) and 1 second(s) with 11 MiB/s (12001585 bytes/second).
+
+Status: at 74%.
+        acquired 5.5 GiB (5974753280 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 2 minute(s) and 53 second(s) with 11 MiB/s (12073558 bytes/second).
+
+Status: at 74%.
+        acquired 5.6 GiB (6026395648 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 2 minute(s) and 54 second(s) with 11 MiB/s (11983725 bytes/second).
+
+Status: at 75%.
+        acquired 5.6 GiB (6077775872 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 2 minute(s) and 47 second(s) with 11 MiB/s (12037464 bytes/second).
+
+Status: at 76%.
+        acquired 5.7 GiB (6133678080 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 2 minute(s) and 39 second(s) with 11 MiB/s (12109870 bytes/second).
+
+Status: at 76%.
+        acquired 5.7 GiB (6177914880 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 2 minute(s) and 41 second(s) with 11 MiB/s (12001585 bytes/second).
+
+Status: at 77%.
+        acquired 5.8 GiB (6226313216 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 2 minute(s) and 33 second(s) with 11 MiB/s (12073558 bytes/second).
+
+Status: at 78%.
+        acquired 5.8 GiB (6282969088 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 2 minute(s) and 26 second(s) with 11 MiB/s (12128107 bytes/second).
+
+Status: at 78%.
+        acquired 5.9 GiB (6333366272 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 2 minute(s) and 27 second(s) with 11 MiB/s (12037464 bytes/second).
+
+Status: at 79%.
+        acquired 5.9 GiB (6385860608 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 2 minute(s) and 19 second(s) with 11 MiB/s (12109870 bytes/second).
+
+Status: at 79%.
+        acquired 5.9 GiB (6437961728 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 2 minute(s) and 20 second(s) with 11 MiB/s (12019498 bytes/second).
+
+Status: at 80%.
+        acquired 6.0 GiB (6489341952 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 2 minute(s) and 13 second(s) with 11 MiB/s (12073558 bytes/second).
+
+Status: at 81%.
+        acquired 6.0 GiB (6534430720 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 2 minute(s) and 6 second(s) with 11 MiB/s (12128107 bytes/second).
+
+Status: at 81%.
+        acquired 6.1 GiB (6588694528 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 2 minute(s) and 7 second(s) with 11 MiB/s (12037464 bytes/second).
+
+Status: at 82%.
+        acquired 6.1 GiB (6647939072 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 1 minute(s) and 59 second(s) with 11 MiB/s (12109870 bytes/second).
+
+Status: at 83%.
+        acquired 6.2 GiB (6692798464 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 1 minute(s) and 52 second(s) with 11 MiB/s (12164748 bytes/second).
+
+Status: at 83%.
+        acquired 6.2 GiB (6744408064 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 1 minute(s) and 53 second(s) with 11 MiB/s (12073558 bytes/second).
+
+Status: at 84%.
+        acquired 6.3 GiB (6795264000 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 1 minute(s) and 46 second(s) with 11 MiB/s (12128107 bytes/second).
+
+Status: at 85%.
+        acquired 6.3 GiB (6847168512 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 1 minute(s) and 39 second(s) with 11 MiB/s (12183152 bytes/second).
+
+Status: at 85%.
+        acquired 6.4 GiB (6890946560 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 1 minute(s) and 39 second(s) with 11 MiB/s (12109870 bytes/second).
+
+Status: at 86%.
+        acquired 6.4 GiB (6935773184 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 1 minute(s) and 32 second(s) with 11 MiB/s (12164748 bytes/second).
+
+Status: at 86%.
+        acquired 6.5 GiB (6982402048 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 1 minute(s) and 33 second(s) with 11 MiB/s (12073558 bytes/second).
+
+Status: at 87%.
+        acquired 6.5 GiB (7036370944 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 1 minute(s) and 26 second(s) with 11 MiB/s (12128107 bytes/second).
+
+Status: at 88%.
+        acquired 6.6 GiB (7087292416 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 1 minute(s) and 19 second(s) with 11 MiB/s (12183152 bytes/second).
+
+Status: at 88%.
+        acquired 6.6 GiB (7139196928 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 1 minute(s) and 19 second(s) with 11 MiB/s (12109870 bytes/second).
+
+Status: at 89%.
+        acquired 6.7 GiB (7189200896 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 1 minute(s) and 12 second(s) with 11 MiB/s (12164748 bytes/second).
+
+Status: at 89%.
+        acquired 6.7 GiB (7233863680 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 1 minute(s) and 13 second(s) with 11 MiB/s (12073558 bytes/second).
+
+Status: at 90%.
+        acquired 6.8 GiB (7287832576 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 1 minute(s) and 6 second(s) with 11 MiB/s (12128107 bytes/second).
+
+Status: at 91%.
+        acquired 6.8 GiB (7338688512 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 59 second(s) with 11 MiB/s (12183152 bytes/second).
+
+Status: at 91%.
+        acquired 6.9 GiB (7392690176 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 59 second(s) with 11 MiB/s (12109870 bytes/second).
+
+Status: at 92%.
+        acquired 6.9 GiB (7444332544 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 53 second(s) with 11 MiB/s (12146400 bytes/second).
+
+Status: at 93%.
+        acquired 6.9 GiB (7498072064 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 46 second(s) with 11 MiB/s (12201611 bytes/second).
+
+Status: at 93%.
+        acquired 7.0 GiB (7549976576 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 46 second(s) with 11 MiB/s (12128107 bytes/second).
+
+Status: at 94%.
+        acquired 7.0 GiB (7590346752 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 39 second(s) with 11 MiB/s (12183152 bytes/second).
+
+Status: at 94%.
+        acquired 7.1 GiB (7641989120 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 39 second(s) with 11 MiB/s (12109870 bytes/second).
+
+Status: at 95%.
+        acquired 7.1 GiB (7669776384 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 33 second(s) with 11 MiB/s (12146400 bytes/second).
+
+Status: at 95%.
+        acquired 7.1 GiB (7722303488 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 33 second(s) with 11 MiB/s (12073558 bytes/second).
+
+Status: at 96%.
+        acquired 7.2 GiB (7775584256 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 26 second(s) with 11 MiB/s (12128107 bytes/second).
+
+Status: at 97%.
+        acquired 7.2 GiB (7827292160 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 19 second(s) with 11 MiB/s (12183152 bytes/second).
+
+Status: at 97%.
+        acquired 7.3 GiB (7879589888 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 19 second(s) with 11 MiB/s (12109870 bytes/second).
+
+Status: at 98%.
+        acquired 7.3 GiB (7931396096 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 13 second(s) with 11 MiB/s (12146400 bytes/second).
+
+Status: at 99%.
+        acquired 7.4 GiB (7984873472 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 6 second(s) with 11 MiB/s (12201611 bytes/second).
+
+Status: at 99%.
+        acquired 7.4 GiB (8033370112 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 6 second(s) with 11 MiB/s (12128107 bytes/second).
+
+Acquiry completed at: Feb 27, 2021 09:44:17
+
+Written: 7.5 GiB (8053063868 bytes) in 10 minute(s) and 59 second(s) with 11 MiB/s (12220127 bytes/second).
+MD5 hash calculated over data:		acfbd7fdb8ccc4df230eb01751b011d1
+SHA256 hash calculated over data:	3b223fba508ea87d9cbce24ba600f36cf2153b845fee98c51de5fa2b82135a3d
+ewfacquire: SUCCESS
+[1;36msansforensics@siftworkstation[0m: [32m~/Documents/lab2[0m
+$ sudo ls[K[K[K[K[K[K[Ksudo u[Kewfinfo /[KUSB1.E01 
+ewfinfo 20140811
+
+Acquiry information
+	Case number:		001
+	Description:		USB1
+	Examiner name:		miso
+	Acquisition date:	Sat Feb 27 09:33:18 2021
+	System date:		Sat Feb 27 09:33:18 2021
+	Operating system used:	Linux
+	Software version used:	20140811
+	Password:		N/A
+
+EWF information
+	File format:		EnCase 6
+	Sectors per chunk:	64
+	Error granularity:	64
+	Compression method:	deflate
+	Compression level:	no compression
+	Set identifier:		745bb220-7ffd-0000-2ce7-7354b9550000
+
+Media information
+	Media type:		removable disk
+	Is physical:		yes
+	Bytes per sector:	512
+	Number of sectors:	15728640
+	Media size:		7.5 GiB (8053063680 bytes)
+
+Digest hash information
+	MD5:			acfbd7fdb8ccc4df230eb01751b011d1
+
+[1;36msansforensics@siftworkstation[0m: [32m~/Documents/lab2[0m
+$ sudo ewfinfo USB1.E01 [C[C[Ksudo ewfinfo USB1.E01 [C[C[Ku[Kewf[K[K[Ksudo w[Kewfverify ./[K[KUSB1.E01 
+ewfverify 20140811
+
+Verify started at: Feb 27, 2021 09:55:54
+This could take a while.
+
+Status: at 10%.
+        verified 791 MiB (829685760 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 36 second(s) with 192 MiB/s (201326592 bytes/second).
+
+Status: at 17%.
+        verified 1.2 GiB (1377533952 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 39 second(s) with 163 MiB/s (171341780 bytes/second).
+
+Status: at 26%.
+        verified 1.9 GiB (2100101120 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 34 second(s) with 166 MiB/s (175066601 bytes/second).
+
+Status: at 31%.
+        verified 2.4 GiB (2572845056 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 35 second(s) with 150 MiB/s (157903209 bytes/second).
+
+Status: at 41%.
+        verified 3.1 GiB (3339288576 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 28 second(s) with 160 MiB/s (167772160 bytes/second).
+
+Status: at 48%.
+        verified 3.6 GiB (3902242816 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 26 second(s) with 153 MiB/s (161061273 bytes/second).
+
+Status: at 56%.
+        verified 4.2 GiB (4545871872 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 22 second(s) with 153 MiB/s (161061273 bytes/second).
+
+Status: at 64%.
+        verified 4.8 GiB (5166202880 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 18 second(s) with 153 MiB/s (161061273 bytes/second).
+
+Status: at 73%.
+        verified 5.5 GiB (5958500352 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 13 second(s) with 156 MiB/s (164348238 bytes/second).
+
+Status: at 81%.
+        verified 6.1 GiB (6596886528 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 9 second(s) with 156 MiB/s (164348238 bytes/second).
+
+Status: at 88%.
+        verified 6.6 GiB (7159283712 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 6 second(s) with 153 MiB/s (161061273 bytes/second).
+
+Status: at 97%.
+        verified 7.3 GiB (7882866688 bytes) of total 7.5 GiB (8053063680 bytes).
+        completion in 1 second(s) with 156 MiB/s (164348238 bytes/second).
+
+Verify completed at: Feb 27, 2021 09:56:42
+
+Read: 7.5 GiB (8053063680 bytes) in 48 second(s) with 160 MiB/s (167772160 bytes/second).
+
+MD5 hash stored in file:		acfbd7fdb8ccc4df230eb01751b011d1
+MD5 hash calculated over data:		acfbd7fdb8ccc4df230eb01751b011d1
+
+ewfverify: SUCCESS
+[1;36msansforensics@siftworkstation[0m: [32m~/Documents/lab2[0m
+$ sudo mount [K[K[K[K[K[K[K fsstat [K[K[K[K[K[K[K[K fsts[Ks[K[Kstat /dev/sdb
+Cannot determine file system type
+[1;36msansforensics@siftworkstation[0m: [32m~/Documents/lab2[0m
+$ sudo fsstat /dev/sdb[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Klsblk /dev/sdb[K[K[K[K[K[K[K[K[K[K[K[K[K[Kfdisk /dev/sdb
+[32m
+Welcome to fdisk (util-linux 2.31.1).
+[0mChanges will remain in memory only, until you decide to write them.
+Be careful before using the write command.
+
+
+Command (m for help): q
+
+[1;36msansforensics@siftworkstation[0m: [32m~/Documents/lab2[0m
+$ sudo fdisk /dev/sdb[K[K[K[K[K[K[K[K[K[K[K[K[K
+Display all 137 possibilities? (y or n)
+[1;36msansforensics@siftworkstation[0m: [32m~/Documents/lab2[0m
+$ sudo f[Klsblk /dev/sdb
+NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sdb      8:16   1  7.5G  0 disk 
+├─sdb1   8:17   1   99M  0 part 
+└─sdb2   8:18   1  411M  0 part 
+[1;36msansforensics@siftworkstation[0m: [32m~/Documents/lab2[0m
+$ sudo lsblk /dev/sdb[C[C[C[C[C[C[Cfdis[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1@sstat[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Pdisk[C[C[C[C[C[C[C[C[C-/dev/sdbl/dev/sdb /dev/sdb
+[1mDisk /dev/sdb: 7.5 GiB, 8053063680 bytes, 15728640 sectors
+[0mUnits: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0x86566e25
+
+[1mDevice[0m     [1mBoot[0m [1m Start[0m [1m    End[0m [1mSectors[0m [1m Size[0m [1mId[0m [1mType[0m
+/dev/sdb1         2048  204800  202753   99M 83 Linux
+/dev/sdb2       206848 1048575  841728  411M  b W95 FAT32
+[1;36msansforensics@siftworkstation[0m: [32m~/Documents/lab2[0m
+$ sudo mount -o ro,loop,offset=$$((([K[K[K[K(())2))0))8))*))[1P))[1P))3))8))[1P))[1P))4))8))*))5))1))2))[C[C /dev/ewf /dev/sdb1[K
+mount: /dev/sdb: failed to setup loop device for /dev/ewf.
+[1;36msansforensics@siftworkstation[0m: [32m~/Documents/lab2[0m
+$ sudo kpartx -a /dev/sdb
+[1;36msansforensics@siftworkstation[0m: [32m~/Documents/lab2[0m
+$ sudo kpartx -a /dev/sdb[C[C[C[C[C[C[C[37@mount -o ro,loop,offset=$((2048*512)) /dev/ewf[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cfdisk -l /dev/sdb[K[C[C[C[C[C[C[C[38@mount -o ro,loop,offset=$((2048*512)) /dev/ewf[C[C[C[C[C[C[C[C[C
+mount: /dev/sdb: failed to setup loop device for /dev/ewf.
+[1;36msansforensics@siftworkstation[0m: [32m~/Documents/lab2[0m
+$ cd mn[K[K/mnt[K[K[K[Ksudo mount -o ro,loop,offset=$((2048*512)) /dev/ewf /dev/sdb[1P[1P[1P[1@m[1@n[1@t
+mount: /dev/sdb: failed to setup loop device for /mnt/ewf.
+[1;36msansforensics@siftworkstation[0m: [32m~/Documents/lab2[0m
+$ sudo mount -o ro,loop,offset=$((2048*512)) /mnt/ewf /dev/sdbdev[C[C[C[C[C[C[C[C[C[C[C[C[Cmnt[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K/dev/sdb /mnt/w[Kewf
+[1;36msansforensics@siftworkstation[0m: [32m~/Documents/lab2[0m
+$ cd/ [K[K /mnt/ewf
+[1;36msansforensics@siftworkstation[0m: [32m/mnt/ewf[0m
+$ ll[K[Ksudo find -type f -exec sha256sum "{}"
+find: missing argument to `-exec'
+[1;36msansforensics@siftworkstation[0m: [32m/mnt/ewf[0m
+$ sudo find -type f -exec sha256sum "{}"[C[C[C[C[C[C[C[C[C[C[C[C[C \;[1P \;[1P
+bff8ce19a95353796152f6ec875ebca0ef6777741ca06f18e5fb1f20cc9195dc  ./hello.png
+a87b0f3523d491109abd75436509b39e208054255c951fd6b23f23719c674fd1  ./NOTES.md
+[1;36msansforensics@siftworkstation[0m: [32m/mnt/ewf[0m
+$ sudo fsstat -o 2048[K[K[K[K/mnt/ewf
+Invalid image offset (tsk_parse: invalid image offset: /mnt/ewf)
+[1;36msansforensics@siftworkstation[0m: [32m/mnt/ewf[0m
+$ sudo fsstat -o /mnt/ewf[C[C[1P/mnt/ewf[1P/mnt/ewf[1P/mnt/ewf
+Invalid magic value (raw_open: image "/mnt/ewf" - is a directory)
+[1;36msansforensics@siftworkstation[0m: [32m/mnt/ewf[0m
+$ sudo fsstat /mnt/ewf[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Ksudo fls -r o[K-o 2048 /ev/[K[K[Kdev/sdb
+r/r 4:	hello.png
+r/r * 6:	.NOTES.md.swp
+r/r 8:	NOTES.md
+r/r * 10:	NOTES.md~
+v/v 3237587:	$MBR
+v/v 3237588:	$FAT1
+v/v 3237589:	$FAT2
+V/V 3237590:	$OrphanFiles
+[1;36msansforensics@siftworkstation[0m: [32m/mnt/ewf[0m
+$ fls --help
+fls: invalid option -- '-'
+Invalid argument: --help
+usage: fls [-adDFlhpruvV] [-f fstype] [-i imgtype] [-b dev_sector_size] [-m dir/] [-o imgoffset] [-z ZONE] [-s seconds] image [images] [inode]
+	If [inode] is not given, the root directory is used
+	-a: Display "." and ".." entries
+	-d: Display deleted entries only
+	-D: Display only directories
+	-F: Display only files
+	-l: Display long version (like ls -l)
+	-i imgtype: Format of image file (use '-i list' for supported types)
+	-b dev_sector_size: The size (in bytes) of the device sectors
+	-f fstype: File system type (use '-f list' for supported types)
+	-m: Display output in mactime input format with
+	      dir/ as the actual mount point of the image
+	-h: Include MD5 checksum hash in mactime output
+	-o imgoffset: Offset into image file (in sectors)
+	-p: Display full path for each file
+	-r: Recurse on directory entries
+	-u: Display undeleted entries only
+	-v: verbose output to stderr
+	-V: Print version
+	-z: Time zone of original machine (i.e. EST5EDT or GMT) (only useful with -l)
+	-s seconds: Time skew of original machine (in seconds) (only useful with -l & -m)
+[1;36msansforensics@siftworkstation[0m: [32m/mnt/ewf[0m
+$ fls --help[C[Csudo fls -r -o 2048 /dev/sdb[1@l
+r/r 4:	hello.png	2021-02-23 16:44:46 (UTC)	2021-02-23 00:00:00 (UTC)	0000-00-00 00:00:00 (UTC)	2021-02-23 16:44:46 (UTC)	97438	0	0
+r/r * 6:	.NOTES.md.swp	2021-02-23 16:44:52 (UTC)	2021-02-23 00:00:00 (UTC)	0000-00-00 00:00:00 (UTC)	2021-02-23 16:44:52 (UTC)	0	0	0
+r/r 8:	NOTES.md	2021-02-23 16:45:18 (UTC)	2021-02-23 00:00:00 (UTC)	0000-00-00 00:00:00 (UTC)	2021-02-23 16:45:18 (UTC)	49	0	0
+r/r * 10:	NOTES.md~	2021-02-23 16:45:18 (UTC)	2021-02-23 00:00:00 (UTC)	0000-00-00 00:00:00 (UTC)	2021-02-23 16:45:18 (UTC)	0	0	0
+v/v 3237587:	$MBR	0000-00-00 00:00:00 (UTC)	0000-00-00 00:00:00 (UTC)	0000-00-00 00:00:00 (UTC)	0000-00-00 00:00:00 (UTC)	512	0	0
+v/v 3237588:	$FAT1	0000-00-00 00:00:00 (UTC)	0000-00-00 00:00:00 (UTC)	0000-00-00 00:00:00 (UTC)	0000-00-00 00:00:00 (UTC)	102400	0	0
+v/v 3237589:	$FAT2	0000-00-00 00:00:00 (UTC)	0000-00-00 00:00:00 (UTC)	0000-00-00 00:00:00 (UTC)	0000-00-00 00:00:00 (UTC)	102400	0	0
+V/V 3237590:	$OrphanFiles	0000-00-00 00:00:00 (UTC)	0000-00-00 00:00:00 (UTC)	0000-00-00 00:00:00 (UTC)	0000-00-00 00:00:00 (UTC)	0	0	0
+[1;36msansforensics@siftworkstation[0m: [32m/mnt/ewf[0m
+$ [K$ [K$ [K$ [K$ sudo fls -rl -o 2048 /dev/sdb[C[C[19Pfls --help[C[Csudo fls -r -o 2048 /dev/sdb[C[C[C[C[C[C[C[C[8Psstat /mnt/ewf-o /mnt/ewf[C[C[C[C[C[C[C[Cind -type f -exec sha256sum {} \;[C[C[C[C[C[C[C[C[16Psstat -o /mnt/ewf[3P/mnt/ewf[C[C[C[C[C[C[C[Cls -r -o 2048 /dev/sdb[C[C[18Pfls --help[C[Csudo fls -rl -o 2048 /dev/sdb[C[C[Ksudo fls -rl -o 2048 /dev/sdb[C[C[19Pfls --help[C[Csudo fls -r -o 2048 /dev/sdb[C[C[C[C[C[C[C[C[8Psstat /mnt/ewf-o /mnt/ewf[C[C[C[C[C[C[C[Cind -type f -exec sha256sum {} \;[1P"{}"[C[Ccd /mnt/ewf[K[C[C[49@sudo mount -o ro,loop,offset=$((2048*512)) /dev/sdb[C[C[C[C[C[C[C[C[Cmnt/ewf /dev/sdbdev[C[C[C[C[C[C[C[C[C[C[C[C[Cmnt[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P[1P[1@6[1@8[1@4[1@8
+mount: /dev/sdb: failed to setup loop device for /mnt/ewf.
+[1;36msansforensics@siftworkstation[0m: [32m/mnt/ewf[0m
+$ sudo mount -o ro,loop,offset=$((206848*512)) /mnt/ewf /dev/sdb[C[1P /dev/sdb[1P /dev/sdb[1P /dev/sdb[1P /dev/sdb[1P /dev/sdb[1P /dev/sdb[1P /dev/sdbd /dev/sdbe /dev/sdbv /dev/sdbs /dev/sdbd /dev/sdbb /dev/sdb[1P /dev/sdb[1P /dev/sdb[1P /dev/sdb[1P /dev/sdbd /dev/sdb[1P /dev/sdbv /dev/sdb/ /dev/sdbs /dev/sdbd /dev/sdbb /dev/sdb[1P/dev/sdb[1Pdev/sdb[1Pev/sdb[1Pv/sdb[1P/sdb[1Psdb[1Pdb[1Pb[K /mnt/ewf
+mount: /mnt/ewf: overlapping loop device exists for /dev/sdb.
+[1;36msansforensics@siftworkstation[0m: [32m/mnt/ewf[0m
+$ sudo mount -o ro,loop,offset=$((206848*512)) /dev/sdb /mnt/ewf[C[C[C[C1 /mnt/ewf
+mount: /mnt/ewf: wrong fs type, bad option, bad superblock on /dev/loop20, missing codepage or helper program, or other error.
+[1;36msansforensics@siftworkstation[0m: [32m/mnt/ewf[0m
+$ exit
+exit
+
+Script done on 2021-02-27 10:09:18+0000

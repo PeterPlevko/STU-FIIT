@@ -1,0 +1,91 @@
+.leftPart {
+    margin: 20px 0px 20px 0px;
+    width: 50%;
+}
+
+.slick-slide{
+    height: 50%;
+}
+
+.rightPart {
+    margin: 20px;
+    width: 50%;
+}
+
+.product {
+    display: flex;
+    border: 2px solid #45A29E;
+    background-color: #0B0C10;
+}
+
+.functionalPart {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.reviewPart {
+    margin-top: 20px;
+    display: flex;
+    width: 40%;
+    justify-content: space-around;
+}
+
+.reviewPart p{
+    font-weight: bold;
+    margin: 0px
+}
+
+.recommendations {
+    background-color: #1F2833;
+    border: 2px solid #45A29E;
+    width: -webkit-fill-available;
+    border-radius: 15px;
+}
+
+.recommendations img {
+    width: 200px;
+    height: 200px;
+    border-radius: 0px;
+    margin-top: 40px;
+}
+
+.recommendations h1 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.product figure:not(.main-img) {
+    display: none;
+}
+
+#galleryRow {
+    display: flex;
+    align-items: center;
+}
+
+.lightbox img {
+    max-width: -webkit-fill-available;
+}
+
+.ratingReview{
+    display: flex;
+    width: 35%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.prizes {
+    margin-top: 20px;
+    display: flex;
+    width: 55%;
+    justify-content: space-around;
+}
+
+.getHigher{
+    margin-top: 5px;
+    color: #66FCF1;
+}

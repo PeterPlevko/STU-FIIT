@@ -1,0 +1,175 @@
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: webcomponents.fe.milung.eu
+spec:
+  group: fe.milung.eu
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              required:
+                - module-uri
+              properties:
+                module-uri:
+                  description: |
+                    URI from which the module shall be accessed. The actual module is cached by the 
+                    conroller, to improve performance and to avoid CORS issues. 
+                  type: string
+                  format: url
+                preload:
+                  description: |
+                    The modules are not preloaded by default but only when navigating to some of the 
+                    subpaths mentioned at the `navigation` list. Setting this property to true
+                    ensures that the module is loaded when application starts.
+                  type: boolean
+                  default: false
+                proxy: 
+                  description: |
+                    Specifies whether the web components loading shall be proxied by the controller. 
+                    This is usefull when the web component is served from the cluster and 
+                    not accessible from the outside of the cluster network. The module will be served
+                    from the URL `<base controller URI>/web-components/<WebComponent name>.jsm`. 
+                    This is recommended approach for the standard assumed use-case.
+                  type: boolean
+                  default: true
+                hash-suffix: 
+                  description: |
+                    A hash string to identify the particular version of the module uri in case of 
+                    controller proxying it. If `proxy` property is set and `hash` property is set then 
+                    the final module file name is `<WebComponent name>.<hash-suffix>.jsm` and the resource is 
+                    assumed to never expire. To refresh user agents` caches, one needs to change the hash 
+                    to a new unique value. 
+                  type: string
+
+                contextElements: 
+                  description: |
+                    Components that can be displayed in special context, e.g. `ufe-app-shell` for top level
+                    application shell, `my-menu-item` for the components to display in the custom menu, etc.
+                  type: array
+                  items: 
+                    type: object
+                    required: 
+                    - contextNames
+                    - element
+                    properties:
+                      contextNames:
+                        details: List of context names in which this element is intended to be shown
+                        type: array
+                        items: 
+                          type: string
+                      element:
+                        details: The HTML element tag name to use when navigated to the specific path
+                        type: string
+                        example: my-element-name
+                      priority:
+                        description: |
+                          The priority of the navigation entry in lists. The entries with higher priority are  
+                          displayed before entries with the lower priorities, if there is ordering 
+                          supported by the list. Default priority is 0
+                        type: number
+                        default: 0
+                      attributes: 
+                        description: |
+                          A list of key-value pairs to assign specific attributes to the element. The `name` is
+                          used as the attribute name. The `value` can be any valid json type. 
+                        type: array
+                        items: 
+                          type: object
+                          required: 
+                            - name
+                            - value
+                          properties: 
+                            name: 
+                              type: string
+                            value: 
+                              x-kubernetes-preserve-unknown-fields: true
+                      roles:
+                        type: array
+                        items: 
+                          type: string
+                navigation:
+                  description: |
+                    Components with the navigation specification may be used as sub-paths
+                    and are considered as the workspaces or application on its own within
+                    the composed application shell
+                  type: array
+                  items: 
+                    type: object
+
+                    required: 
+                      - path
+                      - title
+                      - element
+                    properties:
+                      path:
+                        description: |
+                          By navigating to the specific subpath the app shell will place the `element` 
+                          on the main workspace (content) of the shell
+                        type: string
+                        example: /my-app
+                      title:
+                        description: |
+                          The title is used to present the links to the particular workspace or to display it in 
+                          navigation lists or as a title when on the particular path
+                        type: string
+                        example: My Cool Embeded And Navigable App
+                      priority:
+                        description: |
+                          The priority of the navigation entry in lists. The entries with higher priority are  
+                          displayed before entries with the lower priorities, if there is ordering 
+                          supported by the list. Default priority is 0
+                        type: number
+                        default: 0
+                      details: 
+                        details: |
+                          Additional description to explain to the user the purpose of the component. It is shown 
+                          in addition to the title in the navigation lists
+                        type: string
+                      element:
+                        details: The HTML element tag name to use when navigated to the specific path
+                        type: string
+                        example: my-element-name
+                      attributes: 
+                        description: |
+                          A list of key-value pairs to assign specific attributes to the element. The `name` is
+                          used as the attribute name. The `value` can be any valid json type. 
+                        type: array
+                        items: 
+                          type: object
+                          required: 
+                            - name
+                            - value
+                          properties: 
+                            name: 
+                              type: string
+                            value: 
+                              x-kubernetes-preserve-unknown-fields: true
+                      icon: 
+                        type: object
+                        description: |
+                          The optional icon to associate with the navigable component. SVG preferred. 
+                        properties: 
+                          mime: 
+                            type: string
+                          data:
+                            type: string
+                            format: byte 
+                      roles:
+                        type: array
+                        items: 
+                          type: string
+
+  scope: Namespaced
+  names:
+    plural: webcomponents
+    singular: webcomponent
+    kind: WebComponent
+    shortNames:
+    - webc

@@ -1,0 +1,47 @@
+:host {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  margin-top:50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
+.sticky {
+  position: fixed;
+  height: 40px;
+  padding: 0;
+  padding-left: 10px;
+  margin:0;
+  background-color: #80808060;
+  top: 96vh;
+  width: 105vw;
+  margin-left: -1vw;
+  overflow-y: hidden;
+  justify-content: left;
+}
+
+.body {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  min-height: 75vh;
+}
+
+.footer {
+  align-items: center;
+  margin-top: auto;
+  text-align: center;
+  width: 99%;
+}
+
+mwc-button {
+  --mdc-theme-primary: red;
+}

@@ -1,0 +1,60 @@
+[
+    {
+        "GPS": "48.027423 17.314564",
+        "campType": "vojaci-dôstojníci",
+        "equipment": [
+            "desinfectStation",
+            "mobileComando",
+            "cemetery",
+            "lazaret"
+        ],
+        "numberOfCaptives": 59574,
+        "mainCaptiveNationality": "Rus",
+        "state": "confirmed",
+        "addedBy": "developer"
+    },
+    {
+        "GPS": "47.991419 17.620104",
+        "campType": "vojaci-dôstojníci",
+        "equipment": [
+            "lazaret",
+            "mobileComando",
+            "cemetery"
+        ],
+        "numberOfCaptives": 60700,
+        "mainCaptiveNationality": "Rus",
+        "state": "confirmed",
+        "addedBy": "developer"
+    },
+    {
+        "GPS": "47.855737 17.766373",
+        "campType": "vojaci-dôstojníci",
+        "equipment": [
+            "hospital",
+            "mobileComando",
+            "cemetery"
+        ],
+        "numberOfCaptives": 44196,
+        "mainCaptiveNationality": "Srb",
+        "state": "confirmed",
+        "addedBy": "developer"
+    },
+    {
+        "GPS": "48.945594 20.564013",
+        "campType": "vojaci",
+        "equipment": "lazaret",
+        "numberOfCaptives": 1000,
+        "mainCaptiveNationality": "Rus",
+        "state": "confirmed",
+        "addedBy": "developer"
+    },
+    {
+        "GPS": "49.274773 21.907031",
+        "campType": "vojaci",
+        "equipment": "lazaret",
+        "numberOfCaptives": 500,
+        "mainCaptiveNationality": "Rus",
+        "state": "confirmed",
+        "addedBy": "developer"
+    }
+]

@@ -1,0 +1,41 @@
+{
+	"info": {
+		"_postman_id": "ec716e7c-d8d0-41be-9764-a6a433fa4553",
+		"name": "uloha 10",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14763343"
+	},
+	"item": [
+		{
+			"name": "complex search",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"query\": {\r\n        \"function_score\": {\r\n            \"query\": {\r\n                \"bool\": {\r\n                    \"must\": [\r\n                        {\r\n                            \"multi_match\": {\r\n                                \"query\": \"put1n chr1stian fake jew\",\r\n                                \"type\": \"most_fields\",\r\n                                \"fields\": [\r\n                                    \"content^6\",\r\n                                    \"author.description.shingles^10\"\r\n                                ],\r\n                                \"fuzziness\": \"auto\",\r\n                                \"operator\": \"or\"\r\n                            }\r\n                        },\r\n                        {\r\n                        \"nested\" : {\r\n                            \"path\" : \"conversation_references\",\r\n                            \"query\" : {\r\n                                \"term\": {\r\n                                \"conversation_references.content\": \"nazi\"\r\n                                }\r\n                            }\r\n                            }\r\n                        },\r\n                        {\r\n                            \"term\": { \"hashtags\": \"ukraine\" }\r\n                        }\r\n                    ],\r\n                    \"filter\": [\r\n                        {\r\n                            \"nested\": {\r\n                                \"path\": \"author\",\r\n                                \"query\": {\r\n                                    \"range\": {\r\n                                        \"author.following_count\": {\r\n                                            \"gt\": 100\r\n                                        }\r\n                                    }\r\n                                }\r\n                            }\r\n                        },\r\n                        {\r\n                            \"nested\": {\r\n                                \"path\": \"author\",\r\n                                \"query\": {\r\n                                    \"range\": {\r\n                                        \"author.followers_count\": {\r\n                                            \"gt\": 100\r\n                                        }\r\n                                    }\r\n                                }\r\n                            }\r\n                        },\r\n                        {\r\n                            \"nested\": {\r\n                            \"path\": \"links\",\r\n                            \"query\": {\r\n                                \"exists\": {\r\n                                \"field\": \"links\"\r\n                            }\r\n                            }\r\n                            }\r\n                        }\r\n                        \r\n                    ],\r\n                    \"should\": [\r\n                        {\r\n                            \"nested\": {\r\n                                \"path\": \"context_annotations\", \r\n                                \"query\": {\r\n                                    \"nested\": {\r\n                                        \"path\": \"context_annotations.domain\",\r\n                                        \"query\": {\r\n                                            \"match\": { \"context_annotations.domain.name\": { \"query\": \"Person\", \"boost\": 5 } }\r\n                                        }\r\n                                        }\r\n                                }\r\n                            }\r\n                        },\r\n                                                {\r\n                            \"nested\": {\r\n                                \"path\": \"context_annotations\", \r\n                                \"query\": {\r\n                                    \"nested\": {\r\n                                        \"path\": \"context_annotations.entity\",\r\n                                        \"query\": {\r\n                                            \"match\": { \"context_annotations.entity.name\": { \"query\": \"Soros\", \"boost\": 10 } }\r\n                                        }\r\n                                        }\r\n                                }\r\n                            }\r\n                        },\r\n                        {\r\n                            \"nested\": {\r\n                                \"path\": \"author\",\r\n                                \"query\": {\r\n                                    \"match_phrase\": {\r\n                                        \"author.description\": {\r\n                                            \"query\": \"put1n chr1stian fake jew\",\r\n                                            \"slop\": 1,\r\n                                            \"boost\": 5\r\n                                        }\r\n                                    }\r\n                                }\r\n                            }\r\n                        },\r\n                        {\r\n                            \"match_phrase\": {\r\n                                \"content\": {\r\n                                    \"query\": \"put1n chr1stian fake jew\",\r\n                                    \"slop\": 1,\r\n                                    \"boost\": 5\r\n                                }\r\n                            }\r\n                        }\r\n                    ]\r\n                }\r\n            }\r\n        }\r\n    },\r\n    \"aggs\": {\r\n        \"hashtags\": {\r\n            \"filter\": {\r\n                \"terms\": { \r\n                    \"hashtags\": [\"istandwithputin\", \"racism\", \"1trillion\", \"istandwithrussia\", \"isupportrussia\", \"blacklivesmatter\", \"racism\", \"racistukraine\", \"africansinukraine\", \"palestine\", \"israel\", \"freepalestine\", \"istandwithpalestine\",\"racisteu\", \"putin\"] \r\n                }\r\n            },\r\n            \"aggs\": {\r\n                \"pro-russia\": {\r\n                \"date_histogram\": {\r\n                        \"field\": \"created_at\",\r\n                        \"calendar_interval\": \"1w\",\r\n                        \"format\": \"yyyy-MM-dd\" \r\n                    },\r\n                    \"aggs\": {\r\n                        \"hashtag\": {\r\n                        \"terms\": {\r\n                            \"field\": \"hashtags\"\r\n                        }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n            \r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9200/tweets/_search",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"tweets",
+						"_search"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

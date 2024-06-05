@@ -1,0 +1,67 @@
+/* style.css
+	Defines the style of index.js
+// =============================================================================
+//                    YOU DO NOT NEED TO EDIT THIS FILE
+// =============================================================================
+// if you want to have cooler battleship pictures, change boat.png in media/
+*/
+
+body {
+ 	font-family: 'Source Sans Pro', 'Arial';
+	background-color: #EEE;
+	padding: 2em;
+}
+
+#title 		{ font-size: 5em; }
+#subtitle { font-size: 3em; font-style: italic;}
+
+
+#title-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+#game-container {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+#game-controller {
+	display: flex;
+	flex-direction: column;
+}
+
+.player-container {
+	width: 600px;
+	height: 1000px;
+	border: 0.2em solid #39397D;
+	background-color: #white;
+	padding: 1em;
+	margin: 0.5em;
+}
+
+.player-title {
+	margin: 0;
+}
+
+.my-board, .their-board {
+	width: 400px;
+	height: 400px;
+	/*margin: 3em;*/
+	table-layout: fixed;
+}
+
+.battleship-board-square, .battleship-board-square {
+	padding: 0;
+	margin: 0;
+	width: 2em;
+	height: 2em;
+	overflow: hidden;
+	border: 1px solid black;
+	background-size: 4em 4em;
+	background-repeat: no-repeat;
+}

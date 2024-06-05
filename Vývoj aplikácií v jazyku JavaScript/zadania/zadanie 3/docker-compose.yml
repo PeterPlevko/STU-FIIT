@@ -1,0 +1,45 @@
+version: "3.8"
+
+services:
+  postgres:
+    image: postgres:latest
+    restart: always
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=password
+      - APP_DB_USER=docker
+      - APP_DB_PASS=docker
+      - APP_DB_NAME=docker
+      - POSTGRES_DB=eshop
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - 54321:5432
+    container_name: postgres
+
+  backend:
+    image: backend:latest
+    build:
+      context: ./backend
+    ports:
+      - 8080:8080
+    depends_on:
+      - "postgres"
+
+  frontend:
+    image: frontend:latest
+    build:
+      context: ./frontend
+    ports:
+      - 3000:3000
+    depends_on:
+      - "postgres"
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 3030:8080
+    depends_on:
+      - "postgres"
+    container_name: adminer

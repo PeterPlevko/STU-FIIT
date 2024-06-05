@@ -1,0 +1,103 @@
+
+table.table1 {
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    font-size: 15px;
+    border-collapse: collapse;
+    border-width: 2px;
+}
+
+table.table2 {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    border-collapse: collapse;
+    border-width: 2px;
+}
+
+table ul {
+    display: inline-block;
+}
+
+/* Styl zmena farby pozadia pre kazdy neparny riadok v tabulke*/
+tr:nth-of-type(odd) {
+    background: #bcd9ea;
+}
+/* Styl zmena farby pozadia pre kazdy parny riadok v tabulke*/
+tr:nth-of-type(even) {
+    background: #5ef863;
+}
+
+th {
+    background: #0000FF;
+    font-family: Arial, serif;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px;
+    border: 2px solid black;
+    text-align: center;
+}
+
+
+td {
+    padding: 10px;
+    border: 2px solid black;
+    text-align: center;
+    font-size: 17px;
+}
+
+td.starts {
+    text-align: left;
+    line-height: 1.5;
+}
+
+td.starts-count {
+    text-align: center;
+    font-size: 40px;
+}
+
+
+td.name {
+    font-family: sans-serif;
+    font-style: italic;
+
+}
+
+li.red {
+
+    color: red;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: left;
+    margin-left: 20px;
+}
+
+
+div.div-left, div.div-right {
+    box-sizing: border-box;
+    width: 50%;
+    float: left;
+    text-align: center;
+    font-size: 17px;
+
+}
+div.div-right ul {
+    list-style-type: none;
+}
+h1 {
+    font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
+    text-decoration: underline;
+    text-align: center;
+    width: 100%;
+}
+
+h2, h3 {
+    font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
+
+    font-style: italic;
+    text-align: center;
+    width: 100%;
+
+}

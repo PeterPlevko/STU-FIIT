@@ -1,0 +1,1 @@
+Pre spustenie treba odkomentovat par extensions v php.ini (fileinfo, gd, pgsql, pdo_pgsql) a spustit prikazy "npm install", "composer install", "php artisan migrate", a seednut databazu pomocou "php artisan db:seed". Je potrebne pridat do .env a config/database.php spravne udaje pre pripojenie sa k databaze.

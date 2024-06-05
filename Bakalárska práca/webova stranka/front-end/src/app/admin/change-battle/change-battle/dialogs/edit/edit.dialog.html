@@ -1,0 +1,88 @@
+<div class="container">
+  <h3 mat-dialog-title>Issue id: {{data._id}}</h3>
+
+  <form class="mat-dialog-content" (ngSubmit)="submit" #formControl="ngForm">
+
+    <div class="form">
+      <mat-form-field color="accent">
+        <mat-label>Vlož GPS súradnice</mat-label>
+        <input pattern="^[-]?([1-8]?\d(\.\d+)?|90(\.0+)?) \s*[-]?(180(\.0+)?|((1[0-7]\d)|([1-9]?\d))(\.\d+)?)$" required matInput placeholder="49.279648 21.924156" [(ngModel)]="data.GPS" name="GPS">
+      </mat-form-field>
+  </div>
+
+  <div class="form">
+    <mat-form-field color="accent">
+      <mat-label>Vlož názov boja</mat-label>
+      <input required matInput placeholder="Obsadenie obce Medzilaborce" [(ngModel)]="data.name" name="name">
+    </mat-form-field>
+  </div>
+
+  <div class="form">
+    <mat-form-field color="accent">
+      <mat-label>Vlož dátum začiatku</mat-label>
+      <input matInput placeholder="startDate" [(ngModel)]="data.startDate" name="23/11/1914">
+    </mat-form-field>
+  </div>
+
+  <div class="form">
+    <mat-form-field color="accent">
+      <mat-label>Vlož dátum ukončenia</mat-label>
+      <input matInput placeholder="28/11/1914" [(ngModel)]="data.endDate" name="endDate">
+    </mat-form-field>
+  </div>
+
+  <div class="form">
+    <mat-form-field color="accent">
+      <mat-label>Vlož Rakúsko-uhorskú armádu</mat-label>
+      <textarea  matInput placeholder="R-U 3. armáda; bojová skupina Krautwald, 6 práporov 200. honvédskej pešej divízie, prápor 29. a 101. pešieho pluku 34. pešej divízie, 4 útvary 17. domobraneckej pešej divízie" [(ngModel)]="data.austriaHungaryArmy" name="austriaHungaryArmy"></textarea>
+    </mat-form-field>
+</div>
+
+<div class="form">
+  <mat-form-field color="accent">
+    <mat-label>Vlož veľkosť Rakúsko-uhorskej armády </mat-label>
+    <input type="number" matInput placeholder="13000" [(ngModel)]="data.austriaHungaryArmyNumber" name="austriaHungaryArmyNumber">
+  </mat-form-field>
+</div>
+
+<div class="form">
+  <mat-form-field color="accent">
+    <mat-label>Vlož Ruskú armádu</mat-label>
+    <textarea matInput placeholder="Ruská 8. armáda; 194. Troicko-sergijevský pluk, 2. zmiešaná kozácka divízia, 2. pŕapory 195. orovajského pluku 49. pešej divízie" [(ngModel)]="data.russianArmy" name="russianArmy"></textarea>
+  </mat-form-field>
+</div>
+
+<div class="form">
+  <mat-form-field color="accent">
+    <mat-label>Vlož veľkosť Ruskej armády </mat-label>
+    <input type="number" matInput placeholder="14500" [(ngModel)]="data.russianArmyNumber" name="russianArmyNumber">
+  </mat-form-field>
+</div>
+
+<div class="form">
+  <mat-form-field color="accent">
+    <mat-label>Vlož výsledok</mat-label>
+    <input matInput placeholder="Víťazstvo R-U armády" [(ngModel)]="data.result" name="result">
+  </mat-form-field>
+</div>
+
+<div class="form">
+  <mat-form-field color="accent">
+    <mat-label>Vlož poznámku</mat-label>
+    <textarea matInput placeholder="Jedna z najväčších bitiek vojny na území dnešného Slovenska" [(ngModel)]="data.note" name="note"></textarea>
+  </mat-form-field>
+</div>
+
+  <div class="form">
+    <mat-form-field color="accent">
+      <mat-label>Vlož kto záznam pridal</mat-label>
+      <input matInput placeholder="admin" [(ngModel)]="data.addedBy" name="addedBy">
+    </mat-form-field>
+</div>
+
+    <div mat-dialog-actions>
+      <button mat-button  [disabled]="!formControl.valid" [mat-dialog-close]="1" (click)="stopEdit()">Potvrdiť</button>
+      <button mat-button (click)="onNoClick()" tabindex="-1">Zrušiť</button>
+    </div>
+  </form>
+</div>

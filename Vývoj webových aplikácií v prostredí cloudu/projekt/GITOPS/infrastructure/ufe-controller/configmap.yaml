@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ufe-controller
+data:
+  APPLICATION_TITLE: Nemocnica WAC Pprerko
+  APPLICATION_DESCRIPTION: Ukážková aplikácia pre nasadenie mikro-front-end applikácií
+  APPLICATION_TITLE_SHORT: WAC Pprerko
+  HTTP_CSP_HEADER: default-src 'self' 'unsafe-inline' https://fonts.googleapis.com/ https://fonts.gstatic.com/; font-src 'self' https://fonts.googleapis.com/ https://fonts.gstatic.com/; script-src 'nonce-{NONCE_VALUE}'; connect-src 'self' localhost:30431

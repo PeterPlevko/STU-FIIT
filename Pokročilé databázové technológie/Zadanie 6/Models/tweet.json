@@ -1,0 +1,60 @@
+{
+    "source_id": 1247616214769086465,
+    "author_id": 12,
+    "content": "I’m moving $1B of my Square equity (~28% of my wealth) to #startsmall LLC to fund global COVID-19 relief. After we disarm this pandemic, the focus will shift to girl’s health and education, and UBI. It will operate transparently, all flows tracked here: https://t.co/hVkUczDQmz",
+    "language": "en",
+    "source": "Twitter for iPhone",
+    "retweet_count": 72261,
+    "reply_count": 34915,
+    "like_count": 381998,
+    "quote_count": 21000,
+    "possibly_sensitive": false,
+    "created_at": "2020-04-07T20:04:19+02:00",
+    "hashtags":
+    [
+      {
+        "tag" : "Ukraina"
+      }
+    ],
+    "links": [
+        {
+            "url": "https://docs.google.com/spreadsheets/d/1-eGxq2mMoEGwgSpNVL5j2sa6ToojZUZ-Zun8h2oBAR4",
+            "title": "#startsmall tracker",
+            "description": "Donations Total Value Created:, $ 1,747,245,458.19 Total Disbursed:, $ 496,696,311.00 Total Remaining: , $ 1,250,549,147.19 Date, Amount ,Grantee,Twitter,Link,Why? 7/25/2022,$250,000,Girls Garage,@_GirlsGarage,ht..."
+        }
+    ],
+    "annotations": [
+      {
+          "type": "Person",
+          "value": "CashApp",
+          "probability": 0.501
+      }
+    ],
+    "context_annotations": [
+        {
+            "domain": {
+                "name": "Person",
+                "description": "Named people in the world like Nelson Mandela"
+            },
+            "entity": {
+                "name": "Jack Dorsey",
+                "description": "Jack Dorsey"
+            }
+        }
+    ],
+    "conversation_references": [
+      {
+          "id": 1502011498398457858,
+          "type": "quoted",
+          "author": {
+              "id": 1069702634960052224,
+              "name": "The Bitcoin Conference",
+              "username": "TheBitcoinConf"
+          },
+          "content": "Cash App joins Bitcoin 2022 as the title partner to make the largest gathering of the bitcoin community in the world even bigger. Join the most influential bitcoin advocates at the Miami Convention Center April 6-9. Register today for a chance to win some bitcoin from @cashapp. https://t.co/JyvOQp4rLr",
+          "hashtags": [
+            "startsmall"
+        ]
+      }
+    ]
+  }

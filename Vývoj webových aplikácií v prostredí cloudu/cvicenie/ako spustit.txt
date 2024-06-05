@@ -1,0 +1,51 @@
+bash
+
+kubectl apply -f ./flux-system/gotk-components.yaml 
+kubectl apply -k ./clusters/localhost
+kubectl apply -k ./flux-system/
+kubectl apply -k ./clusters/localhost-infra/
+
+powershell
+
+$env:MONGODB_USERNAME="user"
+$env:MONGODB_PASSWORD="password"
+
+docker run --name mongoDB --rm --network my-network -e MONGO_INITDB_DATABASE=auth -e MONGO_INITDB_ROOT_USERNAME=$env:MONGODB_USERNAME -e MONGO_INITDB_ROOT_PASSWORD=$env:MONGODB_PASSWORD -d -p 27017:27017 -v hospital-volume:/data/db mongo:6.0.3
+
+docker run --name mongo-express --rm --network my-network -e ME_CONFIG_MONGODB_ADMINUSERNAME=$env:MONGODB_USERNAME -e ME_CONFIG_MONGODB_ADMINPASSWORD=$env:MONGODB_PASSWORD -e ME_CONFIG_MONGODB_SERVER=mongoDB -d -p 8081:8081 mongo-express:1.0.0-alpha
+
+v tomto momente by malo byt vsetko running
+kubectl port-forward -n ingress-nginx service/ingress-nginx-controller 8088:80 
+ked je error treba vytvorit cez postmana ambulanciu bobulova
+kubectl port-forward service/pp-ambulance-webapi -n wac-hospital 8111:80
+
+http://localhost:8111/api/waiting-list/bobulova
+
+{
+  "id": "bobulova",
+  "name": "Ambulancia všeobecného lekára Dr. Bobulová",
+  "roomNumber": "211 - 2.posch",
+  "predefinedConditions": [
+    {
+      "value": "Teploty",
+      "code": "subfebrilia",
+      "reference": "https://zdravoteka.sk/priznaky/zvysena-telesna-teplota/",
+      "typicalDurationMinutes": 20
+    },
+    {
+      "code": "folowup",
+      "value": "Kontrola",
+      "typicalDurationMinutes": 15
+    },
+    {
+      "code": "nausea",
+      "value": "Nevoľnosť",
+      "typicalDurationMinutes": 45,
+      "reference": "https://zdravoteka.sk/priznaky/nevolnost/"
+    }
+  ]
+}
+
+po vytvoreni ambulancie mozme port forward 8111:80 vypnut
+
+http://localhost:8088/

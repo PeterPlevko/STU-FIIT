@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lezec.sk - admin</title>
+    <link rel="stylesheet" type="text/css" href="../css/basic/mainTheme.css">
+    <link rel="stylesheet" type="text/css" href="../css/responsive/mainThemeResponsive.css">
+    <link rel="stylesheet" type="text/css" href="../css/basic/admin.css">
+
+</head>
+<body>
+<main>
+    <section class="allProducts">
+        <button id="newProduct" class="productsBtn">New product</button>
+        <table class="product">
+            <thead>
+            <tr>
+                <th>Meno produktu</th>
+                <th>Krátky popis</th>
+                <th>Dlhý popis</th>
+                <th>Značka</th>
+                <th>Veľkosť</th>
+                <th>Cena</th>
+                <th>Zľava</th>
+                <th>Predaných kusov</th>
+                <th>Rating</th>
+                <th>Je top?</th>
+                <th>Je hit tyždňa?</th>
+                <th>Klučové slová</th>
+                <th>Akcie</th>
+            </tr>
+            </thead>
+            <tr>
+                <th>OCÚN STRIKE QC</th>
+                <th>Ocún STRIKE QC je lezecká obuv pre široké spektrum lezcov. Ľahká asymetria im poskytuje športvoý
+                    charakter
+                </th>
+                <th>Ocún STRIKE QC je lezecká obuv pre široké spektrum lezcov. Ľahká asymetria im poskytuje športvoý
+                    charakter, zatiaľ čo sa polstrovaný jazyk stará o vyšší komfort pri dlhšom nosení. Zapínanie na
+                    suchý
+                    zips umožňuje ľahké a rýchle obúvanie aj vyzúvanie, ktoré ocenia bouderisti a lezci na umelých
+                    stenách.
+                    Rovný profil, voľnejšia päta a polstrovaný jazyk poskytujú komfort, ktorý je potrebný aj na
+                    celodenné
+                    lezenie.
+                </th>
+                <th>Ocun</th>
+                <th>S</th>
+                <th>70</th>
+                <th>-</th>
+                <th>3</th>
+                <th>4.7</th>
+                <th>True</th>
+                <th>True</th>
+                <th>lezecky;ocun;modre</th>
+                <th>
+                    <button class="edit productsBtn">Edit</button>
+                    <button class="remove productsBtn">Remove</button>
+                </th>
+            </tr>
+            <tr>
+                <th>OCÚN STRIKE QC</th>
+                <th>Ocún STRIKE QC je lezecká obuv pre široké spektrum lezcov. Ľahká asymetria im poskytuje športvoý
+                    charakter
+                </th>
+                <th>Ocún STRIKE QC je lezecká obuv pre široké spektrum lezcov. Ľahká asymetria im poskytuje športvoý
+                    charakter, zatiaľ čo sa polstrovaný jazyk stará o vyšší komfort pri dlhšom nosení. Zapínanie na
+                    suchý
+                    zips umožňuje ľahké a rýchle obúvanie aj vyzúvanie, ktoré ocenia bouderisti a lezci na umelých
+                    stenách.
+                    Rovný profil, voľnejšia päta a polstrovaný jazyk poskytujú komfort, ktorý je potrebný aj na
+                    celodenné
+                    lezenie.
+                </th>
+                <th>Ocun</th>
+                <th>S</th>
+                <th>70</th>
+                <th>-</th>
+                <th>3</th>
+                <th>4.7</th>
+                <th>True</th>
+                <th>True</th>
+                <th>lezecky;ocun;modre</th>
+                <th>
+                    <button class="edit productsBtn">Edit</button>
+                    <button class="remove productsBtn">Remove</button>
+                </th>
+            </tr>
+            <tr>
+                <th>OCÚN STRIKE QC</th>
+                <th>Ocún STRIKE QC je lezecká obuv pre široké spektrum lezcov. Ľahká asymetria im poskytuje športvoý
+                    charakter
+                </th>
+                <th>Ocún STRIKE QC je lezecká obuv pre široké spektrum lezcov. Ľahká asymetria im poskytuje športvoý
+                    charakter, zatiaľ čo sa polstrovaný jazyk stará o vyšší komfort pri dlhšom nosení. Zapínanie na
+                    suchý
+                    zips umožňuje ľahké a rýchle obúvanie aj vyzúvanie, ktoré ocenia bouderisti a lezci na umelých
+                    stenách.
+                    Rovný profil, voľnejšia päta a polstrovaný jazyk poskytujú komfort, ktorý je potrebný aj na
+                    celodenné
+                    lezenie.
+                </th>
+                <th>Ocun</th>
+                <th>S</th>
+                <th>70</th>
+                <th>-</th>
+                <th>3</th>
+                <th>4.7</th>
+                <th>True</th>
+                <th>True</th>
+                <th>lezecky;ocun;modre</th>
+                <th>
+                    <button class="edit productsBtn">Edit</button>
+                    <button class="remove productsBtn">Remove</button>
+                </th>
+            </tr>
+        </table>
+    </section>
+    <dialog id="editDlg">
+        <form>
+            <button id="closeBtn" class="productsBtn">X</button>
+            <fieldset>
+                <label for="name">Meno produktu : </label>
+                <input type="text" placeholder="Meno produktu " id="name" name="name">
+                <label for="shortDesc">Krátky popis : </label>
+                <input type="text" placeholder="Krátky popis " id="shortDesc" name="shortDesc">
+                <label for="longDesc">Dlhý popis : </label>
+                <input type="text" placeholder="Meno produktu " id="longDesc" name="longDesc">
+                <label for="size">Veľkosť : </label>
+                <input type="text" placeholder="Veľkosť " id="size" name="size">
+                <label for="prize">Cena : </label>
+                <input type="text" placeholder="Cena " id="prize" name="prize">
+                <label for="discount">Zľava : </label>
+                <input type="text" placeholder="Zľava " id="discount" name="discount">
+                <label for="solds">Predaných kusov : </label>
+                <input type="text" placeholder="Kusov " id="solds" name="solds">
+                <label for="rating">Rating : </label>
+                <input type="text" placeholder="Rating " id="rating" name="rating">
+                <label for="top">Je top? : </label>
+                <input type="checkbox" placeholder="Cena " id="top" name="top">
+                <label for="bestOfWeek">Je hit tyždňa? : </label>
+                <input type="checkbox" placeholder="Cena " id="bestOfWeek" name="bestOfWeek">
+                <label for="keywords">Klučové slová : </label>
+                <input type="text" placeholder="Klučové slová " id="keywords" name="keywords">
+                </br>
+                <input type="submit" class="editBtn" value="Odošli">
+            </fieldset>
+        </form>
+    </dialog>
+</main>
+<script>
+    let btns = document.getElementsByClassName('edit');
+    for (let i = 0; i < btns.length; i++) {
+        if (btns[i] !== null) {
+            btns[i].addEventListener('click', function () {
+                document.getElementById('editDlg').showModal();
+            });
+        }
+    }
+
+    document.getElementById('newProduct').addEventListener('click', function () {
+        document.getElementById('editDlg').showModal();
+    });
+    document.getElementById('closeBtn').addEventListener('click', function () {
+        document.getElementById('editDlg').close();
+    });
+</script>
+</body>
+</html>

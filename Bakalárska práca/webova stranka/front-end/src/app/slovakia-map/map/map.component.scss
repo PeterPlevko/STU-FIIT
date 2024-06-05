@@ -1,0 +1,112 @@
+.mainBlok{
+  margin-top: 10px;
+  width: 60%;
+  background-color: white;
+  padding: 10px;
+  font-size: large;
+  padding: 10px;
+  border: 1px solid #009999;
+}
+
+
+#slovakiaMap {
+  height: 700px;
+  width: 1100px;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.displayFlex{
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.mat-menu-panel {
+  background: lightgray;
+  margin-top: .3rem;
+
+
+}
+.mat-menu-content {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 1rem;
+}
+.row{
+  display: flex;
+}
+
+.menu{
+  margin-left: 10px;
+
+}
+
+.column{
+  min-width: 200px;
+  margin-left: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.marginLeft{
+  margin-left: 10px;
+}
+.defaultValues{
+  margin-left: 10px;
+
+}
+
+.defaultValuesCss{
+  box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
+  height: 27px;
+  border-radius: 4px;
+  padding: 5px;
+  background-color: #ec6602;
+}
+
+.centerMiddle{
+  display: flex;
+  justify-content: center;
+}
+
+.displayFlex{
+  display: flex;
+  justify-content: center;
+}
+
+
+
+
+@media only screen and (max-width: 1200px) {
+  .center {
+    display: flex;
+    flex-direction: column;
+  }
+  .center div{
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .center {
+    display: flex;
+    flex-direction: column;
+  }
+  .center div{
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .mainBlok{
+    width: 100%;
+  }
+}

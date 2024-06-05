@@ -1,0 +1,189 @@
+-- uloha 1
+CREATE EXTENSION postgis;  
+CREATE EXTENSION hstore;
+
+-- uloha 2
+SELECT ST_SRID(way) FROM planet_osm_polygon
+
+SELECT name, ST_X(ST_Centroid(ST_Transform(way,4326))) AS longitude,
+ST_Y(ST_Centroid(ST_Transform(way,4326))) AS latitude
+FROM planet_osm_polygon WHERE admin_level = '4';
+
+SELECT name, ST_Centroid(ST_Transform(way,4326)) AS longitude,
+ST_Centroid(ST_Transform(way,4326)) AS latitude
+FROM planet_osm_polygon WHERE admin_level = '4';
+
+-- uloha 3
+SELECT name, ST_Area(ST_Transform(way, 4326)::geography) / 1000000 AS area
+FROM planet_osm_polygon WHERE admin_level = '4' ORDER BY area;
+
+-- uloha 4
+INSERT INTO planet_osm_polygon (name, way)
+VALUES (
+	 'moj_dom',
+	 ST_Transform(ST_GeomFromGeoJSON(
+		'{
+			"type":"Polygon",
+			"coordinates":
+			[
+				[
+					[18.90657, 49.49721],
+					[18.90659, 49.49732],
+					[18.90671, 49.49731],
+					[18.90669, 49.4972],
+					[18.90657, 49.49721],
+				]
+			],
+			"crs":{"type":"name","properties":{"name":"EPSG:4326"}}
+		}'
+    	), 3857
+	)
+);
+
+SELECT name, ST_Transform(way, 4326) FROM planet_osm_polygon
+WHERE name = 'moj_dom';
+
+-- uloha 5
+SELECT name FROM planet_osm_polygon WHERE admin_level = '4'
+AND ST_Contains(way, (SELECT way FROM planet_osm_polygon WHERE name = 'moj_dom'))
+
+-- uloha 6
+INSERT INTO planet_osm_point (name, way)
+VALUES ('moja_poloha', ST_Transform(ST_Point(17.06434, 48.15835, 4326), 3857))
+
+SELECT name, ST_Transform(way, 4326) FROM planet_osm_point
+WHERE name = 'moja_poloha';
+
+-- uloha 7
+SELECT ST_Contains((SELECT way FROM planet_osm_polygon WHERE name = 'moj_dom'), (SELECT way FROM planet_osm_point WHERE name = 'moja_poloha'))
+
+-- uloha 8
+SELECT ST_Distance(ST_Transform((SELECT way FROM planet_osm_polygon WHERE name = 'Fakulta informatiky a informačných technológií STU'), 4326),
+ST_Transform((SELECT way FROM planet_osm_point WHERE name ='moja_poloha'), 4326)::geography) AS vzdialenost;
+			
+SELECT ST_Transform((SELECT way FROM planet_osm_polygon WHERE name = 'Fakulta informatiky a informačných technológií STU'), 4326) 
+
+-- uloha 9
+-- empty
+
+-- uloha 10
+SELECT name, ST_Area(ST_Transform(way, 4326)::geography)/1000000 AS area,
+ST_X(ST_centroid(ST_Transform(way, 4326))) AS longitude,
+ST_y(ST_centroid(ST_Transform(way, 4326))) AS latitude
+FROM planet_osm_polygon
+WHERE admin_level = '8'
+AND lower(name) like ('okres%')
+ORDER BY area ASC LIMIT 1;
+
+-- uloha 11
+CREATE TABLE priestorova_tabulka(
+	osm_id SERIAL,
+	access text,
+	"addr:housename" text,
+	"addr:housenumber" text,
+	"addr:interpolation" text,
+	admin_level text,
+	aerialway text,
+	aeroway text,
+	amenity text,
+	area text,
+	barrier text,
+	bicycle text,
+	brand text,
+	bridge text,
+	boundary text,
+	building text,
+	construction text,
+	covered text,
+	culvert text,
+	cutting text,
+	denomination text,
+	disused text,
+	embankment text,
+	foot text,
+	"generator:source" text,
+	harbour text,
+	highway text,
+	historic text,
+	horse text,
+	intermittent text,
+	junction text,
+	landuse text,
+	layer text,
+	leisure text,
+	lock text,
+	man_made text,
+	military text,
+	motorcar text,
+	name text,
+	"natural" text,
+	office text,
+	oneway text,
+	operator text,
+	place text,
+	population text,
+	power text,
+	power_source text,
+	public_transport text,
+	railway text,
+	ref text,
+	religion text,
+	route text,
+	service text,
+	shop text,
+	sport text,
+	surface text,
+	toll text,
+	tourism text,
+	"tower:type" text,
+	tracktype text,
+	tunnel text,
+	water text,
+	waterway text,
+	wetland text,
+	width text,
+	wood text,
+	z_order integer,
+	way_area real,
+	way geometry
+);
+
+INSERT INTO priestorova_tabulka
+	SELECT * FROM planet_osm_roads WHERE ST_WITHIN(
+    (ST_transform(way,4326)),
+    (SELECT ST_BUFFER(
+    ST_Intersection((SELECT ST_transform(way,4326)
+    FROM planet_osm_polygon
+    WHERE admin_level = '8' AND name = 'okres Malacky'),
+    (SELECT ST_transform(way,4326)
+    FROM planet_osm_polygon
+    WHERE admin_level = '8' AND name = 'okres Pezinok' ))::geography, 10000)::geometry));
+
+SELECT ST_Transform(way, 4326)::geography FROM priestorova_tabulka;
+
+-- uloha 12
+WITH longest_road AS (SELECT roads.name, ST_Intersection(polygon.way, roads.way) AS road,
+ST_Length(ST_Intersection(polygon.way, roads.way)) AS len
+FROM planet_osm_polygon polygon, planet_osm_roads roads
+WHERE polygon.name = 'okres Čadca' AND roads.highway IS NOT NULL
+ORDER BY len DESC
+LIMIT 1)
+SELECT kataster.idn5 AS "číslo katastra", kataster.nm5 AS "názov katastra"
+FROM ku_0 kataster, longest_road
+WHERE ST_Intersects(ST_Transform(kataster."Shape", 3857), longest_road.road);
+
+-- uloha 13
+INSERT INTO planet_osm_polygon (name, way)
+VALUES ('Okolie_Bratislavy',
+(SELECT ST_MakePolygon(ST_ExteriorRing(ST_Transform(ST_Intersection(ST_Buffer(ST_Transform(way, 4326)::geography,20000), (SELECT ST_Transform(way, 4326)::geography
+FROM planet_osm_polygon
+WHERE name = 'Slovensko'and boundary ='administrative'))::geometry, 3857)), ARRAY[ST_ExteriorRing(way)])
+from planet_osm_polygon
+WHERE name = 'Bratislava' AND admin_level ='6'));
+
+select ST_Transform(way, 4326)::geography
+FROM planet_osm_polygon WHERE name = 'Okolie_Bratislavy';
+
+SELECT ST_Area(ST_Transform(way, 4326)::geography)/1000000 AS vymera
+FROM planet_osm_polygon
+WHERE name='Okolie_Bratislavy';	

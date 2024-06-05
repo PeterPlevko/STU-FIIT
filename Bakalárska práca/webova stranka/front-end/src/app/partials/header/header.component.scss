@@ -1,0 +1,31 @@
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ec6602;
+
+}
+.header a{
+    color: black;
+    text-decoration: none;
+    margin: 20px;
+    font-size: 30px;
+}
+.header a:hover{
+    color: white;
+}
+
+.headerCenter{
+  box-shadow: 1px 1px 20px 1px #833800;
+    justify-content: center;
+}
+
+.mat-icon{
+  margin: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+  .header {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,8 @@
+machines:
+  - model: "VF-2"
+    ip: "vnos-simulator"
+    port: "8000"
+  - model: "VF-4"
+    ip: "vnos-simulator"
+    port: "8000"
+server_url: "http://vnos-server:8000/consumer"

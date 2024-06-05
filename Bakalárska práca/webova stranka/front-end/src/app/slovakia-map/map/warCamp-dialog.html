@@ -1,0 +1,38 @@
+<button mat-icon-button class="close-button" [mat-dialog-close]="true">
+  <mat-icon class="close-icon" color="warn">close</mat-icon>
+</button>
+
+<div class="wholeContainer">
+  <h1>Zajatecký tábor</h1>
+  <hr class="solid">
+  <div class="importantInfromation containerTwoColumns">
+    <div>
+      <p>GPS: </p>
+      <p>Typ tábora: </p>
+      <p>Typ zajatcov: </p>
+      <p>Najpočetnejšia národnosť: </p>
+    </div>
+    <div>
+      <p>{{data.GPS}}</p>
+      <p>{{data.campType}}</p>
+      <p>{{data.numberOfCaptives}}</p>
+      <p>{{data.mainCaptiveNationality}}</p>
+    </div>
+  </div>
+    <hr class="solid">
+    <div class="fightArmy">
+      <!-- <h1>{{data.cemetery}}</h1>
+      <h1>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</h1> -->
+      <h1>Vybavenie tábora</h1>
+      <div *ngFor="let equipment of data.equipment">
+        <mat-checkbox *ngIf="equipment === 'cemetery'" class="example-margin"  [checked]="equipment">Cintorín</mat-checkbox>
+        <mat-checkbox *ngIf="equipment === 'mausoleum'" class="example-margin" [checked]="equipment" >Mauzoleum</mat-checkbox>
+        <mat-checkbox *ngIf="equipment === 'desinfectStation'" class="example-margin" [checked]="equipment" >Dezinfekčná stanica</mat-checkbox>
+        <mat-checkbox *ngIf="equipment === 'hospital'" class="example-margin" [checked]="equipment">Nemocnica</mat-checkbox>
+        <mat-checkbox *ngIf="equipment === 'lazaret'" class="example-margin" [checked]="equipment">Lazaret</mat-checkbox>
+        <mat-checkbox *ngIf="equipment === 'crypt'" class="example-margin" [checked]="equipment">Krypta</mat-checkbox>
+        <mat-checkbox *ngIf="equipment === 'mobileOperationComando'" class="example-margin" [checked]="equipment">Mobilné operačné komando</mat-checkbox>
+      </div>
+
+    </div>
+</div>

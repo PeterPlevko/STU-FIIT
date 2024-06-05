@@ -1,0 +1,21 @@
+{
+  "extends": ["plugin:adonis/typescriptApp", "prettier"],
+  "plugins": ["prettier"],
+  "rules": {
+      "@typescript-eslint/no-floating-promises": "off",
+      "@typescript-eslint/no-unsafe-member-access": "off",
+      "@typescript-eslint/no-unsafe-return": "off",
+      "@typescript-eslint/no-unsafe-assignment": "off",
+      "prefer-promise-reject-errors": "off",
+      "@typescript-eslint/no-non-null-assertion": "off",
+      "@typescript-eslint/no-unsafe-argument": "off",
+      "@typescript-eslint/restrict-template-expressions": "off",
+      "@typescript-eslint/require-await": "off",
+      "@typescript-eslint/no-unsafe-call": "off",
+      "@typescript-eslint/explicit-member-accessibility": "off",
+
+      // TypeScript
+      "quotes": ["warn", "single", { "avoidEscape": true }],
+      "@typescript-eslint/explicit-function-return-type": "off"
+  }
+}

@@ -1,0 +1,68 @@
+uloha 1
+MATCH (a: Author {username: "ZelenskyyUa"})-[:TWEETED]->(c: Conversation)
+MATCH (rt: Conversation)-[r:REPLIED_TO]->(c: Conversation) 
+WITH c,  size(collect((c)<-[:REPLIED_TO]-(rt))) AS relations
+ORDER BY relations DESC LIMIT 1
+match (h:Hashtag {tag: 'Ukraine'}) 
+CREATE (me: Author {name: 'Peter Plevko', username: 'Kuntox', id:'1498793095227494401'})
+CREATE(myConversation:Conversation {content: c.content, author_id: me.id})
+CREATE (myConversation)-[rtc:RETWEETED]->(c)
+CREATE (myConversation)-[:HAS]->(h)
+CREATE (me)-[t:TWEETED]->(myConversation)
+
+match (c:Conversation {author_id: '1498793095227494401'})
+return c
+
+match (c:Conversation {author_id: '1498793095227494401'})
+detach delete c
+
+uloha 2
+MATCH (a: Author)
+WITH size(()-[:RETWEETED]->(:Conversation)<-[:TWEETED]-(a:Author)) as rtc1, a
+ORDER BY rtc1 DESC LIMIT 10
+with a
+MATCH (a:Author)-[:TWEETED]->(badTweets: Conversation)
+WITH a, badTweets, size(()-[:RETWEETED]->(badTweets:Conversation)) as rtc2
+WHERE rtc2 > 0
+with a, badTweets, rtc2
+ORDER BY rtc2 ASC LIMIT 20
+return a, badTweets, rtc2
+
+uloha 3
+MATCH (Marios:Author {username: 'Marios59885699'})
+MATCH (Marios)-[:TWEETED]->(:Conversation)-[:RETWEETED]->(MTweets:Conversation)<-[:RETWEETED]-(:Conversation)<-[:TWEETED]-(toFollow:Author)
+with toFollow, sum(size((toFollow)-[:TWEETED]->(:Conversation)-[:RETWEETED*1..]->(MTweets))) as RCount
+ORDER BY RCount DESC
+LIMIT 10
+return toFollow
+
+uloha 4
+MATCH (parliament:Author {username: 'ua_parliament'})
+MATCH (nexta:Author {username: 'nexta_tv'})
+MATCH path = allShortestPaths((parliament)-[:TWEETED|QUOTED|RETWEETED|REPLIED_TO*..10]-(nexta))
+return path
+
+uloha 5
+MATCH (parliament:Author {username: 'ua_parliament'})
+MATCH (nexta:Author {username: 'nexta_tv'})
+MATCH path = shortestPath((parliament)-[:TWEETED|QUOTED|RETWEETED|REPLIED_TO*..10]-(nexta))
+WITH nodes(path) as n
+unwind n as nU
+match(c:Conversation) where c.id = nU.id
+match (a:Author {id: c.author_id})
+return a, n
+
+uloha 6
+MATCH (h:Hashtag)<-[:HAS]-(t)<-[:TWEETED]-(a:Author)
+with h as hashtag, COUNT(DISTINCT t) as tweet_count
+ORDER BY tweet_count DESC LIMIT 10
+with tweet_count, hashtag
+call 
+{ 
+	with hashtag 
+	match (a:Author)-->(c:Conversation)-->(hashtag:Hashtag)
+	with a, size(collect(c)) as htCount
+	order by htCount desc limit 1
+	return a
+}
+return hashtag.tag as hashtag, tweet_count, a.username as username

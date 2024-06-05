@@ -1,0 +1,7 @@
+autonomous-mode: 1, 2, 3
+lane-assist: true, false
+speed: <20, <50, <90, <130, <150, >=150
+abs: true, false
+esp: true, false
+asr: true, false
+mode: eco, normal, sport, track

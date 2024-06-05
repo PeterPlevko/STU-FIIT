@@ -1,0 +1,68 @@
+Matej Pirschel FIIT STU
+
+Zadanie 3 SPaASM
+(pomocný string pre zmeny v kóde)
+I4561AsEmblerySuPOhodicka2x3XzgvwpqLJfBCDnFMH90KNG78QRtTUVWjYZ
+           37   5    6  1                  0          2    4   
+
+1. Pomocou nástroja IDA sme analyzovali kód programu. Správnu dĺžku reťazca sme zistili tak,
+že sme v nástroji prezerali, aké inštrukcie sa postupne vykonávajú. Postupne sme našli funkciu, 
+v ktorej sa porovnáva register eax s číslom 8. Pri debugu sme zistili, že do nasledujúcej funkcie
+loc_4010A9 sa dostaneme, keď sa eax rovná porovnávanému číslu 8, pričom eax vždy obsahoval číslo,
+ktoré reflektovalo počet znakov v nami zadanom reťazci do dialógového okna, ktoré sa zobrazilo po
+spustení programu. Z toho sme usúdili, že dĺžka reťazca by mala byť presne 8 znakov.
+
+2. Pri pokračovaní analýzy sme narazili hneď v ďalšej funkcii na načítanie 2 reťazcov - 
+"J#ki80Ys" a "I4561AsEmblerySuPOhodicka2x3XzgvwpqLJfBCDnFMH90KNG78QRtTUVWjYZ",
+na čo sa následne zavolala funkcia sub_401146. V tejto funkcii sa načíta reťazec 
+"I4561AsEmblerySuPOhodicka2x3XzgvwpqLJfBCDnFMH90KNG78QRtTUVWjYZ", z ktorého sa následne
+načítajú znaky s offsetmi, ktoré sú napísané v programe prostredníctvom hexadecimálnych čísel do reťazca.
+Následne sa tieto znaky porovnajú s nami zadaným reťazcom, ak sa všetky zhodujú, program vyhodí dialógové okno 
+s textom: Right! Pre dané zadanie je správny reťazec, ktorý je potrebné zadať "FIITgeek".
+
+3. MessageBoxA(HWND hWnd, LPCSTR lpText, LPCSTR lpCaption, UINT uType)
+Parametre:
+HWND hWnd handle pre okno na ktorom sa zobrazi sprava
+LPCSTR lpText string so spravou co sa zobrazi v okne
+LPCSTR lpCaption Názov(titul) okna
+UINT uType specifikuje obsah a spravanie dialogoveho okna, moze obsahovat rozne flagy
+
+   Zobrazí dialógové okno obsahujúce ikonu, tlačidlá, a nejakú správu. Vracia hodnotu závisiacu od stlačeného tlačidla,
+   pri zlyhaní vráti 0.
+
+   DialogBoxParamA(HINSTANCE hInstance, LPCSTR lpTemplateName, HWND hWndParent, DLGPROC lpDialogFunc, LPARAM dwInitParam)
+Parametre:
+  HINSTANCE hInstance, handlerk modulu ktorý obsahuje vzor pre dialog box 
+  LPCSTR    lpTemplateName, vzor dialógového okna
+  HWND      hWndParent, handler k oknu obsahujúcemu daný dialog box
+  DLGPROC   lpDialogFunc, pointer na procedúru k dialog boxu
+  LPARAM    dwInitParam, hodnota na posunutie do dialog boxu 
+   Vytvorí dialógové okno pomocou vzorového zdroja. Pred jeho zobrazením posunie zvolenú hodnotu do daného okna. 
+   Aplikácia môže využiť túto hodnotu na inicializáciu dialógového okna. Začne cyklus, v ktorom číta vstup od užívateľa.
+   Vracia nResult parameter po vykonaní akcie po úspechu, 0 po neúspechu a -1 pri chybe.
+ 
+   GetDlgItemTextA(HWND hDlg, int nIDDlgItem, LPSTR lpString, int cchMax)
+Parametre: 
+  HWND  hDlg, handle ku dialog boxu 
+  int   nIDDlgItem, identifikátor časti, z ktorej sa dá zistiť text
+  LPSTR lpString, buffer na ulozenie textu
+  int   cchMax, maximálna dĺžka buffera
+   Prečíta text zadaný do dialógového okna.
+   Funkcia vracia počet znakov skopírovaných do buffera mimo ukončovacieho znaku ak úspech, inak 0.
+ 
+4. 00401097 - GetDlgItemTextA - prečíta a načíta vstup do buffera
+
+5. 0040101E - DialogBoxParamA vytvorí a zobrazí základné dialógové okno
+
+6. 004010EA - MessageBox zobrazí vyskakovacie okno so správou, či bol zadaný reťazec prijatý alebo zamietnutý - Wrong ! / Right !
+
+7. inštrukcia sa vykoná pri nesprávnej dĺžke vstupu, žiadna inštrukcia na tejto adrese nezačína, no vykonáva sa tam inštrukcia z adresy 
+004010A2, ktorá je tesne pred touto adresou. 
+
+8. Po analýze progremu sme prišli na to, že je možné upraviť program buď zmenou dát, alebo zmenou offsetov. 
+keďže dáta sme meniť nemali, rozhodli sme sa zmeniť offsety vo funkcii "sub_401146". Za správny string sme sa rozhodli zvoliť "MatejPir", 
+tak sme v danej funkcii zmenili offsety tak, aby ukazovali na správne písmená. Problém nastal pri 2. písmene, keďže tam sa offset použiť nedal. 
+Preto sme do al pridali priamo ascii hodnotu znaku, ktorý sme sa rozhodli vložiť, teda znaku a. Zvyšné písmená sme doplnili podľa offsetu v poli 
+ "I4561AsEmblerySuPOhodicka2x3XzgvwpqLJfBCDnFMH90KNG78QRtTUVWjYZ" , ktoré obsahovalo všetky potrebné znaky, takže sme ďalej nepostretli pri
+využití tohto princípu žiadne ďalšie problémy.
+

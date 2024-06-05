@@ -1,0 +1,15 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+- .secrets
+- gotk-components.yaml
+- ambulance-gitops-repo.yaml
+- ambulance-localhost-kustomization.yaml 
+- projekt-ufe-image-policy.yaml
+- projekt-ufe-image-repo.yaml
+- projekt-ufe-imageupdateautomation.yaml
+- projekt-backend-image-policy.yaml
+- projekt-backend-image-repo.yaml
+- ../infrastructure/mongo/.secrets
+- ambulance-localhost-infra-kustomization.yaml

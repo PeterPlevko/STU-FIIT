@@ -1,0 +1,108 @@
+-----------------------------------------
+Súbor: 01XadesT.xml
+Neplatná hodnota xmlns:xzep v DataEnvelope. Očakávaná hodnota: http://www.ditec.sk/ep/signature_formats/xades_zep/v1.0, Našla sa: http://www.ditec.sk/ep/signature_formats/xades_zep/v1.01
+ERROR: Koreňový element musí obsahovať atribúty xmlns:xzep a xmlns:ds podľa profilu XADES_ZEP
+
+Súbor: 01XadesT.xml je neplatný
+-----------------------------------------
+
+
+-----------------------------------------
+Súbor: 02XadesT.xml
+Nepodporovaný SignatureMethod algoritmus: http://www.w3.org/2001/04/xmldsig-more#rsa-sha255
+ERROR: ds:SignatureMethod a ds:CanonicalizationMethod musia obsahovať URI niektorého z podporovaných algoritmov pre dané elementy podľa profilu XAdES_ZEP.
+
+Súbor: 02XadesT.xml je neplatný
+-----------------------------------------
+
+
+-----------------------------------------
+Súbor: 03XadesT.xml
+Nepodporovaný DigestMethod algoritmus: http://www.w3.org/2001/04/xmlenc#sha2561
+ERROR: ds:Transforms a ds:DigestMethod vo všetkých referenciách v ds:SignedInfo musia obsahovať URI niektorého z podporovaných algoritmov podľa profilu XAdES_ZEP.
+
+Súbor: 03XadesT.xml je neplatný
+-----------------------------------------
+
+
+-----------------------------------------
+Súbor: 04XadesT.xml
+Digest value mismatch for reference: #ManifestObject201403250803212
+
+Súbor: 04XadesT.xml je neplatný
+-----------------------------------------
+
+
+-----------------------------------------
+Súbor: 05XadesT.xml
+Digest value mismatch for reference: #ManifestObject201403250803212
+
+Súbor: 05XadesT.xml je neplatný
+-----------------------------------------
+
+
+-----------------------------------------
+Súbor: 06XadesT.xml
+Digest value mismatch for reference: #ManifestObject201403250803212
+
+Súbor: 06XadesT.xml je neplatný
+-----------------------------------------
+
+
+-----------------------------------------
+Súbor: 07XadesT.xml
+Digest value mismatch for reference: #ManifestObject201403250803212
+
+Súbor: 07XadesT.xml je neplatný
+-----------------------------------------
+
+
+-----------------------------------------
+Súbor: 08XadesT.xml
+Digest value mismatch for reference: #ManifestObject201403250803212
+
+Súbor: 08XadesT.xml je neplatný
+-----------------------------------------
+
+
+-----------------------------------------
+Súbor: 09XadesT.xml
+Digest value mismatch for reference: #ManifestObject201403250803212
+
+Súbor: 09XadesT.xml je neplatný
+-----------------------------------------
+
+
+-----------------------------------------
+Súbor: 10XadesT.xml
+Nepodporovaný Transfor algoritmus: http://www.w3.org/TR/2001/REC-xml-c14n-200103151
+ERROR: ds:Transforms a ds:DigestMethod vo všetkých referenciách v ds:SignedInfo musia obsahovať URI niektorého z podporovaných algoritmov podľa profilu XAdES_ZEP.
+
+Súbor: 10XadesT.xml je neplatný
+-----------------------------------------
+
+
+-----------------------------------------
+Súbor: 11XadesT.xml
+Digest value mismatch for reference: #ManifestObject201403250803212
+
+Súbor: 11XadesT.xml je neplatný
+-----------------------------------------
+
+
+-----------------------------------------
+Súbor: 12XadesT.xml
+Digest value mismatch for reference: #ManifestObject201403250803212
+
+Súbor: 12XadesT.xml je neplatný
+-----------------------------------------
+
+
+-----------------------------------------
+Súbor: 13XadesT.xml
+Digest value mismatch for reference: #ManifestObject201403250803212
+
+Súbor: 13XadesT.xml je neplatný
+-----------------------------------------
+
+

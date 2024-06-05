@@ -1,0 +1,52 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:latest
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=password
+      - APP_DB_USER=docker
+      - APP_DB_PASS=docker
+      - APP_DB_NAME=docker
+    volumes:
+      - ./data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - 5432:5432
+
+  
+  frontend:
+    image: slack2-frontend:latest
+    build:
+      context: ../front-end
+    ports: 
+      - 8080:8080
+    environment:
+      - BACKEND_URL=backend
+      - BACKEND_PORT=3333
+      
+  backend:
+    image: slack2-backend:latest
+    build:
+      context: ../back-end
+    ports:
+      - 3333:3333
+    restart: on-failure
+    depends_on:
+      - postgres
+    environment:
+      - PORT=8080
+      - DB_HOST=postgres    
+      - PORT=3333
+      - HOST=0.0.0.0
+      - NODE_ENV=development
+      - APP_KEY=6FRlvl4op8IzZlqx8GuO_0E4Faz1K35C
+      - DB_CONNECTION=pg
+      - PG_HOST=postgres
+      - PG_PORT=5432
+      - PG_USER=root
+      - PG_PASSWORD=password
+      - PG_DB_NAME=slack2
+      - DRIVE_DISK=local
+    command: sh -c "node ace migration:run && node ace db:seed && node server js"

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<form xmlns="http://sipvs-projekt.com/sipvs-teamABBBC">
+    <first-name>Katka</first-name>
+    <last-name>Bielcikova</last-name>
+    <email-address>KB@slfiit.sk</email-address>
+    <reservation-date>2023-11-21</reservation-date>
+    <wants-equipment>true</wants-equipment>
+    <reservations>
+        <reservation reservation_id="1">
+            <sportsman-name></sportsman-name>
+            <court-number>5</court-number>
+        </reservation>
+    </reservations>
+</form>

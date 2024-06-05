@@ -1,0 +1,50 @@
+<app-header></app-header>
+
+<div class="displayFlex">
+  <div class="middle">
+
+    <form [formGroup]="loginForm" class="inputField" (submit)="submit()">
+
+      <label for="username">Prihlasovacie meno</label><br>
+      <mat-form-field id="username" appearance="fill">
+          <mat-label>Vloz prihlasovacie meno</mat-label>
+          <input matInput formControlName="username">
+          <mat-error *ngIf="loginForm.get('username')!.hasError('required') && !loginForm.get('username')!.hasError('badRequest')">
+            Vloz meno
+          </mat-error>
+          <mat-error *ngIf="loginForm.get('username')!.hasError('badRequest')">
+            Zle meno alebo heslo
+          </mat-error>
+        </mat-form-field>
+
+        <label for="password">Heslo</label><br>
+        <mat-form-field id="password" appearance="fill">
+          <mat-label>Vloz heslo</mat-label>
+          <input type="password" matInput formControlName="password">
+          <mat-error *ngIf="loginForm.get('password')!.hasError('required') && !loginForm.get('password')!.hasError('badRequest')">
+            Vloz heslo
+          </mat-error>
+          <mat-error *ngIf="loginForm.get('password')!.hasError('badRequest')">
+            Zle meno alebo heslo
+          </mat-error>
+        </mat-form-field>
+
+        <div class="alignButtons">
+          <button mat-raised-button
+          class="buttonStyle"
+          color="primary"
+          type="submit">Prihlasenie</button>
+          <button
+          [routerLink]="['/register']"
+          mat-raised-button
+          class="buttonStyle"
+          color="primary"
+          type="button"
+          >Registracia</button>
+        </div>
+    </form>
+</div>
+</div>
+
+
+<app-footer></app-footer>

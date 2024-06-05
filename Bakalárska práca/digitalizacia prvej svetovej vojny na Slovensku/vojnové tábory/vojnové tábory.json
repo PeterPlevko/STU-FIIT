@@ -1,0 +1,66 @@
+[
+  {
+    "kraj": "Trnavský",
+    "okres": "Dunajská Streda",
+    "obec": "Šamorín",
+    "GPS": "48.027423 17.314564",
+    "typ tabora": "vojaci-dôstojníci",
+    "vybavenie": [
+      "lazaret",
+      "dezinfekcna stanica",
+      "mobilne operacne komando",
+      "ncintorin",
+      "lazaret"
+    ],
+    "pocet zajatcov": 59574,
+    "narodnost vacsiny zajatych": "Rus"
+  },
+  {
+    "kraj": "Trnavský",
+    "okres": "Dunajská Streda",
+    "obec": "Dunajská Streda",
+    "GPS": "47.991419 17.620104",
+    "typ tabora": "vojaci-dôstojníci",
+    "vybavenie": [
+      "lazaret",
+      "mobilne operacne komando",
+      "ncintorin"
+    ],
+    "pocet zajatcov": 60700,
+    "narodnost vacsiny zajatych": "Rus"
+  },
+  {
+    "kraj": "Trnavský",
+    "okres": "Dunajská Streda",
+    "obec": "Veľký Meder",
+    "GPS": "47.855737 17.766373",
+    "typ tabora": "vojaci-dôstojníci",
+    "vybavenie": [
+      "nemocnica",
+      "mobilne operacne komando",
+      "cintorin"
+    ],
+    "pocet zajatcov": 44196,
+    "narodnost vacsiny zajatych": "Srb"
+  },
+  {
+    "kraj": "Košický",
+    "okres": "Spišská Nová Ves",
+    "obec": "Spišská Nová Ves",
+    "GPS": "48.945594 20.564013",
+    "typ tabora": "vojaci",
+    "vybavenie": "lazaret",
+    "pocet zajatcov": 1000,
+    "narodnost vacsiny zajatych": "Rus"
+  },
+  {
+    "kraj": "Prešovský",
+    "okres": "Medzilaborce",
+    "obec": "Medzilaborce",
+    "GPS": "49.274773 21.907031",
+    "typ tabora": "vojaci",
+    "vybavenie": "lazaret",
+    "pocet zajatcov": 500,
+    "narodnost vacsiny zajatych": "Rus"
+  }
+]

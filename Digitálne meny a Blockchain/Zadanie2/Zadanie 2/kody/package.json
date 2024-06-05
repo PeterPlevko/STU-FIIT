@@ -1,0 +1,18 @@
+{
+  "name": "kody",
+  "version": "1.0.0",
+  "description": "",
+  "main": "BattleshipPlayer.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "coverage": "truffle run coverage --solcoverjs ./.solcover.js --network coverage --temp build"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "solidity-coverage": "^0.7.20"
+  }
+}

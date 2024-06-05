@@ -1,0 +1,47 @@
+<div class="container">
+  <h3 mat-dialog-title>Add new Issue</h3>
+
+  <form class="mat-dialog-content" (ngSubmit)="submit" #formControl="ngForm">
+
+    <div class="form">
+      <mat-form-field color="accent">
+        <input matInput placeholder="Id" [(ngModel)]="data._id" name="_id">
+      </mat-form-field>
+  </div>
+
+    <div class="form">
+      <mat-form-field color="accent">
+        <input matInput placeholder="Meno" [(ngModel)]="data.surname" name="surname">
+      </mat-form-field>
+  </div>
+
+  <div class="form">
+    <mat-form-field color="accent">
+      <input matInput placeholder="Priezvisko" [(ngModel)]="data.firstname" name="firstname">
+    </mat-form-field>
+</div>
+
+    <div class="form">
+        <mat-form-field color="accent">
+          <input matInput placeholder="Email" [(ngModel)]="data.email" name="email">
+        </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field color="accent">
+        <input matInput placeholder="Pouzivatelske meno" [(ngModel)]="data.username" name="username">
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field color="accent">
+        <input matInput placeholder="Typ puzivatela" [(ngModel)]="data.userType" name="userType">
+      </mat-form-field>
+    </div>
+
+    <div mat-dialog-actions>
+      <button mat-button  [disabled]="!formControl.valid" [mat-dialog-close]="1" (click)="confirmAdd()">Save</button>
+      <button mat-button (click)="onNoClick()" tabindex="-1">Cancel</button>
+    </div>
+  </form>
+</div>

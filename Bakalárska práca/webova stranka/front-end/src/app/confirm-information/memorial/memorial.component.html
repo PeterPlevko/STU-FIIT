@@ -1,0 +1,226 @@
+
+
+<div class="makeLong center" *ngIf="memorial===null">
+
+  <h1 class="elevate">Nie je nič na potvrdenie</h1>
+</div>
+
+
+<div *ngIf="memorial!==null" class="displayFlex">
+  <div class="mainBlok">
+
+    <form [formGroup]="memorialForm" class="inputField leftSideForm" (submit)="submit()">
+
+      <label for="name">Názov pamätníka</label><br>
+      <mat-form-field id="name" appearance="fill">
+        <mat-label>Vlož názov pamätníka</mat-label>
+        <input [ngModel]="memorial.name" placeholder="Pomník padlým v I. a II. svetovej vojne, Košické Olšany" matInput formControlName="name">
+      </mat-form-field>
+
+        <label for="GPS">GPS</label><br>
+        <mat-form-field id="GPS" appearance="fill">
+          <mat-label>Vlož GPS súradnice</mat-label>
+          <input pattern="^[-]?([1-8]?\d(\.\d+)?|90(\.0+)?) \s*[-]?(180(\.0+)?|((1[0-7]\d)|([1-9]?\d))(\.\d+)?)$" [ngModel]="memorial.GPS" placeholder="48.733179 21.346886" matInput formControlName="GPS">
+        </mat-form-field>
+
+        <label for="municipalityDescription">Popis obce</label><br>
+        <mat-form-field id="municipalityDescription" appearance="fill">
+          <mat-label>Vloz popis obce</mat-label>
+          <textarea [ngModel]="memorial.municipalityDescription" matInput placeholder="Obec leží v Košickej kotline v doline Torysy v okrese Košice okolie v Košickom samosprávnom kraji. Prvá písomná zmienka o obci pochádza z roku 1288 a v súčasnosti tu žije asi 1300 obyvateľov." formControlName="municipalityDescription"></textarea>
+        </mat-form-field>
+
+        <label for="location">Poloha pamätníka</label><br>
+        <mat-form-field id="location" appearance="fill">
+          <mat-label>Vlož polohu pamätníka</mat-label>
+          <textarea [ngModel]="memorial.location" matInput placeholder="Pomník sa nachádza neďaleko domu smútku na miestnom cintoríne." formControlName="location"></textarea>
+        </mat-form-field>
+
+        <label for="photoDescription">Popis fotky</label><br>
+        <mat-form-field id="photoDescription" appearance="fill">
+          <mat-label>Vlož popis fotky</mat-label>
+          <textarea [ngModel]="memorial.photoDescription" matInput placeholder="Na snímke je pomník padlým vojakom v I. a II. svetovej vojne, na ktorom figuruje 11 mien padlých vojakov v I. a 4 mená padlých v II. svetovej vojne. Pomník odhalili z iniciatívy starostu obce Slavomíra Horvátha v roku 2017. Tvorí ho veľký balvan z miestneho kameňolomu, na ktorý je pripevnená tabuľa s menami padlých vojakov." formControlName="photoDescription"></textarea>
+        </mat-form-field>
+
+        <label for="deceased">Celé meno vojaka</label><br>
+        <div class="row">
+          <mat-form-field id="deceased" appearance="fill">
+            <mat-label>Vlož celé meno vojaka</mat-label>
+            <input  placeholder="Juraj Behún" matInput formControlName="deceased">
+          </mat-form-field>
+          <div class="column">
+            <button mat-raised-button
+            class="marginRight buttonStyle battleButton"
+            color="primary"
+            (click)="addDeceased()"
+            type="button">Pridať</button>
+            <button mat-raised-button
+            class="marginRight buttonStyle battleButton"
+            color="primary"
+            (click)="changeDeceased()"
+            type="button">Upraviť</button>
+          </div>
+        </div>
+
+        <div class="marginTop fightsScrollList" *ngIf="deceasedFlag">
+          <h1>Mená vojakov</h1>
+          <cdk-virtual-scroll-viewport  itemSize="auto" class="example-viewport">
+          <div class="wholeItem" *ngFor="let deceased of deceasedLists">
+              <div class="example-item">
+                <mat-form-field class="smallerMatForm"  appearance="fill">
+                  <input [ngModelOptions]="{standalone: true}"  id="{{deceased.element}}" #newValue [ngModel]="deceased.element" matInput>
+                </mat-form-field>
+
+                <button mat-raised-button
+                #deleteButton
+                id="{{deceased.id}}"
+                class="buttonStyle"
+                color="primary"
+                (click)="onClickDeleteDeceased(deleteButton)"
+                type="button">Delete</button>
+
+                <button mat-raised-button
+                #updateButton
+                id="{{deceased.id}}"
+                class="buttonStyle"
+                color="primary"
+                (click)="onClickUpdateDeceased(updateButton, newValue.value)"
+                type="button">Update</button>
+              </div>
+          </div>
+        </cdk-virtual-scroll-viewport>
+        </div>
+
+        <label for="dateOfBirth">Dátum narodenia</label><br>
+        <div class="row">
+          <mat-form-field id="dateOfBirth" appearance="fill">
+            <mat-label>Vlož dátum narodenia</mat-label>
+            <input placeholder="1874" matInput formControlName="dateOfBirth">
+          </mat-form-field>
+          <div class="column">
+            <button mat-raised-button
+            class="marginRight buttonStyle battleButton"
+            color="primary"
+            (click)="addBirthDate()"
+            type="button">Pridať</button>
+            <button mat-raised-button
+            class="marginRight buttonStyle battleButton"
+            color="primary"
+            (click)="changeBirthDate()"
+            type="button">Upraviť</button>
+          </div>
+        </div>
+
+        <div class="marginTop fightsScrollList" *ngIf="dateOfBirthFlag">
+          <h1>Dátumy narodení</h1>
+          <cdk-virtual-scroll-viewport  itemSize="auto" class="example-viewport">
+          <div class="wholeItem" *ngFor="let dateBirth of dateOfBirths">
+              <div class="example-item">
+                <mat-form-field class="smallerMatForm"  appearance="fill">
+                  <input [ngModelOptions]="{standalone: true}"  id="{{dateBirth.id}}" #newValue [ngModel]="dateBirth.element" matInput>
+                </mat-form-field>
+
+                <button mat-raised-button
+                #deleteButton
+                id="{{dateBirth.id}}"
+                class="buttonStyle"
+                color="primary"
+                (click)="onClickDeleteDateBirth(deleteButton)"
+                type="button">Delete</button>
+
+                <button mat-raised-button
+                #updateButton
+                id="{{dateBirth.id}}"
+                class="buttonStyle"
+                color="primary"
+                (click)="onClickUpdateDateBirth(updateButton, newValue.value)"
+                type="button">Update</button>
+              </div>
+          </div>
+        </cdk-virtual-scroll-viewport>
+        </div>
+
+        <label for="dateOfDeath">Dátum úmrtia</label><br>
+        <div class="row">
+          <mat-form-field id="dateOfDeath" appearance="fill">
+            <mat-label>Vlož dátum úmrtia</mat-label>
+            <input placeholder="1915" matInput formControlName="dateOfDeath">
+          </mat-form-field>
+          <div class="column">
+            <button mat-raised-button
+            class="marginRight buttonStyle battleButton"
+            color="primary"
+            (click)="addDateOfDeath()"
+            type="button">Pridať</button>
+            <button mat-raised-button
+            class="marginRight buttonStyle battleButton"
+            color="primary"
+            (click)="changeDeathDate()"
+            type="button">Upraviť</button>
+          </div>
+        </div>
+
+        <div class="marginTop fightsScrollList" *ngIf="dateOfDeathFlag">
+          <h1>Dátumy úmrtí</h1>
+          <cdk-virtual-scroll-viewport  itemSize="auto" class="example-viewport">
+          <div class="wholeItem" *ngFor="let dateOfDeath of dateOfDeaths">
+              <div class="example-item">
+                <mat-form-field class="smallerMatForm"  appearance="fill">
+                  <input [ngModelOptions]="{standalone: true}" id="{{dateOfDeath.id}}" #newValue [ngModel]="dateOfDeath.element" matInput>
+                </mat-form-field>
+
+                <button mat-raised-button
+                #deleteButton
+                id="{{dateOfDeath.id}}"
+                class="buttonStyle"
+                color="primary"
+                (click)="onClickDeleteDateOfDeath(deleteButton)"
+                type="button">Delete</button>
+
+                <button mat-raised-button
+                #updateButton
+                id="{{dateOfDeath.id}}"
+                class="buttonStyle"
+                color="primary"
+                (click)="onClickUpdateDateOfDeath(updateButton, newValue.value)"
+                type="button">Update</button>
+              </div>
+          </div>
+        </cdk-virtual-scroll-viewport>
+        </div>
+
+
+        <input required type="file" class="file-input" accept="image/png, image/jpeg"
+         (change)="onFileSelected($event)" #fileUpload>
+
+        <div [ngClass]="{'redText': fileFlag}" class="file-upload">
+          {{fileName || "Zatiaľ si nepridal súbor *povinné"}}
+            <button type="button" mat-mini-fab color="primary" class="upload-btn"
+              (click)="fileUpload.click()">
+                <mat-icon>attach_file</mat-icon>
+            </button>
+        </div>
+
+        <img class="image" [src]="imageToShow" alt="image">
+
+
+        <div class="row">
+          <div>
+            <button mat-raised-button
+            [disabled]="!memorialForm.valid"
+            class="buttonStyle"
+            color="primary"
+            type="submit">Potvrdiť</button>
+          </div>
+
+          <div>
+            <button mat-raised-button
+            class="buttonStyle"
+            color="primary"
+            (click)="remove()"
+            type="button">Zamietnuť</button>
+          </div>
+        </div>
+
+    </form>
+  </div>
+</div>

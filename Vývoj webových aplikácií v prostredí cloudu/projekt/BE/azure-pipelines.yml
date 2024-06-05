@@ -1,0 +1,48 @@
+trigger:
+- main
+
+stages:
+- stage: BuildAndPublish
+  displayName: Build and Publish docker image
+  jobs:  
+  - job: BuildAndPublish
+    displayName: Build and Publish docker image
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+    - task: GoTool@0
+      displayName: Use Go version 1.17.5
+      inputs:
+        version: '1.17.5'
+    - task: Go@0
+      displayName: Build Go project
+      inputs:
+        command: 'build'
+        workingDirectory: '$(System.DefaultWorkingDirectory)'
+    - task: Go@0
+      displayName: Run the tests
+      inputs:
+        command: 'test'
+        arguments: './...'
+        workingDirectory: '$(System.DefaultWorkingDirectory)'
+    - task: Docker@2
+      displayName: Docker build
+      inputs:
+        containerRegistry: 'Docker Hub Registry'
+        repository: 'xrericha/projekt-backend'
+        command: 'build'
+        Dockerfile: 'Dockerfile'
+        tags: |
+          1.0.0-$(Build.BuildId)
+          latest
+          dev-latest
+    - task: Docker@2
+      displayName: Docker push
+      inputs:
+        containerRegistry: 'Docker Hub Registry'
+        repository: 'xrericha/projekt-backend'
+        command: 'push'
+        tags: |
+          1.0.0-$(Build.BuildId)
+          latest
+          dev-latest

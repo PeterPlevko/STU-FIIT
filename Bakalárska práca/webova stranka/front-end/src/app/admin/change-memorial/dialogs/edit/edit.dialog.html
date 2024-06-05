@@ -1,0 +1,92 @@
+<div class="container">
+  <h3 mat-dialog-title>Issue id: {{data._id}}</h3>
+
+  <form [formGroup]="formControl" class="mat-dialog-content" (ngSubmit)="submit">
+
+    <div class="form">
+      <mat-form-field color="accent">
+        <mat-label>Vlož GPS súradnice</mat-label>
+        <input pattern="^[-]?([1-8]?\d(\.\d+)?|90(\.0+)?) \s*[-]?(180(\.0+)?|((1[0-7]\d)|([1-9]?\d))(\.\d+)?)$" required matInput placeholder="48.173181 17.101719" [(ngModel)]="data.GPS" name="surname" formControlName="GPS" >
+      </mat-form-field>
+  </div>
+
+  <div *ngIf="fileShowFlag" class="form">
+    <mat-form-field color="accent">
+      <mat-label>Vlož názov pamätníka</mat-label>
+      <input required matInput placeholder="Tabuľa padlým v I. svetovej vojne, Vajnory (Bratislava)" [(ngModel)]="data.name" name="name" formControlName="name">
+    </mat-form-field>
+  </div>
+
+  <div class="form">
+    <mat-form-field color="accent">
+      <mat-label>Lokácia</mat-label>
+      <textarea matInput placeholder="Tabuľa sa nachádza vnútri kaplnky v areáli Kostola Sedembolestnej Panny Márie na Osloboditeľskej ulici vo Vajnoroch." [(ngModel)]="data.location" name="location" formControlName="location"></textarea>
+    </mat-form-field>
+  </div>
+
+  <div class="form">
+    <mat-form-field color="accent">
+      <mat-label>Vlož popis obce</mat-label>
+      <textarea matInput placeholder="Vajnory sú mestskou časťou Bratislavy v Bratislavskom samosprávnom kraji. Ležia Rozkladajú sa na úpätí Malých Karpát a prvá písomná zmienka o osídlení pochádza z roku 1237. V súčasnosti tu žije vyše 5.000 obyvateľov." [(ngModel)]="data.municipalityDescription" name="municipalityDescription" formControlName="municipalityDescription"></textarea>
+    </mat-form-field>
+  </div>
+
+  <div class="form">
+    <mat-form-field color="accent">
+      <mat-label>Mena padlých oddelené čiarkou</mat-label>
+      <input matInput placeholder="1914,1917" [(ngModel)]="data.deceasedList" name="deceasedList" formControlName="deceasedList">
+    </mat-form-field>
+  </div>
+
+  <div class="form">
+    <mat-form-field color="accent">
+      <mat-label>Vlož dátumy narodení oddelené čiarkou</mat-label>
+      <input matInput placeholder="1871,1872" [(ngModel)]="data.dateOfBirth" name="dateOfBirth" formControlName="dateOfBirth">
+    </mat-form-field>
+</div>
+
+<div class="form">
+  <mat-form-field color="accent">
+    <mat-label>Vlož dátumy úmrtí oddelené čiarkou</mat-label>
+    <input matInput placeholder="1914,1915" [(ngModel)]="data.dateOfDeath" name="dateOfDeath" formControlName="dateOfDeath">
+  </mat-form-field>
+</div>
+
+<div class="form">
+  <mat-form-field color="accent">
+    <mat-label>Vlož popis fotky</mat-label>
+    <textarea matInput placeholder="Na snímke je tabuľa na pamiatku padlých vojakov v I. svetovej vojne, na ktorej figuruje 56 mien padlých vojakov." [(ngModel)]="data.photoDescription" name="photoDescription" formControlName="photoDescription"></textarea>
+  </mat-form-field>
+</div>
+
+  <div class="form">
+    <mat-form-field color="accent">
+      <mat-label>Vlož kto pridal záznam</mat-label>
+      <input matInput placeholder="admin" [(ngModel)]="data.addedBy" name="firstname" formControlName="addedBy">
+    </mat-form-field>
+</div>
+
+    <mat-checkbox (change)="setAll($event.checked)" class="example-margin" [(ngModel)]="checked" formControlName="checkBox">Nechcem pridať súbor</mat-checkbox>
+
+    <div *ngIf="fileShowFlag">
+      <input formControlName="file" required name="file" required  type="file" class="file-input" accept="image/png, image/jpeg"
+      (change)="onFileSelected($event)" #fileUpload>
+
+     <div [ngClass]="{'redText': fileFlag}" class="file-upload">
+       {{fileName || "Zatiaľ si nepridal súbor *povinné"}}
+         <button type="button" mat-mini-fab color="primary" class="upload-btn"
+           (click)="fileUpload.click()">
+             <mat-icon>attach_file</mat-icon>
+         </button>
+     </div>
+    </div>
+
+
+
+
+    <div mat-dialog-actions>
+      <button mat-button  [disabled]="!formControl.valid" [mat-dialog-close]="1" (click)="stopEdit()">Potvrdiť</button>
+      <button mat-button (click)="onNoClick()" tabindex="-1">Zrušiť</button>
+    </div>
+  </form>
+</div>

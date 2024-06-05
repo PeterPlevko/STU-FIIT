@@ -1,0 +1,883 @@
+{
+	"info": {
+		"_postman_id": "46c0f1a1-2804-4726-86d6-66efc3e00daf",
+		"name": "Chat API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "History between authenticated and requested user",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/{{user_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"{{user_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/{{user_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"{{user_id}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "10.21.254.101"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 28 Mar 2022 11:17:07 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 28 Mar 2022 11:17:07 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.0.7"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:80"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"user_from\": {\n            \"id\": 1,\n            \"name\": \"Ernestine Kessler\",\n            \"email\": \"reese63@example.com\",\n            \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"role\": \"USER\",\n            \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n        },\n        \"user_to\": {\n            \"id\": 2,\n            \"name\": \"Mr. Alexandre Spinka PhD\",\n            \"email\": \"blanda.whitney@example.net\",\n            \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"role\": \"ADMIN\",\n            \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n        },\n        \"message\": \"MSG1\",\n        \"viewed\": 0,\n        \"created_at\": \"2022-03-11T19:28:03.000000Z\",\n        \"updated_at\": \"2022-03-11T19:28:05.000000Z\"\n    },\n    {\n        \"id\": 4,\n        \"user_from\": {\n            \"id\": 1,\n            \"name\": \"Ernestine Kessler\",\n            \"email\": \"reese63@example.com\",\n            \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"role\": \"USER\",\n            \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n        },\n        \"user_to\": {\n            \"id\": 2,\n            \"name\": \"Mr. Alexandre Spinka PhD\",\n            \"email\": \"blanda.whitney@example.net\",\n            \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"role\": \"ADMIN\",\n            \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n        },\n        \"message\": \"Hi I am sending you a message\",\n        \"viewed\": 1,\n        \"created_at\": \"2022-03-11T19:40:46.000000Z\",\n        \"updated_at\": \"2022-03-11T19:40:46.000000Z\"\n    },\n    {\n        \"id\": 5,\n        \"user_from\": {\n            \"id\": 1,\n            \"name\": \"Ernestine Kessler\",\n            \"email\": \"reese63@example.com\",\n            \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"role\": \"USER\",\n            \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n        },\n        \"user_to\": {\n            \"id\": 2,\n            \"name\": \"Mr. Alexandre Spinka PhD\",\n            \"email\": \"blanda.whitney@example.net\",\n            \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"role\": \"ADMIN\",\n            \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n        },\n        \"message\": \"Hi I am sending you a message\",\n        \"viewed\": 0,\n        \"created_at\": \"2022-03-11T19:41:16.000000Z\",\n        \"updated_at\": \"2022-03-11T19:41:16.000000Z\"\n    },\n    {\n        \"id\": 8,\n        \"user_from\": {\n            \"id\": 1,\n            \"name\": \"Ernestine Kessler\",\n            \"email\": \"reese63@example.com\",\n            \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"role\": \"USER\",\n            \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n        },\n        \"user_to\": {\n            \"id\": 2,\n            \"name\": \"Mr. Alexandre Spinka PhD\",\n            \"email\": \"blanda.whitney@example.net\",\n            \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"role\": \"ADMIN\",\n            \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n        },\n        \"message\": \"toto je cisto testovacia sprava, ok?\",\n        \"viewed\": 0,\n        \"created_at\": \"2022-03-27T18:26:33.000000Z\",\n        \"updated_at\": \"2022-03-27T18:26:33.000000Z\"\n    },\n    {\n        \"id\": 6,\n        \"user_from\": {\n            \"id\": 2,\n            \"name\": \"Mr. Alexandre Spinka PhD\",\n            \"email\": \"blanda.whitney@example.net\",\n            \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"role\": \"ADMIN\",\n            \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n        },\n        \"user_to\": {\n            \"id\": 1,\n            \"name\": \"Ernestine Kessler\",\n            \"email\": \"reese63@example.com\",\n            \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"role\": \"USER\",\n            \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n        },\n        \"message\": \"asd\",\n        \"viewed\": 1,\n        \"created_at\": \"2022-03-11T20:55:50.000000Z\",\n        \"updated_at\": \"2022-03-27T18:29:05.000000Z\"\n    },\n    {\n        \"id\": 7,\n        \"user_from\": {\n            \"id\": 2,\n            \"name\": \"Mr. Alexandre Spinka PhD\",\n            \"email\": \"blanda.whitney@example.net\",\n            \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"role\": \"ADMIN\",\n            \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n        },\n        \"user_to\": {\n            \"id\": 1,\n            \"name\": \"Ernestine Kessler\",\n            \"email\": \"reese63@example.com\",\n            \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"role\": \"USER\",\n            \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n            \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n        },\n        \"message\": \"asd2\",\n        \"viewed\": 1,\n        \"created_at\": \"2022-03-11T20:56:04.000000Z\",\n        \"updated_at\": \"2022-03-27T18:29:05.000000Z\"\n    }\n]"
+				},
+				{
+					"name": "401 unauthorized",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/{{user_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"{{user_id}}"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 12 Mar 2022 14:53:06 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 12 Mar 2022 14:53:06 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.0.7"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:3000"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Unauthenticated.\"\n}"
+				},
+				{
+					"name": "404 not found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/{{user_id_404}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"{{user_id_404}}"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 12 Mar 2022 14:51:42 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 12 Mar 2022 14:51:42 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.0.7"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:3000"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"No query results for model [App\\\\Models\\\\User] 500\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Authenticated user username history",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}",
+					"host": [
+						"{{baseUrl}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "401 unauthorized",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}",
+							"host": [
+								"{{baseUrl}}"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 12 Mar 2022 14:52:49 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 12 Mar 2022 14:52:49 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.0.7"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:3000"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Unauthenticated.\"\n}"
+				},
+				{
+					"name": "200 success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}",
+							"host": [
+								"{{baseUrl}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "10.21.254.101"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 28 Mar 2022 11:17:47 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 28 Mar 2022 11:17:47 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.0.7"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:80"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"name\": \"Mr. Alexandre Spinka PhD\",\n        \"id\": 2,\n        \"unreads\": 0,\n        \"latest\": {\n            \"id\": 8,\n            \"user_from\": {\n                \"id\": 1,\n                \"name\": \"Ernestine Kessler\",\n                \"email\": \"reese63@example.com\",\n                \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n                \"role\": \"USER\",\n                \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n                \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n            },\n            \"user_to\": {\n                \"id\": 2,\n                \"name\": \"Mr. Alexandre Spinka PhD\",\n                \"email\": \"blanda.whitney@example.net\",\n                \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n                \"role\": \"ADMIN\",\n                \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n                \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n            },\n            \"message\": \"toto je cisto testovacia sprava, ok?\",\n            \"viewed\": 0,\n            \"created_at\": \"2022-03-27T18:26:33.000000Z\",\n            \"updated_at\": \"2022-03-27T18:26:33.000000Z\"\n        }\n    },\n    {\n        \"name\": \"Jayden Kiehn\",\n        \"id\": 3,\n        \"unreads\": 0,\n        \"latest\": {\n            \"id\": 8,\n            \"user_from\": {\n                \"id\": 1,\n                \"name\": \"Ernestine Kessler\",\n                \"email\": \"reese63@example.com\",\n                \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n                \"role\": \"USER\",\n                \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n                \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n            },\n            \"user_to\": {\n                \"id\": 2,\n                \"name\": \"Mr. Alexandre Spinka PhD\",\n                \"email\": \"blanda.whitney@example.net\",\n                \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n                \"role\": \"ADMIN\",\n                \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n                \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n            },\n            \"message\": \"toto je cisto testovacia sprava, ok?\",\n            \"viewed\": 0,\n            \"created_at\": \"2022-03-27T18:26:33.000000Z\",\n            \"updated_at\": \"2022-03-27T18:26:33.000000Z\"\n        }\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Send user example message",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"text\": \"Hi I am sending you a message\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/{{user_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"{{user_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"text\": \"Hi I am sending you a message\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/{{user_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"{{user_id}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "10.21.254.101"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 28 Mar 2022 11:18:07 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 28 Mar 2022 11:18:07 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.0.7"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:80"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"user_from\": {\n        \"id\": 1,\n        \"name\": \"Ernestine Kessler\",\n        \"email\": \"reese63@example.com\",\n        \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n        \"role\": \"USER\",\n        \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n        \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n    },\n    \"user_to\": {\n        \"id\": 2,\n        \"name\": \"Mr. Alexandre Spinka PhD\",\n        \"email\": \"blanda.whitney@example.net\",\n        \"email_verified_at\": \"2022-03-08T13:38:04.000000Z\",\n        \"role\": \"ADMIN\",\n        \"created_at\": \"2022-03-08T13:38:04.000000Z\",\n        \"updated_at\": \"2022-03-08T13:38:04.000000Z\"\n    },\n    \"message\": \"Hi I am sending you a message\",\n    \"updated_at\": \"2022-03-28T11:18:07.000000Z\",\n    \"created_at\": \"2022-03-28T11:18:07.000000Z\",\n    \"id\": 9\n}"
+				},
+				{
+					"name": "401 unauthorized",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"text\": \"Hi I am sending you a message\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/{{user_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"{{user_id}}"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 12 Mar 2022 14:55:34 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 12 Mar 2022 14:55:34 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.0.7"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:3000"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Unauthenticated.\"\n}"
+				},
+				{
+					"name": "404 not found",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"text\": \"Hi I am sending you a message\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/{{user_id_404}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"{{user_id_404}}"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 12 Mar 2022 14:55:53 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 12 Mar 2022 14:55:53 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.0.7"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:3000"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"No query results for model [App\\\\Models\\\\User] 500\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Read chat from specifified user",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/{{user_id}}/read",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"{{user_id}}",
+						"read"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 success",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/{{user_id}}/read",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"{{user_id}}",
+								"read"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 12 Mar 2022 21:18:20 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 12 Mar 2022 21:18:20 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.0.7"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "56"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:3000"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						}
+					],
+					"cookie": [],
+					"body": "[]"
+				},
+				{
+					"name": "401 unauthorized",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/{{user_id}}/read",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"{{user_id}}",
+								"read"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 12 Mar 2022 21:17:20 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 12 Mar 2022 21:17:20 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.0.7"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:3000"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Unauthenticated.\"\n}"
+				},
+				{
+					"name": "404 not found",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/{{user_id_404}}/read",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"{{user_id_404}}",
+								"read"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 12 Mar 2022 21:17:42 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 12 Mar 2022 21:17:42 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.0.7"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:3000"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"No query results for model [App\\\\Models\\\\User] 500\"\n}"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "NlTxZcVMr8x70AqmL8BsPXKk6WU1fTYtSj7Qnl8v",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.request.headers.add({key: 'accept', value: 'application/json' });"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "10.21.254.101/api/chats",
+			"type": "string"
+		},
+		{
+			"key": "user_id",
+			"value": "2"
+		},
+		{
+			"key": "user_id_404",
+			"value": "500",
+			"type": "string"
+		}
+	]
+}

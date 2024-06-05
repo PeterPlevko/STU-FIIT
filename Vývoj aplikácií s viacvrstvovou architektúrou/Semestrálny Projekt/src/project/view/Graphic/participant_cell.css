@@ -1,0 +1,15 @@
+.list-view .list-cell{
+    -fx-background-color: #7bbd6e;
+    -fx-text-fill: #000000;
+    -fx-border-color:
+            #090a0c,
+            linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),
+            linear-gradient(#20262b, #191d22),
+            radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));
+    -fx-border-width: 0px 0px 1px 0px;
+}
+
+.list-view .list-cell:hover, .list-view .list-cell:selected{
+    -fx-background-color: #4c8d43;
+    -fx-text-fill: #000000;
+}

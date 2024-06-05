@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Messie.CustomerEditController">
+   <children>
+      <Button layoutX="107.0" layoutY="325.0" mnemonicParsing="false" onAction="#switchToMain" prefHeight="36.0" prefWidth="93.0" text="odoslat" />
+      <TableView fx:id="tableView" layoutX="33.0" layoutY="92.0" prefHeight="200.0" prefWidth="534.0">
+        <columns>
+          <TableColumn fx:id="nameSurname" onEditCommit="#changeFirstNameCellEvent" prefWidth="136.0" text="meno a priezvisko" />
+          <TableColumn fx:id="address" onEditCommit="#changeLastNameCellEvent" prefWidth="174.0" text="adresa" />
+            <TableColumn fx:id="city" onEditCommit="#changeCityCellEvent" prefWidth="127.0" text="mesto" />
+            <TableColumn fx:id="postalCode" onEditCommit="#changePostalCodeCellEvent" prefWidth="96.0" text="psc" />
+        </columns>
+      </TableView>
+      <Text layoutX="220.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zakaznici">
+         <font>
+            <Font size="36.0" />
+         </font></Text>
+      <Button layoutX="377.0" layoutY="325.0" mnemonicParsing="false" onAction="#deleteUser" prefHeight="36.0" prefWidth="93.0" text="zmazat" />
+   </children>
+</AnchorPane>

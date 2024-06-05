@@ -1,0 +1,81 @@
+.mainBlok{
+  margin-top: 300px;
+  width: 50%;
+  background-color: white;
+  font-size: large;
+  padding: 50px;
+  border: 1px solid #009999;
+}
+
+.column{
+  display: flex;
+  flex-direction: column;
+}
+
+.center{
+  display: flex;
+  align-items: center;
+}
+
+.center a{
+  color: black;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  text-decoration: none;
+  font-size: 30px;
+}
+
+.center a:hover{
+  color: #009999;
+}
+
+.displayFlex{
+  display: flex;
+  justify-content: center;
+}
+@media only screen and (max-width: 1400px) {
+  .mainBlok {
+    width: 40%;
+  }
+  .mainBlokBigger {
+    width: 40%;
+  }
+
+}
+
+@media only screen and (max-width: 1200px) {
+  .mainBlok {
+    width: 50%;
+  }
+  .mainBlokBigger {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .mainBlok {
+    margin-top: 200px;
+    width: 100%;
+  }
+  .mainBlokBigger {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .mainBlok {
+    width: 100%;
+    margin-top: 100px;
+  }
+  .mainBlokBigger {
+    padding: 0px;
+    width: 100%;
+  }
+  mat-form-field {
+    min-width: 200px;
+  }
+
+  .mainBlok a{
+    font-size: 25px;
+  }
+}

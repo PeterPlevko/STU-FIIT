@@ -1,0 +1,126 @@
+{
+	"info": {
+		"_postman_id": "b4adf391-3a20-438b-b259-1d9360807274",
+		"name": "uloha 7",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14763343"
+	},
+	"item": [
+		{
+			"name": "get",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"query\": {\r\n        \"match\": {\r\n            \"source_id\": \"1247616214769086465\"\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9200/tweets/_search",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"tweets",
+						"_search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"query\": {\r\n        \"match\": {\r\n            \"source_id\": \"1247616214769086465\"\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9200/tweets/_delete_by_query",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"tweets",
+						"_delete_by_query"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"source_id\": 1247616214769086465,\r\n        \"author\": {\r\n            \"id\": 12,\r\n            \"name\": \"jack\",\r\n            \"username\": \"jack\",\r\n            \"description\": \"#bitcoin\",\r\n            \"tweet_count\": 28623,\r\n            \"listed_count\": 32971,\r\n            \"followers_count\": 6430176,\r\n            \"following_count\": 4584\r\n        },\r\n        \"content\": \"I’m moving $1B of my Square equity (~28% of my wealth) to #startsmall LLC to fund global COVID-19 relief. After we disarm this pandemic, the focus will shift to girl’s health and education, and UBI. It will operate transparently, all flows tracked here: https://t.co/hVkUczDQmz\",\r\n        \"language\": \"en\",\r\n        \"source\": \"Twitter for iPhone\",\r\n        \"retweet_count\": 72261,\r\n        \"reply_count\": 34915,\r\n        \"like_count\": 381998,\r\n        \"quote_count\": 21000,\r\n        \"possibly_sensitive\": false,\r\n        \"created_at\": \"2020-04-07T20:04:19+02:00\",\r\n        \"hashtags\": [\r\n            \"startsmall\"\r\n        ],\r\n        \"links\": [\r\n            {\r\n                \"url\": \"https://docs.google.com/spreadsheets/d/1-eGxq2mMoEGwgSpNVL5j2sa6ToojZUZ-Zun8h2oBAR4\",\r\n                \"title\": \"#startsmall tracker\",\r\n                \"description\": \"Donations Total Value Created:, $ 1,747,245,458.19 Total Disbursed:, $ 496,696,311.00 Total Remaining: , $ 1,250,549,147.19 Date, Amount ,Grantee,Twitter,Link,Why? 7/25/2022,$250,000,Girls Garage,@_GirlsGarage,ht...\"\r\n            }\r\n        ],\r\n        \"annotations\": null,\r\n        \"context_annotations\": [\r\n            {\r\n                \"domain\": {\r\n                    \"name\": \"Person\",\r\n                    \"description\": \"Named people in the world like Nelson Mandela\"\r\n                },\r\n                \"entity\": {\r\n                    \"name\": \"Jack Dorsey\",\r\n                    \"description\": \"Jack Dorsey\"\r\n                }\r\n            },\r\n            {\r\n                \"domain\": {\r\n                    \"name\": \"Brand Vertical\",\r\n                    \"description\": \"Top level entities that describe a Brands industry\"\r\n                },\r\n                \"entity\": {\r\n                    \"name\": \"Business & finance\",\r\n                    \"description\": null\r\n                }\r\n            },\r\n            {\r\n                \"domain\": {\r\n                    \"name\": \"Entities [Entity Service]\",\r\n                    \"description\": \"Entity Service top level domain, every item that is in Entity Service should be in this domain\"\r\n                },\r\n                \"entity\": {\r\n                    \"name\": \"Financial services\",\r\n                    \"description\": null\r\n                }\r\n            },\r\n            {\r\n                \"domain\": {\r\n                    \"name\": \"Entities [Entity Service]\",\r\n                    \"description\": \"Entity Service top level domain, every item that is in Entity Service should be in this domain\"\r\n                },\r\n                \"entity\": {\r\n                    \"name\": \"Bitcoin cryptocurrency\",\r\n                    \"description\": \"Bitcoin Cryptocurrency\"\r\n                }\r\n            },\r\n            {\r\n                \"domain\": {\r\n                    \"name\": \"Brand\",\r\n                    \"description\": \"Brands and Companies\"\r\n                },\r\n                \"entity\": {\r\n                    \"name\": \"Cash App\",\r\n                    \"description\": null\r\n                }\r\n            },\r\n            {\r\n                \"domain\": {\r\n                    \"name\": \"Interests and Hobbies Category\",\r\n                    \"description\": \"A grouping of interests and hobbies entities, like Novelty Food or Destinations\"\r\n                },\r\n                \"entity\": {\r\n                    \"name\": \"Cryptocurrencies\",\r\n                    \"description\": \"Cryptocurrency\"\r\n                }\r\n            },\r\n            {\r\n                \"domain\": {\r\n                    \"name\": \"Unified Twitter Taxonomy\",\r\n                    \"description\": \"A taxonomy view into the Semantic Core knowledge graph\"\r\n                },\r\n                \"entity\": {\r\n                    \"name\": \"Cryptocurrencies\",\r\n                    \"description\": \"Cryptocurrency\"\r\n                }\r\n            },\r\n            {\r\n                \"domain\": {\r\n                    \"name\": \"Unified Twitter Taxonomy\",\r\n                    \"description\": \"A taxonomy view into the Semantic Core knowledge graph\"\r\n                },\r\n                \"entity\": {\r\n                    \"name\": \"Bitcoin cryptocurrency\",\r\n                    \"description\": \"Bitcoin Cryptocurrency\"\r\n                }\r\n            },\r\n            {\r\n                \"domain\": {\r\n                    \"name\": \"Unified Twitter Taxonomy\",\r\n                    \"description\": \"A taxonomy view into the Semantic Core knowledge graph\"\r\n                },\r\n                \"entity\": {\r\n                    \"name\": \"Jack Dorsey\",\r\n                    \"description\": \"Jack Dorsey\"\r\n                }\r\n            },\r\n            {\r\n                \"domain\": {\r\n                    \"name\": \"Unified Twitter Taxonomy\",\r\n                    \"description\": \"A taxonomy view into the Semantic Core knowledge graph\"\r\n                },\r\n                \"entity\": {\r\n                    \"name\": \"Tech personalities\",\r\n                    \"description\": \"Tech Professionals\"\r\n                }\r\n            },\r\n            {\r\n                \"domain\": {\r\n                    \"name\": \"Unified Twitter Taxonomy\",\r\n                    \"description\": \"A taxonomy view into the Semantic Core knowledge graph\"\r\n                },\r\n                \"entity\": {\r\n                    \"name\": \"Business personalities\",\r\n                    \"description\": null\r\n                }\r\n            },\r\n            {\r\n                \"domain\": {\r\n                    \"name\": \"Unified Twitter Taxonomy\",\r\n                    \"description\": \"A taxonomy view into the Semantic Core knowledge graph\"\r\n                },\r\n                \"entity\": {\r\n                    \"name\": \"Cash App\",\r\n                    \"description\": null\r\n                }\r\n            },\r\n            {\r\n                \"domain\": {\r\n                    \"name\": \"Unified Twitter Taxonomy\",\r\n                    \"description\": \"A taxonomy view into the Semantic Core knowledge graph\"\r\n                },\r\n                \"entity\": {\r\n                    \"name\": \"Cryptocoins\",\r\n                    \"description\": null\r\n                }\r\n            },\r\n            {\r\n                \"domain\": {\r\n                    \"name\": \"Unified Twitter Taxonomy\",\r\n                    \"description\": \"A taxonomy view into the Semantic Core knowledge graph\"\r\n                },\r\n                \"entity\": {\r\n                    \"name\": \"Digital asset industry\",\r\n                    \"description\": null\r\n                }\r\n            },\r\n            {\r\n                \"domain\": {\r\n                    \"name\": \"Unified Twitter Taxonomy\",\r\n                    \"description\": \"A taxonomy view into the Semantic Core knowledge graph\"\r\n                },\r\n                \"entity\": {\r\n                    \"name\": \"Digital assets & cryptocurrency\",\r\n                    \"description\": \"Cryptocurrency\"\r\n                }\r\n            },\r\n            {\r\n                \"domain\": {\r\n                    \"name\": \"Technology\",\r\n                    \"description\": \"for individual and types of technology, e.g., food technology, 3D printing\"\r\n                },\r\n                \"entity\": {\r\n                    \"name\": \"Fintech\",\r\n                    \"description\": null\r\n                }\r\n            },\r\n            {\r\n                \"domain\": {\r\n                    \"name\": \"Cities\",\r\n                    \"description\": \"Cities around the world\"\r\n                },\r\n                \"entity\": {\r\n                    \"name\": \"Miami\",\r\n                    \"description\": \"Miami\"\r\n                }\r\n            }\r\n        ],\r\n        \"conversation_references\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9200/tweets/_create/1247616214769086465",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"tweets",
+						"_create",
+						"1247616214769086465"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "complex search",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"query\": {\r\n        \"nested\":{\r\n            \"path\": \"author\",\r\n            \"query\": {\r\n                \"query_string\": {\r\n                \"query\": \"jack\",\r\n                \"default_field\": \"author.username\"\r\n                }\r\n            }\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9200/tweets/_search",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"tweets",
+						"_search"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,66 @@
+toto je potrebne zmenit v oficialnej sablone fiit stu  
+https://www.overleaf.com/latex/templates/stu-fiit-bachelor-thesis-template-slovak-university-of-technology/pppyykvvhqgq
+zmena chapterov 
+
+\usepackage{titlesec}
+\titleformat{\chapter}[hang]
+{\Huge\bfseries}
+{\thechapter\space}
+{0pt}
+{\Huge\bfseries}
+\titlespacing*{\chapter}{0 pt}{-\baselineskip}{32 pt}
+
+do preamblu
+-------------------------------------------------------------
+zmena headeru a cislovania 
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+%\lhead{\nouppercase{\leftmark}}
+\lhead{}
+\chead{}
+\rhead{}
+\fancyfoot{}
+\fancyfoot[LE,RO]{\thepage}
+
+\fancypagestyle{plain}{%
+\fancyfoot{}
+\fancyfoot[LE,RO]{\thepage}
+}
+
+zamenit za toto podobne co je v preamble
+------------------------------------------------------------------
+odtsranit ciaru hore
+
+\renewcommand{\headrulewidth}{0pt}
+
+do preamblu
+--------------------------------------------------------------------
+
+\clearpage
+% Empty Page
+\pagebreak
+\phantom{a}
+\thispagestyle{empty}
+\pagebreak
+
+toto dat pred kazde zacatie kapitoly, vycisti do strany sa mi zda
+----------------------------------------------------------------------
+\addcontentsline{toc}{chapter}{Literatúra}
+
+prida literaturu do contents
+-------------------------------------------------------------------------
+za \appendix
+
+\titleformat{\chapter}[hang]{\Huge{\bfseries{Príloha}} \Huge\bfseries}{\thechapter:\hsp\space\hsp}{0pt}{\Huge\bfseries}
+
+zmeni header prilohy
+
+----------------------------------------------------------------------------
+
+toto dat za chapter v kazdej prilohe zvlast pre nastavenie page numberingu
+
+\pagenumbering{arabic}% resets `page` counter to 1
+\renewcommand*{\thepage}{A-\arabic{page}}
+
+

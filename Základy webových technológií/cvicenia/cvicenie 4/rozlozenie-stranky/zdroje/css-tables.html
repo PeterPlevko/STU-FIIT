@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Tables</title>
+    <meta charset="UTF-8">
+	<style>
+		html {
+		  font-family: sans-serif;
+		}
+
+		form {
+		  display: table;
+		  margin: 0 auto;
+		}
+
+		form div {
+		  display: table-row;
+		}
+
+		form label, form input {
+		  display: table-cell;
+		  margin-bottom: 10px;
+		}
+
+		form label {
+		  width: 200px;
+		  padding-right: 5%;
+		  text-align: right;
+		}
+
+		form input {
+		  width: 300px;
+		}
+
+		form p {
+		  display: table-caption;
+		  caption-side: bottom;
+		  width: 300px;
+		  color: #999;
+		  font-style: italic;
+		}
+	</style>
+</head>
+<body>
+<form>
+  <p>Povedzte nám svoje celé meno a vek.</p>
+  <div>
+    <label for="fname">Meno:</label>
+    <input type="text" id="fname">
+  </div>
+  <div>
+    <label for="lname">Priezvisko:</label>
+    <input type="text" id="lname">
+  </div>
+  <div>
+    <label for="age">Vek:</label>
+    <input type="text" id="age">
+  </div>
+</form>
+</body>
+</html>

@@ -1,0 +1,186 @@
+Script started on 2021-02-20 09:38:16+0000
+[1;36msansforensics@siftworkstation[0m: [32m~[0m
+$ ls /media[K[K[K[K[K[K[K[K[Kdconf-editor
+[1;36msansforensics@siftworkstation[0m: [32m~[0m
+$ lsusb /[K-d
+lsusb: option requires an argument -- 'd'
+Usage: lsusb [options]...
+List USB devices
+  -v, --verbose
+      Increase verbosity (show descriptors)
+  -s [[bus]:][devnum]
+      Show only devices with specified device and/or
+      bus numbers (in decimal)
+  -d vendor:[product]
+      Show only devices with the specified vendor and
+      product ID numbers (in hexadecimal)
+  -D device
+      Selects which device lsusb will examine
+  -t, --tree
+      Dump the physical USB device hierarchy as a tree
+  -V, --version
+      Show version of program
+  -h, --help
+      Show usage and help
+[1;36msansforensics@siftworkstation[0m: [32m~[0m
+$ lsusb -d[K[K
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 001 Device 002: ID 8690:3a04  
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+[1;36msansforensics@siftworkstation[0m: [32m~[0m
+$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           394M  3.1M  391M   1% /run
+/dev/sda1        98G   14G   80G  15% /
+tmpfs           2.0G     0  2.0G   0% /dev/shm
+tmpfs           5.0M  4.0K  5.0M   1% /run/lock
+tmpfs           2.0G     0  2.0G   0% /sys/fs/cgroup
+/dev/loop0       56M   56M     0 100% /snap/core18/1988
+/dev/loop3      640K  640K     0 100% /snap/gnome-logs/103
+/dev/loop2      384K  384K     0 100% /snap/gnome-characters/570
+/dev/loop1      1.0M  1.0M     0 100% /snap/gnome-logs/81
+/dev/loop4      4.3M  4.3M     0 100% /snap/gnome-calculator/544
+/dev/loop5       55M   55M     0 100% /snap/core18/1668
+/dev/loop6       15M   15M     0 100% /snap/gnome-characters/399
+/dev/loop7      219M  219M     0 100% /snap/gnome-3-34-1804/66
+/dev/loop8      3.8M  3.8M     0 100% /snap/gnome-system-monitor/127
+/dev/loop9      163M  163M     0 100% /snap/gnome-3-28-1804/145
+/dev/loop10      99M   99M     0 100% /snap/core/10823
+/dev/loop11      45M   45M     0 100% /snap/gtk-common-themes/1440
+/dev/loop13      92M   92M     0 100% /snap/core/8689
+/dev/loop14     161M  161M     0 100% /snap/gnome-3-28-1804/116
+/dev/loop12     2.3M  2.3M     0 100% /snap/gnome-system-monitor/157
+/dev/loop15      65M   65M     0 100% /snap/gtk-common-themes/1514
+/dev/loop16     141M  141M     0 100% /snap/gnome-3-26-1604/100
+/dev/loop17     141M  141M     0 100% /snap/gnome-3-26-1604/98
+/dev/loop18     2.5M  2.5M     0 100% /snap/gnome-calculator/826
+tmpfs           394M   28K  394M   1% /run/user/121
+tmpfs           394M   36K  394M   1% /run/user/1000
+[1;36msansforensics@siftworkstation[0m: [32m~[0m
+$ lbsl[K[Kblk[K[K[K[Ksblk
+NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+loop0    7:0    0  55.5M  1 loop /snap/core18/1988
+loop1    7:1    0   956K  1 loop /snap/gnome-logs/81
+loop2    7:2    0   276K  1 loop /snap/gnome-characters/570
+loop3    7:3    0   548K  1 loop /snap/gnome-logs/103
+loop4    7:4    0   4.2M  1 loop /snap/gnome-calculator/544
+loop5    7:5    0  54.7M  1 loop /snap/core18/1668
+loop6    7:6    0  14.8M  1 loop /snap/gnome-characters/399
+loop7    7:7    0   219M  1 loop /snap/gnome-3-34-1804/66
+loop8    7:8    0   3.7M  1 loop /snap/gnome-system-monitor/127
+loop9    7:9    0 162.9M  1 loop /snap/gnome-3-28-1804/145
+loop10   7:10   0  98.4M  1 loop /snap/core/10823
+loop11   7:11   0  44.9M  1 loop /snap/gtk-common-themes/1440
+loop12   7:12   0   2.2M  1 loop /snap/gnome-system-monitor/157
+loop13   7:13   0  91.4M  1 loop /snap/core/8689
+loop14   7:14   0 160.2M  1 loop /snap/gnome-3-28-1804/116
+loop15   7:15   0  64.8M  1 loop /snap/gtk-common-themes/1514
+loop16   7:16   0 140.7M  1 loop /snap/gnome-3-26-1604/100
+loop17   7:17   0 140.7M  1 loop /snap/gnome-3-26-1604/98
+loop18   7:18   0   2.5M  1 loop /snap/gnome-calculator/826
+sda      8:0    0   100G  0 disk 
+└─sda1   8:1    0   100G  0 part /
+sdb      8:16   1   7.5G  0 disk 
+└─sdb1   8:17   1   7.5G  0 part 
+[1;36msansforensics@siftworkstation[0m: [32m~[0m
+$ lsblk /dev/sdb
+NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sdb      8:16   1  7.5G  0 disk 
+└─sdb1   8:17   1  7.5G  0 part 
+[1;36msansforensics@siftworkstation[0m: [32m~[0m
+$ lsblk /dev/sdb[C[C[C[C[C[C[C[K[C[Cdf -h[C[Clsusb -d[C[Cdconf-editor[C[C[4Plsusb -d[K>> usb/[K_info.txt
+[1;36msansforensics@siftworkstation[0m: [32m~[0m
+$ lsusb >> usb_info.txt[C[C[C[C[7Pblk /dev/sdb[C[C[C[C[C[C[C[K[C[Cdf -h[C[Clsusb [C[C[1Pdf -h /dev/sdb >> usb_info.txt 
+[1;36msansforensics@siftworkstation[0m: [32m~[0m
+$ df -h /dev/sdb >> usb_info.txt [C[C[10Plsusb >> usb_info.txt[C[C[C[C[7Pblk /dev/sdb[C[C[C[C[C[C[C[K /dev/sdb >> usb_info.txt
+[1;36msansforensics@siftworkstation[0m: [32m~[0m
+$ fdisk -kl[K[Kl /dev/sdb >> usb_info.txt 
+fdisk: cannot open /dev/sdb: Permission denied
+[1;36msansforensics@siftworkstation[0m: [32m~[0m
+$ fdisk -l /dev/sdb >> usb_info.txt [C[C[1@s[1@u[1@d[1@o[1@ 
+[1;36msansforensics@siftworkstation[0m: [32m~[0m
+$ parted /dev/sdb [K
+WARNING: You are not superuser.  Watch out for permissions.
+Error: Error opening /dev/sdb: Permission denied
+                                                                                                                                                    Retry/Cancel? ^C
+[1;36msansforensics@siftworkstation[0m: [32m~[0m
+$ parted /dev/sdb[C[C[1@s[1@u[1@d[1@o[1@ 
+GNU Parted 3.2
+Using /dev/sdb
+Welcome to GNU Parted! Type 'help' to view a list of commands.
+                                                                          (parted) print
+Model: Flash USB Disk (scsi)
+Disk /dev/sdb: 8053MB
+Sector size (logical/physical): 512B/512B
+Partition Table: msdos
+Disk Flags: 
+
+Number  Start   End     Size    Type     File system  Flags
+ 1      2621kB  8053MB  8050MB  primary  fat32        lba
+
+                                                                          (parted) quit
+[1;36msansforensics@siftworkstation[0m: [32m~[0m
+$ echo "Model: Flash USB Disk (scsi)
+> Disk /dev/sdb: 8053MB
+> Sector size (logical/physical): 512B/512B
+> Partition Table: msdos
+> Disk Flags: 
+> 
+> Number  Start   End     Size    Type     File system  Flags
+>  1      2621kB  8053MB  8050MB  primary  fat32        lba" >> [K[K[K>> usb_infp[Ko.y[Ktxt
+[1;36msansforensics@siftworkstation[0m: [32m~[0m
+$ cat usb_info.txt 
+Bus 001 Device 005: ID 8690:3a04  
+NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sdb      8:16   1  7.5G  0 disk 
+└─sdb1   8:17   1  7.5G  0 part 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+Disk /dev/sdb: 7.5 GiB, 8053063680 bytes, 15728640 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0x3a87adbf
+
+Device     Boot Start      End  Sectors  Size Id Type
+/dev/sdb1        5120 15728639 15723520  7.5G  c W95 FAT32 (LBA)
+Model: Flash USB Disk (scsi)
+Disk /dev/sdb: 8053MB
+Sector size (logical/physical): 512B/512B
+Partition Table: msdos
+Disk Flags: 
+
+Number  Start   End     Size    Type     File system  Flags
+ 1      2621kB  8053MB  8050MB  primary  fat32        lba
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 001 Device 002: ID 8690:3a04  
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sdb      8:16   1  7.5G  0 disk 
+└─sdb1   8:17   1  7.5G  0 part 
+Disk /dev/sdb: 7.5 GiB, 8053063680 bytes, 15728640 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0x3a87adbf
+
+Device     Boot Start      End  Sectors  Size Id Type
+/dev/sdb1        5120 15728639 15723520  7.5G  c W95 FAT32 (LBA)
+Model: Flash USB Disk (scsi)
+Disk /dev/sdb: 8053MB
+Sector size (logical/physical): 512B/512B
+Partition Table: msdos
+Disk Flags: 
+
+Number  Start   End     Size    Type     File system  Flags
+ 1      2621kB  8053MB  8050MB  primary  fat32        lba
+[1;36msansforensics@siftworkstation[0m: [32m~[0m
+$ ex[K[Kexit
+exit
+
+Script done on 2021-02-20 09:42:05+0000

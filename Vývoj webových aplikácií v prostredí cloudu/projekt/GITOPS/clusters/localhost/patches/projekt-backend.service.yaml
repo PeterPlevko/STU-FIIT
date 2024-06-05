@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: pprerko-projekt-backend
+spec:
+  type: NodePort
+  ports:
+  - name: webapi-s-port
+    port: 80
+    protocol: TCP
+    nodePort: 30431

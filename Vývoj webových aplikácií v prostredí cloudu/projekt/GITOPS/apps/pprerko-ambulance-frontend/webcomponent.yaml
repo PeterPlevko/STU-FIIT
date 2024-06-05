@@ -1,0 +1,19 @@
+apiVersion: fe.milung.eu/v1
+kind: WebComponent
+metadata: 
+  name: pprerko-ambulance-frontend
+spec:   
+  module-uri: http://pprerko-ambulance-frontend.wac-hospital/build/ambulance-list.esm.js
+  navigation:
+    - element: pprerko-home-page
+      path: pprerko-ambulance-frontend          
+      title: Projekt pprerko
+      details: Spravuje zoznam pacientov čakajúcich na vyšetrenie v ambulancii     
+      attributes:                   
+        - name: base-path
+          value: /pprerko-ambulance-frontend/
+        - name: api-uri
+          value: /pprerko-ambulance-backend
+  preload: false                    
+  proxy: true                                           
+  hash-suffix: v1alpha2                        
