@@ -116,7 +116,7 @@
 #### Počet úspešných bakalárov: 187
 
 #### Počet študentov na začiatku inžinierskeho štúdia ročník 2022/2023 2 ročné denné štúdium študijný program inteligentné softvérové systémy: 162
-#### Počet úspešných inžinierov: ---
+#### Počet úspešných inžinierov: 137
 
 ### Obdobie medzi strednou školou a bakalárom
 #### Nie je potrebné ísť na úrad práce ani do sociálnej poistovne, je potrebné zaslať mailom banke potvrdenie o štúdiu pre študentský účet zadarmo (tatra banka), na prídavky pre dieťa, na smeti
